@@ -53,6 +53,7 @@ exclude:
   - node_modules
   - vendor
   - legacy_docs
+  - "**/SKILL.md"
 
 # SEO
 author: AI4SocialScience Contributors

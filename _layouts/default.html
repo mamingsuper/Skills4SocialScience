@@ -14,6 +14,10 @@
         .detail-title { font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem; }
         .detail-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
         .meta-tag { background: rgba(255,255,255,0.5); padding: 0.25rem 0.75rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.9rem; }
+        .detail-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+        .nav-lang { border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); padding: 0.3rem 0.7rem; }
+        .skill-source-block { margin-top: 1rem; background: #1e1e2e; color: #cdd6f4; border-radius: 8px; padding: 1rem; overflow-x: auto; }
+        .hint { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
 
         .detail-content { background: rgba(255,255,255,0.6); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); line-height: 1.8; }
         .detail-content h2 { margin-top: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
@@ -31,9 +35,15 @@
             </a>
             <div class="nav-links">
                 <a href="{{ site.baseurl }}/#skills">Skills</a>
+                <a href="{{ site.baseurl }}/#quick-start">Quick Start</a>
                 <a href="{{ site.baseurl }}/#papers">Papers</a>
                 <a href="{{ site.baseurl }}/#resources">Resources</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
+                {% if page.url contains '/zh/' %}
+                <a href="{{ site.baseurl }}/" class="nav-lang">English</a>
+                {% else %}
+                <a href="{{ site.baseurl }}/zh/" class="nav-lang">中文</a>
+                {% endif %}
             </div>
         </div>
     </nav>

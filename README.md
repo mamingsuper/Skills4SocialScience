@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/Skills4SocialScience?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/Skills4SocialScience?style=social)
+![GitHub stars](https://img.shields.io/github/stars/mamingsuper/Skills4SocialScience?style=social)
+![GitHub forks](https://img.shields.io/github/forks/mamingsuper/Skills4SocialScience?style=social)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 **A Curated Collection of AI Skills & Tools for Social Science Research**
@@ -61,14 +61,14 @@ Literature Review → Research Design → Data Collection → Data Analysis → 
 <details>
 <summary><b>Available Solutions</b></summary>
 
-- **[Claude Scientific Writer](skills/0-one-stop-solutions/CLAUDE_SCIENTIFIC_WRITER.md)** 📝
+- **[Claude Scientific Writer](_skills/writing/claude-writer/SKILL.md)** 📝
   - End-to-end academic paper writing solution
   - Integrated workflow from outline to final draft
   - Supports multiple scientific and social science disciplines
   - AI-powered writing assistance with Claude
   - Literature integration and citation management
   - Structured academic paper formats (IMRAD)
-  - [View resource guide](skills/0-one-stop-solutions/CLAUDE_SCIENTIFIC_WRITER.md)
+  - [View resource guide](_skills/writing/claude-writer/SKILL.md)
   - [Visit GitHub repository](https://github.com/K-Dense-AI/claude-scientific-writer)
 
 </details>
@@ -93,13 +93,13 @@ Literature Review → Research Design → Data Collection → Data Analysis → 
 <details>
 <summary><b>Available Skills & Resources</b></summary>
 
-- **[Open Science Skills](skills/2-research-design/OPEN_SCIENCE_SKILLS.md)** 🔬
+- **[Open Science Skills](_skills/design/open-science-skills/SKILL.md)** 🔬
   - Comprehensive collection of open science practices
   - Reproducible research workflows
   - Data management and sharing protocols
   - Pre-registration guidelines
   - Version control for research
-  - [View resource guide](skills/2-research-design/OPEN_SCIENCE_SKILLS.md)
+  - [View resource guide](_skills/design/open-science-skills/SKILL.md)
   - [Visit GitHub repository](https://github.com/scdenney/open-science-skills)
 
 </details>
@@ -179,14 +179,13 @@ To use these skills, you'll need:
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/yourusername/Skills4SocialScience.git
+   git clone https://github.com/mamingsuper/Skills4SocialScience.git
    cd Skills4SocialScience
    ```
 
 2. **Browse available skills:**
    ```bash
-   cd skills/
-   ls
+   find _skills -name "SKILL.md"
    ```
 
 3. **Install a specific skill:**
@@ -203,8 +202,8 @@ To use these skills, you'll need:
 
 New to AI-powered research tools? Start here:
 
-1. **For Complete Paper Writing:** Try [Claude Scientific Writer](skills/0-one-stop-solutions/CLAUDE_SCIENTIFIC_WRITER.md) for an integrated academic writing solution
-2. **For Research Design:** Explore [Open Science Skills](skills/2-research-design/OPEN_SCIENCE_SKILLS.md) to learn reproducible research practices
+1. **For Complete Paper Writing:** Try [Claude Scientific Writer](_skills/writing/claude-writer/SKILL.md) for an integrated academic writing solution
+2. **For Research Design:** Explore [Open Science Skills](_skills/design/open-science-skills/SKILL.md) to learn reproducible research practices
 3. **Contribute Skills:** Help build this repository by adding your own research tools and workflows
 4. **Join the Community:** Share your experiences and learn from other social science researchers
 
@@ -224,7 +223,7 @@ We welcome contributions from the social science community! Here's how you can h
 
 ### Reporting Issues
 
-Found a bug or have a suggestion? Please [open an issue](https://github.com/yourusername/Skills4SocialScience/issues).
+Found a bug or have a suggestion? Please [open an issue](https://github.com/mamingsuper/Skills4SocialScience/issues).
 
 ### Skill Submission Guidelines
 
@@ -275,9 +274,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact & Support
 
-- **Issues:** [GitHub Issues](https://github.com/yourusername/Skills4SocialScience/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/yourusername/Skills4SocialScience/discussions)
-- **Email:** your.email@example.com
+- **Issues:** [GitHub Issues](https://github.com/mamingsuper/Skills4SocialScience/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/mamingsuper/Skills4SocialScience/discussions)
+- **Website:** [Skills4SocialScience](https://mamingsuper.github.io/Skills4SocialScience)
 
 ---
 

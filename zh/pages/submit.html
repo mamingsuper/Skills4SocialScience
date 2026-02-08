@@ -2,21 +2,21 @@
 layout: null
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Resource - AI4SocialScience</title>
-    <meta name="description" content="Contribute AI skills, academic papers, or resources to the AI4SocialScience community.">
+    <title>提交资源 - AI4SocialScience</title>
+    <meta name="description" content="提交 AI 技能、论文或研究资源到 AI4SocialScience。">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/form.css">
 
     <style>
-        /* Form Specific Styles */
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
         .form-page { padding: 120px 0 60px; }
         .form-header { text-align: center; margin-bottom: 3rem; }
         .form-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); }
@@ -62,7 +62,6 @@ layout: null
 
         .hint { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-muted); }
 
-        /* Type Selector */
         .type-selector {
             display: flex;
             gap: 1rem;
@@ -91,13 +90,11 @@ layout: null
         .type-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
         .type-label { font-weight: 600; font-size: 0.9rem; }
 
-        /* Conditional Sections */
         .conditional-fields { display: none; }
         .conditional-fields.active { display: block; animation: fadeIn 0.3s ease; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Preview */
         .preview-container {
             background: #1e1e2e;
             border-radius: var(--border-radius);
@@ -125,35 +122,23 @@ layout: null
             border-radius: 4px;
             cursor: pointer;
         }
-
-        /* Success/Error */
-        .message-box {
-            display: none;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .success { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success); color: #065f46; }
-        .error { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--error); color: #7f1d1d; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="../" class="nav-logo">
+            <a href="{{ site.baseurl }}/zh/" class="nav-logo">
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SocialScience</span>
             </a>
             <div class="nav-links">
-                <a href="../#skills">Skills</a>
-                <a href="../#quick-start">Quick Start</a>
-                <a href="../#papers">Papers</a>
-                <a href="../#resources">Resources</a>
-                <a href="learn.html">Learn</a>
+                <a href="{{ site.baseurl }}/zh/#skills">技能</a>
+                <a href="{{ site.baseurl }}/zh/#quick-start">快速开始</a>
+                <a href="{{ site.baseurl }}/zh/#papers">论文</a>
+                <a href="{{ site.baseurl }}/zh/#resources">资源</a>
+                <a href="{{ site.baseurl }}/zh/pages/learn.html">学习</a>
                 <a href="https://github.com/mamingsuper/Skills4SocialScience" class="nav-cta">GitHub</a>
-                <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-lang">中文</a>
+                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-lang">English</a>
             </div>
         </div>
     </nav>
@@ -161,12 +146,11 @@ layout: null
     <main class="form-page">
         <div class="container">
             <header class="form-header">
-                <h1>Submit a Contribution</h1>
-                <p>Share your knowledge with the social science community. Choose a category below to get started.</p>
+                <h1>提交贡献</h1>
+                <p>将你的 AI 技能、论文或研究资源提交到社区。页面会自动生成 GitHub Issue 草稿，维护者审核后合并。</p>
             </header>
 
             <div class="form-container">
-                <!-- Type Selector -->
                 <div class="type-selector">
                     <div class="type-option active" data-entry-type="skill" onclick="switchType('skill')">
                         <span class="type-icon">🛠️</span>
@@ -174,125 +158,120 @@ layout: null
                     </div>
                     <div class="type-option" data-entry-type="paper" onclick="switchType('paper')">
                         <span class="type-icon">📄</span>
-                        <span class="type-label">Paper</span>
+                        <span class="type-label">论文</span>
                     </div>
                     <div class="type-option" data-entry-type="resource" onclick="switchType('resource')">
                         <span class="type-icon">📦</span>
-                        <span class="type-label">Resource</span>
+                        <span class="type-label">资源</span>
                     </div>
                 </div>
 
                 <form id="submission-form">
                     <input type="hidden" id="entry-type" name="type" value="skill">
 
-                    <!-- Common Info -->
                     <section class="form-section">
-                        <h2>📝 Basic Info</h2>
+                        <h2>📝 基本信息</h2>
                         <div class="form-group">
-                            <label for="title">Title / Name <span class="required">*</span></label>
-                            <input type="text" id="title" required placeholder="e.g. Claude Scientific Writer">
+                            <label for="title">标题 / 名称 <span class="required">*</span></label>
+                            <input type="text" id="title" required placeholder="例如：Claude Scientific Writer">
                         </div>
                         <div class="form-group">
-                            <label for="description">Short Description <span class="required">*</span></label>
-                            <input type="text" id="description" required placeholder="One sentence summary...">
+                            <label for="description">简短描述 <span class="required">*</span></label>
+                            <input type="text" id="description" required placeholder="一句话说明用途...">
                         </div>
                     </section>
 
-                    <!-- Skill Specific Fields -->
                     <div id="fields-skill" class="conditional-fields active">
                         <section class="form-section">
-                            <h2>🛠️ Skill Details</h2>
+                            <h2>🛠️ Skill 信息</h2>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>Workflow Stage</label>
+                                    <label>研究阶段</label>
                                     <select id="skill-stage">
-                                        <option value="literature">Literature Review</option>
-                                        <option value="design">Research Design</option>
-                                        <option value="data">Data Collection</option>
-                                        <option value="analysis">Data Analysis</option>
-                                        <option value="writing">Writing & Publishing</option>
-                                        <option value="presentation">Presentation</option>
-                                        <option value="teaching">Teaching</option>
+                                        <option value="literature">文献综述</option>
+                                        <option value="design">研究设计</option>
+                                        <option value="data">数据收集</option>
+                                        <option value="analysis">数据分析</option>
+                                        <option value="writing">写作发表</option>
+                                        <option value="presentation">展示汇报</option>
+                                        <option value="teaching">教学应用</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Compatible Tools</label>
-                                    <input type="text" id="skill-tools" placeholder="e.g. Claude, Cursor">
+                                    <label>兼容工具</label>
+                                    <input type="text" id="skill-tools" placeholder="例如：Claude, Cursor">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Tags</label>
-                                <input type="text" id="skill-tags" placeholder="comma, separated, tags">
+                                <label>标签</label>
+                                <input type="text" id="skill-tags" placeholder="用逗号分隔：writing, paper, social-science">
                             </div>
                         </section>
                     </div>
 
-                    <!-- Paper Specific Fields -->
                     <div id="fields-paper" class="conditional-fields">
                         <section class="form-section">
-                            <h2>📄 Paper Details</h2>
+                            <h2>📄 论文信息</h2>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>Year</label>
-                                    <input type="number" id="paper-year" placeholder="2024">
+                                    <label>年份</label>
+                                    <input type="number" id="paper-year" placeholder="2025">
                                 </div>
                                 <div class="form-group">
-                                    <label>Link (PDF/DOI)</label>
+                                    <label>链接（PDF/DOI）</label>
                                     <input type="url" id="paper-link" placeholder="https://arxiv.org/...">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Category</label>
+                                <label>分类</label>
                                 <select id="paper-category">
-                                    <option value="general">General AI & SocSci</option>
-                                    <option value="methodology">Methodology</option>
-                                    <option value="application">Application</option>
-                                    <option value="ethics">Ethics & Policy</option>
+                                    <option value="general">AI 与社会科学（综合）</option>
+                                    <option value="methodology">方法论</option>
+                                    <option value="application">应用案例</option>
+                                    <option value="ethics">伦理与政策</option>
                                 </select>
                             </div>
                         </section>
                     </div>
 
-                    <!-- Resource Specific Fields -->
                     <div id="fields-resource" class="conditional-fields">
                         <section class="form-section">
-                            <h2>📦 Resource Details</h2>
+                            <h2>📦 资源信息</h2>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>Type</label>
+                                    <label>资源类型</label>
                                     <select id="resource-type">
-                                        <option value="Dataset">Dataset</option>
-                                        <option value="Prompt Library">Prompt Library</option>
-                                        <option value="Tutorial">Tutorial / Guide</option>
-                                        <option value="Course">Course</option>
-                                        <option value="Tool">Tool / Software</option>
+                                        <option value="Dataset">数据集</option>
+                                        <option value="Prompt Library">提示词库</option>
+                                        <option value="Tutorial">教程 / 指南</option>
+                                        <option value="Course">课程</option>
+                                        <option value="Tool">工具 / 软件</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Link</label>
+                                    <label>链接</label>
                                     <input type="url" id="resource-link" placeholder="https://...">
                                 </div>
                             </div>
                         </section>
                     </div>
 
-                    <!-- Preview Section -->
                     <section class="form-section">
-                        <h2>👀 Preview (YAML Front Matter)</h2>
-                        <p class="hint">This is the file content that will be created in the repository.</p>
+                        <h2>👀 预览（YAML Front Matter）</h2>
+                        <p class="hint">这是将会提交到仓库中的文件内容草稿。</p>
                         <div class="preview-container">
-                            <button type="button" class="btn-copy" onclick="copyPreview()">Copy</button>
+                            <button type="button" class="btn-copy" onclick="copyPreview()">复制</button>
                             <pre><code id="yaml-preview">---
-# Content will appear here...
+# 预览内容会显示在这里...
 ---</code></pre>
                         </div>
                     </section>
 
                     <div class="form-actions" style="text-align: center; margin-top: 2rem;">
-                        <button type="button" class="btn btn-secondary" onclick="updatePreview()">Refresh Preview</button>
-                        <a id="github-submit-link" href="#" target="_blank" class="btn btn-primary">Submit to GitHub →</a>
+                        <button type="button" class="btn btn-secondary" onclick="updatePreview()">刷新预览</button>
+                        <a id="github-submit-link" href="#" target="_blank" class="btn btn-primary">提交到 GitHub →</a>
                     </div>
-                    <p class="hint" style="text-align:center; margin-top: 0.75rem;">Submission opens a prefilled GitHub issue for maintainer review and merge.</p>
+                    <p class="hint" style="text-align:center; margin-top: 0.75rem;">提交会打开预填的 GitHub Issue，供维护者审核并合并。</p>
                 </form>
             </div>
         </div>
@@ -301,7 +280,7 @@ layout: null
     <footer class="footer">
         <div class="container">
             <div class="footer-content" style="text-align:center">
-                <p>Made with ❤️ for the research community</p>
+                <p>AI4SocialScience • 面向社会科学研究社区</p>
             </div>
         </div>
     </footer>

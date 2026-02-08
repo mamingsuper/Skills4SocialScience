@@ -1,0 +1,33 @@
+name: Resource Submission
+description: Propose a new resource entry.
+title: "[RESOURCE] "
+labels:
+  - resource-submission
+  - needs-triage
+body:
+  - type: input
+    id: resource_title
+    attributes:
+      label: Resource title
+    validations:
+      required: true
+  - type: input
+    id: resource_type
+    attributes:
+      label: Resource type
+      placeholder: Dataset / Prompt Library / Tutorial / Tool
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+    validations:
+      required: true
+  - type: textarea
+    id: file_content
+    attributes:
+      label: _resources/<slug>.md content
+      render: markdown
+    validations:
+      required: true

@@ -1,0 +1,42 @@
+name: Skill Submission
+description: Propose a new AI skill entry.
+title: "[SKILL] "
+labels:
+  - skill-submission
+  - needs-triage
+body:
+  - type: input
+    id: skill_name
+    attributes:
+      label: Skill name
+      placeholder: claude-writer
+    validations:
+      required: true
+  - type: input
+    id: workflow_stage
+    attributes:
+      label: Workflow stage
+      placeholder: writing / design / data / analysis
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Short description
+      placeholder: One-sentence skill summary
+    validations:
+      required: true
+  - type: textarea
+    id: index_content
+    attributes:
+      label: _skills/<stage>/<slug>/index.md content
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: skill_content
+    attributes:
+      label: _skills/<stage>/<slug>/SKILL.md content
+      render: markdown
+    validations:
+      required: true

@@ -14,11 +14,27 @@ layout: default
     </div>
 
     <div class="detail-actions">
-        <!-- In a real scenario, this would download the raw file -->
-        <a href="https://github.com/mamingsuper/Skills4SocialScience/blob/main/_skills/{{ page.slug }}.md" target="_blank" class="btn btn-primary">View Source on GitHub</a>
+        <button id="download-skill-btn" type="button" class="btn btn-primary">Download SKILL.md</button>
+        {% if page.source_file %}
+        <a href="https://github.com/mamingsuper/Skills4SocialScience/blob/main/{{ page.source_file }}" target="_blank" class="btn btn-secondary">View Source on GitHub</a>
+        {% else %}
+        <a href="https://github.com/mamingsuper/Skills4SocialScience/tree/main/_skills" target="_blank" class="btn btn-secondary">View Source on GitHub</a>
+        {% endif %}
     </div>
 </div>
 
-<div class="detail-content">
+<section id="skill-source-section" class="detail-content" data-source-file="{{ page.source_file | default: '' }}" hidden>
+    <h2>Skill Content</h2>
+    <pre class="skill-source-block"><code id="skill-source-content">Loading latest content...</code></pre>
+    <p class="hint">Auto-synced from repository source file.</p>
+</section>
+
+<div id="skill-fallback-content" class="detail-content">
     {{ content }}
 </div>
+
+<script>
+    window.siteBaseurl = '{{ site.baseurl }}';
+    window.skillSourceFile = '{{ page.source_file | default: "" }}';
+</script>
+<script src="{{ site.baseurl }}/assets/js/download.js"></script>

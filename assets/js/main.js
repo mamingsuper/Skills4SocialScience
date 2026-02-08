@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initFilterTabs() {
     const filterTabs = document.querySelectorAll('.filter-tab');
-    const skillCards = document.querySelectorAll('.skill-card');
+    const skillsSection = document.querySelector('#skills');
+    const skillCards = skillsSection
+        ? skillsSection.querySelectorAll('.skill-card')
+        : document.querySelectorAll('.skill-card');
     
     if (!filterTabs.length) return;
     
@@ -68,9 +71,9 @@ function initNavScroll() {
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            nav.style.backgroundColor = 'rgba(10, 10, 15, 0.95)';
+            nav.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
         } else {
-            nav.style.backgroundColor = 'rgba(10, 10, 15, 0.8)';
+            nav.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
         }
     });
 }

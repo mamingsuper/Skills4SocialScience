@@ -1,223 +1,330 @@
 /**
- * Skill Submission Form Handler
+ * Multi-type submission helper for Skills4SocialScience.
+ * Static site pages cannot write directly to the repo, so we open a prefilled GitHub issue.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    initForm();
-    initLivePreview();
+const TARGET_REPO = "mamingsuper/Skills4SocialScience";
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("submission-form");
+    if (!form) {
+        return;
+    }
+
+    const entryTypeInput = document.getElementById("entry-type");
+    switchType((entryTypeInput && entryTypeInput.value) || "skill");
+
+    form.querySelectorAll("input, select, textarea").forEach((field) => {
+        field.addEventListener("input", updatePreview);
+        field.addEventListener("change", updatePreview);
+    });
+
+    updatePreview();
 });
 
-/**
- * Initialize form submission
- */
-function initForm() {
-    const form = document.getElementById('skill-form');
-    if (!form) return;
+function switchType(type) {
+    const normalizedType = ["skill", "paper", "resource"].includes(type) ? type : "skill";
+    const entryTypeInput = document.getElementById("entry-type");
+    if (entryTypeInput) {
+        entryTypeInput.value = normalizedType;
+    }
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Submitting...';
-        submitBtn.disabled = true;
-
-        try {
-            const formData = new FormData(form);
-            const skillData = buildSkillData(formData);
-
-            // Submit to serverless function
-            const response = await submitSkill(skillData);
-
-            if (response.success) {
-                showSuccess(response.prUrl);
-            } else {
-                showError(response.error || 'Submission failed');
-            }
-        } catch (error) {
-            console.error('Submission error:', error);
-            showError(error.message);
-        } finally {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-/**
- * Build skill data from form
- */
-function buildSkillData(formData) {
-    const compatibility = formData.getAll('compatibility');
-    const tags = formData.get('tags')
-        ? formData.get('tags').split(',').map(t => t.trim()).filter(Boolean)
-        : [];
-
-    return {
-        name: formData.get('name'),
-        description: formData.get('description'),
-        workflow_stage: formData.get('workflow_stage'),
-        primary_tool: formData.get('primary_tool'),
-        compatibility: compatibility,
-        purpose: formData.get('purpose'),
-        instructions: formData.get('instructions'),
-        example: formData.get('example'),
-        tags: tags,
-        author: {
-            name: formData.get('author_name'),
-            email: formData.get('author_email'),
-            github: formData.get('github_username')
-        }
-    };
-}
-
-/**
- * Submit skill to serverless function
- */
-async function submitSkill(skillData) {
-    // For now, fall back to GitHub Issues approach
-    // When Netlify Functions are set up, this would POST to /.netlify/functions/submit-skill
-
-    const issueBody = generateSkillMarkdown(skillData);
-    const issueTitle = encodeURIComponent(`[Skill Proposal] ${skillData.name}`);
-    const issueBodyEncoded = encodeURIComponent(issueBody);
-
-    // Redirect to GitHub issue creation
-    const issueUrl = `https://github.com/meleantonio/awesome-econ-ai-stuff/issues/new?title=${issueTitle}&body=${issueBodyEncoded}&labels=skill-proposal`;
-
-    window.open(issueUrl, '_blank');
-
-    return {
-        success: true,
-        prUrl: issueUrl
-    };
-}
-
-/**
- * Generate SKILL.md content
- */
-function generateSkillMarkdown(data) {
-    const compatibilityYaml = data.compatibility.map(c => `  - ${c}`).join('\n');
-    const tagsYaml = data.tags.length > 0
-        ? data.tags.map(t => `  - ${t}`).join('\n')
-        : '  - general';
-
-    return `---
-name: ${data.name}
-description: ${data.description}
-workflow_stage: ${data.workflow_stage}
-compatibility:
-${compatibilityYaml}
-author: ${data.author.name} <${data.author.email}>
-version: 1.0.0
-tags:
-${tagsYaml}
----
-
-# ${toTitleCase(data.name.replace(/-/g, ' '))}
-
-## Purpose
-
-${data.purpose}
-
-## Instructions
-
-${data.instructions}
-
-${data.example ? `## Example Output
-
-\`\`\`
-${data.example}
-\`\`\`` : ''}
-
-## Author
-
-- **Name:** ${data.author.name}
-- **Email:** ${data.author.email}
-${data.author.github ? `- **GitHub:** [@${data.author.github}](https://github.com/${data.author.github})` : ''}
-`;
-}
-
-/**
- * Initialize live preview
- */
-function initLivePreview() {
-    const form = document.getElementById('skill-form');
-    if (!form) return;
-
-    // Update preview on input
-    const inputs = form.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('input', debounce(updatePreview, 300));
-        input.addEventListener('change', updatePreview);
+    document.querySelectorAll(".type-option").forEach((option) => {
+        option.classList.toggle("active", option.dataset.entryType === normalizedType);
     });
 
-    // Initial preview
+    ["skill", "paper", "resource"].forEach((candidate) => {
+        const section = document.getElementById(`fields-${candidate}`);
+        if (section) {
+            section.classList.toggle("active", candidate === normalizedType);
+        }
+    });
+
     updatePreview();
 }
 
-/**
- * Update the preview pane
- */
-function updatePreview() {
-    const form = document.getElementById('skill-form');
-    const preview = document.getElementById('skill-preview');
-    if (!form || !preview) return;
-
-    const formData = new FormData(form);
-    const skillData = buildSkillData(formData);
-    const markdown = generateSkillMarkdown(skillData);
-
-    preview.querySelector('code').textContent = markdown;
+function getCurrentType() {
+    const entryTypeInput = document.getElementById("entry-type");
+    return (entryTypeInput && entryTypeInput.value) || "skill";
 }
 
-/**
- * Show success message
- */
-function showSuccess(prUrl) {
-    const form = document.getElementById('skill-form');
-    const successMsg = document.getElementById('success-message');
-    const prLink = document.getElementById('pr-link');
-
-    if (form) form.hidden = true;
-    if (successMsg) successMsg.hidden = false;
-    if (prLink) prLink.href = prUrl;
+function getInputValue(id, fallback = "") {
+    const element = document.getElementById(id);
+    if (!element) {
+        return fallback;
+    }
+    return (element.value || "").trim() || fallback;
 }
 
-/**
- * Show error message
- */
-function showError(message) {
-    const errorMsg = document.getElementById('error-message');
-    const errorText = document.getElementById('error-text');
-
-    if (errorMsg) errorMsg.hidden = false;
-    if (errorText) errorText.textContent = message;
+function splitCsv(raw) {
+    if (!raw) {
+        return [];
+    }
+    return raw
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
 }
 
-/**
- * Utility: Title case
- */
-function toTitleCase(str) {
-    return str.replace(/\w\S*/g, txt =>
-        txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
-    );
+function slugify(value, fallback = "new-entry") {
+    const slug = (value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    return slug || fallback;
 }
 
-/**
- * Utility: Debounce
- */
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
+function toYamlList(items) {
+    if (!items.length) {
+        return "[]";
+    }
+    const quoted = items.map((item) => `"${item.replace(/"/g, '\\"')}"`);
+    return `[${quoted.join(", ")}]`;
+}
+
+function yamlQuote(value) {
+    return `"${String(value || "").replace(/"/g, '\\"')}"`;
+}
+
+function buildSubmissionData() {
+    const type = getCurrentType();
+    const title = getInputValue("title", "Untitled");
+    const description = getInputValue("description", "Please add description.");
+    const slug = slugify(title);
+
+    if (type === "paper") {
+        return {
+            type,
+            title,
+            slug,
+            description,
+            year: getInputValue("paper-year", new Date().getFullYear().toString()),
+            link: getInputValue("paper-link", "https://example.com"),
+            category: getInputValue("paper-category", "general")
         };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+    }
+
+    if (type === "resource") {
+        return {
+            type,
+            title,
+            slug,
+            description,
+            resourceType: getInputValue("resource-type", "Dataset"),
+            link: getInputValue("resource-link", "https://example.com")
+        };
+    }
+
+    const tags = splitCsv(getInputValue("skill-tags"));
+    const tools = splitCsv(getInputValue("skill-tools", "Claude, Cursor"));
+    const workflowStage = getInputValue("skill-stage", "writing");
+
+    return {
+        type,
+        title,
+        slug,
+        description,
+        workflowStage,
+        tools,
+        tags
     };
 }
 
-// Expose updatePreview globally for button click
+function buildSkillMarkdown(data) {
+    const sourceFile = `_skills/${data.workflowStage}/${data.slug}/SKILL.md`;
+
+    return `---
+layout: skill
+name: ${yamlQuote(data.title)}
+description: ${yamlQuote(data.description)}
+workflow_stage: ${data.workflowStage}
+category: ${data.workflowStage}
+tags: ${toYamlList(data.tags)}
+compatibility: ${toYamlList(data.tools)}
+source_file: ${sourceFile}
+---
+# ${data.title}
+
+Loading the latest \`SKILL.md\` content from the repository source.
+`;
+}
+
+function buildSkillSourceMarkdown(data) {
+    return `# ${data.title}
+
+## Overview
+
+${data.description}
+
+## Purpose
+
+Describe what this skill should help researchers accomplish.
+
+## Instructions
+
+1. Clarify the research question and expected output.
+2. Propose a workflow aligned with social science best practices.
+3. Provide reusable prompts, templates, or scripts.
+4. Add validation checks before final output.
+`;
+}
+
+function buildPaperMarkdown(data) {
+    return `---
+layout: paper
+title: ${yamlQuote(data.title)}
+description: ${yamlQuote(data.description)}
+year: ${data.year}
+link: ${data.link}
+category: ${data.category}
+---
+# ${data.title}
+
+Add abstract, methods, and key findings here.
+`;
+}
+
+function buildResourceMarkdown(data) {
+    return `---
+layout: resource
+title: ${yamlQuote(data.title)}
+description: ${yamlQuote(data.description)}
+type: ${data.resourceType}
+link: ${data.link}
+---
+# ${data.title}
+
+Describe why this resource is useful for social science researchers.
+`;
+}
+
+function buildArtifacts() {
+    const data = buildSubmissionData();
+    let markdown;
+    let proposedPath;
+    let label;
+    let template;
+    let additionalFiles = [];
+
+    if (data.type === "paper") {
+        markdown = buildPaperMarkdown(data);
+        proposedPath = `_papers/${data.slug}.md`;
+        label = "paper-submission";
+        template = "paper-submission.yml";
+    } else if (data.type === "resource") {
+        markdown = buildResourceMarkdown(data);
+        proposedPath = `_resources/${data.slug}.md`;
+        label = "resource-submission";
+        template = "resource-submission.yml";
+    } else {
+        markdown = buildSkillMarkdown(data);
+        proposedPath = `_skills/${data.workflowStage}/${data.slug}/index.md`;
+        label = "skill-submission";
+        template = "skill-submission.yml";
+        additionalFiles = [
+            {
+                path: `_skills/${data.workflowStage}/${data.slug}/SKILL.md`,
+                content: buildSkillSourceMarkdown(data)
+            }
+        ];
+    }
+
+    const issueTitle = `[${data.type.toUpperCase()}] ${data.title}`;
+    const issueBody = [
+        `## Submission type`,
+        `${data.type}`,
+        ``,
+        `## Proposed file path`,
+        `\`${proposedPath}\``,
+        ``,
+        `## File content`,
+        "```markdown",
+        markdown.trim(),
+        "```",
+        "",
+        ...additionalFiles.flatMap((file) => [
+            `## Additional file`,
+            `\`${file.path}\``,
+            "```markdown",
+            file.content.trim(),
+            "```",
+            ""
+        ]),
+        "",
+        `## Notes`,
+        `- Generated from the website submit form.`,
+        `- Please review and commit to \`${proposedPath}\`.`,
+        ...additionalFiles.map((file) => `- Also add \`${file.path}\`.`)
+    ].join("\n");
+
+    const issueUrl =
+        `https://github.com/${TARGET_REPO}/issues/new` +
+        `?template=${encodeURIComponent(template)}` +
+        `&title=${encodeURIComponent(issueTitle)}` +
+        `&body=${encodeURIComponent(issueBody)}` +
+        `&labels=${encodeURIComponent(`${label},needs-triage`)}`;
+
+    return { data, markdown, proposedPath, issueUrl };
+}
+
+function getSubmitButtonText(type) {
+    const isZh = document.documentElement.lang.toLowerCase().startsWith("zh");
+    if (!isZh) {
+        return `Submit ${type} to GitHub →`;
+    }
+
+    const labels = {
+        skill: "提交 Skill 到 GitHub →",
+        paper: "提交论文到 GitHub →",
+        resource: "提交资源到 GitHub →"
+    };
+    return labels[type] || "提交到 GitHub →";
+}
+
+function updatePreview() {
+    const preview = document.getElementById("yaml-preview");
+    const submitLink = document.getElementById("github-submit-link");
+
+    const { data, markdown, issueUrl } = buildArtifacts();
+
+    if (preview) {
+        preview.textContent = markdown;
+    }
+
+    if (submitLink) {
+        submitLink.href = issueUrl;
+        submitLink.textContent = getSubmitButtonText(data.type);
+    }
+}
+
+async function copyPreview() {
+    const preview = document.getElementById("yaml-preview");
+    if (!preview) {
+        return;
+    }
+
+    const text = preview.textContent || "";
+    if (!text) {
+        return;
+    }
+
+    try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+            return;
+        }
+    } catch (error) {
+        console.warn("Clipboard API unavailable, falling back:", error);
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+}
+
+window.switchType = switchType;
 window.updatePreview = updatePreview;
+window.copyPreview = copyPreview;

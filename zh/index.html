@@ -32,11 +32,12 @@
             </a>
             <div class="nav-links">
                 <a href="#skills">技能</a>
+                <a href="#quick-start">快速开始</a>
                 <a href="#papers">论文</a>
                 <a href="#resources">资源</a>
-                <a href="{{ site.baseurl }}/pages/learn.html">学习</a>
-                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">提交</a>
-                <a href="{{ site.baseurl }}/" style="margin-left: 10px;">🌐 English</a>
+                <a href="{{ site.baseurl }}/zh/pages/learn.html">学习</a>
+                <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-cta">提交</a>
+                <a href="{{ site.baseurl }}/" class="nav-lang">English</a>
             </div>
         </div>
     </nav>
@@ -55,7 +56,7 @@
             <div class="hero-actions">
                 <a href="#skills" class="btn btn-primary">浏览技能</a>
                 <a href="#quick-start" class="btn btn-secondary">快速开始</a>
-                <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary">贡献资源</a>
+                <a href="{{ site.baseurl }}/zh/pages/submit.html" class="btn btn-secondary">贡献资源</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -91,29 +92,57 @@
     </header>
 
     <!-- Quick Start Section -->
-    <section id="quick-start" class="section">
+    <section id="quick-start" class="quickstart-section section">
         <div class="container">
             <h2 class="section-title">快速开始 ⚡</h2>
-            <p class="section-description">几分钟内掌握 AI 技能</p>
+            <p class="section-description">2 分钟完成接入</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="glass-panel" style="padding: 2rem;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">1️⃣</div>
-                    <h3>安装工具</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">安装 <strong>Claude Code</strong> 或 <strong>Cursor</strong>。</p>
-                    <code style="display:block; padding: 1rem; background: rgba(0,0,0,0.05); border-radius: 8px;">npm install -g @anthropic-ai/claude-code</code>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>安装 AI 工具</h3>
+                        <p>选择一个你常用的 AI Coding Agent：</p>
+                        <div class="tool-grid">
+                            <a href="https://docs.anthropic.com/claude-code" class="tool-card" target="_blank" rel="noopener noreferrer">
+                                <span class="tool-icon">🤖</span>
+                                Claude Code
+                            </a>
+                            <a href="https://cursor.com" class="tool-card" target="_blank" rel="noopener noreferrer">
+                                <span class="tool-icon">⌨️</span>
+                                Cursor
+                            </a>
+                            <a href="https://openai.com/codex/" class="tool-card" target="_blank" rel="noopener noreferrer">
+                                <span class="tool-icon">🐙</span>
+                                Codex
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="glass-panel" style="padding: 2rem;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">2️⃣</div>
-                    <h3>下载技能</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">在下方浏览技能并下载 <code>.md</code> 文件。</p>
-                    <p>将其放入您的项目文件夹或 <code>~/.claude/skills/</code>。</p>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>下载并放置 Skill</h3>
+                        <p>打开技能详情页，点击 <strong>Download SKILL.md</strong>，放到本地 skills 目录：</p>
+                        <div class="code-block">
+                            <code><span class="comment"># Claude Code 示例</span>
+mkdir -p ~/.claude/skills/claude-writer
+# 将下载的 SKILL.md 放到：
+~/.claude/skills/claude-writer/SKILL.md</code>
+                        </div>
+                    </div>
                 </div>
-                <div class="glass-panel" style="padding: 2rem;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">3️⃣</div>
-                    <h3>运行与享受</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">在您的 AI 助手中调用该技能。</p>
-                    <code style="display:block; padding: 1rem; background: rgba(0,0,0,0.05); border-radius: 8px;">/skill-name 执行这个任务...</code>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>开始调用</h3>
+                        <p>你可以使用 slash 命令或自然语言触发技能：</p>
+                        <div class="code-block">
+                            <code>/claude-writer 帮我生成一篇 AI 治理主题论文的大纲。</code>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,6 +157,7 @@
             <div class="filter-tabs">
                 <button class="filter-tab active" data-filter="all">全部</button>
                 <button class="filter-tab" data-filter="literature">文献</button>
+                <button class="filter-tab" data-filter="design">设计</button>
                 <button class="filter-tab" data-filter="data">数据</button>
                 <button class="filter-tab" data-filter="writing">写作</button>
             </div>
@@ -211,26 +241,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        // Simple Filter Logic
-        document.querySelectorAll('.filter-tab').forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class
-                document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
-                button.classList.add('active');
-
-                const filter = button.getAttribute('data-filter');
-                const cards = document.querySelectorAll('#skills .skill-card');
-
-                cards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 </body>
 </html>
