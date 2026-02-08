@@ -1,0 +1,236 @@
+---
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI4SocialScience - 社会科学 AI 工具集</title>
+    <meta name="description" content="社会科学研究者的 AI 技能、论文和资源精选集。">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+    </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="{{ site.baseurl }}/zh/" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SocialScience</span>
+            </a>
+            <div class="nav-links">
+                <a href="#skills">技能</a>
+                <a href="#papers">论文</a>
+                <a href="#resources">资源</a>
+                <a href="{{ site.baseurl }}/pages/learn.html">学习</a>
+                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">提交</a>
+                <a href="{{ site.baseurl }}/" style="margin-left: 10px;">🌐 English</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 开源项目 • 专为社会科学学者打造</div>
+            <h1 class="hero-title">
+                AI 赋能 <span class="gradient-text">社会科学</span>
+            </h1>
+            <p class="hero-description">
+                汇集 AI 技能、学术论文和研究资源的综合中心。
+                从文献综述到论文发表，全流程自动化您的研究工作。
+            </p>
+            <div class="hero-actions">
+                <a href="#skills" class="btn btn-primary">浏览技能</a>
+                <a href="#quick-start" class="btn btn-secondary">快速开始</a>
+                <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary">贡献资源</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">{{ site.skills | size }}</span>
+                    <span class="stat-label">AI 技能</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">{{ site.papers | size }}</span>
+                    <span class="stat-label">论文</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-preview">
+                <div class="code-header">
+                    <span class="code-dot red"></span>
+                    <span class="code-dot yellow"></span>
+                    <span class="code-dot green"></span>
+                    <span class="code-title">终端</span>
+                </div>
+                <pre class="code-content"><code><span style="color:#a78bfa">$</span> claude
+
+<span style="color:#6b7280"># 正在查找相关文献...</span>
+
+<span style="color:#a78bfa">></span> <span style="color:#fcd34d">/literature-review</span> 查找 2023-2025 年
+  关于社会学 AI 应用的开创性论文
+
+<span style="color:#34d399">✓ 从 Sci-Hub & arXiv 找到 15 篇论文
+✓ 生成总结矩阵...
+✓ 导出至 Zotero...</span></code></pre>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Start Section -->
+    <section id="quick-start" class="section">
+        <div class="container">
+            <h2 class="section-title">快速开始 ⚡</h2>
+            <p class="section-description">几分钟内掌握 AI 技能</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="glass-panel" style="padding: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">1️⃣</div>
+                    <h3>安装工具</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">安装 <strong>Claude Code</strong> 或 <strong>Cursor</strong>。</p>
+                    <code style="display:block; padding: 1rem; background: rgba(0,0,0,0.05); border-radius: 8px;">npm install -g @anthropic-ai/claude-code</code>
+                </div>
+                <div class="glass-panel" style="padding: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">2️⃣</div>
+                    <h3>下载技能</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">在下方浏览技能并下载 <code>.md</code> 文件。</p>
+                    <p>将其放入您的项目文件夹或 <code>~/.claude/skills/</code>。</p>
+                </div>
+                <div class="glass-panel" style="padding: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">3️⃣</div>
+                    <h3>运行与享受</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">在您的 AI 助手中调用该技能。</p>
+                    <code style="display:block; padding: 1rem; background: rgba(0,0,0,0.05); border-radius: 8px;">/skill-name 执行这个任务...</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">AI 技能 🛠️</h2>
+            <p class="section-description">自动化研究工作流的利器</p>
+
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">全部</button>
+                <button class="filter-tab" data-filter="literature">文献</button>
+                <button class="filter-tab" data-filter="data">数据</button>
+                <button class="filter-tab" data-filter="writing">写作</button>
+            </div>
+
+            <div class="skills-grid">
+                {% for item in site.skills %}
+                <article class="skill-card" data-category="{{ item.category }}">
+                    <span class="skill-icon">{{ item.icon | default: "⚡" }}</span>
+                    <h3 class="skill-title">{{ item.name }}</h3>
+                    <p class="skill-description">{{ item.description }}</p>
+                    <div class="skill-tags">
+                        {% for tag in item.tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="skill-footer">
+                        <span class="status">{{ item.workflow_stage }}</span>
+                        <a href="{{ item.url | relative_url }}" class="skill-link">查看 →</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Papers Section -->
+    <section id="papers" class="section">
+        <div class="container">
+            <h2 class="section-title">论文 📄</h2>
+            <p class="section-description">社会科学 AI 领域的精选读物</p>
+            <div class="skills-grid">
+                {% for item in site.papers %}
+                <article class="skill-card">
+                    <span class="skill-icon">📄</span>
+                    <h3 class="skill-title">{{ item.title }}</h3>
+                    <p class="skill-description">{{ item.description }}</p>
+                    <div class="skill-footer">
+                        <span>{{ item.year }}</span>
+                        <a href="{{ item.link }}" target="_blank" class="skill-link">阅读 PDF →</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <h2 class="section-title">资源 📦</h2>
+            <p class="section-description">数据集、提示词和指南</p>
+            <div class="skills-grid">
+                {% for item in site.resources %}
+                <article class="skill-card">
+                    <span class="skill-icon">📦</span>
+                    <h3 class="skill-title">{{ item.title }}</h3>
+                    <p class="skill-description">{{ item.description }}</p>
+                    <div class="skill-footer">
+                        <span>{{ item.type }}</span>
+                        <a href="{{ item.url | relative_url }}" class="skill-link">访问 →</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p><strong>AI4SocialScience</strong> • 由研究社区用 ❤️ 制作</p>
+                <br>
+                <div class="footer-links" style="justify-content:center; display:flex;">
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience">GitHub</a>
+                    <a href="{{ site.baseurl }}/CONTRIBUTING.md">贡献</a>
+                    <a href="{{ site.baseurl }}/LICENSE">协议</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Simple Filter Logic
+        document.querySelectorAll('.filter-tab').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class
+                document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+                const cards = document.querySelectorAll('#skills .skill-card');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
