@@ -275,7 +275,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📬 Contact & Support
 
 - **Issues:** [GitHub Issues](https://github.com/mamingsuper/Skills4SocialScience/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/mamingsuper/Skills4SocialScience/discussions)
+- **Repository:** [GitHub Repo](https://github.com/mamingsuper/Skills4SocialScience)
 - **Website:** [Skills4SocialScience](https://mamingsuper.github.io/Skills4SocialScience)
 
 ---
