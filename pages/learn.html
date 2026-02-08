@@ -1,0 +1,143 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn - AI4SocialScience</title>
+    <meta name="description" content="Guide to AI Coding Agents, Skills, and Workflows for Social Science Research.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .learn-page { padding: 120px 0 60px; }
+        .learn-header { text-align: center; margin-bottom: 4rem; }
+        .learn-header h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .learn-header p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+
+        .learn-section { margin-bottom: 4rem; padding: 2rem; border-radius: var(--border-radius-lg); background: rgba(255,255,255,0.4); border: 1px solid var(--border-color); backdrop-filter: blur(10px); }
+        .learn-section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
+        .learn-section p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .feature-card { background: rgba(255,255,255,0.6); padding: 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); }
+        .feature-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+        .feature-card h3 { margin-bottom: 0.5rem; color: var(--text-primary); }
+
+        .code-block { background: #1e1e2e; color: #cdd6f4; padding: 1.5rem; border-radius: var(--border-radius); font-family: var(--font-mono); overflow-x: auto; margin: 1.5rem 0; }
+        .code-block code { font-size: 0.9rem; }
+        .comment { color: #6c7086; }
+        .command { color: #f9e2af; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SocialScience</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">Skills</a>
+                <a href="../#papers">Papers</a>
+                <a href="../#resources">Resources</a>
+                <a href="submit.html" class="nav-cta">Submit</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="learn-page">
+        <div class="container">
+            <header class="learn-header">
+                <div class="hero-badge">📚 Education</div>
+                <h1>Understanding <span class="gradient-text">AI for Research</span></h1>
+                <p>How to use AI Agents, Skills, and Workflows to accelerate your social science research.</p>
+            </header>
+
+            <!-- 1. What are AI Agents? -->
+            <section class="learn-section">
+                <h2>🤖 What Are AI Coding Agents?</h2>
+                <p>AI coding agents (like Claude Code, Cursor, or Gemini CLI) are intelligent assistants that live in your terminal or editor. Unlike ChatGPT, they can:</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">📂</span>
+                        <h3>Read Your Project</h3>
+                        <p>They can scan your entire folder, understanding your data structure, paper drafts, and code.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>Execute Commands</h3>
+                        <p>They can run Python scripts, install R packages, or compile LaTeX documents autonomously.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🧠</span>
+                        <h3>Follow Context</h3>
+                        <p>They remember your research question and methodology throughout the session.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. What are Skills? -->
+            <section class="learn-section">
+                <h2>🛠️ What Are "Skills"?</h2>
+                <p>Skills are specialized instruction sets that teach an AI agent how to perform a specific research task perfectly. Think of them as "Standard Operating Procedures" (SOPs) for AI.</p>
+
+                <div class="code-block">
+                    <code><span class="comment"># Without a Skill:</span>
+User: "Run a regression."
+AI: *Writes generic code that might ignore robust standard errors.*
+
+<span class="comment"># With the 'stata-regression' Skill:</span>
+User: "/stata-regression Run a model on my panel data."
+AI: *Automatically uses reghdfe, clusters standard errors, and formats output for publication.*</code>
+                </div>
+
+                <p>By using skills from this repository, you ensure your AI assistant follows best practices in social science methodology.</p>
+            </section>
+
+            <!-- 3. Workflow -->
+            <section class="learn-section">
+                <h2>🔄 The AI Research Workflow</h2>
+                <p>We organize tools by the research lifecycle:</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">1️⃣</span>
+                        <h3>Literature Review</h3>
+                        <p>AI can summarize hundreds of papers, extract key arguments, and identify gaps.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">2️⃣</span>
+                        <h3>Data & Analysis</h3>
+                        <p>Automate data cleaning, statistical modeling, and visualization generation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">3️⃣</span>
+                        <h3>Writing & Pub</h3>
+                        <p>Draft sections, format citations, and convert to LaTeX/Markdown.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h2>Ready to start?</h2>
+                <br>
+                <a href="../#skills" class="btn btn-primary">Browse Skills</a>
+                <a href="submit.html" class="btn btn-secondary">Submit a Contribution</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p>AI4SocialScience • Made with ❤️ by the research community</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

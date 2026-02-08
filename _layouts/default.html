@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: page.name }} - AI4SocialScience</title>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        .detail-page { padding: 120px 0 60px; }
+        .detail-header { margin-bottom: 3rem; }
+        .detail-title { font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem; }
+        .detail-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .meta-tag { background: rgba(255,255,255,0.5); padding: 0.25rem 0.75rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.9rem; }
+
+        .detail-content { background: rgba(255,255,255,0.6); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); line-height: 1.8; }
+        .detail-content h2 { margin-top: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .detail-content code { background: rgba(0,0,0,0.05); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: var(--font-mono); }
+        .detail-content pre { background: #1e1e2e; color: #fff; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+        .detail-content pre code { background: none; color: inherit; padding: 0; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="{{ site.baseurl }}/" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SocialScience</span>
+            </a>
+            <div class="nav-links">
+                <a href="{{ site.baseurl }}/#skills">Skills</a>
+                <a href="{{ site.baseurl }}/#papers">Papers</a>
+                <a href="{{ site.baseurl }}/#resources">Resources</a>
+                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="detail-page">
+        <div class="container">
+            {{ content }}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p>AI4SocialScience • Open Source</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

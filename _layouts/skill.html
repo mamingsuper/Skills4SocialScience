@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="detail-header">
+    <div class="hero-badge">🛠️ AI Skill</div>
+    <h1 class="detail-title">{{ page.name }}</h1>
+    <p style="font-size: 1.2rem; color: var(--text-secondary);">{{ page.description }}</p>
+
+    <div class="detail-meta">
+        <span class="meta-tag">📂 {{ page.workflow_stage }}</span>
+        {% for tool in page.compatibility %}
+        <span class="meta-tag">🤖 {{ tool }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="detail-actions">
+        <!-- In a real scenario, this would download the raw file -->
+        <a href="https://github.com/ming.ma/Skills4SocialScience/blob/main/_skills/{{ page.slug }}.md" target="_blank" class="btn btn-primary">View Source on GitHub</a>
+    </div>
+</div>
+
+<div class="detail-content">
+    {{ content }}
+</div>

@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="detail-header">
+    <div class="hero-badge">📦 Resource</div>
+    <h1 class="detail-title">{{ page.title }}</h1>
+    <p style="font-size: 1.2rem; color: var(--text-secondary);">{{ page.description }}</p>
+
+    <div class="detail-meta">
+        <span class="meta-tag">📌 Type: {{ page.type }}</span>
+    </div>
+
+    <div class="detail-actions">
+        <a href="{{ page.link }}" target="_blank" class="btn btn-primary">Access Resource →</a>
+    </div>
+</div>
+
+<div class="detail-content">
+    {{ content }}
+</div>

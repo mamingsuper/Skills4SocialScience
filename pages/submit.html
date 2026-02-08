@@ -1,0 +1,307 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Resource - AI4SocialScience</title>
+    <meta name="description" content="Contribute AI skills, academic papers, or resources to the AI4SocialScience community.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* Form Specific Styles */
+        .form-page { padding: 120px 0 60px; }
+        .form-header { text-align: center; margin-bottom: 3rem; }
+        .form-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .form-header p { color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .form-section { margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 2rem; }
+        .form-section:last-child { border-bottom: none; }
+        .form-section h2 { font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary); font-size: 0.9rem; }
+        .required { color: var(--error); margin-left: 2px; }
+
+        input[type="text"], input[type="email"], input[type="url"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.8);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        .hint { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Type Selector */
+        .type-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .type-option {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .type-option:hover { background: rgba(255, 255, 255, 0.8); }
+        .type-option.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+        .type-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+        .type-label { font-weight: 600; font-size: 0.9rem; }
+
+        /* Conditional Sections */
+        .conditional-fields { display: none; }
+        .conditional-fields.active { display: block; animation: fadeIn 0.3s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Preview */
+        .preview-container {
+            background: #1e1e2e;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .preview-container pre { margin: 0; }
+        .preview-container code {
+            font-family: var(--font-mono);
+            color: #a6accd;
+            font-size: 0.85rem;
+        }
+
+        .btn-copy {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Success/Error */
+        .message-box {
+            display: none;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .success { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success); color: #065f46; }
+        .error { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--error); color: #7f1d1d; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SocialScience</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">Skills</a>
+                <a href="../#papers">Papers</a>
+                <a href="../#resources">Resources</a>
+                <a href="learn.html">Learn</a>
+                <a href="https://github.com/ming.ma/Skills4SocialScience" class="nav-cta">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="form-page">
+        <div class="container">
+            <header class="form-header">
+                <h1>Submit a Contribution</h1>
+                <p>Share your knowledge with the social science community. Choose a category below to get started.</p>
+            </header>
+
+            <div class="form-container">
+                <!-- Type Selector -->
+                <div class="type-selector">
+                    <div class="type-option active" onclick="switchType('skill')">
+                        <span class="type-icon">🛠️</span>
+                        <span class="type-label">AI Skill</span>
+                    </div>
+                    <div class="type-option" onclick="switchType('paper')">
+                        <span class="type-icon">📄</span>
+                        <span class="type-label">Paper</span>
+                    </div>
+                    <div class="type-option" onclick="switchType('resource')">
+                        <span class="type-icon">📦</span>
+                        <span class="type-label">Resource</span>
+                    </div>
+                </div>
+
+                <form id="submission-form">
+                    <input type="hidden" id="entry-type" name="type" value="skill">
+
+                    <!-- Common Info -->
+                    <section class="form-section">
+                        <h2>📝 Basic Info</h2>
+                        <div class="form-group">
+                            <label for="title">Title / Name <span class="required">*</span></label>
+                            <input type="text" id="title" required placeholder="e.g. Claude Scientific Writer">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Short Description <span class="required">*</span></label>
+                            <input type="text" id="description" required placeholder="One sentence summary...">
+                        </div>
+                    </section>
+
+                    <!-- Skill Specific Fields -->
+                    <div id="fields-skill" class="conditional-fields active">
+                        <section class="form-section">
+                            <h2>🛠️ Skill Details</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Workflow Stage</label>
+                                    <select id="skill-stage">
+                                        <option value="literature">Literature Review</option>
+                                        <option value="design">Research Design</option>
+                                        <option value="data">Data Collection</option>
+                                        <option value="analysis">Data Analysis</option>
+                                        <option value="writing">Writing & Publishing</option>
+                                        <option value="presentation">Presentation</option>
+                                        <option value="teaching">Teaching</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Compatible Tools</label>
+                                    <input type="text" id="skill-tools" placeholder="e.g. Claude, Cursor">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Tags</label>
+                                <input type="text" id="skill-tags" placeholder="comma, separated, tags">
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Paper Specific Fields -->
+                    <div id="fields-paper" class="conditional-fields">
+                        <section class="form-section">
+                            <h2>📄 Paper Details</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Year</label>
+                                    <input type="number" id="paper-year" placeholder="2024">
+                                </div>
+                                <div class="form-group">
+                                    <label>Link (PDF/DOI)</label>
+                                    <input type="url" id="paper-link" placeholder="https://arxiv.org/...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select id="paper-category">
+                                    <option value="general">General AI & SocSci</option>
+                                    <option value="methodology">Methodology</option>
+                                    <option value="application">Application</option>
+                                    <option value="ethics">Ethics & Policy</option>
+                                </select>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Resource Specific Fields -->
+                    <div id="fields-resource" class="conditional-fields">
+                        <section class="form-section">
+                            <h2>📦 Resource Details</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <select id="resource-type">
+                                        <option value="Dataset">Dataset</option>
+                                        <option value="Prompt Library">Prompt Library</option>
+                                        <option value="Tutorial">Tutorial / Guide</option>
+                                        <option value="Course">Course</option>
+                                        <option value="Tool">Tool / Software</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Link</label>
+                                    <input type="url" id="resource-link" placeholder="https://...">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Preview Section -->
+                    <section class="form-section">
+                        <h2>👀 Preview (YAML Front Matter)</h2>
+                        <p class="hint">This is the file content that will be created in the repository.</p>
+                        <div class="preview-container">
+                            <button type="button" class="btn-copy" onclick="copyPreview()">Copy</button>
+                            <pre><code id="yaml-preview">---
+# Content will appear here...
+---</code></pre>
+                        </div>
+                    </section>
+
+                    <div class="form-actions" style="text-align: center; margin-top: 2rem;">
+                        <button type="button" class="btn btn-secondary" onclick="updatePreview()">Refresh Preview</button>
+                        <a id="github-submit-link" href="#" target="_blank" class="btn btn-primary">Submit to GitHub →</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p>Made with ❤️ for the research community</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/form.js"></script>
+</body>
+</html>
