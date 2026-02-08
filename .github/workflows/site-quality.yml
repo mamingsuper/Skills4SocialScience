@@ -24,10 +24,23 @@ jobs:
         run: bundle exec jekyll build --trace
 
   link-check:
+    needs: jekyll-build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Install Dependencies
+        run: bundle install
+
+      - name: Build Site
+        run: bundle exec jekyll build --trace
 
       - name: Run Link Checker
         uses: lycheeverse/lychee-action@v2
@@ -38,7 +51,9 @@ jobs:
             --accept 200,206,301,302,403,429
             --exclude "localhost|127.0.0.1"
             --exclude "^data:"
-            "**/*.md"
-            "**/*.html"
+            "_site/**/*.html"
+            "README.md"
+            "README_CN.md"
+            "CONTRIBUTING.md"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

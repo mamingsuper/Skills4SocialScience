@@ -218,7 +218,7 @@ We welcome contributions from the social science community! Here's how you can h
 1. Fork this repository
 2. Create a new branch (`git checkout -b feature/new-skill`)
 3. Add your skill to the appropriate category folder
-4. Include detailed documentation (see [template](docs/skill-template.md))
+4. Include detailed documentation (see [template](legacy_docs/guides/skill-template.md))
 5. Submit a pull request
 
 ### Reporting Issues
@@ -249,12 +249,11 @@ Found a bug or have a suggestion? Please [open an issue](https://github.com/mami
 
 ## 📖 Documentation
 
-Detailed documentation is available in the [docs](docs/) folder:
+Detailed reference docs:
 
-- [Skill Development Guide](docs/skill-development.md)
-- [Best Practices](docs/best-practices.md)
-- [FAQ](docs/faq.md)
-- [Troubleshooting](docs/troubleshooting.md)
+- [Skill Development Guide](legacy_docs/guides/skill-development.md)
+- [Skill Template Guide](legacy_docs/guides/skill-template.md)
+- [Online Learn Page](https://mamingsuper.github.io/Skills4SocialScience/pages/learn.html)
 
 ---
 
