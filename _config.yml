@@ -7,12 +7,11 @@ baseurl: "/Skills4SocialScience"
 markdown: kramdown
 highlighter: rouge
 
-# Theme
-remote_theme: pages-themes/minimal@v0.2.0
+# Theme (Disabled to use custom styles)
+# remote_theme: pages-themes/minimal@v0.2.0
 
 # Plugins
 plugins:
-  - jekyll-remote-theme
   - jekyll-seo-tag
 
 # Collections
