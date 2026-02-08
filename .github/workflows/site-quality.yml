@@ -35,7 +35,6 @@ jobs:
           args: >-
             --verbose
             --no-progress
-            --exclude-mail
             --accept 200,206,301,302,403,429
             --exclude "localhost|127.0.0.1"
             --exclude "^data:"
