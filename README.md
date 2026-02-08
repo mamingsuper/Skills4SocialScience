@@ -1,4 +1,4 @@
-# Skills for Social Science 🎓
+# Skills for Social Science 🎓🏇
 
 <div align="center">
 

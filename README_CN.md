@@ -1,4 +1,4 @@
-# AI4SocialScience 🎓
+# AI4SocialScience 🎓🏇
 
 <div align="center">
 
