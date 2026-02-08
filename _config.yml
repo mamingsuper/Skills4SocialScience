@@ -1,0 +1,63 @@
+title: AI4SocialScience
+description: A Curated Collection of AI Skills, Papers, and Resources for Social Science Research
+url: https://ming.ma.github.io/Skills4SocialScience
+baseurl: "/Skills4SocialScience"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Theme
+remote_theme: pages-themes/minimal@v0.2.0
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  skills:
+    output: true
+    permalink: /skills/:path/
+  papers:
+    output: true
+    permalink: /papers/:path/
+  resources:
+    output: true
+    permalink: /resources/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "skills"
+    values:
+      layout: "skill"
+  - scope:
+      path: ""
+      type: "papers"
+    values:
+      layout: "paper"
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"
+
+# Exclude from build
+exclude:
+  - README.md
+  - README_CN.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - legacy_docs
+
+# SEO
+author: AI4SocialScience Contributors
+social:
+  name: AI4SocialScience
+  links:
+    - https://github.com/ming.ma/Skills4SocialScience
