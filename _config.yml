@@ -1,6 +1,6 @@
 title: AI4SocialScience
 description: A Curated Collection of AI Skills, Papers, and Resources for Social Science Research
-url: https://ming.ma.github.io/Skills4SocialScience
+url: https://mamingsuper.github.io/Skills4SocialScience
 baseurl: "/Skills4SocialScience"
 
 # Build settings
@@ -59,4 +59,4 @@ author: AI4SocialScience Contributors
 social:
   name: AI4SocialScience
   links:
-    - https://github.com/ming.ma/Skills4SocialScience
+    - https://github.com/mamingsuper/Skills4SocialScience

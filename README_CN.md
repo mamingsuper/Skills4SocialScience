@@ -4,7 +4,7 @@
 
 **社会科学研究的 AI 工具、论文与资源精选集**
 
-[**🌐 访问网站**](https://ming.ma.github.io/Skills4SocialScience) | [English](README.md) | [中文](README_CN.md)
+[**🌐 访问网站**](https://mamingsuper.github.io/Skills4SocialScience) | [English](README.md) | [中文](README_CN.md)
 
 </div>
 
@@ -27,7 +27,7 @@
 
 ## 📖 文档浏览
 
-我们推荐您通过我们的 **[项目网站](https://ming.ma.github.io/Skills4SocialScience)** 进行浏览，以获得最佳阅读体验。
+我们推荐您通过我们的 **[项目网站](https://mamingsuper.github.io/Skills4SocialScience)** 进行浏览，以获得最佳阅读体验。
 
 网站源码位于 `docs/` 文件夹中。
 
