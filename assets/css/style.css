@@ -484,6 +484,37 @@ a:hover {
 }
 
 /* ============================================
+   Author Section
+   ============================================ */
+.author-section {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-3xl);
+    margin: var(--space-3xl) auto;
+    max-width: 1000px;
+    box-shadow: var(--glass-shadow);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+.author-section img {
+    width: 180px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.author-content h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.author-content a {
+    color: var(--accent-primary);
+}
+
+/* ============================================
    Footer
    ============================================ */
 .footer {

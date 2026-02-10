@@ -35,6 +35,18 @@
 
 我们热烈欢迎您的贡献！请参阅我们的 [贡献指南](./CONTRIBUTING.md)。
 
+## 🌐 特色资源
+
+*   **[OpenResearcher](https://github.com/TIGER-AI-Lab/OpenResearcher)**：TIGER AI Lab 提供的知识图谱与可复制研究模板合集，适配 Claude 与其他 Agent。
+
 ## 📜 开源协议
 
 MIT License.
+
+## 👤 维护者信息
+
+- 个人网站：[maming.digital](https://www.maming.digital/)
+- X/Twitter：[Winter62675779](https://x.com/Winter62675779)
+- 微信扫码（下图）
+
+![WeChat QR](assets/images/wechat-qrcode.jpg)

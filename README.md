@@ -257,6 +257,12 @@ Detailed reference docs:
 
 ---
 
+## 🌐 Featured Resource
+
+- **[OpenResearcher](https://github.com/TIGER-AI-Lab/OpenResearcher):** TIGER AI Lab's curated set of reproducible research workflows, knowledge graphs, and LLM-friendly experiments tailored for social scientists.
+
+---
+
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -276,6 +282,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Issues:** [GitHub Issues](https://github.com/mamingsuper/Skills4SocialScience/issues)
 - **Repository:** [GitHub Repo](https://github.com/mamingsuper/Skills4SocialScience)
 - **Website:** [Skills4SocialScience](https://mamingsuper.github.io/Skills4SocialScience)
+
+## 👤 About the Maintainer
+
+- Website: [maming.digital](https://www.maming.digital/)
+- X/Twitter: [Winter62675779](https://x.com/Winter62675779)
+- WeChat: 扫码关注（二维码下方）  
+
+![WeChat QR](assets/images/wechat-qrcode.jpg)
 
 ---
 
