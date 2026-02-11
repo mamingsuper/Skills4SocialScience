@@ -1,13 +1,20 @@
 ---
 layout: null
+title: 提交资源 | AI4SS
+description: 通过预填 GitHub Issue 向 AI4SS 提交技能、论文和资源。
+lang: zh-CN
+permalink: /zh/pages/submit.html
+sitemap: false
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>提交资源 - AI4SocialScience</title>
-    <meta name="description" content="提交 AI 技能、论文或研究资源到 AI4SocialScience。">
+    <meta name="robots" content="noindex,follow">
+    {% seo %}
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/pages/submit.html">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/pages/submit.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,7 +136,7 @@ layout: null
         <div class="nav-container">
             <a href="{{ site.baseurl }}/zh/" class="nav-logo">
                 <span class="logo-icon">🎓</span>
-                <span class="logo-text">AI4SocialScience</span>
+                <span class="logo-text">AI4SS</span>
             </a>
             <div class="nav-links">
                 <a href="{{ site.baseurl }}/zh/#skills">技能</a>
@@ -228,7 +235,8 @@ layout: null
                                     <option value="general">AI 与社会科学（综合）</option>
                                     <option value="methodology">方法论</option>
                                     <option value="application">应用案例</option>
-                                    <option value="ethics">伦理与政策</option>
+                                    <option value="ethics-policy">伦理与政策</option>
+                                    <option value="review">综述与盘点</option>
                                 </select>
                             </div>
                         </section>
@@ -252,6 +260,16 @@ layout: null
                                     <label>链接</label>
                                     <input type="url" id="resource-link" placeholder="https://example.com/resource">
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label>分类</label>
+                                <select id="resource-category">
+                                    <option value="research-tool">研究工具</option>
+                                    <option value="dataset">数据集</option>
+                                    <option value="workflow">工作流指南</option>
+                                    <option value="benchmark">基准测试</option>
+                                    <option value="community">社区资源</option>
+                                </select>
                             </div>
                         </section>
                     </div>
@@ -280,7 +298,7 @@ layout: null
     <footer class="footer">
         <div class="container">
             <div class="footer-content" style="text-align:center">
-                <p>AI4SocialScience • 面向社会科学研究社区</p>
+                <p>AI4SS • 面向社会科学研究社区</p>
             </div>
         </div>
     </footer>

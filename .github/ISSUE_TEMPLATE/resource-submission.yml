@@ -24,6 +24,13 @@ body:
       label: Link
     validations:
       required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      placeholder: research-tool / dataset / workflow / benchmark / community
+    validations:
+      required: true
   - type: textarea
     id: file_content
     attributes:

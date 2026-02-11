@@ -1,0 +1,56 @@
+skill_stages:
+  - key: literature
+    en: Literature Review
+    zh: 文献综述
+  - key: design
+    en: Research Design
+    zh: 研究设计
+  - key: data
+    en: Data Collection
+    zh: 数据采集
+  - key: analysis
+    en: Data Analysis
+    zh: 数据分析
+  - key: writing
+    en: Writing & Publishing
+    zh: 写作发表
+  - key: presentation
+    en: Presentation
+    zh: 展示汇报
+  - key: teaching
+    en: Teaching
+    zh: 教学应用
+
+paper_categories:
+  - key: general
+    en: General AI & Social Science
+    zh: AI 与社会科学综合
+  - key: methodology
+    en: Methods
+    zh: 方法论
+  - key: application
+    en: Applications
+    zh: 应用案例
+  - key: ethics-policy
+    en: Ethics & Policy
+    zh: 伦理与政策
+  - key: review
+    en: Reviews & Surveys
+    zh: 综述
+
+resource_categories:
+  - key: research-tool
+    en: Research Tool
+    zh: 研究工具
+  - key: dataset
+    en: Dataset
+    zh: 数据集
+  - key: workflow
+    en: Workflow Guide
+    zh: 工作流指南
+  - key: benchmark
+    en: Benchmark
+    zh: 基准测试
+  - key: community
+    en: Community Resource
+    zh: 社区资源

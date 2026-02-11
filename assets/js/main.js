@@ -3,42 +3,44 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initFilterTabs();
+    initFilterGroups();
     initSmoothScroll();
     initNavScroll();
 });
 
 /**
- * Filter tabs for skills catalog
+ * Generic filter tabs for collection grids.
  */
-function initFilterTabs() {
-    const filterTabs = document.querySelectorAll('.filter-tab');
-    const skillsSection = document.querySelector('#skills');
-    const skillCards = skillsSection
-        ? skillsSection.querySelectorAll('.skill-card')
-        : document.querySelectorAll('.skill-card');
-    
-    if (!filterTabs.length) return;
-    
-    filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Update active tab
-            filterTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            
-            const filter = tab.dataset.filter;
-            
-            // Filter cards with animation
-            skillCards.forEach(card => {
-                const category = card.dataset.category;
-                const shouldShow = filter === 'all' || category === filter;
-                
-                if (shouldShow) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.3s ease';
-                } else {
-                    card.style.display = 'none';
-                }
+function initFilterGroups() {
+    const filterGroups = document.querySelectorAll('[data-filter-group]');
+    if (!filterGroups.length) return;
+
+    filterGroups.forEach((group) => {
+        const filterTabs = group.querySelectorAll('.filter-tab');
+        const targetSelector = group.dataset.target;
+        const attribute = group.dataset.attribute || 'category';
+        const cards = targetSelector ? document.querySelectorAll(targetSelector) : [];
+
+        if (!filterTabs.length || !cards.length) return;
+
+        filterTabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach((item) => item.classList.remove('active'));
+                tab.classList.add('active');
+
+                const filterValue = tab.dataset.filter || 'all';
+
+                cards.forEach((card) => {
+                    const cardValue = (card.dataset[attribute] || '').toLowerCase();
+                    const shouldShow = filterValue === 'all' || cardValue === filterValue;
+
+                    if (shouldShow) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.3s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
     });

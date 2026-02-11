@@ -1,12 +1,18 @@
 ---
+title: AI4SS | AI for Social Science
+description: Curated AI skills, tools, papers, and references for social science workflows.
+lang: en
+permalink: /
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }} - {{ site.description }}</title>
-    <meta name="description" content="{{ site.description }}">
+    {% seo %}
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/">
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}/">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,13 +31,13 @@
         <div class="nav-container">
             <a href="{{ site.baseurl }}/" class="nav-logo">
                 <span class="logo-icon">🎓</span>
-                <span class="logo-text">AI4SocialScience</span>
+                <span class="logo-text">AI4SS</span>
             </a>
             <div class="nav-links">
                 <a href="#skills">Skills</a>
                 <a href="#quick-start">Quick Start</a>
                 <a href="#papers">Papers</a>
-                <a href="#resources">Resources</a>
+                <a href="#resources">Tools</a>
                 <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
                 <a href="{{ site.baseurl }}/zh/" class="nav-lang">中文</a>
@@ -47,8 +53,8 @@
                 AI for <span class="gradient-text">Social Science</span>
             </h1>
             <p class="hero-description">
-                A curated hub of AI Skills, Academic Papers, and Research Resources.
-                Automate your workflow from literature review to publication.
+                AI4SS organizes your workflow into Skills, Papers, and Tool Resources,
+                so you can move from research question to publication with reusable processes.
             </p>
             <div class="hero-actions">
                 <a href="#skills" class="btn btn-primary">Browse Skills</a>
@@ -64,6 +70,10 @@
                 <div class="stat">
                     <span class="stat-value">{{ site.papers | size }}</span>
                     <span class="stat-label">Papers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">{{ site.resources | size }}</span>
+                    <span class="stat-label">Tools</span>
                 </div>
             </div>
         </div>
@@ -82,12 +92,49 @@
 <span style="color:#a78bfa">></span> <span style="color:#fcd34d">/literature-review</span> Find seminal papers
   on AI in Sociology from 2023-2025
 
-<span style="color:#34d399">✓ Found 15 papers from Sci-Hub & arXiv
+<span style="color:#34d399">✓ Found 15 papers from public sources
 ✓ Generating summary matrix...
 ✓ Exporting to Zotero...</span></code></pre>
             </div>
         </div>
     </header>
+
+    <!-- Taxonomy Section -->
+    <section class="section taxonomy-section">
+        <div class="container">
+            <h2 class="section-title">Collections Architecture 🧭</h2>
+            <p class="section-description">A clean structure for AI + social science knowledge management.</p>
+            <div class="taxonomy-grid">
+                <article class="taxonomy-card">
+                    <h3>Skills</h3>
+                    <p>Executable methods arranged by research workflow stage.</p>
+                    <div class="skill-tags">
+                        {% for stage in site.data.taxonomy.skill_stages %}
+                        <span class="tag">{{ stage.en }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+                <article class="taxonomy-card">
+                    <h3>Papers</h3>
+                    <p>Methods, applications, ethics, and review papers for evidence-based decisions.</p>
+                    <div class="skill-tags">
+                        {% for category in site.data.taxonomy.paper_categories %}
+                        <span class="tag">{{ category.en }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+                <article class="taxonomy-card">
+                    <h3>Tools & Resources</h3>
+                    <p>Research platforms, datasets, and workflow assets with direct links.</p>
+                    <div class="skill-tags">
+                        {% for category in site.data.taxonomy.resource_categories %}
+                        <span class="tag">{{ category.en }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
     <!-- Quick Start -->
     <section id="quick-start" class="quickstart-section section">
@@ -150,19 +197,18 @@ mkdir -p ~/.claude/skills/claude-writer
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">AI Skills 🛠️</h2>
-            <p class="section-description">Tools to automate your research workflow</p>
+            <p class="section-description">Task instructions you can execute directly in agents</p>
 
-            <div class="filter-tabs">
+            <div class="filter-tabs" data-filter-group data-target="#skills-grid .skill-card" data-attribute="category">
                 <button class="filter-tab active" data-filter="all">All</button>
-                <button class="filter-tab" data-filter="literature">Literature</button>
-                <button class="filter-tab" data-filter="design">Design</button>
-                <button class="filter-tab" data-filter="data">Data</button>
-                <button class="filter-tab" data-filter="writing">Writing</button>
+                {% for stage in site.data.taxonomy.skill_stages %}
+                <button class="filter-tab" data-filter="{{ stage.key }}">{{ stage.en }}</button>
+                {% endfor %}
             </div>
 
-            <div class="skills-grid">
+            <div id="skills-grid" class="skills-grid">
                 {% for item in site.skills %}
-                <article class="skill-card" data-category="{{ item.category }}">
+                <article class="skill-card" data-category="{{ item.category | default: item.workflow_stage | slugify }}">
                     <span class="skill-icon">{{ item.icon | default: "⚡" }}</span>
                     <h3 class="skill-title">{{ item.name }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
@@ -185,16 +231,29 @@ mkdir -p ~/.claude/skills/claude-writer
     <section id="papers" class="section">
         <div class="container">
             <h2 class="section-title">Papers 📄</h2>
-            <p class="section-description">Curated readings on AI in Social Science</p>
-            <div class="skills-grid">
-                {% for item in site.papers %}
-                <article class="skill-card">
+            <p class="section-description">Evidence base for AI-enabled social science</p>
+
+            <div class="filter-tabs" data-filter-group data-target="#papers-grid .paper-card" data-attribute="category">
+                <button class="filter-tab active" data-filter="all">All</button>
+                {% for category in site.data.taxonomy.paper_categories %}
+                <button class="filter-tab" data-filter="{{ category.key }}">{{ category.en }}</button>
+                {% endfor %}
+            </div>
+
+            <div id="papers-grid" class="skills-grid">
+                {% assign sorted_papers = site.papers | sort: "year" | reverse %}
+                {% for item in sorted_papers %}
+                {% assign category_meta = site.data.taxonomy.paper_categories | where: "key", item.category | first %}
+                <article class="skill-card paper-card" data-category="{{ item.category | default: 'general' | slugify }}">
                     <span class="skill-icon">📄</span>
                     <h3 class="skill-title">{{ item.title }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
+                    <div class="skill-tags">
+                        <span class="tag">{{ category_meta.en | default: item.category | default: "General" }}</span>
+                    </div>
                     <div class="skill-footer">
                         <span>{{ item.year }}</span>
-                        <a href="{{ item.link }}" target="_blank" class="skill-link">Read PDF →</a>
+                        <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="skill-link">Read PDF →</a>
                     </div>
                 </article>
                 {% endfor %}
@@ -205,16 +264,32 @@ mkdir -p ~/.claude/skills/claude-writer
     <!-- Resources Section -->
     <section id="resources" class="section">
         <div class="container">
-            <h2 class="section-title">Resources 📦</h2>
-            <p class="section-description">Datasets, Prompts, and Guides</p>
-            <div class="skills-grid">
-                {% for item in site.resources %}
-                <article class="skill-card">
+            <h2 class="section-title">Tools & Resources 📦</h2>
+            <p class="section-description">GitHub repos, datasets, and reusable assets (sorted by stars)</p>
+
+            <div class="filter-tabs" data-filter-group data-target="#resources-grid .resource-card" data-attribute="category">
+                <button class="filter-tab active" data-filter="all">All</button>
+                {% for category in site.data.taxonomy.resource_categories %}
+                <button class="filter-tab" data-filter="{{ category.key }}">{{ category.en }}</button>
+                {% endfor %}
+            </div>
+
+            <div id="resources-grid" class="skills-grid">
+                {% assign sorted_resources = site.resources | sort: "stars" | reverse %}
+                {% for item in sorted_resources %}
+                {% assign category_meta = site.data.taxonomy.resource_categories | where: "key", item.category | first %}
+                {% assign stars = item.stars | default: 0 | plus: 0 %}
+                <article class="skill-card resource-card" data-category="{{ item.category | default: 'research-tool' | slugify }}" data-stars="{{ stars }}">
                     <span class="skill-icon">📦</span>
                     <h3 class="skill-title">{{ item.title }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
+                    <div class="skill-tags">
+                        <span class="tag">{{ item.type | default: "Resource" }}</span>
+                        <span class="tag">{{ category_meta.en | default: item.category | default: "Research Tool" }}</span>
+                        <span class="tag">⭐ {{ stars }}</span>
+                    </div>
                     <div class="skill-footer">
-                        <span>{{ item.type }}</span>
+                        <span>Updated {{ item.last_updated | default: "N/A" }}</span>
                         <a href="{{ item.url | relative_url }}" class="skill-link">Access →</a>
                     </div>
                 </article>
@@ -228,12 +303,32 @@ mkdir -p ~/.claude/skills/claude-writer
         <div class="author-content">
             <h3>Maintained by Ming Ma</h3>
             <p>Curating AI for social science research with a focus on pragmatic, open-source workflows.</p>
-            <p>
-                Visit <a href="https://www.maming.digital/">maming.digital</a> or follow <a href="https://x.com/Winter62675779">@Winter62675779</a> for project updates.
-            </p>
-            <p>WeChat: 扫描二维码即可关注公众号。</p>
+            <div class="author-links">
+                <a class="author-link" href="https://www.maming.digital/" target="_blank" rel="noopener noreferrer" aria-label="Website">
+                    <svg class="author-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M2 12h20"></path>
+                        <path d="M12 2a15 15 0 0 1 0 20"></path>
+                        <path d="M12 2a15 15 0 0 0 0 20"></path>
+                    </svg>
+                    maming.digital
+                </a>
+                <a class="author-link" href="https://x.com/Winter62675779" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <svg class="author-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.8-6.1L6.7 22H2l7.4-8.5L1 2h6.3l4.3 5.4L18.9 2zm-1.1 18h1.7L7.2 4H5.4l12.4 16z"></path>
+                    </svg>
+                    Winter62675779
+                </a>
+            </div>
         </div>
         <div class="author-content" style="text-align:center;">
+            <div class="author-wechat-label">
+                <svg class="author-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M8.6 3C4.5 3 1.2 5.8 1.2 9.2c0 2 1.2 3.8 3.1 5l-.9 2.8 3-1.7c.7.2 1.4.3 2.2.3.2 0 .4 0 .6-.1-.2-.5-.3-1.1-.3-1.7 0-3.3 3.2-6 7.2-6 .6 0 1.2.1 1.8.2C18.9 5.2 14.1 3 8.6 3zm-2 6.3c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4.1 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"></path>
+                    <path d="M22.8 14.3c0-3-2.9-5.4-6.4-5.4-3.6 0-6.4 2.4-6.4 5.4 0 3 2.9 5.4 6.4 5.4.6 0 1.2-.1 1.8-.2l2.6 1.4-.8-2.4c1.8-1 2.8-2.5 2.8-4.2zm-7.9-.5c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9zm3.7 0c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"></path>
+                </svg>
+                WeChat Public account: <strong>AI4socialscience</strong>
+            </div>
             <img src="{{ site.baseurl }}/assets/images/wechat-qrcode.jpg" alt="WeChat QR for Ming Ma">
             <p style="margin-top: var(--space-sm); color: var(--text-secondary);">WeChat QR</p>
         </div>
@@ -243,7 +338,7 @@ mkdir -p ~/.claude/skills/claude-writer
     <footer class="footer">
         <div class="container">
             <div class="footer-content" style="text-align:center">
-                <p><strong>AI4SocialScience</strong> • Made with ❤️ by the research community</p>
+                <p><strong>AI4SS</strong> • Made with the social science research community</p>
                 <br>
                 <div class="footer-links" style="justify-content:center; display:flex;">
                     <a href="https://github.com/mamingsuper/Skills4SocialScience">GitHub</a>

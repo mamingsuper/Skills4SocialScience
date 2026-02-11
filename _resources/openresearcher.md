@@ -3,8 +3,9 @@ layout: resource
 title: "OpenResearcher"
 description: "TIGER AI Lab's hub for reproducible research, knowledge graphs, and LLM-aware workflows."
 type: Toolset
-category: resource
-url: https://github.com/TIGER-AI-Lab/OpenResearcher
+category: research-tool
+link: https://github.com/TIGER-AI-Lab/OpenResearcher
+last_updated: 2026-02-11
 permalink: /resources/openresearcher/
 ---
 ## OpenResearcher (TIGER AI Lab)

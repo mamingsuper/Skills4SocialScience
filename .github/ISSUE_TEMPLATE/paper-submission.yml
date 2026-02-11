@@ -24,6 +24,13 @@ body:
       label: Link (PDF / DOI / publisher)
     validations:
       required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      placeholder: general / methodology / application / ethics-policy / review
+    validations:
+      required: true
   - type: textarea
     id: file_content
     attributes:

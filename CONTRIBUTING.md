@@ -8,6 +8,12 @@ Thanks for contributing.
 - Papers (`_papers/*.md`)
 - Resources (`_resources/*.md`)
 
+## Taxonomy standards
+
+- Skill stages: `literature`, `design`, `data`, `analysis`, `writing`, `presentation`, `teaching`
+- Paper categories: `general`, `methodology`, `application`, `ethics-policy`, `review`
+- Resource categories: `research-tool`, `dataset`, `workflow`, `benchmark`, `community`
+
 ## Fastest way
 
 1. Open the website submit page.

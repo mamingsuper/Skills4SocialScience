@@ -111,6 +111,7 @@ function buildSubmissionData() {
             slug,
             description,
             resourceType: getInputValue("resource-type", "Dataset"),
+            resourceCategory: getInputValue("resource-category", "research-tool"),
             link: getInputValue("resource-link", "https://example.com")
         };
     }
@@ -190,6 +191,7 @@ layout: resource
 title: ${yamlQuote(data.title)}
 description: ${yamlQuote(data.description)}
 type: ${data.resourceType}
+category: ${data.resourceCategory}
 link: ${data.link}
 ---
 # ${data.title}

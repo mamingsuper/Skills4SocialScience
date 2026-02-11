@@ -24,6 +24,8 @@
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [External Resources](#external-resources)
+- [Automation](#automation)
+- [Growth](#growth)
 - [License](#license)
 
 ---
@@ -257,9 +259,24 @@ Detailed reference docs:
 
 ---
 
+## 🤖 Automation
+
+- Daily GitHub resource collection is configured in [`.github/workflows/auto-collect-github-resources.yml`](.github/workflows/auto-collect-github-resources.yml).
+- Collection script: [`scripts/auto_collect_github_resources.py`](scripts/auto_collect_github_resources.py)
+- New items are written into [`_resources/`](./_resources/) and automatically published after commit.
+
+---
+
 ## 🌐 Featured Resource
 
 - **[OpenResearcher](https://github.com/TIGER-AI-Lab/OpenResearcher):** TIGER AI Lab's curated set of reproducible research workflows, knowledge graphs, and LLM-friendly experiments tailored for social scientists.
+
+---
+
+## 📈 Growth
+
+- SEO and monetization action plan: [`docs/growth-playbook.md`](docs/growth-playbook.md)
+- Includes: sitemap/robots baseline, content strategy, sponsorship path, and KPI checklist.
 
 ---
 

@@ -24,12 +24,19 @@
 *   **[_skills/](./_skills/)**: AI 工具和技能代码。
 *   **[_papers/](./_papers/)**: 精选学术论文。
 *   **[_resources/](./_resources/)**: 数据集和指南。
+*   **[scripts/](./scripts/)**: 自动化采集与维护脚本。
 
 ## 📖 文档浏览
 
 我们推荐您通过我们的 **[项目网站](https://mamingsuper.github.io/Skills4SocialScience)** 进行浏览，以获得最佳阅读体验。
 
 历史文档位于 `legacy_docs/` 文件夹中。
+
+## 🤖 自动化采集
+
+- 每日自动采集 GitHub 新资源：[`.github/workflows/auto-collect-github-resources.yml`](./.github/workflows/auto-collect-github-resources.yml)
+- 采集脚本：[`scripts/auto_collect_github_resources.py`](./scripts/auto_collect_github_resources.py)
+- 新资源会写入 [`_resources/`](./_resources/) 并随仓库更新自动发布到网站
 
 ## 🤝 参与贡献
 
@@ -38,6 +45,10 @@
 ## 🌐 特色资源
 
 *   **[OpenResearcher](https://github.com/TIGER-AI-Lab/OpenResearcher)**：TIGER AI Lab 提供的知识图谱与可复制研究模板合集，适配 Claude 与其他 Agent。
+
+## 📈 SEO 与增长
+
+- 运营与变现执行清单见：[`docs/growth-playbook.md`](./docs/growth-playbook.md)
 
 ## 📜 开源协议
 

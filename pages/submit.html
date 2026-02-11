@@ -1,13 +1,20 @@
 ---
 layout: null
+title: Submit | AI4SS
+description: Submit AI skills, papers, and resources to AI4SS via prefilled GitHub issues.
+lang: en
+permalink: /pages/submit.html
+sitemap: false
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Resource - AI4SocialScience</title>
-    <meta name="description" content="Contribute AI skills, academic papers, or resources to the AI4SocialScience community.">
+    <meta name="robots" content="noindex,follow">
+    {% seo %}
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/pages/submit.html">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/pages/submit.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,7 +151,7 @@ layout: null
         <div class="nav-container">
             <a href="../" class="nav-logo">
                 <span class="logo-icon">🎓</span>
-                <span class="logo-text">AI4SocialScience</span>
+                <span class="logo-text">AI4SS</span>
             </a>
             <div class="nav-links">
                 <a href="../#skills">Skills</a>
@@ -247,7 +254,8 @@ layout: null
                                     <option value="general">General AI & SocSci</option>
                                     <option value="methodology">Methodology</option>
                                     <option value="application">Application</option>
-                                    <option value="ethics">Ethics & Policy</option>
+                                    <option value="ethics-policy">Ethics & Policy</option>
+                                    <option value="review">Review & Survey</option>
                                 </select>
                             </div>
                         </section>
@@ -272,6 +280,16 @@ layout: null
                                     <label>Link</label>
                                     <input type="url" id="resource-link" placeholder="https://example.com/resource">
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select id="resource-category">
+                                    <option value="research-tool">Research Tool</option>
+                                    <option value="dataset">Dataset</option>
+                                    <option value="workflow">Workflow Guide</option>
+                                    <option value="benchmark">Benchmark</option>
+                                    <option value="community">Community Resource</option>
+                                </select>
                             </div>
                         </section>
                     </div>

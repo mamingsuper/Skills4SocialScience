@@ -1,12 +1,18 @@
 ---
+title: AI4SS | 社会科学 AI 资源站
+description: 面向社会科学研究者的 AI 技能、工具、论文与参考资源。
+lang: zh-CN
+permalink: /zh/
 ---
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI4SocialScience - 社会科学 AI 工具集</title>
-    <meta name="description" content="社会科学研究者的 AI 技能、论文和资源精选集。">
+    {% seo %}
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/">
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}/">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,13 +34,13 @@
         <div class="nav-container">
             <a href="{{ site.baseurl }}/zh/" class="nav-logo">
                 <span class="logo-icon">🎓</span>
-                <span class="logo-text">AI4SocialScience</span>
+                <span class="logo-text">AI4SS</span>
             </a>
             <div class="nav-links">
                 <a href="#skills">技能</a>
                 <a href="#quick-start">快速开始</a>
                 <a href="#papers">论文</a>
-                <a href="#resources">资源</a>
+                <a href="#resources">工具</a>
                 <a href="{{ site.baseurl }}/zh/pages/learn.html">学习</a>
                 <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-cta">提交</a>
                 <a href="{{ site.baseurl }}/" class="nav-lang">English</a>
@@ -45,18 +51,19 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <div class="hero-badge">🚀 开源项目 • 专为社会科学学者打造</div>
+            <div class="hero-badge">🚀 开源项目 • 面向社会科学学者</div>
             <h1 class="hero-title">
                 AI 赋能 <span class="gradient-text">社会科学</span>
             </h1>
             <p class="hero-description">
-                汇集 AI 技能、学术论文和研究资源的综合中心。
-                从文献综述到论文发表，全流程自动化您的研究工作。
+                AI4SS 按研究工作流整理技能、工具、论文与资料，
+                帮你从研究问题快速走到可复现成果与论文产出。
             </p>
             <div class="hero-actions">
                 <a href="#skills" class="btn btn-primary">浏览技能</a>
                 <a href="#quick-start" class="btn btn-secondary">快速开始</a>
-                <a href="{{ site.baseurl }}/zh/pages/submit.html" class="btn btn-secondary">贡献资源</a>
+                <a href="{{ site.baseurl }}/zh/pages/learn.html" class="btn btn-secondary">学习指南</a>
+                <a href="{{ site.baseurl }}/zh/pages/submit.html" class="btn btn-secondary">提交资源</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -67,6 +74,10 @@
                     <span class="stat-value">{{ site.papers | size }}</span>
                     <span class="stat-label">论文</span>
                 </div>
+                <div class="stat">
+                    <span class="stat-value">{{ site.resources | size }}</span>
+                    <span class="stat-label">工具资源</span>
+                </div>
             </div>
         </div>
         <div class="hero-visual">
@@ -75,21 +86,58 @@
                     <span class="code-dot red"></span>
                     <span class="code-dot yellow"></span>
                     <span class="code-dot green"></span>
-                    <span class="code-title">终端</span>
+                    <span class="code-title">terminal</span>
                 </div>
                 <pre class="code-content"><code><span style="color:#a78bfa">$</span> claude
 
-<span style="color:#6b7280"># 正在查找相关文献...</span>
+<span style="color:#6b7280"># 正在检索相关文献...</span>
 
-<span style="color:#a78bfa">></span> <span style="color:#fcd34d">/literature-review</span> 查找 2023-2025 年
-  关于社会学 AI 应用的开创性论文
+<span style="color:#a78bfa">></span> <span style="color:#fcd34d">/literature-review</span> 查找 2023-2025
+  年社会科学 AI 研究代表论文
 
-<span style="color:#34d399">✓ 从 Sci-Hub & arXiv 找到 15 篇论文
-✓ 生成总结矩阵...
-✓ 导出至 Zotero...</span></code></pre>
+<span style="color:#34d399">✓ 找到 15 篇公开来源论文
+✓ 生成对比矩阵...
+✓ 导出到 Zotero...</span></code></pre>
             </div>
         </div>
     </header>
+
+    <!-- Taxonomy Section -->
+    <section class="section taxonomy-section">
+        <div class="container">
+            <h2 class="section-title">栏目结构 🧭</h2>
+            <p class="section-description">用于 AI + 社会科学知识管理的统一分类框架。</p>
+            <div class="taxonomy-grid">
+                <article class="taxonomy-card">
+                    <h3>Skills 技能库</h3>
+                    <p>可执行的研究方法模板，按研究阶段组织。</p>
+                    <div class="skill-tags">
+                        {% for stage in site.data.taxonomy.skill_stages %}
+                        <span class="tag">{{ stage.zh }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+                <article class="taxonomy-card">
+                    <h3>Papers 论文库</h3>
+                    <p>方法、应用、政策与综述，帮助你快速构建证据链。</p>
+                    <div class="skill-tags">
+                        {% for category in site.data.taxonomy.paper_categories %}
+                        <span class="tag">{{ category.zh }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+                <article class="taxonomy-card">
+                    <h3>Tools 工具资源</h3>
+                    <p>研究平台、数据集、工作流资产，支持直接落地。</p>
+                    <div class="skill-tags">
+                        {% for category in site.data.taxonomy.resource_categories %}
+                        <span class="tag">{{ category.zh }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
     <!-- Quick Start Section -->
     <section id="quick-start" class="quickstart-section section">
@@ -152,19 +200,18 @@ mkdir -p ~/.claude/skills/claude-writer
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">AI 技能 🛠️</h2>
-            <p class="section-description">自动化研究工作流的利器</p>
+            <p class="section-description">可直接在 Agent 中调用的任务模板</p>
 
-            <div class="filter-tabs">
+            <div class="filter-tabs" data-filter-group data-target="#skills-grid .skill-card" data-attribute="category">
                 <button class="filter-tab active" data-filter="all">全部</button>
-                <button class="filter-tab" data-filter="literature">文献</button>
-                <button class="filter-tab" data-filter="design">设计</button>
-                <button class="filter-tab" data-filter="data">数据</button>
-                <button class="filter-tab" data-filter="writing">写作</button>
+                {% for stage in site.data.taxonomy.skill_stages %}
+                <button class="filter-tab" data-filter="{{ stage.key }}">{{ stage.zh }}</button>
+                {% endfor %}
             </div>
 
-            <div class="skills-grid">
+            <div id="skills-grid" class="skills-grid">
                 {% for item in site.skills %}
-                <article class="skill-card" data-category="{{ item.category }}">
+                <article class="skill-card" data-category="{{ item.category | default: item.workflow_stage | slugify }}">
                     <span class="skill-icon">{{ item.icon | default: "⚡" }}</span>
                     <h3 class="skill-title">{{ item.name }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
@@ -187,16 +234,29 @@ mkdir -p ~/.claude/skills/claude-writer
     <section id="papers" class="section">
         <div class="container">
             <h2 class="section-title">论文 📄</h2>
-            <p class="section-description">社会科学 AI 领域的精选读物</p>
-            <div class="skills-grid">
-                {% for item in site.papers %}
-                <article class="skill-card">
+            <p class="section-description">AI 赋能社会科学的证据库</p>
+
+            <div class="filter-tabs" data-filter-group data-target="#papers-grid .paper-card" data-attribute="category">
+                <button class="filter-tab active" data-filter="all">全部</button>
+                {% for category in site.data.taxonomy.paper_categories %}
+                <button class="filter-tab" data-filter="{{ category.key }}">{{ category.zh }}</button>
+                {% endfor %}
+            </div>
+
+            <div id="papers-grid" class="skills-grid">
+                {% assign sorted_papers = site.papers | sort: "year" | reverse %}
+                {% for item in sorted_papers %}
+                {% assign category_meta = site.data.taxonomy.paper_categories | where: "key", item.category | first %}
+                <article class="skill-card paper-card" data-category="{{ item.category | default: 'general' | slugify }}">
                     <span class="skill-icon">📄</span>
                     <h3 class="skill-title">{{ item.title }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
+                    <div class="skill-tags">
+                        <span class="tag">{{ category_meta.zh | default: item.category | default: "综合" }}</span>
+                    </div>
                     <div class="skill-footer">
                         <span>{{ item.year }}</span>
-                        <a href="{{ item.link }}" target="_blank" class="skill-link">阅读 PDF →</a>
+                        <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="skill-link">阅读 PDF →</a>
                     </div>
                 </article>
                 {% endfor %}
@@ -207,16 +267,32 @@ mkdir -p ~/.claude/skills/claude-writer
     <!-- Resources Section -->
     <section id="resources" class="section">
         <div class="container">
-            <h2 class="section-title">资源 📦</h2>
-            <p class="section-description">数据集、提示词和指南</p>
-            <div class="skills-grid">
-                {% for item in site.resources %}
-                <article class="skill-card">
+            <h2 class="section-title">工具与资源 📦</h2>
+            <p class="section-description">GitHub 仓库、数据集和可复用研究资产（按 stars 排序）</p>
+
+            <div class="filter-tabs" data-filter-group data-target="#resources-grid .resource-card" data-attribute="category">
+                <button class="filter-tab active" data-filter="all">全部</button>
+                {% for category in site.data.taxonomy.resource_categories %}
+                <button class="filter-tab" data-filter="{{ category.key }}">{{ category.zh }}</button>
+                {% endfor %}
+            </div>
+
+            <div id="resources-grid" class="skills-grid">
+                {% assign sorted_resources = site.resources | sort: "stars" | reverse %}
+                {% for item in sorted_resources %}
+                {% assign category_meta = site.data.taxonomy.resource_categories | where: "key", item.category | first %}
+                {% assign stars = item.stars | default: 0 | plus: 0 %}
+                <article class="skill-card resource-card" data-category="{{ item.category | default: 'research-tool' | slugify }}" data-stars="{{ stars }}">
                     <span class="skill-icon">📦</span>
                     <h3 class="skill-title">{{ item.title }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
+                    <div class="skill-tags">
+                        <span class="tag">{{ item.type | default: "资源" }}</span>
+                        <span class="tag">{{ category_meta.zh | default: item.category | default: "研究工具" }}</span>
+                        <span class="tag">⭐ {{ stars }}</span>
+                    </div>
                     <div class="skill-footer">
-                        <span>{{ item.type }}</span>
+                        <span>更新于 {{ item.last_updated | default: "N/A" }}</span>
                         <a href="{{ item.url | relative_url }}" class="skill-link">访问 →</a>
                     </div>
                 </article>
@@ -230,12 +306,32 @@ mkdir -p ~/.claude/skills/claude-writer
         <div class="author-content">
             <h3>维护者：马鸣</h3>
             <p>致力于为社会科学研究构建可复用的 AI 工作流和开源工具汇总。</p>
-            <p>
-                了解更多请访问 <a href="https://www.maming.digital/">maming.digital</a> 或关注 <a href="https://x.com/Winter62675779">@Winter62675779</a>。
-            </p>
-            <p>微信公众号：扫码关注。</p>
+            <div class="author-links">
+                <a class="author-link" href="https://www.maming.digital/" target="_blank" rel="noopener noreferrer" aria-label="个人网站">
+                    <svg class="author-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M2 12h20"></path>
+                        <path d="M12 2a15 15 0 0 1 0 20"></path>
+                        <path d="M12 2a15 15 0 0 0 0 20"></path>
+                    </svg>
+                    maming.digital
+                </a>
+                <a class="author-link" href="https://x.com/Winter62675779" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <svg class="author-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.8-6.1L6.7 22H2l7.4-8.5L1 2h6.3l4.3 5.4L18.9 2zm-1.1 18h1.7L7.2 4H5.4l12.4 16z"></path>
+                    </svg>
+                    Winter62675779
+                </a>
+            </div>
         </div>
         <div class="author-content" style="text-align:center;">
+            <div class="author-wechat-label">
+                <svg class="author-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M8.6 3C4.5 3 1.2 5.8 1.2 9.2c0 2 1.2 3.8 3.1 5l-.9 2.8 3-1.7c.7.2 1.4.3 2.2.3.2 0 .4 0 .6-.1-.2-.5-.3-1.1-.3-1.7 0-3.3 3.2-6 7.2-6 .6 0 1.2.1 1.8.2C18.9 5.2 14.1 3 8.6 3zm-2 6.3c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4.1 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"></path>
+                    <path d="M22.8 14.3c0-3-2.9-5.4-6.4-5.4-3.6 0-6.4 2.4-6.4 5.4 0 3 2.9 5.4 6.4 5.4.6 0 1.2-.1 1.8-.2l2.6 1.4-.8-2.4c1.8-1 2.8-2.5 2.8-4.2zm-7.9-.5c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9zm3.7 0c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"></path>
+                </svg>
+                微信公众号：<strong>AI4SS</strong>
+            </div>
             <img src="{{ site.baseurl }}/assets/images/wechat-qrcode.jpg" alt="WeChat 二维码">
             <p style="margin-top: var(--space-sm); color: var(--text-secondary);">微信二维码</p>
         </div>
@@ -245,12 +341,12 @@ mkdir -p ~/.claude/skills/claude-writer
     <footer class="footer">
         <div class="container">
             <div class="footer-content" style="text-align:center">
-                <p><strong>AI4SocialScience</strong> • 由研究社区用 ❤️ 制作</p>
+                <p><strong>AI4SS</strong> • 社会科学研究社区共建</p>
                 <br>
                 <div class="footer-links" style="justify-content:center; display:flex;">
                     <a href="https://github.com/mamingsuper/Skills4SocialScience">GitHub</a>
-                    <a href="{{ site.baseurl }}/CONTRIBUTING.md">贡献</a>
-                    <a href="{{ site.baseurl }}/LICENSE">协议</a>
+                    <a href="{{ site.baseurl }}/CONTRIBUTING.md">贡献指南</a>
+                    <a href="{{ site.baseurl }}/LICENSE">许可证</a>
                 </div>
             </div>
         </div>

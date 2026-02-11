@@ -1,7 +1,11 @@
-title: AI4SocialScience
-description: A Curated Collection of AI Skills, Papers, and Resources for Social Science Research
-url: https://mamingsuper.github.io/Skills4SocialScience
+title: AI4SS
+tagline: AI for Social Science
+description: Curated skills, tools, papers, and references for AI-powered social science research.
+url: https://mamingsuper.github.io
 baseurl: "/Skills4SocialScience"
+lang: en
+locale: en_US
+timezone: Asia/Shanghai
 
 # Build settings
 markdown: kramdown
@@ -13,6 +17,7 @@ highlighter: rouge
 # Plugins
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Collections
 collections:
@@ -43,6 +48,14 @@ defaults:
       type: "resources"
     values:
       layout: "resource"
+  - scope:
+      path: "pages/submit.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "zh/pages/submit.html"
+    values:
+      sitemap: false
 
 # Exclude from build
 exclude:
@@ -56,8 +69,14 @@ exclude:
   - "**/SKILL.md"
 
 # SEO
-author: AI4SocialScience Contributors
 social:
-  name: AI4SocialScience
+  name: AI4SS
   links:
     - https://github.com/mamingsuper/Skills4SocialScience
+    - https://www.maming.digital/
+    - https://x.com/Winter62675779
+
+twitter:
+  username: Winter62675779
+
+author: Ming Ma

@@ -1,0 +1,10 @@
+---
+---
+User-agent: *
+Allow: /
+
+# Keep contribution forms out of search results.
+Disallow: /pages/submit.html
+Disallow: /zh/pages/submit.html
+
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
