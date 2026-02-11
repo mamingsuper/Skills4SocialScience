@@ -9,6 +9,9 @@ last_updated: 2026-02-10
 stars: 2
 last_updated: 2026-02-10
 license: "MIT"
+stars: 2
+last_updated: 2026-02-10
+license: "MIT"
 ---
 # Open Science Skills
 ...
