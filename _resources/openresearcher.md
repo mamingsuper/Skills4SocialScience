@@ -8,6 +8,9 @@ link: https://github.com/TIGER-AI-Lab/OpenResearcher
 stars: 217
 last_updated: 2026-02-11
 permalink: /resources/openresearcher/
+stars: 242
+last_updated: 2026-02-11
+license: ""
 ---
 ## OpenResearcher (TIGER AI Lab)
 

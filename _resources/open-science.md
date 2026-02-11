@@ -6,6 +6,9 @@ type: Guide
 category: workflow
 link: https://github.com/scdenney/open-science-skills
 last_updated: 2026-02-10
+stars: 2
+last_updated: 2026-02-10
+license: "MIT"
 ---
 # Open Science Skills
 ...
