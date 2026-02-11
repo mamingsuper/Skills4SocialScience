@@ -6,11 +6,11 @@ type: Toolset
 category: research-tool
 link: https://github.com/TIGER-AI-Lab/OpenResearcher
 source: manual-curated
-stars: 243
-last_updated: 2026-02-11
-license: ""
 tags: ["knowledge-graph", "llm", "workflow"]
 permalink: /resources/openresearcher/
+stars: 249
+last_updated: 2026-02-11
+license: ""
 ---
 ## OpenResearcher (TIGER AI Lab)
 
