@@ -275,7 +275,9 @@ mkdir -p ~/.claude/skills/claude-writer
             </div>
 
             <div id="resources-grid" class="skills-grid">
-                {% assign sorted_resources = site.resources | sort: "stars" | reverse %}
+                {% assign with_stars = site.resources | where_exp: "r", "r.stars" | sort: "stars" | reverse %}
+                {% assign without_stars = site.resources | where_exp: "r", "r.stars == nil" | sort: "title" %}
+                {% assign sorted_resources = with_stars | concat: without_stars %}
                 {% for item in sorted_resources %}
                 {% assign category_meta = site.data.taxonomy.resource_categories | where: "key", item.category | first %}
                 {% assign stars = item.stars | default: 0 | plus: 0 %}
@@ -286,7 +288,11 @@ mkdir -p ~/.claude/skills/claude-writer
                     <div class="skill-tags">
                         <span class="tag">{{ item.type | default: "Resource" }}</span>
                         <span class="tag">{{ category_meta.en | default: item.category | default: "Research Tool" }}</span>
+                        {% if item.stars %}
                         <span class="tag">⭐ {{ stars }}</span>
+                        {% elsif item.link contains "github.com" %}
+                        <span class="tag">⭐ syncing</span>
+                        {% endif %}
                     </div>
                     <div class="skill-footer">
                         <span>Updated {{ item.last_updated | default: "N/A" }}</span>

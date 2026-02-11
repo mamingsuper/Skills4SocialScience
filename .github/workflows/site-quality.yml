@@ -51,6 +51,7 @@ jobs:
             --accept 200,206,301,302,403,429
             --exclude "localhost|127.0.0.1"
             --exclude "^data:"
+            --exclude "^https://mamingsuper\\.github\\.io/Skills4SocialScience(/|$)"
             "_site/**/*.html"
             "README.md"
             "README_CN.md"
