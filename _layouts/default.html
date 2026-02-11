@@ -34,14 +34,21 @@
                 <span class="logo-text">AI4SS</span>
             </a>
             <div class="nav-links">
+                {% if page.url contains '/zh/' %}
+                <a href="{{ site.baseurl }}/zh/#skills">技能</a>
+                <a href="{{ site.baseurl }}/zh/#quick-start">快速开始</a>
+                <a href="{{ site.baseurl }}/zh/#papers">论文</a>
+                <a href="{{ site.baseurl }}/zh/#resources">资源</a>
+                <a href="{{ site.baseurl }}/zh/#author">作者</a>
+                <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-cta">提交</a>
+                <a href="{{ site.baseurl }}/" class="nav-lang">English</a>
+                {% else %}
                 <a href="{{ site.baseurl }}/#skills">Skills</a>
                 <a href="{{ site.baseurl }}/#quick-start">Quick Start</a>
                 <a href="{{ site.baseurl }}/#papers">Papers</a>
                 <a href="{{ site.baseurl }}/#resources">Resources</a>
+                <a href="{{ site.baseurl }}/#author">Author</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
-                {% if page.url contains '/zh/' %}
-                <a href="{{ site.baseurl }}/" class="nav-lang">English</a>
-                {% else %}
                 <a href="{{ site.baseurl }}/zh/" class="nav-lang">中文</a>
                 {% endif %}
             </div>

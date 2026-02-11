@@ -5,18 +5,12 @@ description: "TIGER AI Lab's hub for reproducible research, knowledge graphs, an
 type: Toolset
 category: research-tool
 link: https://github.com/TIGER-AI-Lab/OpenResearcher
-stars: 217
+source: manual-curated
+stars: 243
 last_updated: 2026-02-11
+license: ""
+tags: ["knowledge-graph", "llm", "workflow"]
 permalink: /resources/openresearcher/
-stars: 242
-last_updated: 2026-02-11
-license: ""
-stars: 243
-last_updated: 2026-02-11
-license: ""
-stars: 243
-last_updated: 2026-02-11
-license: ""
 ---
 ## OpenResearcher (TIGER AI Lab)
 

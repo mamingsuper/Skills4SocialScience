@@ -30,9 +30,14 @@ jobs:
         run: |
           python scripts/auto_collect_github_resources.py \
             --repo-root . \
-            --max-new 5 \
-            --min-stars 10 \
-            --lookback-days 14
+            --max-new 8 \
+            --min-new 2 \
+            --min-stars 15 \
+            --lookback-days 45 \
+            --fallback-min-stars 40 \
+            --fallback-lookback-days 3650 \
+            --pages-per-query 4 \
+            --per-page 30
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
