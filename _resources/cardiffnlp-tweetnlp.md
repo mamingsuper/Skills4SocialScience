@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/cardiffnlp/tweetnlp
 source: github-auto
+tags: ["computational-social-science", "language-model", "natural-language-processing", "python", "sentiment-analysis", "sns"]
+permalink: /resources/cardiffnlp-tweetnlp/
 stars: 377
 last_updated: 2026-02-09
 license: "MIT"
-tags: ["computational-social-science", "language-model", "natural-language-processing", "python", "sentiment-analysis", "sns"]
-permalink: /resources/cardiffnlp-tweetnlp/
 ---
 ## tweetnlp (cardiffnlp)
 

@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/graphbrain/graphbrain
 source: github-auto
+tags: ["artificial-intelligence", "cognitive-science", "computational-social-science", "hypergraphs", "knowledge", "knowledge-base"]
+permalink: /resources/graphbrain-graphbrain/
 stars: 630
 last_updated: 2026-01-29
 license: "MIT"
-tags: ["artificial-intelligence", "cognitive-science", "computational-social-science", "hypergraphs", "knowledge", "knowledge-base"]
-permalink: /resources/graphbrain-graphbrain/
 ---
 ## graphbrain (graphbrain)
 

@@ -6,11 +6,11 @@ type: GitHub Repository
 category: workflow
 link: https://github.com/booknlp/booknlp
 source: github-auto
+tags: ["computational-social-science", "cultural-analytics", "digital-humanities", "natural-language-processing"]
+permalink: /resources/booknlp-booknlp/
 stars: 889
 last_updated: 2026-02-09
 license: "MIT"
-tags: ["computational-social-science", "cultural-analytics", "digital-humanities", "natural-language-processing"]
-permalink: /resources/booknlp-booknlp/
 ---
 ## booknlp (booknlp)
 

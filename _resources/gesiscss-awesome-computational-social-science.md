@@ -6,11 +6,11 @@ type: GitHub Repository
 category: community
 link: https://github.com/gesiscss/awesome-computational-social-science
 source: github-auto
+tags: ["awesome-list", "computational-social-science", "network-analysis", "python", "rstats", "text-mining"]
+permalink: /resources/gesiscss-awesome-computational-social-science/
 stars: 824
 last_updated: 2026-02-10
 license: "CC0-1.0"
-tags: ["awesome-list", "computational-social-science", "network-analysis", "python", "rstats", "text-mining"]
-permalink: /resources/gesiscss-awesome-computational-social-science/
 ---
 ## awesome-computational-social-science (gesiscss)
 
