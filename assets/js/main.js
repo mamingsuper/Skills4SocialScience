@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav();
     initParticles();
     initStaggerAnimation();
-    initAllLinks();
 });
 
 /**
@@ -326,7 +325,7 @@ function initParticles() {
             // Draw
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(139, 92, 246, ${p.alpha})`;
+            ctx.fillStyle = `rgba(99, 102, 241, ${p.alpha})`;
             ctx.fill();
         });
 
@@ -341,7 +340,7 @@ function initParticles() {
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(139, 92, 246, ${0.1 * (1 - dist / 100)})`;
+                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.1 * (1 - dist / 100)})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }

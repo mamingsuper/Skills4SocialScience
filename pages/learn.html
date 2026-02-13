@@ -7,6 +7,7 @@ permalink: /pages/learn.html
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,31 +17,109 @@ permalink: /pages/learn.html
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/learn.css">
 
     <style>
-        .learn-page { padding: 120px 0 60px; }
-        .learn-header { text-align: center; margin-bottom: 4rem; }
-        .learn-header h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--text-primary); }
-        .learn-header p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+        .learn-page {
+            padding: 120px 0 60px;
+        }
 
-        .learn-section { margin-bottom: 4rem; padding: 2rem; border-radius: var(--border-radius-lg); background: rgba(255,255,255,0.4); border: 1px solid var(--border-color); backdrop-filter: blur(10px); }
-        .learn-section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
-        .learn-section p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+        .learn-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .feature-card { background: rgba(255,255,255,0.6); padding: 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); }
-        .feature-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
-        .feature-card h3 { margin-bottom: 0.5rem; color: var(--text-primary); }
+        .learn-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
 
-        .code-block { background: #1e1e2e; color: #cdd6f4; padding: 1.5rem; border-radius: var(--border-radius); font-family: var(--font-mono); overflow-x: auto; margin: 1.5rem 0; }
-        .code-block code { font-size: 0.9rem; }
-        .comment { color: #6c7086; }
-        .command { color: #f9e2af; }
+        .learn-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .learn-section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .learn-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .learn-section p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--glass-border);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #cdd6f4;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            font-family: var(--font-mono);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .code-block code {
+            font-size: 0.9rem;
+        }
+
+        .comment {
+            color: #6c7086;
+        }
+
+        .command {
+            color: #f9e2af;
+        }
     </style>
 </head>
+
 <body>
     <nav class="nav">
         <div class="nav-container">
@@ -71,12 +150,14 @@ permalink: /pages/learn.html
             <!-- 1. What are AI Agents? -->
             <section class="learn-section">
                 <h2>🤖 What Are AI Coding Agents?</h2>
-                <p>AI coding agents (like Claude Code, Cursor, or Gemini CLI) are intelligent assistants that live in your terminal or editor. Unlike ChatGPT, they can:</p>
+                <p>AI coding agents (like Claude Code, Cursor, or Gemini CLI) are intelligent assistants that live in
+                    your terminal or editor. Unlike ChatGPT, they can:</p>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <span class="feature-icon">📂</span>
                         <h3>Read Your Project</h3>
-                        <p>They can scan your entire folder, understanding your data structure, paper drafts, and code.</p>
+                        <p>They can scan your entire folder, understanding your data structure, paper drafts, and code.
+                        </p>
                     </div>
                     <div class="feature-card">
                         <span class="feature-icon">⚡</span>
@@ -94,7 +175,8 @@ permalink: /pages/learn.html
             <!-- 2. What are Skills? -->
             <section class="learn-section">
                 <h2>🛠️ What Are "Skills"?</h2>
-                <p>Skills are specialized instruction sets that teach an AI agent how to perform a specific research task perfectly. Think of them as "Standard Operating Procedures" (SOPs) for AI.</p>
+                <p>Skills are specialized instruction sets that teach an AI agent how to perform a specific research
+                    task perfectly. Think of them as "Standard Operating Procedures" (SOPs) for AI.</p>
 
                 <div class="code-block">
                     <code><span class="comment"># Without a Skill:</span>
@@ -106,7 +188,8 @@ User: "/stata-regression Run a model on my panel data."
 AI: *Automatically uses reghdfe, clusters standard errors, and formats output for publication.*</code>
                 </div>
 
-                <p>By using skills from this repository, you ensure your AI assistant follows best practices in social science methodology.</p>
+                <p>By using skills from this repository, you ensure your AI assistant follows best practices in social
+                    science methodology.</p>
             </section>
 
             <!-- 3. Workflow -->
@@ -149,4 +232,5 @@ AI: *Automatically uses reghdfe, clusters standard errors, and formats output fo
         </div>
     </footer>
 </body>
+
 </html>
