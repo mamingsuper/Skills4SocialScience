@@ -31,9 +31,10 @@
     --gray-900: #0f172a;
 
     /* ===== Text Colors ===== */
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --text-tertiary: #64748b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    /* Lighter for better contrast */
+    --text-tertiary: #94a3b8;
     --text-inverse: #0f172a;
 
     /* ===== Primary Accent - Indigo ===== */
@@ -98,18 +99,19 @@
     --border-strong: rgba(255, 255, 255, 0.12);
     --border-accent: rgba(99, 102, 241, 0.3);
 
-    /* ===== Glass Effect (Minimalist) ===== */
-    --glass-bg: rgba(15, 23, 42, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.06);
-    --glass-blur: blur(12px);
+    /* ===== Glass Effect (Optimized) ===== */
+    --glass-bg: rgba(15, 23, 42, 0.75);
+    /* More opaque for readability */
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(16px);
     --glass-shadow: none;
-    --glass-hover: rgba(255, 255, 255, 0.08);
+    --glass-hover: rgba(255, 255, 255, 0.15);
 
     /* ===== Shadows (Subtle) ===== */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
 
     /* ===== Border Radius ===== */
     --border-radius: 16px;
@@ -173,18 +175,18 @@
     --space-20: 5rem;
     --space-24: 6rem;
 
-    /* Semantic Spacing */
+    /* Semantic Spacing (Reduced) */
     --space-xs: 0.5rem;
     --space-sm: 0.75rem;
-    --space-md: 1.25rem;
-    --space-lg: 2rem;
-    /* increased from 1.125rem */
-    --space-xl: 3rem;
-    /* increased from 1.25rem */
-    --space-2xl: 4.5rem;
-    /* increased from 1.5rem */
-    --space-3xl: 8rem;
-    /* increased from 3rem */
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    /* Reduced from 2rem */
+    --space-xl: 2rem;
+    /* Reduced from 3rem */
+    --space-2xl: 3.5rem;
+    /* Reduced from 4.5rem */
+    --space-3xl: 5rem;
+    /* Reduced from 8rem */
 
     /* ===== Transitions ===== */
     --duration-instant: 50ms;
