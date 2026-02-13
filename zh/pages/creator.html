@@ -1,0 +1,186 @@
+---
+layout: null
+title: 创作者 | AI4SS
+description: 成为创作者，为 AI4SS 社区贡献 AI 技能、工具和资源
+lang: zh-CN
+permalink: /zh/pages/creator.html
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% seo %}
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/pages/creator.html">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/pages/creator.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+
+    <style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+        .creator-page { padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl); }
+        .creator-header { text-align: center; margin-bottom: 4rem; }
+        .creator-header h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading); }
+        .creator-header p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        .creator-steps { max-width: 900px; margin: 0 auto; }
+        .step-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius-lg); padding: 2rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+        .step-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent-gradient); }
+        .step-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
+        .step-number { width: 40px; height: 40px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; }
+        .step-card p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+        .step-card ul { list-style: none; padding: 0; margin-top: 1rem; }
+        .step-card li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--text-secondary); }
+        .step-card li::before { content: '→'; position: absolute; left: 0; color: var(--accent-primary); }
+
+        .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 3rem auto; }
+        .benefit-card { background: rgba(127, 90, 240, 0.08); border: 1px solid rgba(127, 90, 240, 0.2); border-radius: var(--border-radius); padding: 1.5rem; text-align: center; }
+        .benefit-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .benefit-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .benefit-card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+        .cta-box { background: linear-gradient(135deg, rgba(127, 90, 240, 0.15) 0%, rgba(44, 182, 125, 0.15) 100%); border: 1px solid rgba(127, 90, 240, 0.3); border-radius: var(--border-radius-lg); padding: 3rem; text-align: center; max-width: 800px; margin: 3rem auto; }
+        .cta-box h3 { font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .cta-box p { color: var(--text-secondary); margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SS</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">技能</a>
+                <a href="../#quick-start">快速开始</a>
+                <a href="../#papers">论文</a>
+                <a href="../#resources">工具</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        更多 <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="learn.html">学习</a>
+                        <a href="about.html" class="nav-highlight">关于</a>
+                        <a href="creator.html" class="nav-highlight">创作者</a>
+                        <a href="builder.html" class="nav-highlight">建设者</a>
+                    </div>
+                </div>
+                <a href="submit.html" class="nav-cta">提交</a>
+                <a href="{{ site.baseurl }}/pages/creator.html" class="nav-lang">English</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="creator-page">
+        <div class="container">
+            <header class="creator-header">
+                <div class="hero-badge">✨ 加入创作者</div>
+                <h1>成为 <span class="gradient-text">AI4SS 创作者</span></h1>
+                <p>分享你的专业知识，帮助构建 AI 赋能社会科学研究的未来。你的贡献将帮助全球数千名研究者。</p>
+            </header>
+
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">🏆</span>
+                    <h4>建立声誉</h4>
+                    <p>通过署名贡献被认可为领域专家</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🌐</span>
+                    <h4>全球影响</h4>
+                    <p>你的技能帮助各机构和各国的研究者</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📚</span>
+                    <h4>开源作品集</h4>
+                    <p>建立你的研究工具和方法的公开作品集</p>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🤝</span>
+                    <h4>社区连接</h4>
+                    <p>与志同道合的研究者和 AI 爱好者建立联系</p>
+                </div>
+            </div>
+
+            <div class="creator-steps">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--text-primary); font-size: 2rem;">如何贡献</h2>
+
+                <div class="step-card">
+                    <h3><div class="step-number">1</div> 选择贡献类型</h3>
+                    <p>决定你想要与社区分享什么：</p>
+                    <ul>
+                        <li><strong>AI 技能：</strong> AI 智能体的提示词模板（SKILL.md 文件）</li>
+                        <li><strong>论文：</strong> 带有注释的精选学术论文</li>
+                        <li><strong>工具：</strong> GitHub 仓库、数据集或研究平台</li>
+                        <li><strong>教程：</strong> 特定工作流的分步指南</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <h3><div class="step-number">2</div> 准备内容</h3>
+                    <p>确保你的贡献符合我们的质量标准：</p>
+                    <ul>
+                        <li>技能：创建结构良好的 SKILL.md，包含清晰的说明</li>
+                        <li>论文：包含标题、作者、年份、期刊和 DOI/PDF 链接</li>
+                        <li>工具：提供描述、GitHub URL 和分类</li>
+                        <li>包含相关标签和研究工作流阶段</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <h3><div class="step-number">3</div> 通过表单或 GitHub 提交</h3>
+                    <p>通过你偏好的渠道分享你的贡献：</p>
+                    <ul>
+                        <li>使用<a href="submit.html" style="color: var(--accent-primary);">在线提交表单</a>快速提交</li>
+                        <li>在 GitHub 上开启 Pull Request 直接贡献</li>
+                        <li>批量提交或特殊情况可发送邮件</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <h3><div class="step-number">4</div> 审核与发布</h3>
+                    <p>我们的团队会审核提交内容的质量和相关性：</p>
+                    <ul>
+                        <li>提交通常在 1-2 周内完成审核</li>
+                        <li>我们可能会建议修改以提高清晰度或完整性</li>
+                        <li>接受的贡献会发布并署名</li>
+                        <li>贡献上线时我们会通知你</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>准备分享你的作品？</h3>
+                <p>加入我们的创作者社区，共同构建社会科学 AI 研究的未来。</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="submit.html" class="btn btn-primary">立即提交</a>
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience" class="btn btn-secondary">查看 GitHub</a>
+                </div>
+            </div>
+
+            <div style="max-width: 700px; margin: 3rem auto; text-align: center; color: var(--text-secondary);">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem;">有问题？</h3>
+                <p>如果你对贡献有疑问，或需要准备提交的指导，请联系我们。</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience/issues" style="color: var(--accent-primary);">在 GitHub 上提交问题 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p><strong>AI4SS</strong> • 共同建设，开放共享</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>

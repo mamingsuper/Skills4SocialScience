@@ -1,29 +1,130 @@
+# Enhanced Taxonomy for AI4SS
+# Multi-dimensional classification with faceted search support
+
+# ============================================
+# Research Workflow Stages (Primary Dimension)
+# ============================================
 skill_stages:
-  - key: one-stop
-    en: One-Stop Solution
-    zh: 一站式方案
-  - key: literature
-    en: Literature Review
-    zh: 文献综述
+  - key: discovery
+    en: Discovery & Foundation
+    zh: 发现与基础
+    description: Literature search, question formulation, context understanding
+
   - key: design
     en: Research Design
     zh: 研究设计
-  - key: data
-    en: Data Collection
-    zh: 数据采集
-  - key: analysis
-    en: Data Analysis
-    zh: 数据分析
-  - key: writing
-    en: Writing & Publishing
-    zh: 写作发表
-  - key: presentation
-    en: Presentation
-    zh: 展示汇报
-  - key: teaching
-    en: Teaching
-    zh: 教学应用
+    description: Methodology selection, study design, protocol development
 
+  - key: data
+    en: Data & Evidence
+    zh: 数据与证据
+    description: Data collection, cleaning, preparation, metadata management
+
+  - key: analysis
+    en: Analysis & Modeling
+    zh: 分析与建模
+    description: Quantitative, qualitative, computational analysis
+
+  - key: interpretation
+    en: Interpretation & Synthesis
+    zh: 解释与综合
+    description: Results interpretation, cross-study synthesis, theory integration
+
+  - key: communication
+    en: Communication
+    zh: 学术传播
+    description: Academic writing, visualization, presentation, dissemination
+
+  - key: pedagogy
+    en: Pedagogy & Training
+    zh: 教学与培训
+    description: Curriculum design, student training, faculty development
+
+# ============================================
+# Methodological Dimensions (Secondary Dimension)
+# ============================================
+methodologies:
+  - key: surveys
+    en: Surveys & Polling
+    zh: 调查与民意测验
+  - key: experiments
+    en: Experiments
+    zh: 实验
+  - key: nlp
+    en: Natural Language Processing
+    zh: 自然语言处理
+  - key: network-analysis
+    en: Network Analysis
+    zh: 网络分析
+  - key: gis-spatial
+    en: GIS & Spatial Analysis
+    zh: 地理信息系统
+  - key: causal-inference
+    en: Causal Inference
+    zh: 因果推断
+  - key: mixed-methods
+    en: Mixed Methods
+    zh: 混合方法
+  - key: simulation
+    en: Simulation & Agent-Based
+    zh: 仿真与基于主体
+  - key: digital-traces
+    en: Digital Trace Analysis
+    zh: 数字痕迹分析
+
+# ============================================
+# AI Capability Dimension (Cross-cutting)
+# ============================================
+ai_capabilities:
+  - key: text-generation
+    en: Text Generation
+    zh: 文本生成
+  - key: text-analysis
+    en: Text Analysis & Coding
+    zh: 文本分析与编码
+  - key: data-extraction
+    en: Data Extraction & Cleaning
+    zh: 数据提取与清洗
+  - key: visualization
+    en: Visualization Generation
+    zh: 可视化生成
+  - key: translation
+    en: Translation & Multilingual
+    zh: 翻译与多语言
+  - key: summarization
+    en: Knowledge Synthesis
+    zh: 知识综合
+  - key: hypothesis
+    en: Hypothesis Generation
+    zh: 假设生成
+  - key: reporting
+    en: Automated Reporting
+    zh: 自动化报告
+
+# ============================================
+# Difficulty / Experience Level
+# ============================================
+difficulty_levels:
+  - key: beginner
+    en: Beginner
+    zh: 初级
+    description: No programming required
+  - key: intermediate
+    en: Intermediate
+    zh: 中级
+    description: Basic coding familiarity helpful
+  - key: advanced
+    en: Advanced
+    zh: 高级
+    description: Requires technical expertise
+  - key: expert
+    en: Expert
+    zh: 专家级
+    description: Research-tool level expertise needed
+
+# ============================================
+# Paper Categories
+# ============================================
 paper_categories:
   - key: general
     en: General AI & Social Science
@@ -41,6 +142,35 @@ paper_categories:
     en: Reviews & Surveys
     zh: 综述
 
+# ============================================
+# Resource Format Types
+# ============================================
+resource_formats:
+  - key: repository
+    en: Code Repository
+    zh: 代码仓库
+  - key: webapp
+    en: Web Application
+    zh: 网页应用
+  - key: api
+    en: API / SDK
+    zh: API / 工具包
+  - key: dataset
+    en: Dataset / Corpus
+    zh: 数据集 / 语料库
+  - key: documentation
+    en: Documentation / Guide
+    zh: 文档 / 指南
+  - key: notebook
+    en: Notebook / Jupyter
+    zh: 笔记本 / Jupyter
+  - key: cli
+    en: CLI Tool
+    zh: 命令行工具
+
+# ============================================
+# Resource Categories (Legacy - for backward compatibility)
+# ============================================
 resource_categories:
   - key: research-tool
     en: Research Tool
@@ -60,3 +190,32 @@ resource_categories:
   - key: integration
     en: Integration Tool
     zh: 集成工具
+
+# ============================================
+# Disciplines (For content targeting)
+# ============================================
+disciplines:
+  - key: political-science
+    en: Political Science
+    zh: 政治学
+  - key: economics
+    en: Economics
+    zh: 经济学
+  - key: sociology
+    en: Sociology
+    zh: 社会学
+  - key: psychology
+    en: Psychology
+    zh: 心理学
+  - key: public-policy
+    en: Public Policy
+    zh: 公共政策
+  - key: communication
+    en: Communication Research
+    zh: 传播学
+  - key: anthropology
+    en: Anthropology
+    zh: 人类学
+  - key: education
+    en: Education Research
+    zh: 教育研究

@@ -1,0 +1,179 @@
+---
+layout: null
+title: About | AI4SS
+description: About AI4SS - AI for Social Science research platform and community.
+lang: en
+permalink: /pages/about.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% seo %}
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/pages/about.html">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/pages/about.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+
+    <style>
+        .about-page { padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl); }
+        .about-header { text-align: center; margin-bottom: 4rem; }
+        .about-header h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading); }
+        .about-header p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto 4rem; }
+        .about-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius-lg); padding: 2rem; transition: all var(--transition-base); }
+        .about-card:hover { transform: translateY(-4px); border-color: rgba(127, 90, 240, 0.3); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        .about-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
+        .about-card p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+        .about-card ul { list-style: none; padding: 0; }
+        .about-card li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--text-secondary); }
+        .about-card li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-secondary); font-weight: bold; }
+
+        .mission-section { max-width: 900px; margin: 0 auto 4rem; text-align: center; }
+        .mission-section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary); }
+        .mission-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; }
+
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto 4rem; text-align: center; }
+        .stat-item h3 { font-size: 3rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-item p { color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SS</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">Skills</a>
+                <a href="../#quick-start">Quick Start</a>
+                <a href="../#papers">Papers</a>
+                <a href="../#resources">Tools</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        More <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="learn.html">Learn</a>
+                        <a href="about.html" class="nav-highlight">About</a>
+                        <a href="creator.html" class="nav-highlight">Creator</a>
+                        <a href="builder.html" class="nav-highlight">Builder</a>
+                    </div>
+                </div>
+                <a href="submit.html" class="nav-cta">Submit</a>
+                <a href="{{ site.baseurl }}/zh/pages/about.html" class="nav-lang">中文</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="about-page">
+        <div class="container">
+            <header class="about-header">
+                <div class="hero-badge">📚 About the Project</div>
+                <h1>Democratizing <span class="gradient-text">AI for Research</span></h1>
+                <p>AI4SS is an open-source initiative to make AI tools accessible and practical for social science researchers worldwide.</p>
+            </header>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <h3>{{ site.skills | size }}+</h3>
+                    <p>AI Skills</p>
+                </div>
+                <div class="stat-item">
+                    <h3>{{ site.papers | size }}+</h3>
+                    <p>Curated Papers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>{{ site.resources | size }}+</h3>
+                    <p>Tools & Resources</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Open</h3>
+                    <p>Source & Community</p>
+                </div>
+            </div>
+
+            <section class="mission-section">
+                <h2>Our Mission</h2>
+                <p>
+                    Social science research is undergoing a transformation with AI, but many researchers lack
+                    access to practical, reproducible workflows. AI4SS bridges this gap by curating
+                    executable skills, academic evidence, and research tools—all organized by the
+                    actual stages of research work.
+                </p>
+            </section>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🎯 What We Do</h3>
+                    <p>We curate and organize AI resources specifically designed for social science research workflows:</p>
+                    <ul>
+                        <li><strong>Skills:</strong> Executable prompt templates for AI agents</li>
+                        <li><strong>Papers:</strong> Evidence base for AI-enabled research</li>
+                        <li><strong>Tools:</strong> Platforms, datasets, and workflow assets</li>
+                        <li><strong>Guides:</strong> Tutorials and best practices</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h3>🌍 Who We Serve</h3>
+                    <p>This platform serves the global social science research community:</p>
+                    <ul>
+                        <li><strong>Graduate Students:</strong> Learn efficient research methods</li>
+                        <li><strong>Faculty:</strong> Scale research and teaching capabilities</li>
+                        <li><strong>Industry Researchers:</strong> Apply social science methods at scale</li>
+                        <li><strong>Open Science Advocates:</strong> Build reproducible workflows</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h3>🔓 Our Principles</h3>
+                    <p>We are committed to open and accessible research infrastructure:</p>
+                    <ul>
+                        <li><strong>Open Source:</strong> Everything is MIT-licensed</li>
+                        <li><strong>Community-Driven:</strong> Contributions welcome</li>
+                        <li><strong>Methodologically Sound:</strong> Evidence-based curation</li>
+                        <li><strong>Accessible:</strong> Free for all researchers</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h3>🤝 How to Contribute</h3>
+                    <p>Join our community in building AI tools for social science:</p>
+                    <ul>
+                        <li>Submit new skills or resources via our form</li>
+                        <li>Report issues or suggest improvements</li>
+                        <li>Share this project with colleagues</li>
+                        <li>Contribute directly on GitHub</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h2 style="margin-bottom: 1rem; color: var(--text-primary);">Get Involved</h2>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-primary">Submit a Resource</a>
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience" class="btn btn-secondary">View on GitHub</a>
+                    <a href="{{ site.baseurl }}/pages/creator.html" class="btn btn-secondary">Become a Creator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p><strong>AI4SS</strong> • Made with ❤️ by the social science research community</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>

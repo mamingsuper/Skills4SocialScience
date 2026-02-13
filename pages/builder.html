@@ -1,0 +1,278 @@
+---
+layout: null
+title: Builder | AI4SS
+description: Build and extend the AI4SS platform - technical documentation for contributors and developers.
+lang: en
+permalink: /pages/builder.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% seo %}
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/pages/builder.html">
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/pages/builder.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+
+    <style>
+        .builder-page { padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl); }
+        .builder-header { text-align: center; margin-bottom: 4rem; }
+        .builder-header h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading); }
+        .builder-header p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 3rem auto; }
+        .tech-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 1.5rem; text-align: center; transition: all var(--transition-base); }
+        .tech-card:hover { border-color: rgba(127, 90, 240, 0.3); transform: translateY(-3px); }
+        .tech-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+        .tech-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .tech-card span { color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono); }
+
+        .section-block { max-width: 900px; margin: 0 auto 3rem; }
+        .section-block h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
+        .section-block p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+        .section-block ul { list-style: none; padding: 0; }
+        .section-block li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--text-secondary); }
+        .section-block li::before { content: '•'; position: absolute; left: 0; color: var(--accent-primary); font-weight: bold; }
+
+        .code-block { background: rgba(15, 14, 23, 0.9); border: 1px solid var(--glass-border); border-radius: var(--border-radius-sm); padding: 1.5rem; overflow-x: auto; margin: 1.5rem 0; }
+        .code-block code { color: #cdd6f4; font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; }
+        .comment { color: var(--text-muted); }
+        .keyword { color: #cba6f7; }
+        .string { color: #a6e3a1; }
+        .param { color: #f9e2af; }
+
+        .folder-tree { background: rgba(15, 14, 23, 0.9); border: 1px solid var(--glass-border); border-radius: var(--border-radius-sm); padding: 1.5rem; margin: 1.5rem 0; font-family: var(--font-mono); font-size: 0.85rem; }
+        .folder-tree .folder { color: #89b4fa; }
+        .folder-tree .file { color: var(--text-secondary); }
+
+        .contribution-list { display: grid; gap: 1rem; }
+        .contribution-item { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: var(--border-radius-sm); padding: 1.25rem; }
+        .contribution-item h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .contribution-item p { color: var(--text-secondary); font-size: 0.95rem; margin: 0; }
+        .contribution-item .difficulty { display: inline-block; background: rgba(127, 90, 240, 0.15); color: var(--accent-primary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SS</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">Skills</a>
+                <a href="../#quick-start">Quick Start</a>
+                <a href="../#papers">Papers</a>
+                <a href="../#resources">Tools</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        More <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="learn.html">Learn</a>
+                        <a href="about.html" class="nav-highlight">About</a>
+                        <a href="creator.html" class="nav-highlight">Creator</a>
+                        <a href="builder.html" class="nav-highlight">Builder</a>
+                    </div>
+                </div>
+                <a href="submit.html" class="nav-cta">Submit</a>
+                <a href="{{ site.baseurl }}/zh/pages/builder.html" class="nav-lang">中文</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="builder-page">
+        <div class="container">
+            <header class="builder-header">
+                <div class="hero-badge">🔧 Developer Documentation</div>
+                <h1>Build <span class="gradient-text">AI4SS</span></h1>
+                <p>Technical documentation for contributors, developers, and anyone who wants to extend or improve the AI4SS platform.</p>
+            </header>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">🎯</span>
+                    <h4>Jekyll</h4>
+                    <span>Static Site Generator</span>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">📝</span>
+                    <h4>Markdown</h4>
+                    <span>Content Format</span>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">💻</span>
+                    <h4>GitHub Pages</h4>
+                    <span>Hosting Platform</span>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🎨</span>
+                    <h4>Custom CSS</h4>
+                    <span>Dark Glassmorphism</span>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>📁 Project Structure</h2>
+                <p>AI4SS is organized as a Jekyll static site with collections for different content types:</p>
+                <div class="folder-tree">
+<span class="folder">Skills4SocialScience/</span>
+├── <span class="folder">_skills/</span>          # AI Skills collection
+│   └── <span class="file">skill-name/SKILL.md</span>
+├── <span class="folder">_papers/</span>          # Academic papers collection
+│   └── <span class="file">category/paper.md</span>
+├── <span class="folder">_resources/</span>       # Tools and resources collection
+│   └── <span class="file">category/resource.md</span>
+├── <span class="folder">_data/</span>            # Taxonomy and configuration
+│   └── <span class="file">taxonomy.yml</span>
+├── <span class="folder">_layouts/</span>         # HTML templates
+├── <span class="folder">assets/</span>            # CSS, JS, images
+│   ├── <span class="folder">css/</span>
+│   └── <span class="folder">js/</span>
+└── <span class="folder">pages/</span>            # Additional pages
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>🛠️ Adding a New Skill</h2>
+                <p>Skills are organized as markdown files in the <code>_skills/</code> directory, grouped by research workflow stage.</p>
+                <div class="code-block">
+<code><span class="comment"># Example frontmatter for a skill</span>
+---
+layout: skill
+name: Literature Review Agent
+description: Systematic literature search and synthesis workflow
+workflow_stage: literature
+category: literature
+tags: [Literature Review, Systematic Review, Evidence Synthesis]
+icon: 📚
+compatibility: [Claude, Cursor, Codex]
+permalink: /skills/literature-review-agent/
+---
+
+<span class="comment"># Skill instructions go here...</span>
+<span class="comment"># Write clear, executable steps for the AI agent</span></code>
+                </div>
+                <p>Place the file in the appropriate subdirectory under <code>_skills/</code>:</p>
+                <ul>
+                    <li><code>literature/</code> - Literature review skills</li>
+                    <li><code>design/</code> - Research design skills</li>
+                    <li><code>collection/</code> - Data collection skills</li>
+                    <li><code>analysis/</code> - Data analysis skills</li>
+                    <li><code>writing/</code> - Writing and publishing skills</li>
+                    <li><code>presentation/</code> - Presentation skills</li>
+                </ul>
+            </div>
+
+            <div class="section-block">
+                <h2>📄 Adding a New Paper</h2>
+                <p>Papers are added to the <code>_papers/</code> directory with category-based organization:</p>
+                <div class="code-block">
+<code>---
+layout: paper
+title: "Paper Title Here"
+description: Brief description of the paper and its relevance
+authors: ["Author One", "Author Two"]
+year: 2024
+journal: "Journal Name"
+category: methods
+link: https://doi.org/10.xxxx/xxxx
+---</code>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>🔗 Adding a New Resource</h2>
+                <p>Resources include GitHub repositories, datasets, platforms, and tools:</p>
+                <div class="code-block">
+<code>---
+layout: resource
+title: Tool Name
+description: Description of what the tool does
+type: Repository
+url: https://github.com/user/repo
+stars: 1000
+category: research-tool
+last_updated: 2024-01-15
+---</code>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>🤝 Contribution Opportunities</h2>
+                <div class="contribution-list">
+                    <div class="contribution-item">
+                        <h4>Content Curation <span class="difficulty">Beginner</span></h4>
+                        <p>Add new skills, papers, or tools from your research area</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>Taxonomy Improvements <span class="difficulty">Intermediate</span></h4>
+                        <p>Help improve categorization and add new workflow stages</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>Documentation <span class="difficulty">Beginner</span></h4>
+                        <p>Improve guides, tutorials, and help documentation</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>UI/UX Improvements <span class="difficulty">Intermediate</span></h4>
+                        <p>Enhance design, animations, and user experience</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>Automation Scripts <span class="difficulty">Advanced</span></h4>
+                        <p>Build tools for automatic content collection and updates</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>i18n Translations <span class="difficulty">Beginner</span></h4>
+                        <p>Help translate content to more languages</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>🚀 Local Development</h2>
+                <p>Set up your local development environment:</p>
+                <div class="code-block">
+<code><span class="comment"># Clone the repository</span>
+git clone https://github.com/mamingsuper/Skills4SocialScience.git
+cd Skills4SocialScience
+
+<span class="comment"># Install Ruby and Bundler (if not already installed)</span>
+gem install bundler
+
+<span class="comment"># Install dependencies</span>
+bundle install
+
+<span class="comment"># Start the local server</span>
+bundle exec jekyll serve
+
+<span class="comment"># Visit http://localhost:4000</span></code>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h2 style="margin-bottom: 1rem; color: var(--text-primary);">Ready to Build?</h2>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience" class="btn btn-primary">Fork on GitHub</a>
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience/issues" class="btn btn-secondary">View Issues</a>
+                    <a href="creator.html" class="btn btn-secondary">Become a Creator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p><strong>AI4SS</strong> • Built with open source, for open science</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>

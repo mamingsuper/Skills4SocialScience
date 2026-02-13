@@ -1,0 +1,158 @@
+name: Multi-Channel Search
+
+on:
+  schedule:
+    # Run twice weekly on Monday and Thursday at 3:30 AM UTC
+    - cron: "30 3 * * 1,4"
+  workflow_dispatch:
+    inputs:
+      query:
+        description: "Search query"
+        required: false
+      discipline:
+        description: "Academic discipline"
+        required: false
+      workflow-stage:
+        description: "Research workflow stage"
+        required: false
+      max-results:
+        description: "Maximum results"
+        type: number
+        default: 20
+      dry-run:
+        description: "Dry run mode"
+        type: boolean
+        default: false
+
+concurrency:
+  group: multi-channel-search
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  search:
+    name: Multi-channel Search
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # No external dependencies needed - uses stdlib only
+
+      - name: Run multi-channel search
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Manual trigger with custom parameters
+            ARGS="--query '${{ inputs.query }}' --discipline '${{ inputs.discipline }}' --workflow-stage '${{ inputs.workflow-stage }}' --max-results ${{ inputs.max-results }}"
+            if [ "${{ inputs.dry-run }}" = "true" ]; then
+              ARGS="$ARGS --dry-run"
+            fi
+          else
+            # Scheduled run - search by discipline and workflow stages
+            ARGS="--query 'AI social science research' --max-results 30"
+          fi
+
+          echo "Running search with: $ARGS"
+          python scripts/search_orchestrator.py $ARGS --repo-root .
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected."
+          fi
+        shell: bash
+
+      - name: Commit and push
+        if: steps.check-changes.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Add new files
+          git add _papers/*.md _resources/*.md || true
+
+          # Create commit
+          git commit -m "chore: multi-channel search results
+
+          - Auto-collected new papers and resources from:
+            - Semantic Scholar
+            - arXiv
+            - GitHub
+
+          Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>"
+
+          # Push
+          git push origin HEAD:main
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Multi-Channel Search Summary 📊" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status**: ${{ steps.check-changes.outputs.changed == 'true' && 'New resources found' || 'No new resources' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+
+  check-github-metrics:
+    name: Refresh GitHub Metrics
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: search
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh existing GitHub repository metrics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/auto_collect_github_resources.py \
+            --repo-root . \
+            --lookback-days 3650 \
+            --pages-per-query 1 \
+            --max-new 0
+
+      - name: Commit metrics updates
+        run: |
+          if git diff --quiet; then
+            echo "No metric changes."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add _resources/*.md || true
+            git commit -m "chore: refresh GitHub metrics
+            Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>" || true
+            git push origin HEAD:main || true
+          fi

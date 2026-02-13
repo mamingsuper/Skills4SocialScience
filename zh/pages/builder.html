@@ -1,0 +1,279 @@
+---
+layout: null
+title: 建设者 | AI4SS
+description: 构建和扩展 AI4SS 平台 - 贡献者和开发者技术文档
+lang: zh-CN
+permalink: /zh/pages/builder.html
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% seo %}
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/pages/builder.html">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/pages/builder.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+
+    <style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+        .builder-page { padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl); }
+        .builder-header { text-align: center; margin-bottom: 4rem; }
+        .builder-header h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading); }
+        .builder-header p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 3rem auto; }
+        .tech-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 1.5rem; text-align: center; transition: all var(--transition-base); }
+        .tech-card:hover { border-color: rgba(127, 90, 240, 0.3); transform: translateY(-3px); }
+        .tech-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+        .tech-card h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .tech-card span { color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono); }
+
+        .section-block { max-width: 900px; margin: 0 auto 3rem; }
+        .section-block h2 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
+        .section-block p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+        .section-block ul { list-style: none; padding: 0; }
+        .section-block li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--text-secondary); }
+        .section-block li::before { content: '•'; position: absolute; left: 0; color: var(--accent-primary); font-weight: bold; }
+
+        .code-block { background: rgba(15, 14, 23, 0.9); border: 1px solid var(--glass-border); border-radius: var(--border-radius-sm); padding: 1.5rem; overflow-x: auto; margin: 1.5rem 0; }
+        .code-block code { color: #cdd6f4; font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; }
+        .comment { color: var(--text-muted); }
+        .keyword { color: #cba6f7; }
+        .string { color: #a6e3a1; }
+        .param { color: #f9e2af; }
+
+        .folder-tree { background: rgba(15, 14, 23, 0.9); border: 1px solid var(--glass-border); border-radius: var(--border-radius-sm); padding: 1.5rem; margin: 1.5rem 0; font-family: var(--font-mono); font-size: 0.85rem; }
+        .folder-tree .folder { color: #89b4fa; }
+        .folder-tree .file { color: var(--text-secondary); }
+
+        .contribution-list { display: grid; gap: 1rem; }
+        .contribution-item { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: var(--border-radius-sm); padding: 1.25rem; }
+        .contribution-item h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+        .contribution-item p { color: var(--text-secondary); font-size: 0.95rem; margin: 0; }
+        .contribution-item .difficulty { display: inline-block; background: rgba(127, 90, 240, 0.15); color: var(--accent-primary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SS</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">技能</a>
+                <a href="../#quick-start">快速开始</a>
+                <a href="../#papers">论文</a>
+                <a href="../#resources">工具</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        更多 <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="learn.html">学习</a>
+                        <a href="about.html" class="nav-highlight">关于</a>
+                        <a href="creator.html" class="nav-highlight">创作者</a>
+                        <a href="builder.html" class="nav-highlight">建设者</a>
+                    </div>
+                </div>
+                <a href="submit.html" class="nav-cta">提交</a>
+                <a href="{{ site.baseurl }}/pages/builder.html" class="nav-lang">English</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="builder-page">
+        <div class="container">
+            <header class="builder-header">
+                <div class="hero-badge">🔧 开发者文档</div>
+                <h1>构建 <span class="gradient-text">AI4SS</span></h1>
+                <p>贡献者、开发者的技术文档，以及任何想要扩展或改进 AI4SS 平台的人。</p>
+            </header>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">🎯</span>
+                    <h4>Jekyll</h4>
+                    <span>静态网站生成器</span>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">📝</span>
+                    <h4>Markdown</h4>
+                    <span>内容格式</span>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">💻</span>
+                    <h4>GitHub Pages</h4>
+                    <span>托管平台</span>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🎨</span>
+                    <h4>自定义 CSS</h4>
+                    <span>深色玻璃态设计</span>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>📁 项目结构</h2>
+                <p>AI4SS 组织为 Jekyll 静态网站，包含不同内容类型的集合：</p>
+                <div class="folder-tree">
+<span class="folder">Skills4SocialScience/</span>
+├── <span class="folder">_skills/</span>          # AI 技能集合
+│   └── <span class="file">skill-name/SKILL.md</span>
+├── <span class="folder">_papers/</span>          # 学术论文集合
+│   └── <span class="file">category/paper.md</span>
+├── <span class="folder">_resources/</span>       # 工具和资源集合
+│   └── <span class="file">category/resource.md</span>
+├── <span class="folder">_data/</span>            # 分类和配置
+│   └── <span class="file">taxonomy.yml</span>
+├── <span class="folder">_layouts/</span>         # HTML 模板
+├── <span class="folder">assets/</span>            # CSS、JS、图片
+│   ├── <span class="folder">css/</span>
+│   └── <span class="folder">js/</span>
+└── <span class="folder">pages/</span>            # 额外页面
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>🛠️ 添加新技能</h2>
+                <p>技能以 markdown 文件形式组织在 <code>_skills/</code> 目录中，按研究工作流阶段分组：</p>
+                <div class="code-block">
+<code><span class="comment"># 技能示例 frontmatter</span>
+---
+layout: skill
+name: 文献综述智能体
+description: 系统性文献检索与综合工作流
+workflow_stage: literature
+category: literature
+tags: [文献综述, 系统性综述, 证据综合]
+icon: 📚
+compatibility: [Claude, Cursor, Codex]
+permalink: /skills/literature-review-agent/
+---
+
+<span class="comment"># 技能说明写在这里...</span>
+<span class="comment"># 为 AI 智能体编写清晰、可执行的步骤</span></code>
+                </div>
+                <p>将文件放置在 <code>_skills/</code> 下对应的子目录中：</p>
+                <ul>
+                    <li><code>literature/</code> - 文献综述技能</li>
+                    <li><code>design/</code> - 研究设计技能</li>
+                    <li><code>collection/</code> - 数据收集技能</li>
+                    <li><code>analysis/</code> - 数据分析技能</li>
+                    <li><code>writing/</code> - 写作和发表技能</li>
+                    <li><code>presentation/</code> - 演示技能</li>
+                </ul>
+            </div>
+
+            <div class="section-block">
+                <h2>📄 添加新论文</h2>
+                <p>论文添加到 <code>_papers/</code> 目录中，按类别组织：</p>
+                <div class="code-block">
+<code>---
+layout: paper
+title: "论文标题"
+description: 简要描述论文内容及其相关性
+authors: ["作者一", "作者二"]
+year: 2024
+journal: "期刊名称"
+category: methods
+link: https://doi.org/10.xxxx/xxxx
+---</code>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>🔗 添加新资源</h2>
+                <p>资源包括 GitHub 仓库、数据集、平台和工具：</p>
+                <div class="code-block">
+<code>---
+layout: resource
+title: 工具名称
+description: 工具功能描述
+type: Repository
+url: https://github.com/user/repo
+stars: 1000
+category: research-tool
+last_updated: 2024-01-15
+---</code>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>🤝 贡献机会</h2>
+                <div class="contribution-list">
+                    <div class="contribution-item">
+                        <h4>内容策划 <span class="difficulty">初级</span></h4>
+                        <p>添加你研究领域的新技能、论文或工具</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>分类优化 <span class="difficulty">中级</span></h4>
+                        <p>帮助改进分类并添加新的工作流阶段</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>文档编写 <span class="difficulty">初级</span></h4>
+                        <p>改进指南、教程和帮助文档</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>UI/UX 改进 <span class="difficulty">中级</span></h4>
+                        <p>增强设计、动画和用户体验</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>自动化脚本 <span class="difficulty">高级</span></h4>
+                        <p>构建自动内容收集和更新的工具</p>
+                    </div>
+                    <div class="contribution-item">
+                        <h4>i18n 翻译 <span class="difficulty">初级</span></h4>
+                        <p>帮助将内容翻译成更多语言</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>🚀 本地开发</h2>
+                <p>设置本地开发环境：</p>
+                <div class="code-block">
+<code><span class="comment"># 克隆仓库</span>
+git clone https://github.com/mamingsuper/Skills4SocialScience.git
+cd Skills4SocialScience
+
+<span class="comment"># 安装 Ruby 和 Bundler（如果尚未安装）</span>
+gem install bundler
+
+<span class="comment"># 安装依赖</span>
+bundle install
+
+<span class="comment"># 启动本地服务器</span>
+bundle exec jekyll serve
+
+<span class="comment"># 访问 http://localhost:4000</span></code>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h2 style="margin-bottom: 1rem; color: var(--text-primary);">准备开始构建？</h2>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience" class="btn btn-primary">Fork 到 GitHub</a>
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience/issues" class="btn btn-secondary">查看 Issue</a>
+                    <a href="creator.html" class="btn btn-secondary">成为创作者</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p><strong>AI4SS</strong> • 用开源构建，为开放科学</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>

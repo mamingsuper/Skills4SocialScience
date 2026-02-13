@@ -1,6 +1,6 @@
 /**
  * AI4SS - Main JavaScript
- * Features: Filter tabs, scroll-reveal, counter animation, active nav, particles
+ * Features: Multi-dimensional filters, scroll-reveal, counter animation, active nav, particles
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimation();
     initActiveNav();
     initMobileNav();
+    initDropdownNav();
     initParticles();
+    initStaggerAnimation();
 });
 
 /**
- * Generic filter tabs for collection grids.
+ * Enhanced multi-dimensional filter system with faceted search support.
  */
 function initFilterGroups() {
     const filterGroups = document.querySelectorAll('[data-filter-group]');
@@ -42,14 +44,48 @@ function initFilterGroups() {
 
                     if (shouldShow) {
                         card.style.display = 'block';
-                        card.style.animation = 'fadeInUp 0.4s ease forwards';
+                        card.classList.remove('hidden');
+                        card.classList.add('revealing');
+                        setTimeout(() => {
+                            card.classList.remove('revealing');
+                            card.classList.add('revealed');
+                        }, 50);
                     } else {
-                        card.style.display = 'none';
+                        card.classList.add('hidden');
+                        card.classList.remove('revealed');
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 200);
                     }
                 });
             });
         });
     });
+}
+
+/**
+ * Stagger animation for cards when filters change
+ */
+function initStaggerAnimation() {
+    const styles = document.createElement('style');
+    styles.textContent = `
+        .hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+        .revealing {
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    `;
+    document.head.appendChild(styles);
 }
 
 /**
@@ -198,6 +234,46 @@ function initMobileNav() {
             links.classList.remove('open');
             toggle.classList.remove('active');
         });
+    });
+}
+
+/**
+ * Dropdown navigation
+ */
+function initDropdownNav() {
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    if (!dropdowns.length) return;
+
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+
+        // Desktop: hover
+        dropdown.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 768) {
+                dropdown.classList.add('open');
+            }
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            dropdown.classList.remove('open');
+        });
+
+        // Mobile: click
+        if (toggle) {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (window.innerWidth <= 768) {
+                    dropdown.classList.toggle('open');
+                }
+            });
+        }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            dropdowns.forEach(d => d.classList.remove('open'));
+        }
     });
 }
 

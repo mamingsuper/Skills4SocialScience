@@ -1,0 +1,177 @@
+---
+layout: null
+title: 关于 | AI4SS
+description: 关于 AI4SS - 面向社会科学研究的 AI 平台和社区
+lang: zh-CN
+permalink: /zh/pages/about.html
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% seo %}
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/pages/about.html">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/pages/about.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+
+    <style>
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
+        .about-page { padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl); }
+        .about-header { text-align: center; margin-bottom: 4rem; }
+        .about-header h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading); }
+        .about-header p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto 4rem; }
+        .about-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius-lg); padding: 2rem; transition: all var(--transition-base); }
+        .about-card:hover { transform: translateY(-4px); border-color: rgba(127, 90, 240, 0.3); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        .about-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
+        .about-card p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
+        .about-card ul { list-style: none; padding: 0; }
+        .about-card li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--text-secondary); }
+        .about-card li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-secondary); font-weight: bold; }
+
+        .mission-section { max-width: 900px; margin: 0 auto 4rem; text-align: center; }
+        .mission-section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary); }
+        .mission-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; }
+
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto 4rem; text-align: center; }
+        .stat-item h3 { font-size: 3rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-item p { color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin-top: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">AI4SS</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">技能</a>
+                <a href="../#quick-start">快速开始</a>
+                <a href="../#papers">论文</a>
+                <a href="../#resources">工具</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">
+                        更多 <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                        <a href="learn.html">学习</a>
+                        <a href="about.html" class="nav-highlight">关于</a>
+                        <a href="creator.html" class="nav-highlight">创作者</a>
+                        <a href="builder.html" class="nav-highlight">建设者</a>
+                    </div>
+                </div>
+                <a href="submit.html" class="nav-cta">提交</a>
+                <a href="{{ site.baseurl }}/pages/about.html" class="nav-lang">English</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="about-page">
+        <div class="container">
+            <header class="about-header">
+                <div class="hero-badge">📚 关于项目</div>
+                <h1>让 <span class="gradient-text">AI 研究工具</span> 民主化</h1>
+                <p>AI4SS 是一个开源倡议，旨在让全球社会科学研究者能够方便地使用实用的、可复现的 AI 工具。</p>
+            </header>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <h3>{{ site.skills | size }}+</h3>
+                    <p>AI 技能</p>
+                </div>
+                <div class="stat-item">
+                    <h3>{{ site.papers | size }}+</h3>
+                    <p>精选论文</p>
+                </div>
+                <div class="stat-item">
+                    <h3>{{ site.resources | size }}+</h3>
+                    <p>工具资源</p>
+                </div>
+                <div class="stat-item">
+                    <h3>开源</h3>
+                    <p>社区共建</p>
+                </div>
+            </div>
+
+            <section class="mission-section">
+                <h2>我们的使命</h2>
+                <p>
+                    AI 正在推动社会科学研究的转型，但许多研究者缺乏实用的、可复现的工作流支持。AI4SS 通过筛选并组织可执行的 AI 技能、学术证据和研究工具——全部按照实际研究工作流阶段分类——来弥补这一差距。
+                </p>
+            </section>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>🎯 我们做什么</h3>
+                    <p>我们专门为社会科学研究工作流策划和组织 AI 资源：</p>
+                    <ul>
+                        <li><strong>技能：</strong> AI 智能体可执行的提示词模板</li>
+                        <li><strong>论文：</strong> AI 赋能研究的证据基础</li>
+                        <li><strong>工具：</strong> 平台、数据集和工作流资产</li>
+                        <li><strong>指南：</strong> 教程和最佳实践</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h3>🌍 服务对象</h3>
+                    <p>本平台面向全球社会科学研究社区：</p>
+                    <ul>
+                        <li><strong>研究生：</strong> 学习高效的研究方法</li>
+                        <li><strong>教师：</strong> 扩大研究和教学能力</li>
+                        <li><strong>产业研究者：</strong> 大规模应用社会科学方法</li>
+                        <li><strong>开放科学倡导者：</strong> 构建可复现的工作流</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h3>🔓 我们的原则</h3>
+                    <p>我们致力于开放和可及的研究基础设施：</p>
+                    <ul>
+                        <li><strong>开源：</strong> 全部内容采用 MIT 许可</li>
+                        <li><strong>社区驱动：</strong> 欢迎贡献</li>
+                        <li><strong>方法可靠：</strong> 基于证据的筛选标准</li>
+                        <li><strong>可及性强：</strong> 对所有研究者免费开放</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h3>🤝 如何参与</h3>
+                    <p>加入我们的社区，为社会科学 AI 工具建设出力：</p>
+                    <ul>
+                        <li>通过表单提交新的技能或资源</li>
+                        <li>报告问题或提出改进建议</li>
+                        <li>与同事分享本项目</li>
+                        <li>直接在 GitHub 上贡献代码</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h2 style="margin-bottom: 1rem; color: var(--text-primary);">加入我们</h2>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="submit.html" class="btn btn-primary">提交资源</a>
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience" class="btn btn-secondary">查看 GitHub</a>
+                    <a href="creator.html" class="btn btn-secondary">成为创作者</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="text-align:center">
+                <p><strong>AI4SS</strong> • 社会科学研究社区共建</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>
