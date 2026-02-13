@@ -98,18 +98,18 @@
     --border-strong: rgba(255, 255, 255, 0.12);
     --border-accent: rgba(99, 102, 241, 0.3);
 
-    /* ===== Glass Effect ===== */
-    --glass-bg: rgba(15, 23, 42, 0.65);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-blur: blur(20px);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    --glass-hover: rgba(255, 255, 255, 0.12);
+    /* ===== Glass Effect (Minimalist) ===== */
+    --glass-bg: rgba(15, 23, 42, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --glass-blur: blur(12px);
+    --glass-shadow: none;
+    --glass-hover: rgba(255, 255, 255, 0.08);
 
-    /* ===== Shadows ===== */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    /* ===== Shadows (Subtle) ===== */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
 
     /* ===== Border Radius ===== */
     --border-radius: 16px;
@@ -157,7 +157,7 @@
     --tracking-normal: 0;
     --tracking-wide: 0.025em;
 
-    /* ===== Spacing ===== */
+    /* ===== Spacing (Expansive) ===== */
     --space-0: 0;
     --space-px: 1px;
     --space-1: 0.25rem;
@@ -172,6 +172,19 @@
     --space-16: 4rem;
     --space-20: 5rem;
     --space-24: 6rem;
+
+    /* Semantic Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+    /* increased from 1.125rem */
+    --space-xl: 3rem;
+    /* increased from 1.25rem */
+    --space-2xl: 4.5rem;
+    /* increased from 1.5rem */
+    --space-3xl: 8rem;
+    /* increased from 3rem */
 
     /* ===== Transitions ===== */
     --duration-instant: 50ms;
@@ -209,10 +222,11 @@ body {
     background: var(--bg-gradient);
     background-attachment: fixed;
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.8;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    letter-spacing: 0.01em;
 }
 
 a {
@@ -304,7 +318,7 @@ a:hover {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
@@ -506,7 +520,7 @@ a:hover {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: var(--space-3xl);
-    padding: calc(80px + var(--space-3xl)) var(--space-lg) var(--space-3xl);
+    padding: calc(100px + var(--space-3xl)) var(--space-lg) var(--space-3xl);
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
@@ -604,16 +618,12 @@ a:hover {
     font-size: var(--text-base);
     position: relative;
     overflow: hidden;
+    letter-spacing: 0.02em;
 }
 
 /* Ripple effect on button */
 .btn::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity var(--transition-fast);
+    display: none;
 }
 
 .btn:active::after {
@@ -651,10 +661,10 @@ a:hover {
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--glass-border);
     color: var(--text-primary);
     backdrop-filter: blur(4px);
+    background: transparent;
 }
 
 .btn-secondary:hover {
@@ -830,21 +840,24 @@ a:hover {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-xl);
 }
 
 .skill-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     transition: all var(--transition-base);
-    box-shadow: var(--glass-shadow);
+    box-shadow: none;
     position: relative;
     overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Gradient glow border on hover */
@@ -860,7 +873,9 @@ a:hover {
     mask-composite: exclude;
     border-radius: inherit;
     opacity: 0;
+    opacity: 0;
     transition: opacity var(--transition-base);
+    pointer-events: none;
 }
 
 /* Subtle shine effect */
@@ -881,12 +896,10 @@ a:hover {
 }
 
 .skill-card:hover {
-    transform: translateY(-6px) scale(1.02);
+    transform: translateY(-6px) scale(1.01);
     border-color: transparent;
-    box-shadow:
-        var(--shadow-xl),
-        0 0 40px rgba(99, 102, 241, 0.12),
-        0 0 80px rgba(99, 102, 241, 0.04);
+    box-shadow: var(--shadow-xl);
+    z-index: 10;
 }
 
 .skill-card:hover::before {
@@ -971,7 +984,7 @@ a:hover {
 }
 
 .skill-footer {
-    margin-top: var(--space-md);
+    margin-top: auto;
     padding-top: var(--space-md);
     border-top: 1px solid var(--glass-border);
     display: flex;
@@ -1388,6 +1401,7 @@ a:hover {
     .btn {
         width: 100%;
         justify-content: center;
+        margin-bottom: var(--space-sm);
     }
 
     .filter-tabs {
