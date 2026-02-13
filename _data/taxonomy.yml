@@ -1,4 +1,7 @@
 skill_stages:
+  - key: one-stop
+    en: One-Stop Solution
+    zh: 一站式方案
   - key: literature
     en: Literature Review
     zh: 文献综述
@@ -54,3 +57,6 @@ resource_categories:
   - key: community
     en: Community Resource
     zh: 社区资源
+  - key: integration
+    en: Integration Tool
+    zh: 集成工具

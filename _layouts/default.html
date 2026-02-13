@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% seo %}
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
-    <style>
-        .detail-page { padding: 120px 0 60px; }
-        .detail-header { margin-bottom: 3rem; }
-        .detail-title { font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem; }
-        .detail-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
-        .meta-tag { background: rgba(255,255,255,0.5); padding: 0.25rem 0.75rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.9rem; }
-        .detail-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
-        .nav-lang { border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); padding: 0.3rem 0.7rem; }
-        .skill-source-block { margin-top: 1rem; background: #1e1e2e; color: #cdd6f4; border-radius: 8px; padding: 1rem; overflow-x: auto; }
-        .hint { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; }
-
-        .detail-content { background: rgba(255,255,255,0.6); padding: 2rem; border-radius: var(--border-radius); border: 1px solid var(--border-color); line-height: 1.8; }
-        .detail-content h2 { margin-top: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
-        .detail-content code { background: rgba(0,0,0,0.05); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: var(--font-mono); }
-        .detail-content pre { background: #1e1e2e; color: #fff; padding: 1rem; border-radius: 8px; overflow-x: auto; }
-        .detail-content pre code { background: none; color: inherit; padding: 0; }
-    </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 </head>
+
 <body>
     <nav class="nav">
         <div class="nav-container">
@@ -33,13 +27,17 @@
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SS</span>
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
                 {% if page.url contains '/zh/' %}
                 <a href="{{ site.baseurl }}/zh/#skills">技能</a>
                 <a href="{{ site.baseurl }}/zh/#quick-start">快速开始</a>
                 <a href="{{ site.baseurl }}/zh/#papers">论文</a>
                 <a href="{{ site.baseurl }}/zh/#resources">资源</a>
-                <a href="{{ site.baseurl }}/zh/#author">作者</a>
                 <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-cta">提交</a>
                 <a href="{{ site.baseurl }}/" class="nav-lang">English</a>
                 {% else %}
@@ -47,7 +45,7 @@
                 <a href="{{ site.baseurl }}/#quick-start">Quick Start</a>
                 <a href="{{ site.baseurl }}/#papers">Papers</a>
                 <a href="{{ site.baseurl }}/#resources">Resources</a>
-                <a href="{{ site.baseurl }}/#author">Author</a>
+                <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
                 <a href="{{ site.baseurl }}/zh/" class="nav-lang">中文</a>
                 {% endif %}
@@ -55,8 +53,8 @@
         </div>
     </nav>
 
-    <main class="detail-page">
-        <div class="container">
+    <main>
+        <div class="detail-header">
             {{ content }}
         </div>
     </main>
@@ -64,9 +62,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content" style="text-align:center">
-                <p>AI4SS • Open Source</p>
+                <p><strong>AI4SS</strong> • Open Source for Social Science</p>
             </div>
         </div>
     </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 </body>
+
 </html>

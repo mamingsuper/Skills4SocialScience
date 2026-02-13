@@ -17,7 +17,7 @@ permalink: /
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
@@ -33,12 +33,16 @@ permalink: /
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SS</span>
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
                 <a href="#skills">Skills</a>
                 <a href="#quick-start">Quick Start</a>
                 <a href="#papers">Papers</a>
                 <a href="#resources">Tools</a>
-                <a href="#author">Author</a>
                 <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
                 <a href="{{ site.baseurl }}/zh/" class="nav-lang">中文</a>
@@ -48,6 +52,7 @@ permalink: /
 
     <!-- Hero Section -->
     <header class="hero">
+        <canvas id="particle-canvas"></canvas>
         <div class="hero-content">
             <div class="hero-badge">🚀 Open Source • For Social Science Scholars</div>
             <h1 class="hero-title">
@@ -61,19 +66,18 @@ permalink: /
                 <a href="#skills" class="btn btn-primary">Browse Skills</a>
                 <a href="#quick-start" class="btn btn-secondary">Quick Start</a>
                 <a href="{{ site.baseurl }}/pages/learn.html" class="btn btn-secondary">Start Learning</a>
-                <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary">Submit</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-value">{{ site.skills | size }}</span>
+                    <span class="stat-value" data-count="{{ site.skills | size }}">0</span>
                     <span class="stat-label">AI Skills</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-value">{{ site.papers | size }}</span>
+                    <span class="stat-value" data-count="{{ site.papers | size }}">0</span>
                     <span class="stat-label">Papers</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-value">{{ site.resources | size }}</span>
+                    <span class="stat-value" data-count="{{ site.resources | size }}">0</span>
                     <span class="stat-label">Tools</span>
                 </div>
             </div>
@@ -86,65 +90,28 @@ permalink: /
                     <span class="code-dot green"></span>
                     <span class="code-title">terminal</span>
                 </div>
-                <pre class="code-content"><code><span style="color:#a78bfa">$</span> claude
+                <pre class="code-content"><code><span style="color:#7f5af0">$</span> claude
 
-<span style="color:#6b7280"># Finding relevant literature...</span>
+<span style="color:#72748d"># Finding relevant literature...</span>
 
-<span style="color:#a78bfa">></span> <span style="color:#fcd34d">/literature-review</span> Find seminal papers
+<span style="color:#7f5af0">></span> <span style="color:#fcd34d">/literature-review</span> Find seminal papers
   on AI in Sociology from 2023-2025
 
-<span style="color:#34d399">✓ Found 15 papers from public sources
+<span style="color:#2cb67d">✓ Found 15 papers from public sources
 ✓ Generating summary matrix...
 ✓ Exporting to Zotero...</span></code></pre>
             </div>
         </div>
     </header>
 
-    <!-- Taxonomy Section -->
-    <section class="section taxonomy-section">
-        <div class="container">
-            <h2 class="section-title">Collections Architecture 🧭</h2>
-            <p class="section-description">A clean structure for AI + social science knowledge management.</p>
-            <div class="taxonomy-grid">
-                <article class="taxonomy-card">
-                    <h3>Skills</h3>
-                    <p>Executable methods arranged by research workflow stage.</p>
-                    <div class="skill-tags">
-                        {% for stage in site.data.taxonomy.skill_stages %}
-                        <span class="tag">{{ stage.en }}</span>
-                        {% endfor %}
-                    </div>
-                </article>
-                <article class="taxonomy-card">
-                    <h3>Papers</h3>
-                    <p>Methods, applications, ethics, and review papers for evidence-based decisions.</p>
-                    <div class="skill-tags">
-                        {% for category in site.data.taxonomy.paper_categories %}
-                        <span class="tag">{{ category.en }}</span>
-                        {% endfor %}
-                    </div>
-                </article>
-                <article class="taxonomy-card">
-                    <h3>Tools & Resources</h3>
-                    <p>Research platforms, datasets, and workflow assets with direct links.</p>
-                    <div class="skill-tags">
-                        {% for category in site.data.taxonomy.resource_categories %}
-                        <span class="tag">{{ category.en }}</span>
-                        {% endfor %}
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
     <!-- Quick Start -->
     <section id="quick-start" class="quickstart-section section">
         <div class="container">
-            <h2 class="section-title">Quick Start ⚡</h2>
-            <p class="section-description">Get up and running in under 2 minutes</p>
+            <h2 class="section-title reveal">Quick Start ⚡</h2>
+            <p class="section-description reveal">Get up and running in under 2 minutes</p>
 
             <div class="steps">
-                <div class="step">
+                <div class="step reveal">
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Install Your AI Tool</h3>
@@ -166,7 +133,7 @@ permalink: /
                     </div>
                 </div>
 
-                <div class="step">
+                <div class="step reveal">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Download and Copy a Skill</h3>
@@ -180,7 +147,7 @@ mkdir -p ~/.claude/skills/claude-writer
                     </div>
                 </div>
 
-                <div class="step">
+                <div class="step reveal">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Use the Skill</h3>
@@ -197,10 +164,10 @@ mkdir -p ~/.claude/skills/claude-writer
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">AI Skills 🛠️</h2>
-            <p class="section-description">Task instructions you can execute directly in agents</p>
+            <h2 class="section-title reveal">AI Skills 🛠️</h2>
+            <p class="section-description reveal">Task instructions you can execute directly in agents</p>
 
-            <div class="filter-tabs" data-filter-group data-target="#skills-grid .skill-card" data-attribute="category">
+            <div class="filter-tabs reveal" data-filter-group data-target="#skills-grid .skill-card" data-attribute="category">
                 <button class="filter-tab active" data-filter="all">All</button>
                 {% for stage in site.data.taxonomy.skill_stages %}
                 <button class="filter-tab" data-filter="{{ stage.key }}">{{ stage.en }}</button>
@@ -209,7 +176,7 @@ mkdir -p ~/.claude/skills/claude-writer
 
             <div id="skills-grid" class="skills-grid">
                 {% for item in site.skills %}
-                <article class="skill-card" data-category="{{ item.category | default: item.workflow_stage | slugify }}">
+                <article class="skill-card reveal" data-category="{{ item.category | default: item.workflow_stage | slugify }}">
                     <span class="skill-icon">{{ item.icon | default: "⚡" }}</span>
                     <h3 class="skill-title">{{ item.name }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
@@ -231,10 +198,10 @@ mkdir -p ~/.claude/skills/claude-writer
     <!-- Papers Section -->
     <section id="papers" class="section">
         <div class="container">
-            <h2 class="section-title">Papers 📄</h2>
-            <p class="section-description">Evidence base for AI-enabled social science</p>
+            <h2 class="section-title reveal">Papers 📄</h2>
+            <p class="section-description reveal">Evidence base for AI-enabled social science</p>
 
-            <div class="filter-tabs" data-filter-group data-target="#papers-grid .paper-card" data-attribute="category">
+            <div class="filter-tabs reveal" data-filter-group data-target="#papers-grid .paper-card" data-attribute="category">
                 <button class="filter-tab active" data-filter="all">All</button>
                 {% for category in site.data.taxonomy.paper_categories %}
                 <button class="filter-tab" data-filter="{{ category.key }}">{{ category.en }}</button>
@@ -245,16 +212,19 @@ mkdir -p ~/.claude/skills/claude-writer
                 {% assign sorted_papers = site.papers | sort: "year" | reverse %}
                 {% for item in sorted_papers %}
                 {% assign category_meta = site.data.taxonomy.paper_categories | where: "key", item.category | first %}
-                <article class="skill-card paper-card" data-category="{{ item.category | default: 'general' | slugify }}">
+                <article class="skill-card paper-card reveal" data-category="{{ item.category | default: 'general' | slugify }}">
                     <span class="skill-icon">📄</span>
                     <h3 class="skill-title">{{ item.title }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
                     <div class="skill-tags">
                         <span class="tag">{{ category_meta.en | default: item.category | default: "General" }}</span>
+                        {% if item.journal %}
+                        <span class="tag">{{ item.journal }}</span>
+                        {% endif %}
                     </div>
                     <div class="skill-footer">
-                        <span>{{ item.year }}</span>
-                        <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="skill-link">Read PDF →</a>
+                        <span>{{ item.year }}{% if item.authors %} · {{ item.authors | truncate: 30 }}{% endif %}</span>
+                        <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="skill-link">Read →</a>
                     </div>
                 </article>
                 {% endfor %}
@@ -265,10 +235,10 @@ mkdir -p ~/.claude/skills/claude-writer
     <!-- Resources Section -->
     <section id="resources" class="section">
         <div class="container">
-            <h2 class="section-title">Tools & Resources 📦</h2>
-            <p class="section-description">GitHub repos, datasets, and reusable assets (sorted by stars)</p>
+            <h2 class="section-title reveal">Tools & Resources 📦</h2>
+            <p class="section-description reveal">Research platforms, datasets, and workflow assets</p>
 
-            <div class="filter-tabs" data-filter-group data-target="#resources-grid .resource-card" data-attribute="category">
+            <div class="filter-tabs reveal" data-filter-group data-target="#resources-grid .resource-card" data-attribute="category">
                 <button class="filter-tab active" data-filter="all">All</button>
                 {% for category in site.data.taxonomy.resource_categories %}
                 <button class="filter-tab" data-filter="{{ category.key }}">{{ category.en }}</button>
@@ -282,7 +252,7 @@ mkdir -p ~/.claude/skills/claude-writer
                 {% for item in sorted_resources %}
                 {% assign category_meta = site.data.taxonomy.resource_categories | where: "key", item.category | first %}
                 {% assign stars = item.stars | default: 0 | plus: 0 %}
-                <article class="skill-card resource-card" data-category="{{ item.category | default: 'research-tool' | slugify }}" data-stars="{{ stars }}">
+                <article class="skill-card resource-card reveal" data-category="{{ item.category | default: 'research-tool' | slugify }}" data-stars="{{ stars }}">
                     <span class="skill-icon">📦</span>
                     <h3 class="skill-title">{{ item.title }}</h3>
                     <p class="skill-description">{{ item.description }}</p>
@@ -291,8 +261,6 @@ mkdir -p ~/.claude/skills/claude-writer
                         <span class="tag">{{ category_meta.en | default: item.category | default: "Research Tool" }}</span>
                         {% if item.stars %}
                         <span class="tag">⭐ {{ stars }}</span>
-                        {% elsif item.link contains "github.com" %}
-                        <span class="tag">⭐ syncing</span>
                         {% endif %}
                     </div>
                     <div class="skill-footer">
@@ -301,6 +269,43 @@ mkdir -p ~/.claude/skills/claude-writer
                     </div>
                 </article>
                 {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Taxonomy Section -->
+    <section class="section taxonomy-section">
+        <div class="container">
+            <h2 class="section-title reveal">Collections Architecture 🧭</h2>
+            <p class="section-description reveal">A clean structure for AI + social science knowledge management.</p>
+            <div class="taxonomy-grid">
+                <article class="taxonomy-card reveal">
+                    <h3>Skills</h3>
+                    <p>Executable methods arranged by research workflow stage.</p>
+                    <div class="skill-tags">
+                        {% for stage in site.data.taxonomy.skill_stages %}
+                        <span class="tag">{{ stage.en }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+                <article class="taxonomy-card reveal">
+                    <h3>Papers</h3>
+                    <p>Methods, applications, ethics, and review papers for evidence-based decisions.</p>
+                    <div class="skill-tags">
+                        {% for category in site.data.taxonomy.paper_categories %}
+                        <span class="tag">{{ category.en }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+                <article class="taxonomy-card reveal">
+                    <h3>Tools & Resources</h3>
+                    <p>Research platforms, datasets, and workflow assets with direct links.</p>
+                    <div class="skill-tags">
+                        {% for category in site.data.taxonomy.resource_categories %}
+                        <span class="tag">{{ category.en }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
             </div>
         </div>
     </section>
