@@ -486,6 +486,10 @@ a:hover {
     border-radius: 2px;
 }
 
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
 .section {
     padding: var(--space-3xl) 0;
 }

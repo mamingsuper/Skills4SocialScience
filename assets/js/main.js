@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimation();
     initActiveNav();
     initMobileNav();
-    initDropdownNav();
     initParticles();
     initStaggerAnimation();
+    initAllLinks();
 });
 
 /**
@@ -326,7 +326,7 @@ function initParticles() {
             // Draw
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(127, 90, 240, ${p.alpha})`;
+            ctx.fillStyle = `rgba(139, 92, 246, ${p.alpha})`;
             ctx.fill();
         });
 
@@ -341,7 +341,7 @@ function initParticles() {
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `rgba(127, 90, 240, ${0.1 * (1 - dist / 100)})`;
+                    ctx.strokeStyle = `rgba(139, 92, 246, ${0.1 * (1 - dist / 100)})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
