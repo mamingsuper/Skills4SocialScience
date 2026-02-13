@@ -587,6 +587,7 @@ a:hover {
     gap: var(--space-md);
     margin-bottom: var(--space-2xl);
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .btn {
@@ -791,19 +792,21 @@ a:hover {
 .filter-tab {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--glass-border);
-    padding: var(--space-sm) var(--space-md);
+    padding: 0.5rem 0.9rem;
     border-radius: 100px;
     color: var(--text-secondary);
     cursor: pointer;
     transition: all var(--transition-base);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .filter-tab:hover {
     background: var(--accent-primary-100);
-    color: var(--accent-primary);
-    border-color: rgba(139, 92, 246, 0.3);
+    color: var(--accent-primary-light);
+    border-color: rgba(99, 102, 241, 0.3);
 }
 
 .filter-tab.active {
