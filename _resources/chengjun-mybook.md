@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/chengjun/mybook
 source: github-auto
+tags: ["computational-communication", "computational-social-science", "jupyter-notebook", "python"]
+permalink: /resources/chengjun-mybook/
 stars: 106
 last_updated: 2025-11-10
 license: "GPL-3.0"
-tags: ["computational-communication", "computational-social-science", "jupyter-notebook", "python"]
-permalink: /resources/chengjun-mybook/
 ---
 ## mybook (chengjun)
 

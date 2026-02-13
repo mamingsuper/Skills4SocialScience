@@ -8,8 +8,8 @@ link: https://github.com/CSSLab/maia-chess
 source: github-auto
 tags: ["chess", "chess-engine", "computational-social-science", "deep-learning", "machine-learning"]
 permalink: /resources/csslab-maia-chess/
-stars: 1124
-last_updated: 2026-02-10
+stars: 1125
+last_updated: 2026-02-12
 license: "GPL-3.0"
 ---
 ## maia-chess (CSSLab)

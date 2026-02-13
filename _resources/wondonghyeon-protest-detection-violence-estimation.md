@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/wondonghyeon/protest-detection-violence-estimation
 source: github-auto
+tags: ["acm-mm", "acm-multimedia-2017", "computational-social-science", "computer-vision", "datamining", "dataset"]
+permalink: /resources/wondonghyeon-protest-detection-violence-estimation/
 stars: 185
 last_updated: 2026-02-03
 license: "MIT"
-tags: ["acm-mm", "acm-multimedia-2017", "computational-social-science", "computer-vision", "datamining", "dataset"]
-permalink: /resources/wondonghyeon-protest-detection-violence-estimation/
 ---
 ## protest-detection-violence-estimation (wondonghyeon)
 

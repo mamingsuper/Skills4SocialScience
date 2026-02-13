@@ -6,11 +6,11 @@ type: GitHub Repository
 category: community
 link: https://github.com/fhbzc/CSS_program
 source: github-auto
+tags: ["applications", "computational-social-science"]
+permalink: /resources/fhbzc-css-program/
 stars: 251
 last_updated: 2026-02-11
 license: "MIT"
-tags: ["applications", "computational-social-science"]
-permalink: /resources/fhbzc-css-program/
 ---
 ## CSS_program (fhbzc)
 

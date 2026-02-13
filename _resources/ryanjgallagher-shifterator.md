@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/ryanjgallagher/shifterator
 source: github-auto
+tags: ["computational-social-science", "data-visualization", "digital-humanities", "information-theory", "natural-language-processing", "sentiment-analysis"]
+permalink: /resources/ryanjgallagher-shifterator/
 stars: 285
 last_updated: 2026-02-08
 license: "Apache-2.0"
-tags: ["computational-social-science", "data-visualization", "digital-humanities", "information-theory", "natural-language-processing", "sentiment-analysis"]
-permalink: /resources/ryanjgallagher-shifterator/
 ---
 ## shifterator (ryanjgallagher)
 
