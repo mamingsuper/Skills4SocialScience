@@ -21,16 +21,57 @@ permalink: /zh/pages/learn.html
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/learn.css">
 
     <style>
-        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
-        .learn-page { padding: 120px 0 60px; }
-        .learn-header { text-align: center; margin-bottom: 3rem; }
-        .learn-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .learn-header p { color: var(--text-secondary); max-width: 760px; margin: 0 auto; }
-        .learn-section { margin-bottom: 2rem; padding: 2rem; border-radius: var(--border-radius); background: rgba(255,255,255,0.55); border: 1px solid var(--border-color); }
-        .learn-section h2 { margin-bottom: 1rem; }
-        .learn-section p, .learn-section li { color: var(--text-secondary); }
-        .learn-section ul { padding-left: 1.1rem; }
-        .code-block { margin-top: 1rem; background: #1e1e2e; color: #cdd6f4; padding: 1rem; border-radius: var(--border-radius-sm); overflow-x: auto; }
+        body { 
+            font-family: 'Inter', 'Noto Sans SC', sans-serif; 
+            background: var(--bg-primary);
+        }
+        .learn-page { 
+            padding: 120px 0 60px; 
+            background: var(--bg-primary);
+        }
+        .learn-header { 
+            text-align: center; 
+            margin-bottom: 3rem; 
+        }
+        .learn-header h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+            color: var(--text-primary);
+        }
+        .learn-header p { 
+            color: var(--text-secondary); 
+            max-width: 760px; 
+            margin: 0 auto; 
+        }
+        .learn-section { 
+            margin-bottom: 2rem; 
+            padding: 2rem; 
+            border-radius: var(--border-radius); 
+            background: white; 
+            border: 1px solid var(--border-default);
+        }
+        .learn-section h2 { 
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .learn-section p, .learn-section li { 
+            color: var(--text-secondary); 
+        }
+        .learn-section ul { 
+            padding-left: 1.5rem; 
+        }
+        .learn-section li {
+            margin-bottom: 0.5rem;
+        }
+        .learn-code-block { 
+            margin-top: 1rem; 
+            background: var(--gray-900); 
+            color: #e0e0e0; 
+            padding: 1rem; 
+            border-radius: var(--border-radius-sm); 
+            overflow-x: auto; 
+            font-family: var(--font-mono);
+        }
     </style>
 </head>
 <body>
@@ -62,7 +103,7 @@ permalink: /zh/pages/learn.html
 
             <section class="learn-section">
                 <h2>1. 什么是 AI Coding Agent？</h2>
-                <p>AI Coding Agent（如 Claude Code、Cursor）不仅能聊天，还能读取你的项目目录、执行命令、修改文件。</p>
+                <p>AI Coding Agent（如 Claude Code、Cursor）不仅能聊天，还能读取你的项目目录，执行命令、修改文件。</p>
                 <ul>
                     <li>读取论文草稿、代码和数据目录结构</li>
                     <li>执行分析脚本并生成结果</li>
@@ -72,8 +113,8 @@ permalink: /zh/pages/learn.html
 
             <section class="learn-section">
                 <h2>2. 什么是 Skill？</h2>
-                <p>Skill 是一组可复用的任务说明，告诉 AI 如何在某个研究场景下“标准化工作”。</p>
-                <div class="code-block"><code>/claude-writer 帮我把这篇研究计划扩展成论文引言、方法和结果框架。</code></div>
+                <p>Skill 是一组可复用的任务说明，告诉 AI 如何在某个研究场景下"标准化工作"。</p>
+                <div class="learn-code-block"><code>/claude-writer 帮我把这篇研究计划扩展成论文引言、方法和结果框架。</code></div>
             </section>
 
             <section class="learn-section">

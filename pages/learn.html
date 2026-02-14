@@ -26,6 +26,7 @@ permalink: /pages/learn.html
     <style>
         .learn-page {
             padding: 120px 0 60px;
+            background: var(--bg-primary);
         }
 
         .learn-header {
@@ -49,10 +50,9 @@ permalink: /pages/learn.html
         .learn-section {
             margin-bottom: 4rem;
             padding: 2rem;
-            border-radius: var(--border-radius-lg);
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            background: white;
+            border: 1px solid var(--border-default);
         }
 
         .learn-section h2 {
@@ -79,10 +79,20 @@ permalink: /pages/learn.html
         }
 
         .feature-card {
-            background: rgba(15, 23, 42, 0.5);
+            background: var(--bg-tertiary);
             padding: 1.5rem;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
         }
 
         .feature-icon {
@@ -91,31 +101,27 @@ permalink: /pages/learn.html
             display: block;
         }
 
-        .feature-card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .code-block {
-            background: #1e1e2e;
-            color: #cdd6f4;
+        .learn-code-block {
+            background: var(--gray-900);
+            color: #e0e0e0;
             padding: 1.5rem;
-            border-radius: var(--border-radius);
+            border-radius: var(--border-radius-sm);
             font-family: var(--font-mono);
             overflow-x: auto;
             margin: 1.5rem 0;
         }
 
-        .code-block code {
+        .learn-code-block code {
             font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         .comment {
-            color: #6c7086;
+            color: var(--gray-500);
         }
 
         .command {
-            color: #f9e2af;
+            color: var(--accent-primary-light);
         }
     </style>
 </head>
@@ -178,7 +184,7 @@ permalink: /pages/learn.html
                 <p>Skills are specialized instruction sets that teach an AI agent how to perform a specific research
                     task perfectly. Think of them as "Standard Operating Procedures" (SOPs) for AI.</p>
 
-                <div class="code-block">
+                <div class="learn-code-block">
                     <code><span class="comment"># Without a Skill:</span>
 User: "Run a regression."
 AI: *Writes generic code that might ignore robust standard errors.*
@@ -216,7 +222,7 @@ AI: *Automatically uses reghdfe, clusters standard errors, and formats output fo
             </section>
 
             <div style="text-align: center; margin-top: 4rem;">
-                <h2>Ready to start?</h2>
+                <h2 style="color: var(--text-primary);">Ready to start?</h2>
                 <br>
                 <a href="../#skills" class="btn btn-primary">Browse Skills</a>
                 <a href="submit.html" class="btn btn-secondary">Submit a Contribution</a>
