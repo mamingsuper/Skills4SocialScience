@@ -1,0 +1,58 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+    <title>{{ site.title | default: "AI4SS" }}</title>
+    <description>{{ site.description | default: "AI for Social Science - Curated skills, tools, papers and references." }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ site.url }}{{ site.baseurl }}/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>AI4SS - Jekyll</generator>
+    <image>
+        <url>{{ site.url }}{{ site.baseurl }}/assets/images/wechat-qrcode.jpg</url>
+        <title>{{ site.title }}</title>
+        <link>{{ site.url }}{{ site.baseurl }}/</link>
+    </image>
+
+    <!-- Skills -->
+    {% for skill in site.skills limit: 10 %}
+    <item>
+        <title>{{ skill.name }} - AI Skill</title>
+        <description><![CDATA[{{ skill.description | strip_html | truncate: 200 }}]]></description>
+        <link>{{ site.url }}{{ skill.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ skill.url }}</guid>
+        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        <category>skill</category>
+    </item>
+    {% endfor %}
+
+    <!-- Papers -->
+    {% for paper in site.papers limit: 5 %}
+    <item>
+        <title>{{ paper.title }}</title>
+        <description><![CDATA[{{ paper.description | strip_html | truncate: 200 }}]]></description>
+        <link>{{ site.url }}{{ paper.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ paper.url }}</guid>
+        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        <category>paper</category>
+    </item>
+    {% endfor %}
+
+    <!-- Resources -->
+    {% for resource in site.resources limit: 5 %}
+    <item>
+        <title>{{ resource.title }} - Resource</title>
+        <description><![CDATA[{{ resource.description | strip_html | truncate: 200 }}]]></description>
+        <link>{{ site.url }}{{ resource.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ resource.url }}</guid>
+        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        <category>resource</category>
+    </item>
+    {% endfor %}
+
+</channel>
+</rss>

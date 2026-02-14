@@ -1,0 +1,136 @@
+---
+layout: null
+title: 404 - Page Not Found | AI4SS
+description: The page you're looking for doesn't exist.
+lang: en
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | AI4SS</title>
+    <meta name="description" content="The page you're looking for doesn't exist.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-code {
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .error-description {
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .suggestions {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            max-width: 500px;
+        }
+        
+        .suggestions h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .suggestions ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .suggestions li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .suggestions li:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestions a {
+            color: var(--accent-primary);
+        }
+        
+        .suggestions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="error-page">
+        <div class="error-icon">🔍</div>
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-description">
+            Sorry, the page you're looking for doesn't exist. 
+            It may have been moved or deleted. Try searching or go back to the homepage.
+        </p>
+        
+        <div class="error-actions">
+            <a href="{{ site.baseurl }}/" class="btn btn-primary">Go Home</a>
+            <a href="{{ site.baseurl }}/#skills" class="btn btn-secondary">Browse Skills</a>
+            <a href="{{ site.baseurl }}/pages/about.html" class="btn btn-secondary">Learn More</a>
+        </div>
+        
+        <div class="suggestions">
+            <h3>Popular Pages</h3>
+            <ul>
+                <li><a href="{{ site.baseurl }}/#quick-start">Quick Start Guide</a></li>
+                <li><a href="{{ site.baseurl }}/#papers">Research Papers</a></li>
+                <li><a href="{{ site.baseurl }}/#resources">Tools & Resources</a></li>
+                <li><a href="{{ site.baseurl }}/pages/learn.html">Learn about AI for Research</a></li>
+                <li><a href="{{ site.baseurl }}/pages/submit.html">Submit a Resource</a></li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

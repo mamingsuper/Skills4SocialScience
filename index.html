@@ -26,6 +26,18 @@ permalink: /
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..." aria-label="Search">
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -39,6 +51,7 @@ permalink: /
                 <span></span>
             </button>
             <div class="nav-links">
+                <button id="nav-search-btn" class="nav-search-btn" aria-label="Search" style="background:none;border:none;cursor:pointer;font-size:1.2rem;padding:0.25rem;">🔍</button>
                 <a href="#skills">Skills</a>
                 <a href="#quick-start">Quick Start</a>
                 <a href="#papers">Papers</a>
@@ -107,6 +120,9 @@ permalink: /
         </div>
     </header>
 
+    <!-- Main Content Area -->
+    <main id="main-content">
+    
     <!-- Quick Start -->
     <section id="quick-start" class="quickstart-section section">
         <div class="container">
@@ -349,6 +365,8 @@ mkdir -p ~/.claude/skills/claude-writer
         </div>
     </section>
 
+    </main><!-- End Main Content -->
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -356,6 +374,7 @@ mkdir -p ~/.claude/skills/claude-writer
                 <p><strong>AI4SS</strong> • Made with the social science research community</p>
                 <br>
                 <div class="footer-links" style="justify-content:center; display:flex;">
+                    <a href="{{ site.baseurl }}/feed.xml">RSS</a>
                     <a href="https://github.com/mamingsuper/Skills4SocialScience">GitHub</a>
                     <a href="{{ site.baseurl }}/CONTRIBUTING.md">Contribute</a>
                     <a href="{{ site.baseurl }}/LICENSE">License</a>
