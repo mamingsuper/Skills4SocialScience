@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/arsena-k/Word2Vec-bias-extraction
 source: github-auto
+tags: ["bias", "computational-social-science", "computational-sociology", "embeddings", "gender", "health"]
+permalink: /resources/arsena-k-word2vec-bias-extraction/
 stars: 42
 last_updated: 2025-10-31
 license: ""
-tags: ["bias", "computational-social-science", "computational-sociology", "embeddings", "gender", "health"]
-permalink: /resources/arsena-k-word2vec-bias-extraction/
 ---
 ## Word2Vec-bias-extraction (arsena-k)
 

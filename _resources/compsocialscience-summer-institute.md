@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/compsocialscience/summer-institute
 source: github-auto
+tags: []
+permalink: /resources/compsocialscience-summer-institute/
 stars: 367
 last_updated: 2026-02-12
 license: "MIT"
-tags: []
-permalink: /resources/compsocialscience-summer-institute/
 ---
 ## summer-institute (compsocialscience)
 

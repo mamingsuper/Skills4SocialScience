@@ -8,7 +8,7 @@ link: https://github.com/TIGER-AI-Lab/OpenResearcher
 source: manual-curated
 tags: ["knowledge-graph", "llm", "workflow"]
 permalink: /resources/openresearcher/
-stars: 314
+stars: 317
 last_updated: 2026-02-14
 license: ""
 ---
