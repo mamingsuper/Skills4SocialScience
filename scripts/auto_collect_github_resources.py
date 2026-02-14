@@ -24,8 +24,7 @@ RESEARCH_STEPS = [
     "causal inference",
     "survey experiment",
     "reproducible research",
-    "open science workflow",
-    "analysis pipeline",
+    "open science",
     "scientific writing",
     "visualization",
 ]
@@ -35,18 +34,7 @@ DISCIPLINES = [
     "economics",
     "sociology",
     "psychology",
-    "public policy",
-    "education research",
-    "communication research",
-    "anthropology",
-]
-
-TOPIC_QUERIES = [
-    "topic:computational-social-science",
-    "topic:open-science",
-    "topic:social-science",
-    "topic:causal-inference",
-    "topic:survey-methods",
+    "social science",
 ]
 
 SEED_REPOS = [
@@ -72,35 +60,41 @@ def dedupe_preserve_order(values: Iterable[str]) -> List[str]:
 
 
 def build_primary_queries() -> List[str]:
+    """Build simpler, more reliable queries."""
     queries: List[str] = []
-    step_clause = " OR ".join(f'"{step}"' for step in RESEARCH_STEPS)
-
+    
+    # Simple keyword combinations that are more likely to work
+    keywords = [
+        "LLM",
+        "AI",
+        "agent",
+        "GPT",
+        "social science",
+        "research",
+    ]
+    
+    for keyword in keywords:
+        queries.append(f"{keyword} research tool")
+        queries.append(f"{keyword} data analysis")
+    
+    # Add discipline-specific
     for discipline in DISCIPLINES:
-        queries.append(
-            f'"{discipline}" ({step_clause}) (AI OR LLM OR agentic) (tool OR framework OR pipeline)'
-        )
-        queries.append(
-            f'"{discipline}" (computational OR digital) "open science" (toolkit OR workflow)'
-        )
-
-    for step in RESEARCH_STEPS:
-        queries.append(
-            f'"social science" "{step}" (AI OR LLM OR agentic) (tool OR framework OR pipeline)'
-        )
-
+        queries.append(f'"{discipline}" research AI')
+        queries.append(f'"{discipline}" computational')
+    
     return dedupe_preserve_order(queries)
 
 
 def build_fallback_queries() -> List[str]:
-    keyword_queries = [
-        '"social science" "agentic workflow" toolkit',
-        '"reproducible research" "social science" "AI tool"',
-        '"computational social science" "open science" toolkit',
-        '"social science" "LLM" framework',
-        '"causal inference" "social science" "AI tool"',
-        '"survey experiment" "AI" "research workflow"',
+    """Build fallback queries - simpler is better."""
+    queries = [
+        "social science research AI",
+        "computational social science",
+        "academic research workflow",
+        "data science research",
+        "causal inference tool",
     ]
-    return dedupe_preserve_order(TOPIC_QUERIES + keyword_queries)
+    return dedupe_preserve_order(queries)
 
 
 def parse_args() -> argparse.Namespace:
@@ -109,15 +103,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-new", type=int, default=8, help="Maximum number of new resources to add")
     parser.add_argument("--min-new", type=int, default=2, help="Preferred minimum new resources per run")
     parser.add_argument("--min-stars", type=int, default=15, help="Minimum stars for primary search")
-    parser.add_argument("--lookback-days", type=int, default=45, help="Primary search window in days")
-    parser.add_argument("--fallback-min-stars", type=int, default=40, help="Minimum stars for fallback searches")
+    parser.add_argument("--lookback-days", type=int, default=90, help="Primary search window in days")
+    parser.add_argument("--fallback-min-stars", type=int, default=30, help="Minimum stars for fallback searches")
     parser.add_argument(
         "--fallback-lookback-days",
         type=int,
-        default=3650,
-        help="Fallback search window in days (large value ~= broad historical scan)",
+        default=365,
+        help="Fallback search window in days",
     )
-    parser.add_argument("--pages-per-query", type=int, default=4, help="Pages to request per query")
+    parser.add_argument("--pages-per-query", type=int, default=2, help="Pages to request per query")
     parser.add_argument("--per-page", type=int, default=30, help="Items per page for GitHub search")
     parser.add_argument("--dry-run", action="store_true", help="Print candidates without writing files")
     return parser.parse_args()
@@ -258,7 +252,7 @@ def github_repo_details(owner: str, repo: str, token: str | None) -> Dict[str, o
             payload = json.loads(response.read().decode("utf-8"))
         enrich_ranking_fields(payload)
         return payload
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         print(f"[WARN] repo detail failed: {owner}/{repo} -> {exc}")
         return None
 
@@ -361,8 +355,22 @@ def github_search(
     url = f"{SEARCH_URL}?{params}"
     request = urllib.request.Request(url, headers=github_headers(token))
 
-    with urllib.request.urlopen(request, timeout=30) as response:
-        payload = json.loads(response.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        if e.code == 422:
+            print(f"[WARN] query failed: {query} (page={page}) -> HTTP 422: Unprocessable Entity - simplifying query")
+            return []
+        elif e.code == 403:
+            print(f"[WARN] query failed: {query} (page={page}) -> HTTP 403: Forbidden")
+            return []
+        else:
+            print(f"[WARN] query failed: {query} (page={page}) -> {e}")
+            return []
+    except Exception as e:
+        print(f"[WARN] query failed: {query} (page={page}) -> {e}")
+        return []
 
     return payload.get("items", [])
 
@@ -383,19 +391,15 @@ def collect_candidates(
 
     for query in queries:
         for page in range(1, pages_per_query + 1):
-            try:
-                items = github_search(
-                    query,
-                    token,
-                    lookback_days=lookback_days,
-                    sort=sort,
-                    order=order,
-                    per_page=per_page,
-                    page=page,
-                )
-            except Exception as exc:  # noqa: BLE001
-                print(f"[WARN] query failed: {query} (page={page}) -> {exc}")
-                break
+            items = github_search(
+                query,
+                token,
+                lookback_days=lookback_days,
+                sort=sort,
+                order=order,
+                per_page=per_page,
+                page=page,
+            )
 
             if not items:
                 break
