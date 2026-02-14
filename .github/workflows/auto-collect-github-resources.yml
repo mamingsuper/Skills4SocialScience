@@ -33,10 +33,10 @@ jobs:
             --max-new 8 \
             --min-new 2 \
             --min-stars 15 \
-            --lookback-days 45 \
-            --fallback-min-stars 40 \
-            --fallback-lookback-days 3650 \
-            --pages-per-query 4 \
+            --lookback-days 90 \
+            --fallback-min-stars 30 \
+            --fallback-lookback-days 365 \
+            --pages-per-query 2 \
             --per-page 30
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
