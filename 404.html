@@ -19,6 +19,12 @@ permalink: /404.html
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     
     <style>
+        body {
+            background: linear-gradient(180deg, #FDF8F3 0%, #F5EDE4 100%);
+            color: #2D3436;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+        
         .error-page {
             min-height: 100vh;
             display: flex;
@@ -30,10 +36,10 @@ permalink: /404.html
         }
         
         .error-code {
-            font-family: var(--font-heading);
+            font-family: 'Outfit', sans-serif;
             font-size: 8rem;
             font-weight: 800;
-            background: var(--accent-gradient);
+            background: linear-gradient(135deg, #8BA889 0%, #D4A5A5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -43,12 +49,12 @@ permalink: /404.html
         
         .error-title {
             font-size: 2rem;
-            color: var(--text-primary);
+            color: #2D3436;
             margin-bottom: 1rem;
         }
         
         .error-description {
-            color: var(--text-secondary);
+            color: #524c43;
             max-width: 500px;
             margin-bottom: 2rem;
             line-height: 1.7;
@@ -69,14 +75,14 @@ permalink: /404.html
         .suggestions {
             margin-top: 3rem;
             padding: 2rem;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--border-radius);
+            background: white;
+            border: 1px solid rgba(139, 168, 137, 0.15);
+            border-radius: 20px;
             max-width: 500px;
         }
         
         .suggestions h3 {
-            color: var(--text-primary);
+            color: #2D3436;
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
@@ -89,7 +95,7 @@ permalink: /404.html
         
         .suggestions li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 1px solid rgba(139, 168, 137, 0.08);
         }
         
         .suggestions li:last-child {
@@ -97,11 +103,48 @@ permalink: /404.html
         }
         
         .suggestions a {
-            color: var(--accent-primary);
+            color: #6B8B69;
+            font-weight: 500;
         }
         
         .suggestions a:hover {
             text-decoration: underline;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #8BA889 0%, #D4A5A5 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(139, 168, 137, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 168, 137, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            border: 1.5px solid rgba(139, 168, 137, 0.15);
+            color: #2D3436;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(139, 168, 137, 0.1);
+            border-color: #8BA889;
         }
     </style>
 </head>

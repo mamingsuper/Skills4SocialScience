@@ -1,11 +1,12 @@
 /* ============================================
-   Form Styles
+   Form Styles - Creamy Theme
    ============================================ */
 
 .form-page {
     padding-top: calc(80px + var(--space-2xl));
     padding-bottom: var(--space-3xl);
     min-height: 100vh;
+    background: var(--bg-primary);
 }
 
 .form-header {
@@ -16,6 +17,7 @@
 .form-header h1 {
     font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: var(--space-md);
+    color: var(--text-primary);
 }
 
 .form-header p {
@@ -32,8 +34,8 @@
 
 /* Form Sections */
 .form-section {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: white;
+    border: 1px solid var(--border-default);
     border-radius: var(--border-radius);
     padding: var(--space-xl);
     margin-bottom: var(--space-lg);
@@ -43,11 +45,12 @@
     font-size: 1.2rem;
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-md);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-primary);
 }
 
 .section-hint {
-    color: var(--text-muted);
+    color: var(--text-tertiary);
     font-size: 0.9rem;
     margin-bottom: var(--space-md);
 }
@@ -63,8 +66,9 @@
 
 .form-group label {
     display: block;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: var(--space-sm);
+    color: var(--text-primary);
 }
 
 .required {
@@ -74,7 +78,7 @@
 .hint {
     display: block;
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: var(--text-tertiary);
     margin-top: var(--space-xs);
 }
 
@@ -84,8 +88,8 @@ input[type="email"],
 select,
 textarea {
     width: 100%;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    background: white;
+    border: 1px solid var(--border-default);
     border-radius: var(--border-radius-sm);
     padding: var(--space-md);
     font-family: var(--font-sans);
@@ -99,12 +103,12 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+    box-shadow: 0 0 0 3px var(--accent-primary-100);
 }
 
 input::placeholder,
 textarea::placeholder {
-    color: var(--text-muted);
+    color: var(--text-tertiary);
 }
 
 textarea {
@@ -117,7 +121,7 @@ textarea {
 select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236a6a7a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a7d70' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right var(--space-md) center;
     padding-right: var(--space-2xl);
@@ -143,14 +147,16 @@ select {
     gap: var(--space-sm);
     cursor: pointer;
     padding: var(--space-sm) var(--space-md);
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    background: white;
+    border: 1px solid var(--border-default);
     border-radius: var(--border-radius-sm);
     transition: all var(--transition-fast);
+    color: var(--text-secondary);
 }
 
 .checkbox-label:hover {
     border-color: var(--accent-primary);
+    background: var(--accent-primary-100);
 }
 
 .checkbox-label input {
@@ -160,29 +166,31 @@ select {
 .checkbox-custom {
     width: 20px;
     height: 20px;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--border-default);
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all var(--transition-fast);
+    flex-shrink: 0;
 }
 
-.checkbox-label input:checked+.checkbox-custom {
+.checkbox-label input:checked + .checkbox-custom {
     background: var(--accent-primary);
     border-color: var(--accent-primary);
 }
 
-.checkbox-label input:checked+.checkbox-custom::after {
+.checkbox-label input:checked + .checkbox-custom::after {
     content: "✓";
     color: white;
     font-size: 0.8rem;
+    font-weight: bold;
 }
 
 /* Preview */
 .preview-section .preview-container {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    background: var(--gray-900);
+    border: 1px solid var(--gray-800);
     border-radius: var(--border-radius-sm);
     overflow: hidden;
 }
@@ -196,7 +204,7 @@ select {
     font-family: var(--font-mono);
     font-size: 0.85rem;
     line-height: 1.6;
-    color: var(--text-secondary);
+    color: #e0e0e0;
 }
 
 /* Form Actions */
@@ -212,8 +220,8 @@ select {
 .error-message {
     text-align: center;
     padding: var(--space-3xl);
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: white;
+    border: 1px solid var(--border-default);
     border-radius: var(--border-radius);
 }
 
@@ -226,6 +234,7 @@ select {
 .success-message h2,
 .error-message h2 {
     margin-bottom: var(--space-md);
+    color: var(--text-primary);
 }
 
 .success-message p,
