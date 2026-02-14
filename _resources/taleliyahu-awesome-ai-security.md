@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/TalEliyahu/Awesome-AI-Security
 source: github-auto
+tags: ["artificial-intelligence", "cybersecurity"]
+permalink: /resources/taleliyahu-awesome-ai-security/
 stars: 434
 last_updated: 2026-02-14
 license: "MIT"
-tags: ["artificial-intelligence", "cybersecurity"]
-permalink: /resources/taleliyahu-awesome-ai-security/
 ---
 ## Awesome-AI-Security (TalEliyahu)
 

@@ -6,11 +6,11 @@ type: GitHub Repository
 category: community
 link: https://github.com/bytedance/deer-flow
 source: github-auto
+tags: ["agent", "agentic", "agentic-framework", "agentic-workflow", "ai", "ai-agents"]
+permalink: /resources/bytedance-deer-flow/
 stars: 19844
 last_updated: 2026-02-14
 license: "MIT"
-tags: ["agent", "agentic", "agentic-framework", "agentic-workflow", "ai", "ai-agents"]
-permalink: /resources/bytedance-deer-flow/
 ---
 ## deer-flow (bytedance)
 

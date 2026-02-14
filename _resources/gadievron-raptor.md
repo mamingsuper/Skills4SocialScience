@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/gadievron/raptor
 source: github-auto
+tags: []
+permalink: /resources/gadievron-raptor/
 stars: 1093
 last_updated: 2026-02-14
 license: "MIT"
-tags: []
-permalink: /resources/gadievron-raptor/
 ---
 ## raptor (gadievron)
 

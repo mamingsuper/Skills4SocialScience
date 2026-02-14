@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/RamiAwar/dataline
 source: github-auto
+tags: ["ai", "chart", "data-science", "data-visualization", "llm", "sql"]
+permalink: /resources/ramiawar-dataline/
 stars: 1522
 last_updated: 2026-02-14
 license: "GPL-3.0"
-tags: ["ai", "chart", "data-science", "data-visualization", "llm", "sql"]
-permalink: /resources/ramiawar-dataline/
 ---
 ## dataline (RamiAwar)
 

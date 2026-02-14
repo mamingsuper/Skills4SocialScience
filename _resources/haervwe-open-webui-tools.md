@@ -6,11 +6,11 @@ type: GitHub Repository
 category: workflow
 link: https://github.com/Haervwe/open-webui-tools
 source: github-auto
+tags: ["academic-research", "ai-agents", "ai-workstation", "arxiv", "comfyui", "image-generation"]
+permalink: /resources/haervwe-open-webui-tools/
 stars: 571
 last_updated: 2026-02-14
 license: "MIT"
-tags: ["academic-research", "ai-agents", "ai-workstation", "arxiv", "comfyui", "image-generation"]
-permalink: /resources/haervwe-open-webui-tools/
 ---
 ## open-webui-tools (Haervwe)
 

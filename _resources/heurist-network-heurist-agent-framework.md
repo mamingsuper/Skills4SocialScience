@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/heurist-network/heurist-agent-framework
 source: github-auto
+tags: ["agentic-ai", "agentic-framework", "ai", "mcp"]
+permalink: /resources/heurist-network-heurist-agent-framework/
 stars: 770
 last_updated: 2026-02-13
 license: "NOASSERTION"
-tags: ["agentic-ai", "agentic-framework", "ai", "mcp"]
-permalink: /resources/heurist-network-heurist-agent-framework/
 ---
 ## heurist-agent-framework (heurist-network)
 
