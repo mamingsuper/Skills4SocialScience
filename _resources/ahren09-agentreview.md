@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/Ahren09/AgentReview
 source: github-auto
+tags: ["agent", "chatgpt", "computational-social-science", "deep-learning", "emnlp", "emnlp2024"]
+permalink: /resources/ahren09-agentreview/
 stars: 103
 last_updated: 2026-01-27
 license: "Apache-2.0"
-tags: ["agent", "chatgpt", "computational-social-science", "deep-learning", "emnlp", "emnlp2024"]
-permalink: /resources/ahren09-agentreview/
 ---
 ## AgentReview (Ahren09)
 

@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/mengysun/DataParasite
 source: github-auto
+tags: ["awesome", "computational-social-science", "data-curation", "human-ai-collaboration", "llm-agent"]
+permalink: /resources/mengysun-dataparasite/
 stars: 79
 last_updated: 2026-02-12
 license: "BSD-3-Clause"
-tags: ["awesome", "computational-social-science", "data-curation", "human-ai-collaboration", "llm-agent"]
-permalink: /resources/mengysun-dataparasite/
 ---
 ## DataParasite (mengysun)
 

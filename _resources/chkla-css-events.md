@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/chkla/CSS-Events
 source: github-auto
+tags: ["computational-social-science", "conferences", "events", "summer-schools", "text-as-data", "winter-schools"]
+permalink: /resources/chkla-css-events/
 stars: 43
 last_updated: 2025-12-09
 license: ""
-tags: ["computational-social-science", "conferences", "events", "summer-schools", "text-as-data", "winter-schools"]
-permalink: /resources/chkla-css-events/
 ---
 ## CSS-Events (chkla)
 

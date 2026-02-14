@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/jaeyk/comp_thinking_social_science
 source: github-auto
+tags: ["computational-social-science", "data-science", "digital-humanities", "machine-learning", "python", "r"]
+permalink: /resources/jaeyk-comp-thinking-social-science/
 stars: 68
 last_updated: 2026-02-01
 license: "CC0-1.0"
-tags: ["computational-social-science", "data-science", "digital-humanities", "machine-learning", "python", "r"]
-permalink: /resources/jaeyk-comp-thinking-social-science/
 ---
 ## comp_thinking_social_science (jaeyk)
 

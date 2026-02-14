@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/telmomenezes/synthetic
 source: github-auto
+tags: ["artificial-intelligence", "bioinformatics", "biology", "complex-networks", "complex-systems", "complexity-analysis"]
+permalink: /resources/telmomenezes-synthetic/
 stars: 47
 last_updated: 2025-12-31
 license: "MIT"
-tags: ["artificial-intelligence", "bioinformatics", "biology", "complex-networks", "complex-systems", "complexity-analysis"]
-permalink: /resources/telmomenezes-synthetic/
 ---
 ## synthetic (telmomenezes)
 

@@ -8,8 +8,8 @@ link: https://github.com/booknlp/booknlp
 source: github-auto
 tags: ["computational-social-science", "cultural-analytics", "digital-humanities", "natural-language-processing"]
 permalink: /resources/booknlp-booknlp/
-stars: 889
-last_updated: 2026-02-09
+stars: 888
+last_updated: 2026-02-13
 license: "MIT"
 ---
 ## booknlp (booknlp)
