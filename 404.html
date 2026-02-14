@@ -20,8 +20,8 @@ permalink: /404.html
     
     <style>
         body {
-            background: linear-gradient(180deg, #FDF8F3 0%, #F5EDE4 100%);
-            color: #2D3436;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
+            color: #111827;
             font-family: 'Inter', -apple-system, sans-serif;
         }
         
@@ -39,7 +39,7 @@ permalink: /404.html
             font-family: 'Outfit', sans-serif;
             font-size: 8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #8BA889 0%, #D4A5A5 100%);
+            background: linear-gradient(135deg, #111827 0%, #2563EB 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -49,15 +49,49 @@ permalink: /404.html
         
         .error-title {
             font-size: 2rem;
-            color: #2D3436;
+            color: #111827;
             margin-bottom: 1rem;
         }
         
         .error-description {
-            color: #524c43;
+            color: #4B5563;
             max-width: 500px;
             margin-bottom: 2rem;
             line-height: 1.7;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: #111827;
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #2563EB;
+        }
+        
+        .btn-secondary {
+            background: white;
+            border: 1.5px solid #E5E7EB;
+            color: #111827;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #2563EB;
+            color: #2563EB;
         }
         
         .error-actions {
@@ -67,22 +101,17 @@ permalink: /404.html
             justify-content: center;
         }
         
-        .error-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-        
         .suggestions {
             margin-top: 3rem;
             padding: 2rem;
             background: white;
-            border: 1px solid rgba(139, 168, 137, 0.15);
-            border-radius: 20px;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
             max-width: 500px;
         }
         
         .suggestions h3 {
-            color: #2D3436;
+            color: #111827;
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
@@ -95,7 +124,7 @@ permalink: /404.html
         
         .suggestions li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(139, 168, 137, 0.08);
+            border-bottom: 1px solid #F3F4F6;
         }
         
         .suggestions li:last-child {
@@ -103,65 +132,27 @@ permalink: /404.html
         }
         
         .suggestions a {
-            color: #6B8B69;
+            color: #2563EB;
             font-weight: 500;
         }
         
         .suggestions a:hover {
             text-decoration: underline;
         }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #8BA889 0%, #D4A5A5 100%);
-            color: white;
-            border: none;
-            box-shadow: 0 4px 15px rgba(139, 168, 137, 0.2);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 168, 137, 0.3);
-        }
-        
-        .btn-secondary {
-            background: white;
-            border: 1.5px solid rgba(139, 168, 137, 0.15);
-            color: #2D3436;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(139, 168, 137, 0.1);
-            border-color: #8BA889;
-        }
     </style>
 </head>
 <body>
     <main class="error-page">
-        <div class="error-icon">🔍</div>
         <div class="error-code">404</div>
         <h1 class="error-title">Page Not Found</h1>
         <p class="error-description">
             Sorry, the page you're looking for doesn't exist. 
-            It may have been moved or deleted. Try searching or go back to the homepage.
+            It may have been moved or deleted.
         </p>
         
         <div class="error-actions">
             <a href="{{ site.baseurl }}/" class="btn btn-primary">Go Home</a>
             <a href="{{ site.baseurl }}/#skills" class="btn btn-secondary">Browse Skills</a>
-            <a href="{{ site.baseurl }}/pages/about.html" class="btn btn-secondary">Learn More</a>
         </div>
         
         <div class="suggestions">
@@ -169,9 +160,7 @@ permalink: /404.html
             <ul>
                 <li><a href="{{ site.baseurl }}/#quick-start">Quick Start Guide</a></li>
                 <li><a href="{{ site.baseurl }}/#papers">Research Papers</a></li>
-                <li><a href="{{ site.baseurl }}/#resources">Tools & Resources</a></li>
                 <li><a href="{{ site.baseurl }}/pages/learn.html">Learn about AI for Research</a></li>
-                <li><a href="{{ site.baseurl }}/pages/submit.html">Submit a Resource</a></li>
             </ul>
         </div>
     </main>

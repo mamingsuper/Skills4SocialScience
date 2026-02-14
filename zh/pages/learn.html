@@ -11,68 +11,11 @@ permalink: /zh/pages/learn.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% seo %}
-    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ site.baseurl }}/zh/pages/learn.html">
-    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/pages/learn.html">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/learn.css">
-
-    <style>
-        body { 
-            font-family: 'Inter', 'Noto Sans SC', sans-serif; 
-            background: var(--bg-primary);
-        }
-        .learn-page { 
-            padding: 120px 0 60px; 
-            background: var(--bg-primary);
-        }
-        .learn-header { 
-            text-align: center; 
-            margin-bottom: 3rem; 
-        }
-        .learn-header h1 { 
-            font-size: 2.5rem; 
-            margin-bottom: 1rem; 
-            color: var(--text-primary);
-        }
-        .learn-header p { 
-            color: var(--text-secondary); 
-            max-width: 760px; 
-            margin: 0 auto; 
-        }
-        .learn-section { 
-            margin-bottom: 2rem; 
-            padding: 2rem; 
-            border-radius: var(--border-radius); 
-            background: white; 
-            border: 1px solid var(--border-default);
-        }
-        .learn-section h2 { 
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        .learn-section p, .learn-section li { 
-            color: var(--text-secondary); 
-        }
-        .learn-section ul { 
-            padding-left: 1.5rem; 
-        }
-        .learn-section li {
-            margin-bottom: 0.5rem;
-        }
-        .learn-code-block { 
-            margin-top: 1rem; 
-            background: var(--gray-900); 
-            color: #e0e0e0; 
-            padding: 1rem; 
-            border-radius: var(--border-radius-sm); 
-            overflow-x: auto; 
-            font-family: var(--font-mono);
-        }
-    </style>
 </head>
 <body>
     <nav class="nav">
@@ -81,12 +24,18 @@ permalink: /zh/pages/learn.html
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SS</span>
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
                 <a href="{{ site.baseurl }}/zh/#skills">技能</a>
                 <a href="{{ site.baseurl }}/zh/#quick-start">快速开始</a>
                 <a href="{{ site.baseurl }}/zh/#papers">论文</a>
                 <a href="{{ site.baseurl }}/zh/#resources">资源</a>
-                <a href="{{ site.baseurl }}/zh/#author">作者</a>
+                <a href="{{ site.baseurl }}/zh/pages/learn.html" class="active">学习</a>
+                <a href="{{ site.baseurl }}/zh/#author">关于</a>
                 <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-cta">提交</a>
                 <a href="{{ site.baseurl }}/pages/learn.html" class="nav-lang">English</a>
             </div>
@@ -126,7 +75,7 @@ permalink: /zh/pages/learn.html
                 </ul>
             </section>
 
-            <div style="text-align:center; margin-top:2rem;">
+            <div style="text-align:center; margin-top:3rem;">
                 <a href="{{ site.baseurl }}/zh/#skills" class="btn btn-primary">浏览技能</a>
                 <a href="{{ site.baseurl }}/zh/pages/submit.html" class="btn btn-secondary">提交资源</a>
             </div>
@@ -140,5 +89,7 @@ permalink: /zh/pages/learn.html
             </div>
         </div>
     </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 </body>
 </html>
