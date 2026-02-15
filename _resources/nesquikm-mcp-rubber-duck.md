@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/nesquikm/mcp-rubber-duck
 source: github-auto
+tags: []
+permalink: /resources/nesquikm-mcp-rubber-duck/
 stars: 138
 last_updated: 2026-02-13
 license: "MIT"
-tags: []
-permalink: /resources/nesquikm-mcp-rubber-duck/
 ---
 ## mcp-rubber-duck (nesquikm)
 

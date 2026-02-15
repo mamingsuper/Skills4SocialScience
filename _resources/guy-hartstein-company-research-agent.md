@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/guy-hartstein/company-research-agent
 source: github-auto
+tags: ["agents", "ai", "company", "financial-analysis", "gemini", "gemini-3-flash"]
+permalink: /resources/guy-hartstein-company-research-agent/
 stars: 1592
 last_updated: 2026-02-12
 license: "Apache-2.0"
-tags: ["agents", "ai", "company", "financial-analysis", "gemini", "gemini-3-flash"]
-permalink: /resources/guy-hartstein-company-research-agent/
 ---
 ## company-research-agent (guy-hartstein)
 

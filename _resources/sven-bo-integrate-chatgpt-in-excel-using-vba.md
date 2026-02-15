@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/Sven-Bo/Integrate-ChatGPT-in-Excel-using-VBA
 source: github-auto
+tags: []
+permalink: /resources/sven-bo-integrate-chatgpt-in-excel-using-vba/
 stars: 157
 last_updated: 2026-01-30
 license: ""
-tags: []
-permalink: /resources/sven-bo-integrate-chatgpt-in-excel-using-vba/
 ---
 ## Integrate-ChatGPT-in-Excel-using-VBA (Sven-Bo)
 

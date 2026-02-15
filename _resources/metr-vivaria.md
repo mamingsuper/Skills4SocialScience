@@ -6,11 +6,11 @@ type: GitHub Repository
 category: benchmark
 link: https://github.com/METR/vivaria
 source: github-auto
+tags: ["ai", "ai-evaluation", "elicitation", "evals"]
+permalink: /resources/metr-vivaria/
 stars: 133
 last_updated: 2026-02-13
 license: "MIT"
-tags: ["ai", "ai-evaluation", "elicitation", "evals"]
-permalink: /resources/metr-vivaria/
 ---
 ## vivaria (METR)
 

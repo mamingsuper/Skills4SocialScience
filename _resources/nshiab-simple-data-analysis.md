@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/nshiab/simple-data-analysis
 source: github-auto
+tags: ["ai", "analysis", "bun", "data", "data-analysis", "data-science"]
+permalink: /resources/nshiab-simple-data-analysis/
 stars: 329
 last_updated: 2026-02-13
 license: "MIT"
-tags: ["ai", "analysis", "bun", "data", "data-analysis", "data-science"]
-permalink: /resources/nshiab-simple-data-analysis/
 ---
 ## simple-data-analysis (nshiab)
 

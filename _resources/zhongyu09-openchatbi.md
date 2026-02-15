@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/zhongyu09/openchatbi
 source: github-auto
+tags: ["agent", "ai", "analytics", "bi", "database", "datawarehouse"]
+permalink: /resources/zhongyu09-openchatbi/
 stars: 498
 last_updated: 2026-02-13
 license: "MIT"
-tags: ["agent", "ai", "analytics", "bi", "database", "datawarehouse"]
-permalink: /resources/zhongyu09-openchatbi/
 ---
 ## openchatbi (zhongyu09)
 

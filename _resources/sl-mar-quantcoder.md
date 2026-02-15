@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/SL-Mar/quantcoder
 source: github-auto
+tags: ["llm", "local-llm", "ollama", "quantconnect", "trading", "trading-algorithms"]
+permalink: /resources/sl-mar-quantcoder/
 stars: 88
 last_updated: 2026-02-12
 license: "Apache-2.0"
-tags: ["llm", "local-llm", "ollama", "quantconnect", "trading", "trading-algorithms"]
-permalink: /resources/sl-mar-quantcoder/
 ---
 ## quantcoder (SL-Mar)
 
