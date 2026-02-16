@@ -1,0 +1,70 @@
+name: Auto Collect Skills
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: auto-collect-skills
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Collect skills
+        run: |
+          python scripts/auto_collect_skills.py \
+            --repo-root . \
+            --max-new 5 \
+            --min-new 1 \
+            --min-stars 3 \
+            --lookback-days 60 \
+            --pages-per-query 2 \
+            --per-page 30
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push updates
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add _skills/
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(skills): auto-collect GitHub skills"
+
+          for attempt in 1 2 3; do
+            echo "Push attempt ${attempt}..."
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+
+            git rebase --abort || true
+            sleep 5
+          done
+
+          echo "Push failed after 3 attempts."
+          exit 1
