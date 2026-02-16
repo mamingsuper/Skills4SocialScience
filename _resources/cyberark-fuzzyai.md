@@ -8,8 +8,8 @@ link: https://github.com/cyberark/FuzzyAI
 source: github-auto
 tags: ["ai", "ai-red-team", "fuzzing", "jailbreak", "jailbreaking", "llm"]
 permalink: /resources/cyberark-fuzzyai/
-stars: 1197
-last_updated: 2026-02-14
+stars: 1200
+last_updated: 2026-02-15
 license: "Apache-2.0"
 ---
 ## FuzzyAI (cyberark)

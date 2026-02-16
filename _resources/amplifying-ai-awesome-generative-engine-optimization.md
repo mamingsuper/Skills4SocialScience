@@ -8,8 +8,8 @@ link: https://github.com/amplifying-ai/awesome-generative-engine-optimization
 source: github-auto
 tags: ["ai-search-engine", "ai-search-optimization", "awesome", "awesome-list", "generative", "generative-engine-optimization"]
 permalink: /resources/amplifying-ai-awesome-generative-engine-optimization/
-stars: 188
-last_updated: 2026-02-13
+stars: 191
+last_updated: 2026-02-15
 license: ""
 ---
 ## awesome-generative-engine-optimization (amplifying-ai)

@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/UniprJRC/FSDA
 source: github-auto
-stars: 99
-last_updated: 2026-02-14
-license: "EUPL-1.1"
 tags: ["box-cox", "classification", "clustering", "correspondence-analysis", "forward-search", "m-estimation"]
 permalink: /resources/uniprjrc-fsda/
+stars: 99
+last_updated: 2026-02-15
+license: "EUPL-1.1"
 ---
 ## FSDA (UniprJRC)
 

@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/QuantEcon/lecture-jax
 source: github-auto
+tags: ["computational", "economics", "gpu", "jax", "python"]
+permalink: /resources/quantecon-lecture-jax/
 stars: 48
 last_updated: 2026-02-11
 license: ""
-tags: ["computational", "economics", "gpu", "jax", "python"]
-permalink: /resources/quantecon-lecture-jax/
 ---
 ## lecture-jax (QuantEcon)
 

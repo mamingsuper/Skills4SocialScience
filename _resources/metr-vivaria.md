@@ -9,7 +9,7 @@ source: github-auto
 tags: ["ai", "ai-evaluation", "elicitation", "evals"]
 permalink: /resources/metr-vivaria/
 stars: 133
-last_updated: 2026-02-13
+last_updated: 2026-02-15
 license: "MIT"
 ---
 ## vivaria (METR)

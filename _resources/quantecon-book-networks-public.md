@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/QuantEcon/book-networks-public
 source: github-auto
+tags: ["economics", "networks"]
+permalink: /resources/quantecon-book-networks-public/
 stars: 124
 last_updated: 2026-02-05
 license: ""
-tags: ["economics", "networks"]
-permalink: /resources/quantecon-book-networks-public/
 ---
 ## book-networks-public (QuantEcon)
 

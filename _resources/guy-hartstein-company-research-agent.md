@@ -8,8 +8,8 @@ link: https://github.com/guy-hartstein/company-research-agent
 source: github-auto
 tags: ["agents", "ai", "company", "financial-analysis", "gemini", "gemini-3-flash"]
 permalink: /resources/guy-hartstein-company-research-agent/
-stars: 1592
-last_updated: 2026-02-12
+stars: 1593
+last_updated: 2026-02-15
 license: "Apache-2.0"
 ---
 ## company-research-agent (guy-hartstein)

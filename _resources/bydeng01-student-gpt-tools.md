@@ -6,11 +6,11 @@ type: GitHub Repository
 category: community
 link: https://github.com/bydeng01/student-gpt-tools
 source: github-auto
+tags: ["ai", "awesome", "awesome-list", "awesome-lists", "chatgpt", "chatgpt-api"]
+permalink: /resources/bydeng01-student-gpt-tools/
 stars: 57
 last_updated: 2026-02-04
 license: "MIT"
-tags: ["ai", "awesome", "awesome-list", "awesome-lists", "chatgpt", "chatgpt-api"]
-permalink: /resources/bydeng01-student-gpt-tools/
 ---
 ## student-gpt-tools (bydeng01)
 

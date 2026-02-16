@@ -8,8 +8,8 @@ link: https://github.com/CornellNLP/ConvoKit
 source: github-auto
 tags: ["computational-social-science", "conversational-ai", "conversational-analysis", "conversations", "dataset", "dialogs"]
 permalink: /resources/cornellnlp-convokit/
-stars: 619
-last_updated: 2026-02-13
+stars: 621
+last_updated: 2026-02-15
 license: "MIT"
 ---
 ## ConvoKit (CornellNLP)

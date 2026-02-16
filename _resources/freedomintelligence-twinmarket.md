@@ -8,8 +8,8 @@ link: https://github.com/FreedomIntelligence/TwinMarket
 source: github-auto
 tags: ["agent", "computational-social-science", "fintech", "social-simulation"]
 permalink: /resources/freedomintelligence-twinmarket/
-stars: 140
-last_updated: 2026-02-11
+stars: 142
+last_updated: 2026-02-15
 license: ""
 ---
 ## TwinMarket (FreedomIntelligence)

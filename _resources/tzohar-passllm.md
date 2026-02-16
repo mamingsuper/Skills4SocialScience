@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/Tzohar/PassLLM
 source: github-auto
-stars: 46
-last_updated: 2026-02-15
-license: "GPL-3.0"
 tags: ["brute-force", "cybersecurity", "infosec", "llm", "lora", "machine-learning"]
 permalink: /resources/tzohar-passllm/
+stars: 47
+last_updated: 2026-02-15
+license: "GPL-3.0"
 ---
 ## PassLLM (Tzohar)
 

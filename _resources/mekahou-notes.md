@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/Mekahou/Notes
 source: github-auto
+tags: []
+permalink: /resources/mekahou-notes/
 stars: 67
 last_updated: 2026-02-12
 license: "MIT"
-tags: []
-permalink: /resources/mekahou-notes/
 ---
 ## Notes (Mekahou)
 
