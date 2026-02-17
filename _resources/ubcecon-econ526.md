@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/ubcecon/ECON526
 source: github-auto
+tags: []
+permalink: /resources/ubcecon-econ526/
 stars: 25
 last_updated: 2025-12-01
 license: ""
-tags: []
-permalink: /resources/ubcecon-econ526/
 ---
 ## ECON526 (ubcecon)
 

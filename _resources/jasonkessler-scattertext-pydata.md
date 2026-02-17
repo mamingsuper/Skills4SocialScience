@@ -8,8 +8,8 @@ link: https://github.com/JasonKessler/Scattertext-PyData
 source: github-auto
 tags: ["computational-social-science", "gender", "natural-language-processing", "nlp", "political-parties", "political-science"]
 permalink: /resources/jasonkessler-scattertext-pydata/
-stars: 140
-last_updated: 2026-01-29
+stars: 141
+last_updated: 2026-02-16
 license: ""
 ---
 ## Scattertext-PyData (JasonKessler)

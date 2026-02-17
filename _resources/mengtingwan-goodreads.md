@@ -8,8 +8,8 @@ link: https://github.com/MengtingWan/goodreads
 source: github-auto
 tags: ["book-reviews", "computational-social-science", "dataset", "machine-learning", "natural-language-processing", "recommendation-system"]
 permalink: /resources/mengtingwan-goodreads/
-stars: 297
-last_updated: 2026-01-30
+stars: 298
+last_updated: 2026-02-17
 license: "Apache-2.0"
 ---
 ## goodreads (MengtingWan)

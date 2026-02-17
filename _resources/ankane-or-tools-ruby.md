@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/ankane/or-tools-ruby
 source: github-auto
+tags: ["bin-packing", "knapsack-problem", "operations-research", "optimization", "routing", "scheduling"]
+permalink: /resources/ankane-or-tools-ruby/
 stars: 212
 last_updated: 2026-02-16
 license: "Apache-2.0"
-tags: ["bin-packing", "knapsack-problem", "operations-research", "optimization", "routing", "scheduling"]
-permalink: /resources/ankane-or-tools-ruby/
 ---
 ## or-tools-ruby (ankane)
 

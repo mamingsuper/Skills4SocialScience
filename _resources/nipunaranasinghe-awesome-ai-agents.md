@@ -6,11 +6,11 @@ type: GitHub Repository
 category: community
 link: https://github.com/NipunaRanasinghe/awesome-ai-agents
 source: github-auto
-stars: 23
-last_updated: 2026-02-13
-license: "MIT"
 tags: ["ai", "ai-agents", "awesome", "awesome-agents", "awesome-ai", "awesome-list"]
 permalink: /resources/nipunaranasinghe-awesome-ai-agents/
+stars: 24
+last_updated: 2026-02-16
+license: "MIT"
 ---
 ## awesome-ai-agents (NipunaRanasinghe)
 

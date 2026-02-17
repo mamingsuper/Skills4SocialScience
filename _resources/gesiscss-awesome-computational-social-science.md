@@ -8,8 +8,8 @@ link: https://github.com/gesiscss/awesome-computational-social-science
 source: github-auto
 tags: ["awesome-list", "computational-social-science", "network-analysis", "python", "rstats", "text-mining"]
 permalink: /resources/gesiscss-awesome-computational-social-science/
-stars: 826
-last_updated: 2026-02-13
+stars: 825
+last_updated: 2026-02-16
 license: "CC0-1.0"
 ---
 ## awesome-computational-social-science (gesiscss)

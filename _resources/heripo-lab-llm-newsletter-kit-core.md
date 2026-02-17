@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/heripo-lab/llm-newsletter-kit-core
 source: github-auto
-stars: 38
-last_updated: 2026-02-13
-license: "Apache-2.0"
 tags: ["automation", "email-automation", "framework", "llm", "newsletter", "toolkit"]
 permalink: /resources/heripo-lab-llm-newsletter-kit-core/
+stars: 39
+last_updated: 2026-02-16
+license: "Apache-2.0"
 ---
 ## llm-newsletter-kit-core (heripo-lab)
 

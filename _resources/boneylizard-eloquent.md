@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/boneylizard/Eloquent
 source: github-auto
+tags: ["elo-rating-", "forensic-lingsuitics", "llm", "multi-gpu", "privacy", "python"]
+permalink: /resources/boneylizard-eloquent/
 stars: 55
 last_updated: 2026-02-15
 license: "AGPL-3.0"
-tags: ["elo-rating-", "forensic-lingsuitics", "llm", "multi-gpu", "privacy", "python"]
-permalink: /resources/boneylizard-eloquent/
 ---
 ## Eloquent (boneylizard)
 

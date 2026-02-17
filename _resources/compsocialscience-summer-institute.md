@@ -9,7 +9,7 @@ source: github-auto
 tags: []
 permalink: /resources/compsocialscience-summer-institute/
 stars: 367
-last_updated: 2026-02-12
+last_updated: 2026-02-16
 license: "MIT"
 ---
 ## summer-institute (compsocialscience)

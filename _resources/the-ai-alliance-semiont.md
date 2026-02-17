@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/The-AI-Alliance/semiont
 source: github-auto
-stars: 27
-last_updated: 2026-02-14
-license: "Apache-2.0"
 tags: []
 permalink: /resources/the-ai-alliance-semiont/
+stars: 27
+last_updated: 2026-02-17
+license: "Apache-2.0"
 ---
 ## semiont (The-AI-Alliance)
 

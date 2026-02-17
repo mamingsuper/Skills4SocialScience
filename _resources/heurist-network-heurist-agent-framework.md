@@ -8,8 +8,8 @@ link: https://github.com/heurist-network/heurist-agent-framework
 source: github-auto
 tags: ["agentic-ai", "agentic-framework", "ai", "mcp"]
 permalink: /resources/heurist-network-heurist-agent-framework/
-stars: 771
-last_updated: 2026-02-16
+stars: 773
+last_updated: 2026-02-17
 license: "NOASSERTION"
 ---
 ## heurist-agent-framework (heurist-network)

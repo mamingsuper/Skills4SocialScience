@@ -8,8 +8,8 @@ link: https://github.com/gadievron/raptor
 source: github-auto
 tags: []
 permalink: /resources/gadievron-raptor/
-stars: 1098
-last_updated: 2026-02-16
+stars: 1102
+last_updated: 2026-02-17
 license: "MIT"
 ---
 ## raptor (gadievron)

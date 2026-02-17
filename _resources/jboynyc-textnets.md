@@ -8,8 +8,8 @@ link: https://github.com/jboynyc/textnets
 source: github-auto
 tags: ["computational-social-science", "network-analysis", "nlp", "sociology", "text-analysis", "text-as-data"]
 permalink: /resources/jboynyc-textnets/
-stars: 292
-last_updated: 2026-01-04
+stars: 293
+last_updated: 2026-02-16
 license: "GPL-3.0"
 ---
 ## textnets (jboynyc)
