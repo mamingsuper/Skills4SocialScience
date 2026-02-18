@@ -55,23 +55,31 @@ jobs:
           # No external dependencies needed - uses stdlib only
 
       - name: Run multi-channel search
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            # Manual trigger with custom parameters
-            ARGS="--query '${{ inputs.query }}' --discipline '${{ inputs.discipline }}' --workflow-stage '${{ inputs.workflow-stage }}' --max-results ${{ inputs.max-results }}"
+            # Manual trigger with custom parameters — build args array safely
+            EXTRA_ARGS=""
             if [ "${{ inputs.dry-run }}" = "true" ]; then
-              ARGS="$ARGS --dry-run"
+              EXTRA_ARGS="--dry-run"
             fi
+            python scripts/search_orchestrator.py \
+              --query "${{ inputs.query }}" \
+              --discipline "${{ inputs.discipline }}" \
+              --workflow-stage "${{ inputs.workflow-stage }}" \
+              --max-results "${{ inputs.max-results }}" \
+              --repo-root . \
+              $EXTRA_ARGS
           else
-            # Scheduled run - search by discipline and workflow stages
-            ARGS="--query 'AI social science research' --max-results 30"
+            # Scheduled run — no variable quoting issues
+            python scripts/search_orchestrator.py \
+              --query "AI social science research" \
+              --max-results 30 \
+              --repo-root .
           fi
-
-          echo "Running search with: $ARGS"
-          python scripts/search_orchestrator.py $ARGS --repo-root .
 
       - name: Check for changes
         id: check-changes
@@ -135,6 +143,7 @@ jobs:
           python-version: "3.11"
 
       - name: Refresh existing GitHub repository metrics
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -142,7 +151,8 @@ jobs:
             --repo-root . \
             --lookback-days 3650 \
             --pages-per-query 1 \
-            --max-new 0
+            --max-new 0 \
+            --min-new 0
 
       - name: Commit metrics updates
         run: |

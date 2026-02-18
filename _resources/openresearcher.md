@@ -2,6 +2,7 @@
 layout: resource
 title: "OpenResearcher"
 description: "TIGER AI Lab's hub for reproducible research, knowledge graphs, and LLM-aware workflows."
+zh_description: "开源 AI 研究助手框架（TIGER 实验室），支持自动化文献检索与研究报告生成。"
 type: Toolset
 category: research-tool
 link: https://github.com/TIGER-AI-Lab/OpenResearcher

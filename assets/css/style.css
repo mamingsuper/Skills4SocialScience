@@ -2002,3 +2002,246 @@ button:focus-visible {
 .skills-grid.filtering {
     opacity: 0.7;
 }
+
+/* ============================================
+   Dark Mode Theme
+   ============================================ */
+[data-theme="dark"] {
+    /* Surfaces */
+    --bg-primary: #0F1117;
+    --bg-secondary: #161B27;
+    --bg-tertiary: #1E2535;
+    --bg-elevated: #1A2032;
+    --bg-gradient: linear-gradient(180deg, #0F1117 0%, #161B27 100%);
+
+    /* Text */
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-tertiary: #64748B;
+    --text-inverse: #111827;
+    --text-muted: #64748B;
+
+    /* Accent (keep blue, lighten slightly for dark bg) */
+    --accent-primary: #E2E8F0;
+    --accent-primary-light: #F1F5F9;
+    --accent-primary-dark: #CBD5E1;
+    --accent-primary-50: rgba(226, 232, 240, 0.05);
+    --accent-primary-100: rgba(226, 232, 240, 0.1);
+    --accent-secondary: #3B82F6;
+    --accent-secondary-light: #60A5FA;
+    --accent-secondary-100: rgba(59, 130, 246, 0.15);
+    --accent-secondary-200: rgba(59, 130, 246, 0.25);
+    --accent-gradient: linear-gradient(135deg, #F1F5F9 0%, #3B82F6 100%);
+
+    /* Borders */
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --border-default: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.15);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(59, 130, 246, 0.5);
+
+    /* Glass */
+    --glass-bg: rgba(22, 27, 39, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    /* Shadows (more prominent on dark) */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+
+    /* Grays (inverted scale for dark) */
+    --gray-50: #0F1117;
+    --gray-100: #161B27;
+    --gray-200: #1E2535;
+    --gray-800: #D1D5DB;
+    --gray-900: #0A0D14;
+}
+
+/* Dark mode: body background */
+[data-theme="dark"] body {
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+}
+
+/* Dark mode: navigation */
+[data-theme="dark"] .nav {
+    background: rgba(15, 17, 23, 0.92);
+    border-bottom-color: var(--border-default);
+}
+
+[data-theme="dark"] .nav.scrolled {
+    background: rgba(15, 17, 23, 0.98);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode: cards */
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .taxonomy-card,
+[data-theme="dark"] .tool-comp-card,
+[data-theme="dark"] .stage-card,
+[data-theme="dark"] .feature-item,
+[data-theme="dark"] .about-card {
+    background: var(--bg-elevated);
+    border-color: var(--border-default);
+}
+
+[data-theme="dark"] .skill-card:hover,
+[data-theme="dark"] .taxonomy-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent-secondary-200);
+}
+
+/* Dark mode: sections */
+[data-theme="dark"] .quickstart-section,
+[data-theme="dark"] .taxonomy-section,
+[data-theme="dark"] .author-section,
+[data-theme="dark"] .footer {
+    background: var(--bg-secondary);
+    border-color: var(--border-default);
+}
+
+/* Dark mode: code blocks */
+[data-theme="dark"] .code-block,
+[data-theme="dark"] .learn-code,
+[data-theme="dark"] .learn-code-block {
+    background: #0A0D14;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Dark mode: form inputs */
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="url"],
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: var(--bg-tertiary);
+    border-color: var(--border-default);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Dark mode: form container */
+[data-theme="dark"] .form-container {
+    background: rgba(22, 27, 39, 0.9);
+    border-color: var(--border-default);
+}
+
+/* Dark mode: search overlay */
+[data-theme="dark"] .search-overlay {
+    background: rgba(15, 17, 23, 0.97);
+}
+
+[data-theme="dark"] .search-input {
+    background: var(--bg-elevated);
+    border-color: var(--border-default);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .search-result-item {
+    background: var(--bg-elevated);
+    border-color: var(--border-default);
+}
+
+[data-theme="dark"] .search-result-title {
+    color: var(--text-primary);
+}
+
+/* Dark mode: tool cards, filter tabs */
+[data-theme="dark"] .tool-card,
+[data-theme="dark"] .filter-tab {
+    background: var(--bg-elevated);
+    border-color: var(--border-default);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .filter-tab:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .filter-tab.active {
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+    color: white;
+}
+
+/* Dark mode: nav lang tag */
+[data-theme="dark"] .nav-lang {
+    background: var(--bg-tertiary);
+    border-color: var(--border-default);
+    color: var(--text-secondary);
+}
+
+/* Dark mode: buttons */
+[data-theme="dark"] .btn-secondary {
+    background: var(--bg-elevated);
+    border-color: var(--border-default);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-secondary);
+    color: var(--accent-secondary);
+}
+
+/* Dark mode: learn page section cards */
+[data-theme="dark"] .learn-section-card {
+    background: var(--bg-elevated);
+    border-color: var(--border-default);
+}
+
+/* Dark mode: tags */
+[data-theme="dark"] .tag {
+    background: var(--bg-tertiary);
+    border-color: var(--border-default);
+    color: var(--text-secondary);
+}
+
+/* Dark mode: mobile nav menu */
+[data-theme="dark"] .nav-links {
+    background: rgba(15, 17, 23, 0.98);
+}
+
+/* ============================================
+   Dark Mode Toggle Button
+   ============================================ */
+#dark-mode-toggle {
+    background: none;
+    border: 1px solid var(--border-default);
+    border-radius: var(--border-radius-sm);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+#dark-mode-toggle:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+}
+
+[data-theme="dark"] #dark-mode-toggle {
+    border-color: var(--border-default);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] #dark-mode-toggle:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}

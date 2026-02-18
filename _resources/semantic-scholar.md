@@ -2,6 +2,7 @@
 layout: resource
 title: "Semantic Scholar"
 description: "Free AI-powered research tool by Allen AI that surfaces key papers, extracts entities, and provides citation context across 200M+ papers."
+zh_description: "AI 驱动的免费学术文献搜索引擎，支持语义检索、引用分析与论文推荐，覆盖 2 亿余篇论文。"
 type: API & Web App
 category: research-tool
 link: https://www.semanticscholar.org/

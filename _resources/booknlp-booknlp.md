@@ -2,6 +2,7 @@
 layout: resource
 title: "booknlp"
 description: "BookNLP, a natural language processing pipeline for books"
+zh_description: "专为英文长文本（小说、书籍）设计的 NLP 管道，支持人物识别、共指消解与情感分析。"
 type: GitHub Repository
 category: workflow
 link: https://github.com/booknlp/booknlp

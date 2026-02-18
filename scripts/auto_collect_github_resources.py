@@ -9,6 +9,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -335,6 +336,7 @@ def github_search(
     order: str,
     per_page: int,
     page: int,
+    _retry: int = 0,
 ) -> List[Dict[str, object]]:
     query_parts = [query, "archived:false", "fork:false"]
 
@@ -355,15 +357,33 @@ def github_search(
     url = f"{SEARCH_URL}?{params}"
     request = urllib.request.Request(url, headers=github_headers(token))
 
+    # Polite delay between requests to avoid secondary rate limits
+    time.sleep(1.5)
+
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
+            # Respect X-RateLimit-Remaining header
+            remaining = response.headers.get("X-RateLimit-Remaining", "999")
+            if int(remaining) < 5:
+                print(f"[INFO] Rate limit low ({remaining} remaining), sleeping 60s...")
+                time.sleep(60)
             payload = json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         if e.code == 422:
-            print(f"[WARN] query failed: {query} (page={page}) -> HTTP 422: Unprocessable Entity - simplifying query")
+            print(f"[WARN] query failed: {query} (page={page}) -> HTTP 422: Unprocessable Entity")
             return []
-        elif e.code == 403:
-            print(f"[WARN] query failed: {query} (page={page}) -> HTTP 403: Forbidden")
+        elif e.code in (403, 429):
+            # Secondary rate limit — exponential backoff, max 2 retries
+            if _retry < 2:
+                wait = 30 * (2 ** _retry)
+                print(f"[WARN] query rate-limited: {query} (page={page}) -> HTTP {e.code}, retrying in {wait}s...")
+                time.sleep(wait)
+                return github_search(
+                    query, token,
+                    lookback_days=lookback_days, sort=sort, order=order,
+                    per_page=per_page, page=page, _retry=_retry + 1,
+                )
+            print(f"[WARN] query failed after retries: {query} (page={page}) -> HTTP {e.code}: Forbidden")
             return []
         else:
             print(f"[WARN] query failed: {query} (page={page}) -> {e}")

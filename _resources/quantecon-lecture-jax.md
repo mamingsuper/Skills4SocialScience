@@ -2,6 +2,7 @@
 layout: resource
 title: "lecture-jax"
 description: "Lectures on Quantitative Economics Using JAX"
+zh_description: "基于 JAX 的高性能经济学计算教程，适合社会科学中的大规模数值模拟与机器学习应用。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/QuantEcon/lecture-jax

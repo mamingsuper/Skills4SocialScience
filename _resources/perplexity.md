@@ -2,6 +2,7 @@
 layout: resource
 title: "Perplexity AI"
 description: "AI-powered answer engine with Academic Focus mode that searches and synthesizes scholarly sources with inline citations."
+zh_description: "AI 驱动的搜索引擎，每条回答均附带可追溯的学术引用，适合研究者快速核实事实。"
 type: Web App
 category: research-tool
 link: https://www.perplexity.ai/

@@ -2,6 +2,7 @@
 layout: resource
 title: "lecture-python-intro"
 description: "An Undergraduate Lecture Series for the Foundations of Computational Economics"
+zh_description: "QuantEcon 出品的 Python 经济学入门教程，覆盖数据处理、统计建模与经济模型实现。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/QuantEcon/lecture-python-intro

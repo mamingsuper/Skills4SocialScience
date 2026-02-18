@@ -2,6 +2,7 @@
 layout: resource
 title: "Consensus"
 description: "AI-powered academic search engine that synthesizes findings from 200M+ peer-reviewed papers with instant summaries and agreement meters."
+zh_description: "基于 AI 的学术搜索引擎，直接从论文中提取共识性结论，适合快速了解某领域研究现状。"
 type: Web App
 category: research-tool
 link: https://consensus.app/

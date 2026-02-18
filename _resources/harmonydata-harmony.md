@@ -2,6 +2,7 @@
 layout: resource
 title: "harmony"
 description: "The Harmony Python library: a research tool for psychologists to harmonise data and questionnaire items. Open source."
+zh_description: "跨语言问卷条目谐调工具，利用 LLM 自动匹配不同调查量表中的相似测量项，适合跨国比较研究。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/harmonydata/harmony

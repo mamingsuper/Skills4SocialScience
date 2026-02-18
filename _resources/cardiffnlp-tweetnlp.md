@@ -2,6 +2,7 @@
 layout: resource
 title: "tweetnlp"
 description: "TweetNLP for all the NLP enthusiasts working on Twitter! The Python library tweetnlp provides a collection of useful tools to analyze/understand tweets such as sentiment analysi..."
+zh_description: "基于 Twitter 数据预训练的 NLP 工具集，支持情感分析、话题检测与命名实体识别。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/cardiffnlp/tweetnlp

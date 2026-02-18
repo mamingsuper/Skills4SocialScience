@@ -2,6 +2,7 @@
 layout: resource
 title: "scattertext"
 description: "Beautiful visualizations of how language differs among document types."
+zh_description: "Python 文本可视化工具，能在浏览器中呈现不同语料间词汇使用差异，适合社会科学文本比较分析。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/JasonKessler/scattertext

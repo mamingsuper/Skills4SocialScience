@@ -2,6 +2,7 @@
 layout: resource
 title: "HuggingFace Social Science Datasets"
 description: "Curated collection of NLP and social science datasets on HuggingFace Hub for sentiment analysis, hate speech detection, opinion mining, and more."
+zh_description: "Hugging Face 社会科学专区，汇集 NLP 模型、数据集与工具，可直接用于社会科学文本分析。"
 type: Dataset Hub
 category: dataset
 link: https://huggingface.co/datasets?task_categories=text-classification&sort=downloads

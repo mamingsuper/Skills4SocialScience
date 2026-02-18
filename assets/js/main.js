@@ -5,6 +5,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initDarkMode();        // ← run first so theme applies before paint
     initFilterGroups();
     initSmoothScroll();
     initNavScroll();
@@ -646,5 +647,68 @@ function initScrollToTop() {
 
     btn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+/**
+ * =============================================
+ * DARK MODE
+ * Persists to localStorage; respects system preference as default.
+ * Injects a 🌙/☀️ toggle button into .nav-links automatically.
+ * =============================================
+ */
+function initDarkMode() {
+    const STORAGE_KEY = 'ai4ss-theme';
+    const html = document.documentElement;
+
+    // 1. Determine initial theme
+    const stored = localStorage.getItem(STORAGE_KEY);
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = stored || (prefersDark ? 'dark' : 'light');
+    html.setAttribute('data-theme', initialTheme);
+
+    // 2. Create toggle button
+    const btn = document.createElement('button');
+    btn.id = 'dark-mode-toggle';
+    btn.setAttribute('aria-label', 'Toggle dark mode');
+    btn.title = 'Toggle dark / light mode';
+
+    const updateIcon = () => {
+        btn.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    };
+    updateIcon();
+
+    // 3. Inject into nav-links — before lang-switch link if present
+    const injectToggle = () => {
+        const navLinks = document.querySelector('.nav-links');
+        if (!navLinks) return false;
+        const langLink = navLinks.querySelector('.nav-lang');
+        if (langLink) {
+            navLinks.insertBefore(btn, langLink);
+        } else {
+            navLinks.appendChild(btn);
+        }
+        return true;
+    };
+
+    if (!injectToggle()) {
+        setTimeout(injectToggle, 0);
+    }
+
+    // 4. Toggle handler
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem(STORAGE_KEY, next);
+        updateIcon();
+    });
+
+    // 5. Follow system preference changes (only if user hasn't set a preference)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem(STORAGE_KEY)) {
+            html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+            updateIcon();
+        }
     });
 }

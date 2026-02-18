@@ -2,6 +2,7 @@
 layout: resource
 title: "Elicit"
 description: "AI research assistant that automates literature reviews, extracts data from papers, and supports systematic reviews across 138M+ papers."
+zh_description: "AI 研究助手，能自动检索、摘要并比较学术文献，显著提升系统性文献回顾效率。"
 type: Web App
 category: research-tool
 link: https://elicit.com/

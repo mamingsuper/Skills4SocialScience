@@ -2,6 +2,7 @@
 layout: resource
 title: "book-networks-public"
 description: "Companion Site for Economic Networks: Theory and Computation"
+zh_description: "网络经济学交互式教材，系统讲解图论、供应链与金融网络的分析方法与 Python 实现。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/QuantEcon/book-networks-public

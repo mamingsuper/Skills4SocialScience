@@ -2,6 +2,7 @@
 layout: resource
 title: "Scattertext-PyData"
 description: "Notebooks for the Seattle PyData 2017 talk on Scattertext"
+zh_description: "ScatterText 的 PyData 教程版本，包含完整的可交互文本可视化实战讲解。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/JasonKessler/Scattertext-PyData

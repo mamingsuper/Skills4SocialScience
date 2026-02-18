@@ -2,6 +2,7 @@
 layout: resource
 title: "textnets"
 description: "Text analysis with networks."
+zh_description: "将文本分析与网络科学结合的 Python 工具，可将文档或词语关系转化为可分析的网络图。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/jboynyc/textnets

@@ -2,6 +2,7 @@
 layout: resource
 title: "ConvoKit"
 description: "ConvoKit is a toolkit for extracting conversational features and analyzing social phenomena in conversations. It includes several large conversational datasets along with script..."
+zh_description: "康奈尔大学开发的对话数据分析工具包，内置多个社交媒体、法律庭审等标准对话数据集。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/CornellNLP/ConvoKit

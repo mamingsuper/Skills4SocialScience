@@ -2,6 +2,7 @@
 layout: resource
 title: "Litmaps"
 description: "Research visualization tool that creates interactive citation maps with timeline views, helping you track how ideas evolve across publications."
+zh_description: "交互式文献地图与引用可视化工具，可按时间线展示文献关联网络，辅助系统性文献综述。"
 type: Web App
 category: research-tool
 link: https://www.litmaps.com/

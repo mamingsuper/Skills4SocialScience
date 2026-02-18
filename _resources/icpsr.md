@@ -2,6 +2,7 @@
 layout: resource
 title: "ICPSR Data Archive"
 description: "The world's largest archive of social science data, hosting 16,000+ studies with documentation, metadata, and analysis tools."
+zh_description: "美国密歇根大学主导的社会科学数据存档与共享平台，提供数千个政治学、社会学、经济学数据集。"
 type: Data Archive
 category: dataset
 link: https://www.icpsr.umich.edu/

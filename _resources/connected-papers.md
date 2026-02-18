@@ -2,6 +2,7 @@
 layout: resource
 title: "Connected Papers"
 description: "Visual tool that builds a graph of related academic papers from any seed paper, revealing clusters of similar research."
+zh_description: "可视化论文引用关系的文献图谱工具，帮助研究者快速发现相关文献并理解领域知识结构。"
 type: Web App
 category: research-tool
 link: https://www.connectedpapers.com/

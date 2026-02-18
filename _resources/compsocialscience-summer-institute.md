@@ -2,6 +2,7 @@
 layout: resource
 title: "summer-institute"
 description: "Summer Institutes in Computational Social Science"
+zh_description: "计算社会科学夏季研究所（SICSS），提供免费在线课程、讲座及社区，覆盖全球多所合办地点。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/compsocialscience/summer-institute
