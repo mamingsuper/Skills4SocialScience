@@ -27,34 +27,46 @@
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SS</span>
             </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="nav-links">
                 {% if page.url contains '/zh/' %}
+                <button id="nav-search-btn" class="nav-search-btn" aria-label="搜索"
+                    style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
                 <a href="{{ site.baseurl }}/zh/#skills">技能</a>
-                <a href="{{ site.baseurl }}/zh/#quick-start">快速开始</a>
                 <a href="{{ site.baseurl }}/zh/#papers">论文</a>
-                <a href="{{ site.baseurl }}/zh/#resources">资源</a>
+                <a href="{{ site.baseurl }}/zh/#resources">工具</a>
                 <a href="{{ site.baseurl }}/zh/pages/learn.html">学习</a>
-                <a href="{{ site.baseurl }}/zh/#author">关于</a>
+                <a href="{{ site.baseurl }}/zh/pages/about.html">关于</a>
                 <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-cta">提交</a>
                 <a href="{{ site.baseurl }}/" class="nav-lang">English</a>
                 {% else %}
+                <button id="nav-search-btn" class="nav-search-btn" aria-label="Search"
+                    style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
                 <a href="{{ site.baseurl }}/#skills">Skills</a>
-                <a href="{{ site.baseurl }}/#quick-start">Quick Start</a>
                 <a href="{{ site.baseurl }}/#papers">Papers</a>
-                <a href="{{ site.baseurl }}/#resources">Resources</a>
+                <a href="{{ site.baseurl }}/#resources">Tools</a>
                 <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
-                <a href="{{ site.baseurl }}/#author">About</a>
+                <a href="{{ site.baseurl }}/pages/about.html">About</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
                 <a href="{{ site.baseurl }}/zh/" class="nav-lang">中文</a>
                 {% endif %}
             </div>
         </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..."
+                aria-label="Search">
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+    </div>
 
     <main>
         <div class="detail-header">

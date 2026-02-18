@@ -1,7 +1,8 @@
 ---
 layout: null
 title: Learn | AI4SS
-description: Guide to AI coding agents, skills, and workflows for social science research.
+description: Complete guide to using AI agents, skills, and workflows for social science research — from beginner to
+advanced.
 lang: en
 permalink: /pages/learn.html
 ---
@@ -14,94 +15,1067 @@ permalink: /pages/learn.html
     {% seo %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/learn.css">
+
+    <style>
+        .learn-page {
+            padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl);
+        }
+
+        .learn-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .learn-header .hero-badge {
+            margin-bottom: var(--space-md);
+        }
+
+        .learn-header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin: var(--space-md) 0;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+        }
+
+        .learn-header p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── Progress Path ── */
+        .learn-path {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: var(--space-3xl);
+            flex-wrap: wrap;
+        }
+
+        .path-step {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .path-dot {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-default);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            transition: all var(--transition-base);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .path-dot:hover,
+        .path-dot.active {
+            background: var(--accent-secondary);
+            border-color: var(--accent-secondary);
+            color: white;
+        }
+
+        .path-label {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .path-connector {
+            width: 40px;
+            height: 2px;
+            background: var(--border-default);
+            margin: 0 var(--space-xs);
+            align-self: center;
+        }
+
+        /* ── Section Cards ── */
+        .learn-section-card {
+            max-width: 860px;
+            margin: 0 auto var(--space-xl);
+            background: white;
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-xl) var(--space-2xl);
+            box-shadow: var(--shadow-sm);
+            scroll-margin-top: 100px;
+            border-left: 4px solid transparent;
+            transition: border-left-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .learn-section-card:hover {
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--accent-secondary);
+        }
+
+        .learn-section-card.stage-1 {
+            border-left-color: #7C3AED;
+        }
+
+        .learn-section-card.stage-2 {
+            border-left-color: var(--accent-secondary);
+        }
+
+        .learn-section-card.stage-3 {
+            border-left-color: var(--success);
+        }
+
+        .learn-section-card.stage-4 {
+            border-left-color: #0891B2;
+        }
+
+        .learn-section-card.stage-5 {
+            border-left-color: var(--warning);
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 3px 10px;
+            border-radius: var(--border-radius-full);
+            margin-bottom: var(--space-md);
+        }
+
+        .badge-foundation {
+            background: rgba(124, 58, 237, 0.1);
+            color: #7C3AED;
+        }
+
+        .badge-tools {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent-secondary);
+        }
+
+        .badge-workflow {
+            background: rgba(5, 150, 105, 0.1);
+            color: var(--success);
+        }
+
+        .badge-advanced {
+            background: rgba(8, 145, 178, 0.1);
+            color: #0891B2;
+        }
+
+        .badge-community {
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--warning);
+        }
+
+        .learn-section-card h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .learn-section-card>p {
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* ── Comparison Table ── */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-md) 0;
+            font-size: 0.9rem;
+        }
+
+        .compare-table th {
+            background: var(--bg-tertiary);
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-default);
+        }
+
+        .compare-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .compare-table tr:hover td {
+            background: var(--bg-secondary);
+        }
+
+        /* ── Feature Grid ── */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+
+        .feature-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+        }
+
+        .feature-item .feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-xs);
+            display: block;
+        }
+
+        .feature-item strong {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+
+        .feature-item p {
+            color: var(--text-tertiary);
+            font-size: 0.82rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* ── Workflow Steps ── */
+        .workflow-steps {
+            counter-reset: workflow-counter;
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            align-items: flex-start;
+        }
+
+        .workflow-step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent-secondary);
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .workflow-step-content strong {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+
+        .workflow-step-content p {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ── Stage Cards (Research Workflow) ── */
+        .stage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+
+        .stage-card {
+            background: white;
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            text-align: center;
+            text-decoration: none;
+            transition: all var(--transition-base);
+            color: var(--text-primary);
+        }
+
+        .stage-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-secondary);
+            color: var(--accent-secondary);
+        }
+
+        .stage-card .stage-emoji {
+            font-size: 1.75rem;
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stage-card strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .stage-card span {
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+        }
+
+        /* ── Code Block ── */
+        .learn-code {
+            background: var(--gray-900);
+            border-radius: var(--border-radius-sm);
+            padding: var(--space-md);
+            margin: var(--space-md) 0;
+            overflow-x: auto;
+            border: 1px solid var(--gray-800);
+        }
+
+        .learn-code code {
+            color: #e0e0e0;
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            white-space: pre;
+            line-height: 1.7;
+            display: block;
+        }
+
+        .learn-code .c {
+            color: #6b7280;
+        }
+
+        .learn-code .k {
+            color: #7f5af0;
+        }
+
+        .learn-code .s {
+            color: #fcd34d;
+        }
+
+        .learn-code .g {
+            color: #2cb67d;
+        }
+
+        /* ── FAQ Accordion ── */
+        .faq-list {
+            margin: var(--space-md) 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-align: left;
+            font-family: var(--font-sans);
+        }
+
+        .faq-question:hover {
+            color: var(--accent-secondary);
+        }
+
+        .faq-arrow {
+            font-size: 0.75rem;
+            transition: transform var(--transition-base);
+            color: var(--text-tertiary);
+        }
+
+        .faq-item.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            padding-bottom: var(--space-md);
+        }
+
+        /* ── Tool Comparison ── */
+        .tool-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+
+        .tool-comp-card {
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            background: white;
+        }
+
+        .tool-comp-card .tool-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .tool-comp-card .tool-best {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .tool-comp-card .tool-tag {
+            display: inline-block;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            padding: 2px 8px;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        /* ── CTA Block ── */
+        .learn-cta {
+            max-width: 860px;
+            margin: var(--space-2xl) auto 0;
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-2xl);
+            text-align: center;
+            color: white;
+        }
+
+        .learn-cta h2 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: var(--space-sm);
+        }
+
+        .learn-cta p {
+            opacity: 0.85;
+            margin-bottom: var(--space-lg);
+            line-height: 1.65;
+        }
+
+        .learn-cta .btn-white {
+            background: white;
+            color: var(--accent-primary);
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: var(--border-radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: inline-block;
+            margin: 0 var(--space-xs);
+            text-decoration: none;
+        }
+
+        .learn-cta .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--accent-secondary);
+        }
+
+        .learn-cta .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 0.75rem 1.75rem;
+            border-radius: var(--border-radius-full);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: inline-block;
+            margin: 0 var(--space-xs);
+            text-decoration: none;
+        }
+
+        .learn-cta .btn-outline:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        @media (max-width: 640px) {
+            .learn-section-card {
+                padding: var(--space-lg);
+            }
+
+            .path-connector {
+                width: 20px;
+            }
+
+            .path-label {
+                display: none;
+            }
+
+            .stage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <a href="{{ site.baseurl }}/" class="nav-logo">
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SS</span>
             </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="nav-links">
+                <button id="nav-search-btn" class="nav-search-btn" aria-label="Search"
+                    style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
                 <a href="{{ site.baseurl }}/#skills">Skills</a>
-                <a href="{{ site.baseurl }}/#quick-start">Quick Start</a>
                 <a href="{{ site.baseurl }}/#papers">Papers</a>
-                <a href="{{ site.baseurl }}/#resources">Resources</a>
+                <a href="{{ site.baseurl }}/#resources">Tools</a>
                 <a href="{{ site.baseurl }}/pages/learn.html" class="active">Learn</a>
-                <a href="{{ site.baseurl }}/#author">About</a>
+                <a href="{{ site.baseurl }}/pages/about.html">About</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
                 <a href="{{ site.baseurl }}/zh/pages/learn.html" class="nav-lang">中文</a>
             </div>
         </div>
     </nav>
 
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..."
+                aria-label="Search">
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+    </div>
+
     <main class="learn-page">
         <div class="container">
+
+            <!-- Header -->
             <header class="learn-header">
-                <div class="hero-badge">📚 Education</div>
-                <h1>Understanding <span class="gradient-text">AI for Research</span></h1>
-                <p>How to use AI Agents, Skills, and Workflows to accelerate your social science research.</p>
+                <div class="hero-badge">📚 Learning Guide</div>
+                <h1>AI for <span class="gradient-text">Social Science</span> Research</h1>
+                <p>A complete, structured guide to integrating AI agents into every stage of your research workflow —
+                    from first-time users to advanced practitioners.</p>
             </header>
 
-            <section class="learn-section">
+            <!-- Learning Path Navigator -->
+            <nav class="learn-path" aria-label="Learning path">
+                <div class="path-step">
+                    <a href="#section-what" class="path-dot active">1</a>
+                    <span class="path-label">Foundations</span>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-step">
+                    <a href="#section-tools" class="path-dot">2</a>
+                    <span class="path-label">Tools</span>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-step">
+                    <a href="#section-skills" class="path-dot">3</a>
+                    <span class="path-label">Skills</span>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-step">
+                    <a href="#section-workflow" class="path-dot">4</a>
+                    <span class="path-label">Workflow</span>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-step">
+                    <a href="#section-advanced" class="path-dot">5</a>
+                    <span class="path-label">Advanced</span>
+                </div>
+                <div class="path-connector"></div>
+                <div class="path-step">
+                    <a href="#section-faq" class="path-dot">6</a>
+                    <span class="path-label">FAQ</span>
+                </div>
+            </nav>
+
+            <!-- ═══ SECTION 1: What Are AI Coding Agents? ═══ -->
+            <section id="section-what" class="learn-section-card stage-1">
+                <div class="section-badge badge-foundation">① Foundation</div>
                 <h2>🤖 What Are AI Coding Agents?</h2>
-                <p>AI coding agents (like Claude Code, Cursor, or Gemini CLI) are intelligent assistants that live in your terminal or editor. Unlike ChatGPT, they can:</p>
-                <ul>
-                    <li>Read your entire folder, understanding data structure, paper drafts, and code</li>
-                    <li>Execute Python scripts, install R packages, or compile LaTeX documents</li>
-                    <li>Remember your research question and methodology throughout the session</li>
-                </ul>
-            </section>
+                <p>AI coding agents are intelligent assistants that live in your terminal or code editor. Unlike
+                    chat-based AI (e.g., ChatGPT in a browser), they operate directly inside your research environment
+                    — reading files, running code, and taking multi-step actions.</p>
 
-            <section class="learn-section">
-                <h2>🛠️ What Are "Skills"?</h2>
-                <p>Skills are specialized instruction sets that teach an AI agent how to perform a specific research task perfectly.</p>
-                <div class="learn-code-block">
-                    <code><span class="comment"># Without a Skill:</span>
-User: "Run a regression."
-AI: *Writes generic code*
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>ChatGPT / Web Chat</th>
+                            <th>AI Coding Agent (Claude Code, Cursor…)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Read your actual files</td>
+                            <td>❌ You must paste text</td>
+                            <td>✅ Reads your entire project folder</td>
+                        </tr>
+                        <tr>
+                            <td>Execute code / scripts</td>
+                            <td>❌ Generates code only</td>
+                            <td>✅ Runs Python, R, Stata, shell commands</td>
+                        </tr>
+                        <tr>
+                            <td>Install packages</td>
+                            <td>❌</td>
+                            <td>✅ Automatically installs dependencies</td>
+                        </tr>
+                        <tr>
+                            <td>Multi-step research tasks</td>
+                            <td>⚠️ Requires manual copy-paste</td>
+                            <td>✅ Plans and executes autonomously</td>
+                        </tr>
+                        <tr>
+                            <td>Use specialized skills</td>
+                            <td>❌</td>
+                            <td>✅ Load SKILL.md to specialize behavior</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-<span class="comment"># With the Skill:</span>
-User: "/stata-regression Run panel data model"
-AI: *Uses reghdfe, clusters standard errors*</code>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">📁</span>
+                        <strong>Context Awareness</strong>
+                        <p>Reads your entire research folder — data files, drafts, code — in one session.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚙️</span>
+                        <strong>Code Execution</strong>
+                        <p>Runs analysis scripts, installs R packages, compiles LaTeX — automatically.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔁</span>
+                        <strong>Iterative Refinement</strong>
+                        <p>Loops on errors and feedback until the task is done correctly.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🗂️</span>
+                        <strong>File Management</strong>
+                        <p>Creates, edits, and organizes output files — from CSV to PDF.</p>
+                    </div>
                 </div>
             </section>
 
-            <section class="learn-section">
-                <h2>🔄 The AI Research Workflow</h2>
-                <p>We organize tools by the research lifecycle:</p>
-                <ul>
-                    <li><strong>Literature Review</strong> - AI summarizes papers, extracts arguments</li>
-                    <li><strong>Data & Analysis</strong> - Automate cleaning, modeling, visualization</li>
-                    <li><strong>Writing & Publishing</strong> - Draft sections, format citations, convert to LaTeX</li>
-                </ul>
+            <!-- ═══ SECTION 2: Choosing Your AI Tool ═══ -->
+            <section id="section-tools" class="learn-section-card stage-2">
+                <div class="section-badge badge-tools">② AI Tools</div>
+                <h2>🛠️ Choosing Your AI Tool</h2>
+                <p>Several AI coding agents work well for social science research. Here's how they compare for
+                    common research scenarios.</p>
+
+                <div class="tool-comparison">
+                    <div class="tool-comp-card">
+                        <div class="tool-name">🤖 Claude Code</div>
+                        <div class="tool-best">Best for: Long research sessions, complex workflows</div>
+                        <span class="tool-tag">Terminal-based</span>
+                        <span class="tool-tag">Free tier</span>
+                        <span class="tool-tag">Skill support</span>
+                        <span class="tool-tag">Strong reasoning</span>
+                    </div>
+                    <div class="tool-comp-card">
+                        <div class="tool-name">⌨️ Cursor</div>
+                        <div class="tool-best">Best for: Code-heavy analysis, VS Code users</div>
+                        <span class="tool-tag">IDE-integrated</span>
+                        <span class="tool-tag">Codebase chat</span>
+                        <span class="tool-tag">Multi-model</span>
+                    </div>
+                    <div class="tool-comp-card">
+                        <div class="tool-name">🌊 Windsurf</div>
+                        <div class="tool-best">Best for: Beginners, visual workflows</div>
+                        <span class="tool-tag">IDE-integrated</span>
+                        <span class="tool-tag">Beginner-friendly</span>
+                    </div>
+                    <div class="tool-comp-card">
+                        <div class="tool-name">💎 Gemini CLI</div>
+                        <div class="tool-best">Best for: Large document processing</div>
+                        <span class="tool-tag">1M context window</span>
+                        <span class="tool-tag">Google ecosystem</span>
+                    </div>
+                </div>
+
+                <div class="learn-code">
+                    <code><span class="c"># Install Claude Code (recommended for beginners)</span>
+npm install -g @anthropic-ai/claude-code
+
+<span class="c"># Verify installation</span>
+claude --version
+
+<span class="c"># Start a session in your research folder</span>
+cd ~/my-research-project
+claude</code>
+                </div>
             </section>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="{{ site.baseurl }}/#skills" class="btn btn-primary">Browse Skills</a>
-                <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary">Submit a Contribution</a>
+            <!-- ═══ SECTION 3: What Are Skills? ═══ -->
+            <section id="section-skills" class="learn-section-card stage-3">
+                <div class="section-badge badge-workflow">③ Skills</div>
+                <h2>⚡ What Are "Skills"?</h2>
+                <p>Skills are specialized instruction files (SKILL.md) that teach an AI agent how to perform a
+                    specific research task with expert-level precision. Think of them as <strong>reusable research
+                        procedures</strong> — written once, used repeatedly across projects.</p>
+
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="workflow-step-num">1</div>
+                        <div class="workflow-step-content">
+                            <strong>Browse the Skills library</strong>
+                            <p>Find a skill matching your research task (e.g., "Stata Panel Regression", "Literature
+                                Review Summary Matrix").</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-step-num">2</div>
+                        <div class="workflow-step-content">
+                            <strong>Download the SKILL.md file</strong>
+                            <p>Click "Download SKILL.md" on the skill page and place it in your AI's skills directory.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-step-num">3</div>
+                        <div class="workflow-step-content">
+                            <strong>Invoke via slash command</strong>
+                            <p>Type <code
+                                    style="background:var(--bg-tertiary);padding:1px 5px;border-radius:4px;font-family:var(--font-mono);">/skill-name
+                                    your task description</code> in your agent session.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learn-code">
+                    <code><span class="c"># Without a skill — generic output:</span>
+User: "Run a regression on my panel data"
+AI:   <span class="k">*writes basic lm() call without controls or SEs*</span>
+
+<span class="c"># With stata-accounting-research skill — expert output:</span>
+User: <span class="s">"/stata-panel Run fixed effects on firm_data.dta"</span>
+AI:   <span class="g">✓ Detected panel structure: firm-year
+✓ Using reghdfe with firm+year FE
+✓ Clustering SEs at firm level
+✓ Generating LaTeX-ready output table</span></code>
+                </div>
+
+                <p style="margin-top:var(--space-md);">
+                    <a href="{{ site.baseurl }}/#skills" class="btn btn-primary"
+                        style="display:inline-flex;font-size:0.9rem;padding:0.6rem 1.25rem;">Browse All Skills →</a>
+                </p>
+            </section>
+
+            <!-- ═══ SECTION 4: Research Workflow Integration ═══ -->
+            <section id="section-workflow" class="learn-section-card stage-4">
+                <div class="section-badge badge-advanced">④ Workflow</div>
+                <h2>🔄 The AI-Augmented Research Workflow</h2>
+                <p>AI4SS organizes all skills and tools according to the standard social science research lifecycle.
+                    Click any stage to explore its skills and resources.</p>
+
+                <div class="stage-grid">
+                    <a href="{{ site.baseurl }}/#skills" class="stage-card">
+                        <span class="stage-emoji">🔍</span>
+                        <strong>Literature Review</strong>
+                        <span>AI-summarized papers, argument extraction, gap analysis</span>
+                    </a>
+                    <a href="{{ site.baseurl }}/#skills" class="stage-card">
+                        <span class="stage-emoji">📐</span>
+                        <strong>Research Design</strong>
+                        <span>Hypothesis generation, methodology selection, protocol drafting</span>
+                    </a>
+                    <a href="{{ site.baseurl }}/#resources" class="stage-card">
+                        <span class="stage-emoji">🗄️</span>
+                        <strong>Data Collection</strong>
+                        <span>Web scraping, survey design, API access, dataset sourcing</span>
+                    </a>
+                    <a href="{{ site.baseurl }}/#skills" class="stage-card">
+                        <span class="stage-emoji">📊</span>
+                        <strong>Data Analysis</strong>
+                        <span>Statistical modeling, NLP, visualization, causal inference</span>
+                    </a>
+                    <a href="{{ site.baseurl }}/#skills" class="stage-card">
+                        <span class="stage-emoji">✍️</span>
+                        <strong>Writing & Publishing</strong>
+                        <span>Draft sections, format citations, LaTeX conversion, journal prep</span>
+                    </a>
+                    <a href="{{ site.baseurl }}/#skills" class="stage-card">
+                        <span class="stage-emoji">🎤</span>
+                        <strong>Presentation</strong>
+                        <span>Slide creation, talking points, conference abstract writing</span>
+                    </a>
+                    <a href="{{ site.baseurl }}/#skills" class="stage-card">
+                        <span class="stage-emoji">🎓</span>
+                        <strong>Teaching</strong>
+                        <span>Curriculum design, assignment creation, student feedback tools</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ═══ SECTION 5: Advanced Usage ═══ -->
+            <section id="section-advanced" class="learn-section-card stage-5">
+                <div class="section-badge badge-community">⑤ Advanced</div>
+                <h2>🚀 Advanced Usage Patterns</h2>
+                <p>Once comfortable with basic skill usage, these patterns significantly amplify research output.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🔗</span>
+                        <strong>Skill Chaining</strong>
+                        <p>Run multiple skills in sequence: literature-review → research-design → stata-analysis →
+                            write-paper.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🛠️</span>
+                        <strong>Custom Skills</strong>
+                        <p>Write your own SKILL.md files for lab-specific methods or recurring tasks. Share back to the
+                            community!</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📦</span>
+                        <strong>MCP Tool Integration</strong>
+                        <p>Connect skills with Zotero, R, STATA, ArcGIS, and other research tools via MCP servers.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🤝</span>
+                        <strong>Lab-Wide Workflows</strong>
+                        <p>Create a shared `skills/` directory for your research group to standardize methods and
+                            outputs.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔍</span>
+                        <strong>AI-Assisted Peer Review</strong>
+                        <p>Use skills to systematically evaluate methodological rigor in papers before submission.</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📈</span>
+                        <strong>Reproducible Pipelines</strong>
+                        <p>Document agent sessions as reproducible scripts that any lab member can re-run.</p>
+                    </div>
+                </div>
+
+                <div class="learn-code" style="margin-top:var(--space-lg);">
+                    <code><span class="c"># Example: Full paper pipeline using skill chaining</span>
+cd ~/research/ai-governance-paper
+
+<span class="k">$</span> claude
+
+<span class="c"># Step 1: Comprehensive literature review</span>
+<span class="s">/literature-review</span> Find seminal papers on AI governance 2020-2025
+
+<span class="c"># Step 2: Research design assistance</span>
+<span class="s">/open-science-skills</span> Design a pre-registration for a survey experiment
+
+<span class="c"># Step 3: Statistical analysis</span>
+<span class="s">/stata-accounting-research</span> Run panel regression on governance_data.dta
+
+<span class="c"># Step 4: Academic writing</span>
+<span class="s">/claude-writer</span> Draft the results section from analysis output</code>
+                </div>
+            </section>
+
+            <!-- ═══ SECTION 6: FAQ ═══ -->
+            <section id="section-faq" class="learn-section-card" style="border-left-color:var(--border-default);">
+                <div class="section-badge" style="background:var(--bg-tertiary);color:var(--text-secondary);">⑥ FAQ
+                </div>
+                <h2>❓ Frequently Asked Questions</h2>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Do I need to know how to code to use AI4SS skills?
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            No coding is required for many skills, particularly those focused on writing, literature
+                            review, and research design. Skills labeled "Beginner" are designed for researchers without
+                            programming backgrounds. Analysis skills (Stata, R, Python) benefit from basic familiarity
+                            with the tool but don't require expertise — the AI handles the code.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Is this free to use?
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            AI4SS is completely free and open-source (MIT licensed). The skills themselves are free.
+                            However, using AI coding agents like Claude Code requires an Anthropic API key or
+                            subscription, and Cursor requires its own subscription. Many agents offer free tiers
+                            sufficient for basic research use.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How are skills different from regular prompts?
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Regular prompts are one-off instructions you type each time. Skills are structured
+                            instruction files (SKILL.md) that encode expert methodology, common pitfalls to avoid, and
+                            expected output formats. They persist across sessions, are version-controlled, and can be
+                            shared across a research team. Think of them as codified research procedures rather than
+                            ad-hoc queries.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Can I use these skills with any AI tool, not just Claude?
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Most skills work with any AI coding agent that supports system prompts or custom
+                            instructions (Cursor, Windsurf, Gemini CLI, Cline, etc.). Each skill page lists compatible
+                            tools under the metadata tags. Skills designed specifically for Claude's slash-command
+                            system may need minor adaptation for other tools.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How do I contribute a skill or resource?
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Use the <a href="{{ site.baseurl }}/pages/submit.html"
+                                style="color:var(--accent-secondary)">Submit page</a> to fill in a structured form that
+                            generates a GitHub issue with pre-formatted YAML. A maintainer reviews and merges it. You
+                            can also submit directly via pull request on
+                            <a href="https://github.com/mamingsuper/Skills4SocialScience"
+                                style="color:var(--accent-secondary)">GitHub</a>.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What about data privacy and research ethics?
+                            <span class="faq-arrow">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            Never share identifiable participant data with AI systems without explicit consent and IRB
+                            approval. For sensitive datasets, use local/offline AI models (e.g., Ollama with local
+                            Llama models). AI4SS includes papers on AI research ethics — see the Ethics & Policy
+                            category in Papers. Always disclose AI use in your methods section per journal guidelines.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <div class="learn-cta">
+                <h2>Ready to Start?</h2>
+                <p>Browse skills organized by your research workflow stage, or submit your own AI method to help the
+                    community.</p>
+                <a href="{{ site.baseurl }}/#skills" class="btn-white">Browse Skills</a>
+                <a href="{{ site.baseurl }}/pages/submit.html" class="btn-outline">Submit a Skill</a>
             </div>
+
         </div>
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content" style="text-align:center">
-                <p>AI4SS • Made with ❤️ by the research community</p>
+                <p><strong>AI4SS</strong> • Made with ❤️ by the social science research community</p>
             </div>
         </div>
     </footer>
 
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-item.open').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                // Toggle clicked
+                if (!isOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Learning path dot highlight on scroll
+        const sections = document.querySelectorAll('.learn-section-card[id]');
+        const pathDots = document.querySelectorAll('.path-dot');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const index = Array.from(sections).indexOf(entry.target);
+                    pathDots.forEach(d => d.classList.remove('active'));
+                    if (pathDots[index]) pathDots[index].classList.add('active');
+                }
+            });
+        }, { threshold: 0.4, rootMargin: '-80px 0px -50% 0px' });
+
+        sections.forEach(s => sectionObserver.observe(s));
+    </script>
 </body>
 
 </html>

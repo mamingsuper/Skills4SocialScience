@@ -2,6 +2,17 @@
 layout: default
 ---
 <div class="detail-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ site.baseurl }}/">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="{{ site.baseurl }}/#skills">Skills</a>
+        {% if page.workflow_stage %}
+        <span class="breadcrumb-sep">›</span>
+        <span>{{ page.workflow_stage | capitalize }}</span>
+        {% endif %}
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">{{ page.name }}</span>
+    </nav>
     <div class="hero-badge">🛠️ AI Skill</div>
     <h1 class="detail-title">{{ page.name }}</h1>
     <p style="font-size: 1.2rem; color: var(--text-secondary);">{{ page.description }}</p>
@@ -16,14 +27,17 @@ layout: default
     <div class="detail-actions">
         <button id="download-skill-btn" type="button" class="btn btn-primary">Download SKILL.md</button>
         {% if page.source_file %}
-        <a href="https://github.com/mamingsuper/Skills4SocialScience/blob/main/{{ page.source_file }}" target="_blank" class="btn btn-secondary">View Source on GitHub</a>
+        <a href="https://github.com/mamingsuper/Skills4SocialScience/blob/main/{{ page.source_file }}" target="_blank"
+            class="btn btn-secondary">View Source on GitHub</a>
         {% else %}
-        <a href="https://github.com/mamingsuper/Skills4SocialScience/tree/main/_skills" target="_blank" class="btn btn-secondary">View Source on GitHub</a>
+        <a href="https://github.com/mamingsuper/Skills4SocialScience/tree/main/_skills" target="_blank"
+            class="btn btn-secondary">View Source on GitHub</a>
         {% endif %}
     </div>
 </div>
 
-<section id="skill-source-section" class="detail-content" data-source-file="{{ page.source_file | default: '' }}" hidden>
+<section id="skill-source-section" class="detail-content" data-source-file="{{ page.source_file | default: '' }}"
+    hidden>
     <h2>Skill Content</h2>
     <pre class="skill-source-block"><code id="skill-source-content">Loading latest content...</code></pre>
     <p class="hint">Auto-synced from repository source file.</p>

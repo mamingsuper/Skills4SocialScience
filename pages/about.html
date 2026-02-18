@@ -7,6 +7,7 @@ permalink: /pages/about.html
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,68 +17,182 @@ permalink: /pages/about.html
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
     <style>
-        .about-page { padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl); }
-        .about-header { text-align: center; margin-bottom: 4rem; }
-        .about-header h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading); }
-        .about-header p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+        .about-page {
+            padding: calc(80px + var(--space-3xl)) 0 var(--space-3xl);
+        }
 
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto 4rem; }
-        .about-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius-lg); padding: 2rem; transition: all var(--transition-base); }
-        .about-card:hover { transform: translateY(-4px); border-color: rgba(127, 90, 240, 0.3); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
-        .about-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
-        .about-card p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
-        .about-card ul { list-style: none; padding: 0; }
-        .about-card li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--text-secondary); }
-        .about-card li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-secondary); font-weight: bold; }
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-        .mission-section { max-width: 900px; margin: 0 auto 4rem; text-align: center; }
-        .mission-section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-primary); }
-        .mission-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; }
+        .about-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+        }
 
-        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto 4rem; text-align: center; }
-        .stat-item h3 { font-size: 3rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .stat-item p { color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin-top: 0.5rem; }
+        .about-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+        }
+
+        .about-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            transition: all var(--transition-base);
+        }
+
+        .about-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(127, 90, 240, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .about-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .about-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-secondary);
+            font-weight: bold;
+        }
+
+        .mission-section {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .mission-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .mission-section p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
+
 <body>
     <nav class="nav">
         <div class="nav-container">
-            <a href="../" class="nav-logo">
+            <a href="{{ site.baseurl }}/" class="nav-logo">
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SS</span>
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
-                <a href="../#skills">Skills</a>
-                <a href="../#quick-start">Quick Start</a>
-                <a href="../#papers">Papers</a>
-                <a href="../#resources">Tools</a>
-                <div class="nav-dropdown">
-                    <a href="#" class="nav-dropdown-toggle">
-                        More <span class="dropdown-arrow">▼</span>
-                    </a>
-                    <div class="nav-dropdown-menu">
-                        <a href="learn.html">Learn</a>
-                        <a href="about.html" class="nav-highlight">About</a>
-                        <a href="creator.html" class="nav-highlight">Creator</a>
-                        <a href="builder.html" class="nav-highlight">Builder</a>
-                    </div>
-                </div>
-                <a href="submit.html" class="nav-cta">Submit</a>
+                <button id="nav-search-btn" class="nav-search-btn" aria-label="Search"
+                    style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
+                <a href="{{ site.baseurl }}/#skills">Skills</a>
+                <a href="{{ site.baseurl }}/#papers">Papers</a>
+                <a href="{{ site.baseurl }}/#resources">Tools</a>
+                <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
+                <a href="{{ site.baseurl }}/pages/about.html" class="active">About</a>
+                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
                 <a href="{{ site.baseurl }}/zh/pages/about.html" class="nav-lang">中文</a>
             </div>
         </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..."
+                aria-label="Search">
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+    </div>
 
     <main class="about-page">
         <div class="container">
             <header class="about-header">
                 <div class="hero-badge">📚 About the Project</div>
                 <h1>Democratizing <span class="gradient-text">AI for Research</span></h1>
-                <p>AI4SS is an open-source initiative to make AI tools accessible and practical for social science researchers worldwide.</p>
+                <p>AI4SS is an open-source initiative to make AI tools accessible and practical for social science
+                    researchers worldwide.</p>
             </header>
 
             <div class="stats-row">
@@ -112,7 +227,8 @@ permalink: /pages/about.html
             <div class="about-grid">
                 <div class="about-card">
                     <h3>🎯 What We Do</h3>
-                    <p>We curate and organize AI resources specifically designed for social science research workflows:</p>
+                    <p>We curate and organize AI resources specifically designed for social science research workflows:
+                    </p>
                     <ul>
                         <li><strong>Skills:</strong> Executable prompt templates for AI agents</li>
                         <li><strong>Papers:</strong> Evidence base for AI-enabled research</li>
@@ -159,7 +275,8 @@ permalink: /pages/about.html
                 <h2 style="margin-bottom: 1rem; color: var(--text-primary);">Get Involved</h2>
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-primary">Submit a Resource</a>
-                    <a href="https://github.com/mamingsuper/Skills4SocialScience" class="btn btn-secondary">View on GitHub</a>
+                    <a href="https://github.com/mamingsuper/Skills4SocialScience" class="btn btn-secondary">View on
+                        GitHub</a>
                     <a href="{{ site.baseurl }}/pages/creator.html" class="btn btn-secondary">Become a Creator</a>
                 </div>
             </div>
@@ -176,4 +293,5 @@ permalink: /pages/about.html
 
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 </body>
+
 </html>

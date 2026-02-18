@@ -8,6 +8,7 @@ sitemap: false
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +19,34 @@ sitemap: false
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/form.css">
 
     <style>
         /* Form Specific Styles */
-        .form-page { padding: 120px 0 60px; }
-        .form-header { text-align: center; margin-bottom: 3rem; }
-        .form-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); }
-        .form-header p { color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+        .form-page {
+            padding: 120px 0 60px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .form-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
         .form-container {
             max-width: 800px;
@@ -40,17 +59,54 @@ sitemap: false
             box-shadow: var(--glass-shadow);
         }
 
-        .form-section { margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 2rem; }
-        .form-section:last-child { border-bottom: none; }
-        .form-section h2 { font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
+        .form-section {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding-bottom: 2rem;
+        }
 
-        .form-group { margin-bottom: 1.5rem; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-section:last-child {
+            border-bottom: none;
+        }
 
-        label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary); font-size: 0.9rem; }
-        .required { color: var(--error); margin-left: 2px; }
+        .form-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-        input[type="text"], input[type="email"], input[type="url"], input[type="number"], select, textarea {
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .required {
+            color: var(--error);
+            margin-left: 2px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="number"],
+        select,
+        textarea {
             width: 100%;
             padding: 0.75rem;
             border-radius: var(--border-radius-sm);
@@ -61,13 +117,20 @@ sitemap: false
             transition: all 0.2s;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             outline: none;
             border-color: var(--accent-primary);
             box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
         }
 
-        .hint { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--text-muted); }
+        .hint {
+            display: block;
+            margin-top: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
 
         /* Type Selector */
         .type-selector {
@@ -88,21 +151,49 @@ sitemap: false
             transition: all 0.2s;
         }
 
-        .type-option:hover { background: rgba(255, 255, 255, 0.8); }
+        .type-option:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
         .type-option.active {
             background: var(--accent-primary);
             color: white;
             border-color: var(--accent-primary);
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
         }
-        .type-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
-        .type-label { font-weight: 600; font-size: 0.9rem; }
+
+        .type-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .type-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
         /* Conditional Sections */
-        .conditional-fields { display: none; }
-        .conditional-fields.active { display: block; animation: fadeIn 0.3s ease; }
+        .conditional-fields {
+            display: none;
+        }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .conditional-fields.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* Preview */
         .preview-container {
@@ -113,7 +204,10 @@ sitemap: false
             position: relative;
         }
 
-        .preview-container pre { margin: 0; }
+        .preview-container pre {
+            margin: 0;
+        }
+
         .preview-container code {
             font-family: var(--font-mono);
             color: #a6accd;
@@ -126,9 +220,9 @@ sitemap: false
             right: 0.5rem;
             padding: 0.25rem 0.5rem;
             font-size: 0.75rem;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 4px;
             cursor: pointer;
         }
@@ -141,30 +235,57 @@ sitemap: false
             text-align: center;
             margin-top: 2rem;
         }
-        .success { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success); color: #065f46; }
-        .error { background: rgba(239, 68, 68, 0.1); border: 1px solid var(--error); color: #7f1d1d; }
+
+        .success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            color: #065f46;
+        }
+
+        .error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--error);
+            color: #7f1d1d;
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="../" class="nav-logo">
+            <a href="{{ site.baseurl }}/" class="nav-logo">
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SS</span>
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
-                <a href="../#skills">Skills</a>
-                <a href="../#quick-start">Quick Start</a>
-                <a href="../#papers">Papers</a>
-                <a href="../#resources">Resources</a>
-                <a href="../#author">Author</a>
-                <a href="learn.html">Learn</a>
-                <a href="https://github.com/mamingsuper/Skills4SocialScience" class="nav-cta">GitHub</a>
+                <button id="nav-search-btn" class="nav-search-btn" aria-label="Search"
+                    style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
+                <a href="{{ site.baseurl }}/#skills">Skills</a>
+                <a href="{{ site.baseurl }}/#papers">Papers</a>
+                <a href="{{ site.baseurl }}/#resources">Tools</a>
+                <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
+                <a href="{{ site.baseurl }}/pages/about.html">About</a>
+                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta active-cta">Submit</a>
                 <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-lang">中文</a>
             </div>
         </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+        <div class="search-container">
+            <button class="search-close" aria-label="Close search">&times;</button>
+            <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..."
+                aria-label="Search">
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+    </div>
 
     <main class="form-page">
         <div class="container">
@@ -308,10 +429,13 @@ sitemap: false
                     </section>
 
                     <div class="form-actions" style="text-align: center; margin-top: 2rem;">
-                        <button type="button" class="btn btn-secondary" onclick="updatePreview()">Refresh Preview</button>
-                        <a id="github-submit-link" href="#" target="_blank" class="btn btn-primary">Submit to GitHub →</a>
+                        <button type="button" class="btn btn-secondary" onclick="updatePreview()">Refresh
+                            Preview</button>
+                        <a id="github-submit-link" href="#" target="_blank" class="btn btn-primary">Submit to GitHub
+                            →</a>
                     </div>
-                    <p class="hint" style="text-align:center; margin-top: 0.75rem;">Submission opens a prefilled GitHub issue for maintainer review and merge.</p>
+                    <p class="hint" style="text-align:center; margin-top: 0.75rem;">Submission opens a prefilled GitHub
+                        issue for maintainer review and merge.</p>
                 </form>
             </div>
         </div>
@@ -327,4 +451,5 @@ sitemap: false
 
     <script src="{{ site.baseurl }}/assets/js/form.js"></script>
 </body>
+
 </html>

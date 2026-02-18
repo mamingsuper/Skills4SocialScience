@@ -6,6 +6,7 @@ permalink: /
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,23 +18,28 @@ permalink: /
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 </head>
+
 <body>
     <!-- Skip to content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to content</a>
-    
+
     <!-- Search Overlay -->
     <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
         <div class="search-container">
             <button class="search-close" aria-label="Close search">&times;</button>
-            <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..." aria-label="Search">
+            <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..."
+                aria-label="Search">
             <div id="search-results" class="search-results" aria-live="polite"></div>
         </div>
     </div>
@@ -51,13 +57,13 @@ permalink: /
                 <span></span>
             </button>
             <div class="nav-links">
-                <button id="nav-search-btn" class="nav-search-btn" aria-label="Search" style="background:none;border:none;cursor:pointer;font-size:1.2rem;padding:0.25rem;">🔍</button>
+                <button id="nav-search-btn" class="nav-search-btn" aria-label="Search"
+                    style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
                 <a href="#skills">Skills</a>
-                <a href="#quick-start">Quick Start</a>
                 <a href="#papers">Papers</a>
                 <a href="#resources">Tools</a>
                 <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
-                <a href="#author">About</a>
+                <a href="{{ site.baseurl }}/pages/about.html">About</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
                 <a href="{{ site.baseurl }}/zh/" class="nav-lang">中文</a>
             </div>
@@ -67,7 +73,7 @@ permalink: /
     <!-- Hero Section -->
     <header class="hero">
         <canvas id="particle-canvas"></canvas>
-        <div class="hero-content">
+        <div class="hero-content" id="hero-content">
             <div class="hero-badge">🚀 Open Source • For Social Science Scholars</div>
             <h1 class="hero-title">
                 AI for <span class="gradient-text">Social Science</span>
@@ -120,248 +126,274 @@ permalink: /
 
     <!-- Main Content Area -->
     <main id="main-content">
-    
-    <!-- Quick Start -->
-    <section id="quick-start" class="quickstart-section section">
-        <div class="container">
-            <h2 class="section-title reveal">Quick Start ⚡</h2>
-            <p class="section-description reveal">Get up and running in under 2 minutes</p>
 
-            <div class="steps">
-                <div class="step reveal">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Install Your AI Tool</h3>
-                        <p>Choose your preferred AI coding assistant:</p>
-                        <div class="tool-grid">
-                            <a href="https://docs.anthropic.com/claude-code" class="tool-card" target="_blank" rel="noopener noreferrer">
-                                <span class="tool-icon">🤖</span>
-                                Claude Code
-                            </a>
-                            <a href="https://cursor.com" class="tool-card" target="_blank" rel="noopener noreferrer">
-                                <span class="tool-icon">⌨️</span>
-                                Cursor
-                            </a>
-                            <a href="https://openai.com/codex/" class="tool-card" target="_blank" rel="noopener noreferrer">
-                                <span class="tool-icon">🐙</span>
-                                Codex
-                            </a>
+        <!-- Quick Start -->
+        <section id="quick-start" class="quickstart-section section">
+            <div class="container">
+                <h2 class="section-title reveal">Quick Start ⚡</h2>
+                <p class="section-description reveal">Get up and running in under 2 minutes</p>
+
+                <div class="steps">
+                    <div class="step reveal">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Install Your AI Tool</h3>
+                            <p>Choose your preferred AI coding assistant:</p>
+                            <div class="tool-grid">
+                                <a href="https://docs.anthropic.com/claude-code" class="tool-card" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="tool-icon">🤖</span>
+                                    Claude Code
+                                </a>
+                                <a href="https://cursor.com" class="tool-card" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="tool-icon">⌨️</span>
+                                    Cursor
+                                </a>
+                                <a href="https://openai.com/codex/" class="tool-card" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="tool-icon">🐙</span>
+                                    Codex
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="step reveal">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Download and Copy a Skill</h3>
-                        <p>Open any skill page and click <strong>Download SKILL.md</strong>, then place it in your local skills directory:</p>
-                        <div class="code-block">
-                            <code><span class="comment"># Example for Claude Code</span>
+                    <div class="step reveal">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Download and Copy a Skill</h3>
+                            <p>Open any skill page and click <strong>Download SKILL.md</strong>, then place it in your
+                                local skills directory:</p>
+                            <div class="code-block">
+                                <code><span class="comment"># Example for Claude Code</span>
 mkdir -p ~/.claude/skills/claude-writer
 # Move downloaded SKILL.md here:
 ~/.claude/skills/claude-writer/SKILL.md</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step reveal">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Use the Skill</h3>
+                            <p>Invoke the skill via slash command or natural language:</p>
+                            <div class="code-block">
+                                <code>/claude-writer Draft a social science paper outline on AI governance.</code>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="step reveal">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Use the Skill</h3>
-                        <p>Invoke the skill via slash command or natural language:</p>
-                        <div class="code-block">
-                            <code>/claude-writer Draft a social science paper outline on AI governance.</code>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">AI Skills 🛠️</h2>
+                <p class="section-description reveal">Task instructions you can execute directly in agents</p>
+
+                <div class="filter-tabs reveal" data-filter-group data-target="#skills-grid .skill-card"
+                    data-attribute="category">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    {% for stage in site.data.taxonomy.skill_stages %}
+                    <button class="filter-tab" data-filter="{{ stage.key }}">{{ stage.en }}</button>
+                    {% endfor %}
+                </div>
+
+                <div id="skills-grid" class="skills-grid">
+                    {% for item in site.skills %}
+                    <article class="skill-card reveal"
+                        data-category="{{ item.category | default: item.workflow_stage | slugify }}">
+                        <span class="skill-icon">{{ item.icon | default: "⚡" }}</span>
+                        <h3 class="skill-title">{{ item.name }}</h3>
+                        <p class="skill-description">{{ item.description }}</p>
+                        <div class="skill-tags">
+                            {% for tag in item.tags %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
                         </div>
-                    </div>
+                        <div class="skill-footer">
+                            <span class="status">{{ item.workflow_stage }}</span>
+                            <a href="{{ item.url | relative_url }}" class="skill-link">View →</a>
+                        </div>
+                    </article>
+                    {% endfor %}
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title reveal">AI Skills 🛠️</h2>
-            <p class="section-description reveal">Task instructions you can execute directly in agents</p>
+        <!-- Papers Section -->
+        <section id="papers" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">Papers 📄</h2>
+                <p class="section-description reveal">Evidence base for AI-enabled social science</p>
 
-            <div class="filter-tabs reveal" data-filter-group data-target="#skills-grid .skill-card" data-attribute="category">
-                <button class="filter-tab active" data-filter="all">All</button>
-                {% for stage in site.data.taxonomy.skill_stages %}
-                <button class="filter-tab" data-filter="{{ stage.key }}">{{ stage.en }}</button>
-                {% endfor %}
+                <div class="filter-tabs reveal" data-filter-group data-target="#papers-grid .paper-card"
+                    data-attribute="category">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    {% for category in site.data.taxonomy.paper_categories %}
+                    <button class="filter-tab" data-filter="{{ category.key }}">{{ category.en }}</button>
+                    {% endfor %}
+                </div>
+
+                <div id="papers-grid" class="skills-grid">
+                    {% assign sorted_papers = site.papers | sort: "year" | reverse %}
+                    {% for item in sorted_papers %}
+                    {% assign category_meta = site.data.taxonomy.paper_categories | where: "key", item.category | first
+                    %}
+                    <article class="skill-card paper-card reveal"
+                        data-category="{{ item.category | default: 'general' | slugify }}">
+                        <span class="skill-icon">📄</span>
+                        <h3 class="skill-title">{{ item.title }}</h3>
+                        <p class="skill-description">{{ item.description }}</p>
+                        <div class="skill-tags">
+                            <span class="tag">{{ category_meta.en | default: item.category | default: "General"
+                                }}</span>
+                            {% if item.journal %}
+                            <span class="tag">{{ item.journal }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="skill-footer">
+                            <span>{{ item.year }}{% if item.authors %} · {{ item.authors | truncate: 30 }}{% endif
+                                %}</span>
+                            <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="skill-link">Read
+                                →</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
             </div>
+        </section>
 
-            <div id="skills-grid" class="skills-grid">
-                {% for item in site.skills %}
-                <article class="skill-card reveal" data-category="{{ item.category | default: item.workflow_stage | slugify }}">
-                    <span class="skill-icon">{{ item.icon | default: "⚡" }}</span>
-                    <h3 class="skill-title">{{ item.name }}</h3>
-                    <p class="skill-description">{{ item.description }}</p>
-                    <div class="skill-tags">
-                        {% for tag in item.tags %}
-                        <span class="tag">{{ tag }}</span>
-                        {% endfor %}
-                    </div>
-                    <div class="skill-footer">
-                        <span class="status">{{ item.workflow_stage }}</span>
-                        <a href="{{ item.url | relative_url }}" class="skill-link">View →</a>
-                    </div>
-                </article>
-                {% endfor %}
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">Tools & Resources 📦</h2>
+                <p class="section-description reveal">Research platforms, datasets, and workflow assets</p>
+
+                <div class="filter-tabs reveal" data-filter-group data-target="#resources-grid .resource-card"
+                    data-attribute="category">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    {% for category in site.data.taxonomy.resource_categories %}
+                    <button class="filter-tab" data-filter="{{ category.key }}">{{ category.en }}</button>
+                    {% endfor %}
+                </div>
+
+                <div id="resources-grid" class="skills-grid">
+                    {% assign with_stars = site.resources | where_exp: "r", "r.stars" | sort: "stars" | reverse %}
+                    {% assign without_stars = site.resources | where_exp: "r", "r.stars == nil" | sort: "title" %}
+                    {% assign sorted_resources = with_stars | concat: without_stars %}
+                    {% for item in sorted_resources %}
+                    {% assign category_meta = site.data.taxonomy.resource_categories | where: "key", item.category |
+                    first %}
+                    {% assign stars = item.stars | default: 0 | plus: 0 %}
+                    <article class="skill-card resource-card reveal"
+                        data-category="{{ item.category | default: 'research-tool' | slugify }}"
+                        data-stars="{{ stars }}">
+                        <span class="skill-icon">📦</span>
+                        <h3 class="skill-title">{{ item.title }}</h3>
+                        <p class="skill-description">{{ item.description }}</p>
+                        <div class="skill-tags">
+                            <span class="tag">{{ item.type | default: "Resource" }}</span>
+                            <span class="tag">{{ category_meta.en | default: item.category | default: "Research Tool"
+                                }}</span>
+                            {% if item.stars %}
+                            <span class="tag">⭐ {{ stars }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="skill-footer">
+                            <span>Updated {{ item.last_updated | default: "N/A" }}</span>
+                            <a href="{{ item.url | relative_url }}" class="skill-link">Access →</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Papers Section -->
-    <section id="papers" class="section">
-        <div class="container">
-            <h2 class="section-title reveal">Papers 📄</h2>
-            <p class="section-description reveal">Evidence base for AI-enabled social science</p>
-
-            <div class="filter-tabs reveal" data-filter-group data-target="#papers-grid .paper-card" data-attribute="category">
-                <button class="filter-tab active" data-filter="all">All</button>
-                {% for category in site.data.taxonomy.paper_categories %}
-                <button class="filter-tab" data-filter="{{ category.key }}">{{ category.en }}</button>
-                {% endfor %}
+        <!-- Taxonomy Section -->
+        <section class="section taxonomy-section">
+            <div class="container">
+                <h2 class="section-title reveal">Collections Architecture 🧭</h2>
+                <p class="section-description reveal">A clean structure for AI + social science knowledge management.
+                </p>
+                <div class="taxonomy-grid">
+                    <article class="taxonomy-card reveal">
+                        <h3>Skills</h3>
+                        <p>Executable methods arranged by research workflow stage.</p>
+                        <div class="skill-tags">
+                            {% for stage in site.data.taxonomy.skill_stages %}
+                            <span class="tag">{{ stage.en }}</span>
+                            {% endfor %}
+                        </div>
+                    </article>
+                    <article class="taxonomy-card reveal">
+                        <h3>Papers</h3>
+                        <p>Methods, applications, ethics, and review papers for evidence-based decisions.</p>
+                        <div class="skill-tags">
+                            {% for category in site.data.taxonomy.paper_categories %}
+                            <span class="tag">{{ category.en }}</span>
+                            {% endfor %}
+                        </div>
+                    </article>
+                    <article class="taxonomy-card reveal">
+                        <h3>Tools & Resources</h3>
+                        <p>Research platforms, datasets, and workflow assets with direct links.</p>
+                        <div class="skill-tags">
+                            {% for category in site.data.taxonomy.resource_categories %}
+                            <span class="tag">{{ category.en }}</span>
+                            {% endfor %}
+                        </div>
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <div id="papers-grid" class="skills-grid">
-                {% assign sorted_papers = site.papers | sort: "year" | reverse %}
-                {% for item in sorted_papers %}
-                {% assign category_meta = site.data.taxonomy.paper_categories | where: "key", item.category | first %}
-                <article class="skill-card paper-card reveal" data-category="{{ item.category | default: 'general' | slugify }}">
-                    <span class="skill-icon">📄</span>
-                    <h3 class="skill-title">{{ item.title }}</h3>
-                    <p class="skill-description">{{ item.description }}</p>
-                    <div class="skill-tags">
-                        <span class="tag">{{ category_meta.en | default: item.category | default: "General" }}</span>
-                        {% if item.journal %}
-                        <span class="tag">{{ item.journal }}</span>
-                        {% endif %}
-                    </div>
-                    <div class="skill-footer">
-                        <span>{{ item.year }}{% if item.authors %} · {{ item.authors | truncate: 30 }}{% endif %}</span>
-                        <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="skill-link">Read →</a>
-                    </div>
-                </article>
-                {% endfor %}
+        <!-- Author Section -->
+        <section id="author" class="author-section">
+            <div class="author-content">
+                <h3>Maintained by Ming Ma</h3>
+                <p>Curating AI for social science research with a focus on pragmatic, open-source workflows.</p>
+                <div class="author-links">
+                    <a class="author-link" href="https://www.maming.digital/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Website">
+                        <svg class="author-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M2 12h20"></path>
+                            <path d="M12 2a15 15 0 0 1 0 20"></path>
+                            <path d="M12 2a15 15 0 0 0 0 20"></path>
+                        </svg>
+                        maming.digital
+                    </a>
+                    <a class="author-link" href="https://x.com/Winter62675779" target="_blank" rel="noopener noreferrer"
+                        aria-label="X (Twitter)">
+                        <svg class="author-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.8-6.1L6.7 22H2l7.4-8.5L1 2h6.3l4.3 5.4L18.9 2zm-1.1 18h1.7L7.2 4H5.4l12.4 16z">
+                            </path>
+                        </svg>
+                        Winter62675779
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="section">
-        <div class="container">
-            <h2 class="section-title reveal">Tools & Resources 📦</h2>
-            <p class="section-description reveal">Research platforms, datasets, and workflow assets</p>
-
-            <div class="filter-tabs reveal" data-filter-group data-target="#resources-grid .resource-card" data-attribute="category">
-                <button class="filter-tab active" data-filter="all">All</button>
-                {% for category in site.data.taxonomy.resource_categories %}
-                <button class="filter-tab" data-filter="{{ category.key }}">{{ category.en }}</button>
-                {% endfor %}
-            </div>
-
-            <div id="resources-grid" class="skills-grid">
-                {% assign with_stars = site.resources | where_exp: "r", "r.stars" | sort: "stars" | reverse %}
-                {% assign without_stars = site.resources | where_exp: "r", "r.stars == nil" | sort: "title" %}
-                {% assign sorted_resources = with_stars | concat: without_stars %}
-                {% for item in sorted_resources %}
-                {% assign category_meta = site.data.taxonomy.resource_categories | where: "key", item.category | first %}
-                {% assign stars = item.stars | default: 0 | plus: 0 %}
-                <article class="skill-card resource-card reveal" data-category="{{ item.category | default: 'research-tool' | slugify }}" data-stars="{{ stars }}">
-                    <span class="skill-icon">📦</span>
-                    <h3 class="skill-title">{{ item.title }}</h3>
-                    <p class="skill-description">{{ item.description }}</p>
-                    <div class="skill-tags">
-                        <span class="tag">{{ item.type | default: "Resource" }}</span>
-                        <span class="tag">{{ category_meta.en | default: item.category | default: "Research Tool" }}</span>
-                        {% if item.stars %}
-                        <span class="tag">⭐ {{ stars }}</span>
-                        {% endif %}
-                    </div>
-                    <div class="skill-footer">
-                        <span>Updated {{ item.last_updated | default: "N/A" }}</span>
-                        <a href="{{ item.url | relative_url }}" class="skill-link">Access →</a>
-                    </div>
-                </article>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Taxonomy Section -->
-    <section class="section taxonomy-section">
-        <div class="container">
-            <h2 class="section-title reveal">Collections Architecture 🧭</h2>
-            <p class="section-description reveal">A clean structure for AI + social science knowledge management.</p>
-            <div class="taxonomy-grid">
-                <article class="taxonomy-card reveal">
-                    <h3>Skills</h3>
-                    <p>Executable methods arranged by research workflow stage.</p>
-                    <div class="skill-tags">
-                        {% for stage in site.data.taxonomy.skill_stages %}
-                        <span class="tag">{{ stage.en }}</span>
-                        {% endfor %}
-                    </div>
-                </article>
-                <article class="taxonomy-card reveal">
-                    <h3>Papers</h3>
-                    <p>Methods, applications, ethics, and review papers for evidence-based decisions.</p>
-                    <div class="skill-tags">
-                        {% for category in site.data.taxonomy.paper_categories %}
-                        <span class="tag">{{ category.en }}</span>
-                        {% endfor %}
-                    </div>
-                </article>
-                <article class="taxonomy-card reveal">
-                    <h3>Tools & Resources</h3>
-                    <p>Research platforms, datasets, and workflow assets with direct links.</p>
-                    <div class="skill-tags">
-                        {% for category in site.data.taxonomy.resource_categories %}
-                        <span class="tag">{{ category.en }}</span>
-                        {% endfor %}
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Author Section -->
-    <section id="author" class="author-section">
-        <div class="author-content">
-            <h3>Maintained by Ming Ma</h3>
-            <p>Curating AI for social science research with a focus on pragmatic, open-source workflows.</p>
-            <div class="author-links">
-                <a class="author-link" href="https://www.maming.digital/" target="_blank" rel="noopener noreferrer" aria-label="Website">
-                    <svg class="author-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M2 12h20"></path>
-                        <path d="M12 2a15 15 0 0 1 0 20"></path>
-                        <path d="M12 2a15 15 0 0 0 0 20"></path>
+            <div class="author-content" style="text-align:center;">
+                <div class="author-wechat-label">
+                    <svg class="author-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M8.6 3C4.5 3 1.2 5.8 1.2 9.2c0 2 1.2 3.8 3.1 5l-.9 2.8 3-1.7c.7.2 1.4.3 2.2.3.2 0 .4 0 .6-.1-.2-.5-.3-1.1-.3-1.7 0-3.3 3.2-6 7.2-6 .6 0 1.2.1 1.8.2C18.9 5.2 14.1 3 8.6 3zm-2 6.3c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4.1 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z">
+                        </path>
+                        <path
+                            d="M22.8 14.3c0-3-2.9-5.4-6.4-5.4-3.6 0-6.4 2.4-6.4 5.4 0 3 2.9 5.4 6.4 5.4.6 0 1.2-.1 1.8-.2l2.6 1.4-.8-2.4c1.8-1 2.8-2.5 2.8-4.2zm-7.9-.5c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9zm3.7 0c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z">
+                        </path>
                     </svg>
-                    maming.digital
-                </a>
-                <a class="author-link" href="https://x.com/Winter62675779" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-                    <svg class="author-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.8-6.1L6.7 22H2l7.4-8.5L1 2h6.3l4.3 5.4L18.9 2zm-1.1 18h1.7L7.2 4H5.4l12.4 16z"></path>
-                    </svg>
-                    Winter62675779
-                </a>
+                    WeChat Public account: <strong>AI4socialscience</strong>
+                </div>
+                <img src="{{ site.baseurl }}/assets/images/wechat-qrcode.jpg" alt="WeChat QR for Ming Ma">
+                <p style="margin-top: var(--space-sm); color: var(--text-secondary);">WeChat QR</p>
             </div>
-        </div>
-        <div class="author-content" style="text-align:center;">
-            <div class="author-wechat-label">
-                <svg class="author-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M8.6 3C4.5 3 1.2 5.8 1.2 9.2c0 2 1.2 3.8 3.1 5l-.9 2.8 3-1.7c.7.2 1.4.3 2.2.3.2 0 .4 0 .6-.1-.2-.5-.3-1.1-.3-1.7 0-3.3 3.2-6 7.2-6 .6 0 1.2.1 1.8.2C18.9 5.2 14.1 3 8.6 3zm-2 6.3c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4.1 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"></path>
-                    <path d="M22.8 14.3c0-3-2.9-5.4-6.4-5.4-3.6 0-6.4 2.4-6.4 5.4 0 3 2.9 5.4 6.4 5.4.6 0 1.2-.1 1.8-.2l2.6 1.4-.8-2.4c1.8-1 2.8-2.5 2.8-4.2zm-7.9-.5c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9zm3.7 0c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"></path>
-                </svg>
-                WeChat Public account: <strong>AI4socialscience</strong>
-            </div>
-            <img src="{{ site.baseurl }}/assets/images/wechat-qrcode.jpg" alt="WeChat QR for Ming Ma">
-            <p style="margin-top: var(--space-sm); color: var(--text-secondary);">WeChat QR</p>
-        </div>
-    </section>
+        </section>
 
     </main><!-- End Main Content -->
 
@@ -369,9 +401,11 @@ mkdir -p ~/.claude/skills/claude-writer
     <footer class="footer">
         <div class="container">
             <div class="footer-content" style="text-align:center">
-                <p><strong>AI4SS</strong> • Made with the social science research community</p>
+                <p><strong>AI4SS</strong> • Made with ❤️ by the social science research community</p>
                 <br>
                 <div class="footer-links" style="justify-content:center; display:flex;">
+                    <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
+                    <a href="{{ site.baseurl }}/pages/about.html">About</a>
                     <a href="{{ site.baseurl }}/feed.xml">RSS</a>
                     <a href="https://github.com/mamingsuper/Skills4SocialScience">GitHub</a>
                     <a href="{{ site.baseurl }}/CONTRIBUTING.md">Contribute</a>
@@ -384,4 +418,5 @@ mkdir -p ~/.claude/skills/claude-writer
     <!-- Scripts -->
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 </body>
+
 </html>
