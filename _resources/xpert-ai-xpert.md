@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/xpert-ai/xpert
 source: github-auto
+tags: ["agent", "ai", "bi", "data", "dw", "erp"]
+permalink: /resources/xpert-ai-xpert/
 stars: 364
 last_updated: 2026-02-16
 license: "AGPL-3.0"
-tags: ["agent", "ai", "bi", "data", "dw", "erp"]
-permalink: /resources/xpert-ai-xpert/
 ---
 ## xpert (xpert-ai)
 

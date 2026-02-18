@@ -8,8 +8,8 @@ link: https://github.com/AutomatosAI/automatos-ai
 source: github-auto
 tags: ["ai-agents", "cognitive-tools", "context-engineering", "emergent-symbols", "multi-agent-orchestration", "neural-field-theory"]
 permalink: /resources/automatosai-automatos-ai/
-stars: 22
-last_updated: 2026-02-16
+stars: 23
+last_updated: 2026-02-17
 license: "NOASSERTION"
 ---
 ## automatos-ai (AutomatosAI)

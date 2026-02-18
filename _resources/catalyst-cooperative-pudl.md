@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/catalyst-cooperative/pudl
 source: github-auto
+tags: ["cems", "climate", "coal", "ddj", "eia", "eia860"]
+permalink: /resources/catalyst-cooperative-pudl/
 stars: 574
 last_updated: 2026-02-17
 license: "MIT"
-tags: ["cems", "climate", "coal", "ddj", "eia", "eia860"]
-permalink: /resources/catalyst-cooperative-pudl/
 ---
 ## pudl (catalyst-cooperative)
 

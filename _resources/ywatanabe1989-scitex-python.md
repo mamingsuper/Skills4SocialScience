@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/ywatanabe1989/scitex-python
 source: github-auto
-stars: 17
-last_updated: 2026-02-16
-license: "AGPL-3.0"
 tags: ["academic-writing", "agpl-v3", "automation", "bibtex", "data-visualization", "generative-ai"]
 permalink: /resources/ywatanabe1989-scitex-python/
+stars: 17
+last_updated: 2026-02-17
+license: "AGPL-3.0"
 ---
 ## scitex-python (ywatanabe1989)
 

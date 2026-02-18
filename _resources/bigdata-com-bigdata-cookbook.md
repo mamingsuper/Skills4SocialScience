@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/Bigdata-com/bigdata-cookbook
 source: github-auto
-stars: 21
-last_updated: 2026-02-16
-license: "MIT"
 tags: ["agent", "agentic-ai", "agentic-workflow", "agents", "bigdata", "bigdata-com"]
 permalink: /resources/bigdata-com-bigdata-cookbook/
+stars: 21
+last_updated: 2026-02-17
+license: "MIT"
 ---
 ## bigdata-cookbook (Bigdata-com)
 

@@ -8,8 +8,8 @@ link: https://github.com/cardiffnlp/tweetnlp
 source: github-auto
 tags: ["computational-social-science", "language-model", "natural-language-processing", "python", "sentiment-analysis", "sns"]
 permalink: /resources/cardiffnlp-tweetnlp/
-stars: 377
-last_updated: 2026-02-09
+stars: 378
+last_updated: 2026-02-17
 license: "MIT"
 ---
 ## tweetnlp (cardiffnlp)

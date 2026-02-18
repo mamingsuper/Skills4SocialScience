@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/pangaea-data-publisher/qualianon
 source: github-auto
-stars: 33
-last_updated: 2026-02-16
-license: ""
 tags: ["anonymization", "social-sc"]
 permalink: /resources/pangaea-data-publisher-qualianon/
+stars: 34
+last_updated: 2026-02-17
+license: ""
 ---
 ## qualianon (pangaea-data-publisher)
 

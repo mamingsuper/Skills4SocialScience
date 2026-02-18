@@ -9,7 +9,7 @@ source: github-auto
 tags: ["automation", "email-automation", "framework", "llm", "newsletter", "toolkit"]
 permalink: /resources/heripo-lab-llm-newsletter-kit-core/
 stars: 39
-last_updated: 2026-02-16
+last_updated: 2026-02-18
 license: "Apache-2.0"
 ---
 ## llm-newsletter-kit-core (heripo-lab)

@@ -1,0 +1,24 @@
+---
+layout: resource
+title: "fio"
+description: "Friendly & Fast Input-Output Matrix Analysis in R, with computations written in Rust."
+type: GitHub Repository
+category: research-tool
+link: https://github.com/albersonmiranda/fio
+source: github-auto
+stars: 15
+last_updated: 2026-02-07
+license: "NOASSERTION"
+tags: ["economics", "r", "r-package", "rstats"]
+permalink: /resources/albersonmiranda-fio/
+---
+## fio (albersonmiranda)
+
+Auto-collected by AI4SS from GitHub discovery.
+
+- GitHub: https://github.com/albersonmiranda/fio
+- Stars: 15
+- Last updated: 2026-02-07
+- Category: research-tool
+
+Use this repository as a candidate tool/reference for AI-enabled social science workflows.

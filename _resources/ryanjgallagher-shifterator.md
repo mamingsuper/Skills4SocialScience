@@ -8,8 +8,8 @@ link: https://github.com/ryanjgallagher/shifterator
 source: github-auto
 tags: ["computational-social-science", "data-visualization", "digital-humanities", "information-theory", "natural-language-processing", "sentiment-analysis"]
 permalink: /resources/ryanjgallagher-shifterator/
-stars: 285
-last_updated: 2026-02-08
+stars: 287
+last_updated: 2026-02-18
 license: "Apache-2.0"
 ---
 ## shifterator (ryanjgallagher)

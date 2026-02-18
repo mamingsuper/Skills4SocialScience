@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/chncwang/ClinTrialFinder
 source: github-auto
+tags: ["clinical-trials", "data-analysis", "healthcare", "medical-research"]
+permalink: /resources/chncwang-clintrialfinder/
 stars: 17
 last_updated: 2026-02-14
 license: "MIT"
-tags: ["clinical-trials", "data-analysis", "healthcare", "medical-research"]
-permalink: /resources/chncwang-clintrialfinder/
 ---
 ## ClinTrialFinder (chncwang)
 

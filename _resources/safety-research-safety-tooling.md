@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/safety-research/safety-tooling
 source: github-auto
+tags: []
+permalink: /resources/safety-research-safety-tooling/
 stars: 105
 last_updated: 2026-02-16
 license: "MIT"
-tags: []
-permalink: /resources/safety-research-safety-tooling/
 ---
 ## safety-tooling (safety-research)
 

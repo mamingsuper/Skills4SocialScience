@@ -9,7 +9,7 @@ source: github-auto
 tags: ["box-cox", "classification", "clustering", "correspondence-analysis", "forward-search", "m-estimation"]
 permalink: /resources/uniprjrc-fsda/
 stars: 99
-last_updated: 2026-02-15
+last_updated: 2026-02-17
 license: "EUPL-1.1"
 ---
 ## FSDA (UniprJRC)

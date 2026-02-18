@@ -8,8 +8,8 @@ link: https://github.com/Tzohar/PassLLM
 source: github-auto
 tags: ["brute-force", "cybersecurity", "infosec", "llm", "lora", "machine-learning"]
 permalink: /resources/tzohar-passllm/
-stars: 49
-last_updated: 2026-02-17
+stars: 59
+last_updated: 2026-02-18
 license: "GPL-3.0"
 ---
 ## PassLLM (Tzohar)

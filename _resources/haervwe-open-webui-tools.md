@@ -8,8 +8,8 @@ link: https://github.com/Haervwe/open-webui-tools
 source: github-auto
 tags: ["academic-research", "ai-agents", "ai-workstation", "arxiv", "comfyui", "image-generation"]
 permalink: /resources/haervwe-open-webui-tools/
-stars: 574
-last_updated: 2026-02-15
+stars: 575
+last_updated: 2026-02-18
 license: "MIT"
 ---
 ## open-webui-tools (Haervwe)

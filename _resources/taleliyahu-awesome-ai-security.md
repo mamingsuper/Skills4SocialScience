@@ -8,7 +8,7 @@ link: https://github.com/TalEliyahu/Awesome-AI-Security
 source: github-auto
 tags: ["artificial-intelligence", "cybersecurity"]
 permalink: /resources/taleliyahu-awesome-ai-security/
-stars: 487
+stars: 488
 last_updated: 2026-02-17
 license: "MIT"
 ---

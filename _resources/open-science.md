@@ -9,7 +9,7 @@ source: manual-curated
 tags: ["open-science", "reproducible-research"]
 permalink: /resources/open-science/
 stars: 2
-last_updated: 2026-02-10
+last_updated: 2026-02-17
 license: "MIT"
 ---
 # Open Science Skills

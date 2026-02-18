@@ -1,0 +1,24 @@
+---
+layout: resource
+title: "spyglass"
+description: "Neuroscience data analysis framework for reproducible research built by Loren Frank Lab at UCSF"
+type: GitHub Repository
+category: dataset
+link: https://github.com/LorenFrankLab/spyglass
+source: github-auto
+stars: 108
+last_updated: 2026-02-17
+license: "MIT"
+tags: ["datajoint", "electrophysiology", "kachery", "neuroscience", "nwb", "python"]
+permalink: /resources/lorenfranklab-spyglass/
+---
+## spyglass (LorenFrankLab)
+
+Auto-collected by AI4SS from GitHub discovery.
+
+- GitHub: https://github.com/LorenFrankLab/spyglass
+- Stars: 108
+- Last updated: 2026-02-17
+- Category: dataset
+
+Use this repository as a candidate tool/reference for AI-enabled social science workflows.

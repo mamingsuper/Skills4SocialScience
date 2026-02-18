@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/DAAF-Contribution-Community/daaf
 source: github-auto
-stars: 41
-last_updated: 2026-02-17
-license: "LGPL-3.0"
 tags: []
 permalink: /resources/daaf-contribution-community-daaf/
+stars: 71
+last_updated: 2026-02-18
+license: "LGPL-3.0"
 ---
 ## daaf (DAAF-Contribution-Community)
 
