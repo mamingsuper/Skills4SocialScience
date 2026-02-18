@@ -224,8 +224,8 @@ mkdir -p ~/.claude/skills/claude-writer
                 <article class="skill-card"
                     data-category="{{ item.category | default: item.workflow_stage | slugify }}">
                     <span class="skill-icon">{{ item.icon | default: "⚡" }}</span>
-                    <h3 class="skill-title">{{ item.name }}</h3>
-                    <p class="skill-description">{{ item.description }}</p>
+                    <h3 class="skill-title">{{ item.name | default: item.title }}</h3>
+                    <p class="skill-description">{{ item.zh_description | default: item.description }}</p>
                     <div class="skill-tags">
                         {% for tag in item.tags %}
                         <span class="tag">{{ tag }}</span>
@@ -262,7 +262,7 @@ mkdir -p ~/.claude/skills/claude-writer
                     data-category="{{ item.category | default: 'general' | slugify }}">
                     <span class="skill-icon">📄</span>
                     <h3 class="skill-title">{{ item.title }}</h3>
-                    <p class="skill-description">{{ item.description }}</p>
+                    <p class="skill-description">{{ item.zh_description | default: item.description }}</p>
                     <div class="skill-tags">
                         <span class="tag">{{ category_meta.zh | default: item.category | default: "综合" }}</span>
                     </div>

@@ -207,7 +207,7 @@ mkdir -p ~/.claude/skills/claude-writer
                     <article class="skill-card reveal"
                         data-category="{{ item.category | default: item.workflow_stage | slugify }}">
                         <span class="skill-icon">{{ item.icon | default: "⚡" }}</span>
-                        <h3 class="skill-title">{{ item.name }}</h3>
+                        <h3 class="skill-title">{{ item.name | default: item.title }}</h3>
                         <p class="skill-description">{{ item.description }}</p>
                         <div class="skill-tags">
                             {% for tag in item.tags %}
