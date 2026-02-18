@@ -2,6 +2,7 @@
 layout: paper
 title: "Can Large Language Models Transform Computational Social Science?"
 description: "Evaluates zero-shot LLM performance across 25 CSS benchmarks, proposing a roadmap for integrating LLMs into the computational social science pipeline."
+zh_description: "系统评估 LLM 在计算社会科学典型任务上的表现，探讨 AI 对该领域的变革潜力与现实局限性。"
 year: 2024
 link: https://arxiv.org/abs/2305.03514
 category: methodology

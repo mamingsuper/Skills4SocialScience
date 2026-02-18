@@ -2,6 +2,7 @@
 layout: skill
 title: "humanizer"
 description: "Claude Code skill that removes signs of AI-generated writing from text"
+zh_description: "Claude Code 写作技能：自动去除文本中 AI 生成的机械语调，使学术写作更具自然的人文表达风格。"
 category: writing
 link: https://github.com/blader/humanizer
 source: github-auto

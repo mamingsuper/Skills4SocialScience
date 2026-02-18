@@ -2,6 +2,7 @@
 layout: paper
 title: "Out of One, Many: Using Language Models to Simulate Human Samples"
 description: "Demonstrates that LLMs can generate synthetic survey responses that closely match real human opinion distributions, opening doors for rapid prototyping of social science studies."
+zh_description: "提出'硅基抽样'方法，证明正确条件化的 LLM 可生成接近真实人类的合成调查数据，发表于《政治分析》2023年。"
 year: 2023
 link: https://doi.org/10.1017/pan.2023.2
 category: application

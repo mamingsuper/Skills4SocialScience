@@ -463,6 +463,25 @@ def fetch_seed_candidates(token: str | None, min_stars: int) -> List[Dict[str, o
     return candidates
 
 
+def generate_zh_description(repo_name: str, description: str, category: str, owner: str) -> str:
+    """Auto-generate a basic zh_description for newly collected resources.
+    
+    Creates a structured placeholder so Chinese users see useful info.
+    Manual review/improvement is recommended for accuracy.
+    """
+    cat_labels = {
+        "dataset": "数据集资源",
+        "benchmark": "评测基准工具",
+        "workflow": "研究工作流框架",
+        "community": "社区资源合集",
+        "research-tool": "研究辅助工具",
+    }
+    cat_zh = cat_labels.get(category, "开源工具")
+    # Use first 80 chars of description (academic users can read English)
+    desc_short = (description[:80] + "...") if len(description) > 80 else description
+    return f"{repo_name}（{owner}）：GitHub 开源{cat_zh}。{desc_short}"
+
+
 def build_markdown(item: Dict[str, object], used_slugs: Set[str]) -> tuple[str, str]:
     repo_name = str(item.get("name") or "Untitled")
     owner = str((item.get("owner") or {}).get("login") or "unknown")
@@ -489,10 +508,12 @@ def build_markdown(item: Dict[str, object], used_slugs: Set[str]) -> tuple[str, 
     used_slugs.add(slug)
 
     link = str(item.get("html_url") or "")
+    zh_desc = generate_zh_description(repo_name, description, category, owner)
     markdown = f"""---
 layout: resource
 title: {yaml_quote(repo_name)}
 description: {yaml_quote(description)}
+zh_description: {yaml_quote(zh_desc)}
 type: GitHub Repository
 category: {category}
 link: {link}

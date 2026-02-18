@@ -2,6 +2,7 @@
 layout: skill
 title: "khoj"
 description: "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your p..."
+zh_description: "Khoj：可自托管的 AI 第二大脑，支持文档问答、网络搜索、自动化任务与深度研究，适合社会科学研究者管理个人知识库。"
 category: research-engineering
 link: https://github.com/khoj-ai/khoj
 source: github-auto

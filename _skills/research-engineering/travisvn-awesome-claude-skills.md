@@ -2,6 +2,7 @@
 layout: skill
 title: "awesome-claude-skills"
 description: "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows — particularly Claude Code"
+zh_description: "精选 Claude Skills 资源列表，汇集定制化 Claude 工作流的工具与示例，适合研究者按需配置 AI 辅助研究技能。"
 category: research-engineering
 link: https://github.com/travisvn/awesome-claude-skills
 source: github-auto

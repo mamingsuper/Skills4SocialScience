@@ -2,6 +2,7 @@
 layout: skill
 title: "everything-claude-code"
 description: "Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs. Battle-tested configs from an Anthropic hackathon winner."
+zh_description: "完整的 Claude Code 配置集合，包含 Agent、Hooks、命令与规则，由 Anthropic 黑客松获奖作品总结提炼，适合研究者快速搭建 AI 辅助工作流。"
 category: research-engineering
 link: https://github.com/affaan-m/everything-claude-code
 source: github-auto

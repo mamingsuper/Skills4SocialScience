@@ -2,6 +2,7 @@
 layout: paper
 title: "Can Generative AI Improve Social Science?"
 description: "Explores how generative AI can enhance survey research, online experiments, automated content analyses, and agent-based models — while warning of bias, ethics, and replication challenges."
+zh_description: "系统综述生成式 AI 对社会科学的影响，分析 LLM 在测量、理论构建与因果推断中的机遇与方法论挑战。"
 year: 2024
 link: https://doi.org/10.1073/pnas.2314021121
 category: general

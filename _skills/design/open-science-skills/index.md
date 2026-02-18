@@ -2,6 +2,7 @@
 layout: skill
 name: Open Science Skills
 description: Reproducible research workflows and open-science best practices for social science.
+zh_description: "开放科学研究技能，涵盖预注册、数据共享、可复现研究流程及开放存取发表等学术规范实践。"
 workflow_stage: design
 category: design
 tags: [Open Science, Reproducibility, Workflow]
