@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/zaratanDotWorld/choreWheel
 source: github-auto
+tags: ["decision-making", "economics", "game-design", "governance"]
+permalink: /resources/zaratandotworld-chorewheel/
 stars: 16
 last_updated: 2026-02-07
 license: "AGPL-3.0"
-tags: ["decision-making", "economics", "game-design", "governance"]
-permalink: /resources/zaratandotworld-chorewheel/
 ---
 ## choreWheel (zaratanDotWorld)
 

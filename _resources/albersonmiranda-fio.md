@@ -6,11 +6,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/albersonmiranda/fio
 source: github-auto
+tags: ["economics", "r", "r-package", "rstats"]
+permalink: /resources/albersonmiranda-fio/
 stars: 15
 last_updated: 2026-02-07
 license: "NOASSERTION"
-tags: ["economics", "r", "r-package", "rstats"]
-permalink: /resources/albersonmiranda-fio/
 ---
 ## fio (albersonmiranda)
 

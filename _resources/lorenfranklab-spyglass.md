@@ -6,11 +6,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/LorenFrankLab/spyglass
 source: github-auto
+tags: ["datajoint", "electrophysiology", "kachery", "neuroscience", "nwb", "python"]
+permalink: /resources/lorenfranklab-spyglass/
 stars: 108
 last_updated: 2026-02-17
 license: "MIT"
-tags: ["datajoint", "electrophysiology", "kachery", "neuroscience", "nwb", "python"]
-permalink: /resources/lorenfranklab-spyglass/
 ---
 ## spyglass (LorenFrankLab)
 
