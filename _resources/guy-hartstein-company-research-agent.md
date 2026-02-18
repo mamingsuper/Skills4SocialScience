@@ -2,6 +2,7 @@
 layout: resource
 title: "company-research-agent"
 description: "An agentic company research tool powered by LangGraph and Tavily that conducts deep diligence on companies using a multi-agent framework. It leverages Google's Gemini 2.5 Flash..."
+zh_description: "公司研究 AI Agent：基于 LangGraph 与 Tavily 的深度企业调研工具，适合经济学与商业社会科学研究。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/guy-hartstein/company-research-agent

@@ -2,6 +2,7 @@
 layout: resource
 title: "comp_thinking_social_science"
 description: "Computational Thinking for Social Scientists book project"
+zh_description: "《社会科学家的计算思维》配套代码与教材，系统介绍 R/Python 在政治学、社会学中的应用。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/jaeyk/comp_thinking_social_science

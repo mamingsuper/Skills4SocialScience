@@ -2,6 +2,7 @@
 layout: resource
 title: "open-webui-tools"
 description: "Open‑WebUI Tools is a modular toolkit designed to extend and enrich your Open WebUI instance, turning it into a powerful AI workstation. With a suite of over 15 specialized tool..."
+zh_description: "Open WebUI 工具扩展套件，含 arXiv 检索、学术搜索等 15+ 模块，可将 Open WebUI 打造为学术研究工作站。"
 type: GitHub Repository
 category: workflow
 link: https://github.com/Haervwe/open-webui-tools

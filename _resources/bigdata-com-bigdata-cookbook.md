@@ -2,6 +2,7 @@
 layout: resource
 title: "bigdata-cookbook"
 description: "End-to-end financial text-analysis using Bigdata API and the Bigdata-Research-Tools library. Ready-to-use notebooks with RAG & GenAI enabling thematic and risk screening, trend..."
+zh_description: "金融文本分析端到端教程，结合 RAG 与生成式 AI 进行主题筛查与风险分析，含可复用 Notebook。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/Bigdata-com/bigdata-cookbook

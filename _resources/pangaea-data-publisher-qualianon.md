@@ -2,6 +2,7 @@
 layout: resource
 title: "qualianon"
 description: "QualiAnon is a tool to support the anonymization of text data. It is developed by the Qualiservice research data center for the anonymization of interviews in the qualitative so..."
+zh_description: "QualiAnon：研究数据文本匿名化工具（AWI 开发），支持定性访谈等文本的隐私处理与脱敏。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/pangaea-data-publisher/qualianon

@@ -2,6 +2,7 @@
 layout: resource
 title: "STREAM"
 description: "ACL Python package engineered for seamless topic modeling, topic evaluation, and topic visualization. Ideal for text analysis, natural language processing (NLP), and research in..."
+zh_description: "STREAM：Python 主题模型工具包，支持主题建模、评估与可视化，适合社会科学文本挖掘与议题分析。"
 type: GitHub Repository
 category: benchmark
 link: https://github.com/AnFreTh/STREAM

@@ -2,6 +2,7 @@
 layout: resource
 title: "TwinMarket"
 description: "[NeurIPS 2025 & ICLR 2025 Financial AI Best Paper Award] A multi-agent framework that leverages LLMs to simulate socio-economic systems"
+zh_description: "TwinMarket（NeurIPS 2025）：基于 LLM 的多智能体金融市场模拟框架，可用于经济社会行为研究。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/FreedomIntelligence/TwinMarket

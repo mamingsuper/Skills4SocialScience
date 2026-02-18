@@ -2,6 +2,7 @@
 layout: resource
 title: "InkVisitor"
 description: "An open-source, browser-based front-end application for the collection of complex structured data from textual resources in history and the social sciences into a RethinkDB data..."
+zh_description: "InkVisitor：浏览器端复杂关系型数据标注工具，适合历史、宗教社会学等人文社科数据录入。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/DISSINET/InkVisitor

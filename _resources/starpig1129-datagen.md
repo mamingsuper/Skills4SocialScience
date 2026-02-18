@@ -2,6 +2,7 @@
 layout: resource
 title: "DATAGEN"
 description: "DATAGEN: AI-driven multi-agent research assistant automating hypothesis generation, data analysis, and report writing."
+zh_description: "DATAGEN：多智能体 AI 研究助手，自动化假设生成、实验设计与结果分析，适合社会科学研究。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/starpig1129/DATAGEN

@@ -2,6 +2,7 @@
 layout: resource
 title: "AgentReview"
 description: "Official Implementation for EMNLP 2024 (main) \"AgentReview: Exploring Academic Peer Review with LLM Agent.\""
+zh_description: "AgentReview（EMNLP 2024）：用 LLM 模拟学术同行评审流程，研究 AI 辅助评审中的偏见与行为模式。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/Ahren09/AgentReview

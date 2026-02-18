@@ -2,6 +2,7 @@
 layout: resource
 title: "pudl"
 description: "The Public Utility Data Liberation Project provides analysis-ready energy system data to climate advocates, researchers, policymakers, and journalists."
+zh_description: "PUDL：美国能源系统可分析数据集（电力、天然气等），适合能源政策与环境社会科学研究。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/catalyst-cooperative/pudl

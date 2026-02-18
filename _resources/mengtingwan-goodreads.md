@@ -2,6 +2,7 @@
 layout: resource
 title: "goodreads"
 description: "code samples for the goodreads datasets"
+zh_description: "Goodreads 书评与阅读行为数据集，包含评分、书架、评论等数据，适合社会科学文本与行为研究。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/MengtingWan/goodreads

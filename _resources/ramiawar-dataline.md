@@ -2,6 +2,7 @@
 layout: resource
 title: "dataline"
 description: "Chat with your data - AI data analysis and visualization on CSV, Postgres, MySQL, Snowflake, SQLite..."
+zh_description: "DataLine：通过对话界面分析 CSV/数据库数据的 AI 工具，自动生成 SQL 查询与数据可视化。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/RamiAwar/dataline

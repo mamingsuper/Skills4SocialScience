@@ -2,6 +2,7 @@
 layout: resource
 title: "deer-flow"
 description: "DeerFlow is a community-driven Deep Research framework, combining language models with tools like web search, crawling, and Python execution, while contributing back to the open..."
+zh_description: "DeerFlow：字节跳动出品的深度研究框架，结合 LLM 与网络搜索实现自动化研究报告生成。"
 type: GitHub Repository
 category: community
 link: https://github.com/bytedance/deer-flow

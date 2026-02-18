@@ -2,6 +2,7 @@
 layout: resource
 title: "safety-tooling"
 description: "Inference API for many LLMs and other useful tools for empirical research"
+zh_description: "AI 安全实证研究工具包，提供多模型统一推理 API，适合 LLM 行为实验与社会科学 AI 研究。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/safety-research/safety-tooling

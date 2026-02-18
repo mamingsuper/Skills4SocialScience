@@ -2,7 +2,7 @@
 layout: resource
 title: "Open Science Skills Guide"
 description: A comprehensive collection of practices for reproducible research.
-zh_description: "开放科学资源聚合平台，汇集预印本服务器、数据共享平台及可复现研究最佳实践指南。"
+zh_description: "可复现研究实践指南，涵盖开放科学工作流、预注册、数据共享等方法论，适合学术研究者参考。"
 type: Guide
 category: workflow
 link: https://github.com/scdenney/open-science-skills

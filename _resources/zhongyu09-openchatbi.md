@@ -2,6 +2,7 @@
 layout: resource
 title: "openchatbi"
 description: "OpenChatBI is an intelligent chat-based BI tool powered by large language models, designed to help users query, analyze, and visualize data through natural language conversation..."
+zh_description: "OpenChatBI：基于 LLM 的对话式商业智能工具，支持自然语言查询数据库并生成可视化报表。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/zhongyu09/openchatbi

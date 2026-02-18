@@ -2,6 +2,7 @@
 layout: resource
 title: "fio"
 description: "Friendly & Fast Input-Output Matrix Analysis in R, with computations written in Rust."
+zh_description: "fio：R 语言投入产出矩阵分析包，底层由 Rust 提速，适合经济学家进行产业关联与宏观经济结构分析。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/albersonmiranda/fio

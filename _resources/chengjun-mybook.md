@@ -2,6 +2,7 @@
 layout: resource
 title: "mybook"
 description: "Lectures on Computational Communication"
+zh_description: "程军《计算传播学》配套代码与讲义，面向中文学术读者的社会科学计算方法教材。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/chengjun/mybook

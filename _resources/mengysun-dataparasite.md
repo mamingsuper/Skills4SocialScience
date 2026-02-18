@@ -2,6 +2,7 @@
 layout: resource
 title: "DataParasite"
 description: "A simple yet versatile context engineered for scalable online data collection"
+zh_description: "DataParasite：基于上下文工程的轻量在线数据采集工具，支持可扩展的网络数据收集自动化。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/mengysun/DataParasite

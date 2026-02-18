@@ -2,6 +2,7 @@
 layout: resource
 title: "hate-speech-and-offensive-language"
 description: "Repository for the paper \"Automated Hate Speech Detection and the Problem of Offensive Language\", ICWSM 2017"
+zh_description: "仇恨言论与冒犯性语言自动检测经典数据集与模型，ACL 引用最多的社交媒体内容分析资源之一。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/t-davidson/hate-speech-and-offensive-language

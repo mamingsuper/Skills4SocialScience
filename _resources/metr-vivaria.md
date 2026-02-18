@@ -2,6 +2,7 @@
 layout: resource
 title: "vivaria"
 description: "Vivaria is METR's tool for running evaluations and conducting agent elicitation research."
+zh_description: "Vivaria：METR 出品的 AI 能力评估与引导研究平台，适合研究 AI 系统行为与社会影响的实证工作。"
 type: GitHub Repository
 category: benchmark
 link: https://github.com/METR/vivaria

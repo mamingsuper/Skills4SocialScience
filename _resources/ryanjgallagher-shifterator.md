@@ -2,6 +2,7 @@
 layout: resource
 title: "shifterator"
 description: "Interpretable data visualizations for understanding how texts differ at the word level"
+zh_description: "Shifterator：可解释的词频差异可视化工具，通过词移图展示不同语料间的情感和主题变化。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/ryanjgallagher/shifterator

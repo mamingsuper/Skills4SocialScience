@@ -2,6 +2,7 @@
 layout: resource
 title: "FSDA"
 description: "Flexible Statistics and Data Analysis (FSDA) extends MATLAB for a robust analysis of data sets affected by different sources of heterogeneity. It is open source software license..."
+zh_description: "FSDA：MATLAB 统计分析扩展工具箱，支持稳健统计与异常值检测，适合社科数据的高级统计建模。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/UniprJRC/FSDA

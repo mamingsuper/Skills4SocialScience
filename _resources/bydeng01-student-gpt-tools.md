@@ -2,6 +2,7 @@
 layout: resource
 title: "student-gpt-tools"
 description: "AI tools collection for students and researchers. 学生和研究人员的AI工具合集。विद्यार्थियों और शोधकर्ताओं के लिए एआई टूल्स संग्रह।"
+zh_description: "面向学生和研究人员的 AI 工具合集，汇整 GPT 相关实用工具与使用指南，含中文资源。"
 type: GitHub Repository
 category: community
 link: https://github.com/bydeng01/student-gpt-tools

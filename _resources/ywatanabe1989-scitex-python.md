@@ -2,6 +2,7 @@
 layout: resource
 title: "scitex-python"
 description: "Modular Python toolkit for scientific research automation — free as in freedom, local as in yours. From raw data to published manuscript, with 148+ MCP tools for AI agents. AGPL..."
+zh_description: "SciTeX：模块化科研自动化 Python 工具包，支持实验管理、数据处理与论文图表生成，采用自由软件协议。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/ywatanabe1989/scitex-python

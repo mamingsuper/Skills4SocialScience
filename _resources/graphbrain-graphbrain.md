@@ -2,6 +2,7 @@
 layout: resource
 title: "graphbrain"
 description: "Language, Knowledge, Cognition"
+zh_description: "Graphbrain：将自然语言转化为知识超图的 Python 工具，适合从文本中提取结构化知识与语义关系。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/graphbrain/graphbrain

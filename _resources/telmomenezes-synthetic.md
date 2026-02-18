@@ -2,6 +2,7 @@
 layout: resource
 title: "synthetic"
 description: "Symbolic Generators for Complex Networks"
+zh_description: "Synthetic：用于生成复杂网络的符号生成器，适合社会网络模拟与社会科学网络分析研究。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/telmomenezes/synthetic

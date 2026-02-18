@@ -2,6 +2,7 @@
 layout: resource
 title: "choreWheel"
 description: "Computational governance tooling"
+zh_description: "ChoreWheel：计算治理工具，探索基于算法的社区决策与任务分配机制，适合研究数字治理与集体行动。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/zaratanDotWorld/choreWheel

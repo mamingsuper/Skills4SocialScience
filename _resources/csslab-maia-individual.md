@@ -2,6 +2,7 @@
 layout: resource
 title: "maia-individual"
 description: "Modeling individual style in chess with Maia Chess."
+zh_description: "Maia Individual：个体化棋风建模扩展，用于研究个人风格与行为预测，是社会科学行为建模案例。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/CSSLab/maia-individual

@@ -2,6 +2,7 @@
 layout: resource
 title: "edsl"
 description: "Design, conduct and analyze results of AI-powered surveys and experiments. Simulate social science and market research with large numbers of AI agents and LLMs."
+zh_description: "EDSL：Python 框架，用于设计和运行 AI 驱动的调查与实验，可模拟人类回答者进行社会科学研究。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/expectedparrot/edsl

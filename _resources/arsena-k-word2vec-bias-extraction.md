@@ -2,6 +2,7 @@
 layout: resource
 title: "Word2Vec-bias-extraction"
 description: "How are words loaded with meaning? Repository  accompanying research by Alina Arseniev-Koehler and Jacob G. Foster, titled \"Machine learning as a model for cultural learning: te..."
+zh_description: "Word2Vec 偏见提取工具：分析词嵌入中隐含的社会偏见与意义结构，适合计算社会科学文化测量研究。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/arsena-k/Word2Vec-bias-extraction

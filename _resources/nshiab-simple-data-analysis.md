@@ -2,6 +2,7 @@
 layout: resource
 title: "simple-data-analysis"
 description: "Easy-to-use and high-performance TypeScript library for data analysis. Works with tabular, geospatial and vector data."
+zh_description: "Simple Data Analysis：TypeScript/JavaScript 高性能数据分析库，适合新闻数据分析与社科数据处理。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/nshiab/simple-data-analysis

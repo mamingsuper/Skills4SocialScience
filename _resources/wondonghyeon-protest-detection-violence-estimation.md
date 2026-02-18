@@ -2,6 +2,7 @@
 layout: resource
 title: "protest-detection-violence-estimation"
 description: "Implementation of the model used in the paper Protest Activity Detection and Perceived Violence Estimation from Social Media Images (ACM Multimedia 2017)"
+zh_description: "抗议活动检测与暴力程度估算模型，可自动分析新闻图片与文本，适合政治事件数据收集研究。"
 type: GitHub Repository
 category: dataset
 link: https://github.com/wondonghyeon/protest-detection-violence-estimation

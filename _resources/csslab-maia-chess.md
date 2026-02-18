@@ -2,6 +2,7 @@
 layout: resource
 title: "maia-chess"
 description: "Maia is a human-like neural network chess engine trained on millions of human games."
+zh_description: "Maia Chess：在数百万人类棋局上训练的类人棋类引擎，可用于研究人类决策与认知行为模式。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/CSSLab/maia-chess

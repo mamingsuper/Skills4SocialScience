@@ -2,6 +2,7 @@
 layout: resource
 title: "CSS-Events"
 description: "Summer/ winter schools, workshops and conferences in computational social science 🫂"
+zh_description: "计算社会科学领域暑期学校、研讨会与学术会议综合列表，便于研究者追踪重要学术活动。"
 type: GitHub Repository
 category: research-tool
 link: https://github.com/chkla/CSS-Events
