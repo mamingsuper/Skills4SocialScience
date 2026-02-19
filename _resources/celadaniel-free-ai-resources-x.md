@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/CelaDaniel/free-ai-resources-x
 source: github-auto
+tags: ["ai", "ai-agents", "ai-courses", "ai-ethics", "ai-tools", "artificial-intelligence"]
+permalink: /resources/celadaniel-free-ai-resources-x/
 stars: 373
 last_updated: 2026-02-18
 license: "MIT"
-tags: ["ai", "ai-agents", "ai-courses", "ai-ethics", "ai-tools", "artificial-intelligence"]
-permalink: /resources/celadaniel-free-ai-resources-x/
 ---
 ## free-ai-resources-x (CelaDaniel)
 

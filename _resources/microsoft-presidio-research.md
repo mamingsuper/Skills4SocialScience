@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/microsoft/presidio-research
 source: github-auto
+tags: ["deep-learning", "flair", "machine-learning", "named-entity-recognition", "natural-language-processing", "ner"]
+permalink: /resources/microsoft-presidio-research/
 stars: 264
 last_updated: 2026-02-18
 license: "MIT"
-tags: ["deep-learning", "flair", "machine-learning", "named-entity-recognition", "natural-language-processing", "ner"]
-permalink: /resources/microsoft-presidio-research/
 ---
 ## presidio-research (microsoft)
 

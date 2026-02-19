@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/Galaxy-Dawn/claude-scholar
 source: github-auto
-stars: 474
-last_updated: 2026-02-19
-license: ""
 tags: []
 permalink: /resources/galaxy-dawn-claude-scholar/
+stars: 476
+last_updated: 2026-02-19
+license: ""
 ---
 ## claude-scholar (Galaxy-Dawn)
 

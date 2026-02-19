@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/benedekrozemberczki/datasets
 source: github-auto
+tags: ["benchmark", "community-detection", "data-science", "dataset", "deepwalk", "dimensionality-reduction"]
+permalink: /resources/benedekrozemberczki-datasets/
 stars: 652
 last_updated: 2026-02-13
 license: "MIT"
-tags: ["benchmark", "community-detection", "data-science", "dataset", "deepwalk", "dimensionality-reduction"]
-permalink: /resources/benedekrozemberczki-datasets/
 ---
 ## datasets (benedekrozemberczki)
 

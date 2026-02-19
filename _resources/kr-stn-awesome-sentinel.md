@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/kr-stn/awesome-sentinel
 source: github-auto
+tags: ["awesome-list", "hacktoberfest", "open-data", "research", "satellite-imagery", "science"]
+permalink: /resources/kr-stn-awesome-sentinel/
 stars: 575
 last_updated: 2026-02-10
 license: "CC-BY-4.0"
-tags: ["awesome-list", "hacktoberfest", "open-data", "research", "satellite-imagery", "science"]
-permalink: /resources/kr-stn-awesome-sentinel/
 ---
 ## awesome-sentinel (kr-stn)
 

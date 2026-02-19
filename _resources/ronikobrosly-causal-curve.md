@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/ronikobrosly/causal-curve
 source: github-auto
+tags: []
+permalink: /resources/ronikobrosly-causal-curve/
 stars: 281
 last_updated: 2026-01-09
 license: "MIT"
-tags: []
-permalink: /resources/ronikobrosly-causal-curve/
 ---
 ## causal-curve (ronikobrosly)
 

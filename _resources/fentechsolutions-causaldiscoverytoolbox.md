@@ -7,11 +7,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/FenTechSolutions/CausalDiscoveryToolbox
 source: github-auto
+tags: ["algorithm", "causal-discovery", "causal-inference", "causal-models", "causality", "graph"]
+permalink: /resources/fentechsolutions-causaldiscoverytoolbox/
 stars: 1220
 last_updated: 2026-02-11
 license: "MIT"
-tags: ["algorithm", "causal-discovery", "causal-inference", "causal-models", "causality", "graph"]
-permalink: /resources/fentechsolutions-causaldiscoverytoolbox/
 ---
 ## CausalDiscoveryToolbox (FenTechSolutions)
 

@@ -7,11 +7,11 @@ type: GitHub Repository
 category: workflow
 link: https://github.com/dlab-berkeley/Computational-Social-Science-Training-Program
 source: github-auto
+tags: []
+permalink: /resources/dlab-berkeley-computational-social-science-training-program/
 stars: 286
 last_updated: 2026-02-13
 license: ""
-tags: []
-permalink: /resources/dlab-berkeley-computational-social-science-training-program/
 ---
 ## Computational-Social-Science-Training-Program (dlab-berkeley)
 
