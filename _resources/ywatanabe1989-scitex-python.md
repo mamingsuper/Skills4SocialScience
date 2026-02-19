@@ -10,7 +10,7 @@ source: github-auto
 tags: ["academic-writing", "agpl-v3", "automation", "bibtex", "data-visualization", "generative-ai"]
 permalink: /resources/ywatanabe1989-scitex-python/
 stars: 17
-last_updated: 2026-02-17
+last_updated: 2026-02-18
 license: "AGPL-3.0"
 ---
 ## scitex-python (ywatanabe1989)
