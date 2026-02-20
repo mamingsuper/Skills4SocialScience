@@ -9,8 +9,8 @@ link: https://github.com/RamiAwar/dataline
 source: github-auto
 tags: ["ai", "chart", "data-science", "data-visualization", "llm", "sql"]
 permalink: /resources/ramiawar-dataline/
-stars: 1523
-last_updated: 2026-02-16
+stars: 1524
+last_updated: 2026-02-19
 license: "GPL-3.0"
 ---
 ## dataline (RamiAwar)

@@ -9,8 +9,8 @@ link: https://github.com/Bigdata-com/bigdata-cookbook
 source: github-auto
 tags: ["agent", "agentic-ai", "agentic-workflow", "agents", "bigdata", "bigdata-com"]
 permalink: /resources/bigdata-com-bigdata-cookbook/
-stars: 21
-last_updated: 2026-02-17
+stars: 22
+last_updated: 2026-02-19
 license: "MIT"
 ---
 ## bigdata-cookbook (Bigdata-com)

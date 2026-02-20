@@ -9,7 +9,7 @@ link: https://github.com/eseckel/ai-for-grant-writing
 source: manual-curated
 tags: ["grant-writing", "llm", "scientific-writing", "proposal", "generative-ai"]
 permalink: /resources/ai-for-grant-writing/
-stars: 4081
+stars: 4086
 last_updated: 2026-02-19
 license: "CC-BY-4.0"
 ---

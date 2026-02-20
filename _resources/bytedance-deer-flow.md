@@ -9,8 +9,8 @@ link: https://github.com/bytedance/deer-flow
 source: github-auto
 tags: ["agent", "agentic", "agentic-framework", "agentic-workflow", "ai", "ai-agents"]
 permalink: /resources/bytedance-deer-flow/
-stars: 19998
-last_updated: 2026-02-19
+stars: 20017
+last_updated: 2026-02-20
 license: "MIT"
 ---
 ## deer-flow (bytedance)

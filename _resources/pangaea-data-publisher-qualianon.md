@@ -9,8 +9,8 @@ link: https://github.com/pangaea-data-publisher/qualianon
 source: github-auto
 tags: ["anonymization", "social-sc"]
 permalink: /resources/pangaea-data-publisher-qualianon/
-stars: 34
-last_updated: 2026-02-17
+stars: 35
+last_updated: 2026-02-19
 license: ""
 ---
 ## qualianon (pangaea-data-publisher)

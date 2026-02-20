@@ -9,8 +9,8 @@ link: https://github.com/QuantEcon/book-networks-public
 source: github-auto
 tags: ["economics", "networks"]
 permalink: /resources/quantecon-book-networks-public/
-stars: 124
-last_updated: 2026-02-05
+stars: 125
+last_updated: 2026-02-20
 license: ""
 ---
 ## book-networks-public (QuantEcon)

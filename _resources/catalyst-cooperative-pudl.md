@@ -10,7 +10,7 @@ source: github-auto
 tags: ["cems", "climate", "coal", "ddj", "eia", "eia860"]
 permalink: /resources/catalyst-cooperative-pudl/
 stars: 574
-last_updated: 2026-02-18
+last_updated: 2026-02-20
 license: "MIT"
 ---
 ## pudl (catalyst-cooperative)

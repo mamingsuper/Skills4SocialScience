@@ -9,8 +9,8 @@ link: https://github.com/expectedparrot/edsl
 source: github-auto
 tags: ["anthropic", "data-labeling", "deepinfra", "domain-specific-language", "experiments", "llama2"]
 permalink: /resources/expectedparrot-edsl/
-stars: 428
-last_updated: 2026-02-18
+stars: 430
+last_updated: 2026-02-19
 license: "MIT"
 ---
 ## edsl (expectedparrot)

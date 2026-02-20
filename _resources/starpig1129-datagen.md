@@ -9,8 +9,8 @@ link: https://github.com/starpig1129/DATAGEN
 source: github-auto
 tags: ["agent", "ai", "ai-data-analysis", "artificial-intelligence", "code-generation", "data-analysis"]
 permalink: /resources/starpig1129-datagen/
-stars: 1583
-last_updated: 2026-02-13
+stars: 1584
+last_updated: 2026-02-19
 license: "MIT"
 ---
 ## DATAGEN (starpig1129)

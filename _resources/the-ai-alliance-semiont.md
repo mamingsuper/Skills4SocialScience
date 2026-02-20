@@ -9,8 +9,8 @@ link: https://github.com/The-AI-Alliance/semiont
 source: github-auto
 tags: []
 permalink: /resources/the-ai-alliance-semiont/
-stars: 28
-last_updated: 2026-02-19
+stars: 29
+last_updated: 2026-02-20
 license: "Apache-2.0"
 ---
 ## semiont (The-AI-Alliance)

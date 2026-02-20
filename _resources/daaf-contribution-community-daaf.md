@@ -9,8 +9,8 @@ link: https://github.com/DAAF-Contribution-Community/daaf
 source: github-auto
 tags: []
 permalink: /resources/daaf-contribution-community-daaf/
-stars: 76
-last_updated: 2026-02-18
+stars: 79
+last_updated: 2026-02-20
 license: "LGPL-3.0"
 ---
 ## daaf (DAAF-Contribution-Community)
