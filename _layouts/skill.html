@@ -25,6 +25,9 @@ layout: default
     </div>
 
     <div class="detail-actions">
+        {% if page.source == 'github-auto' and page.link %}
+        <a href="{{ page.link }}" target="_blank" class="btn btn-primary">View Original Repository</a>
+        {% else %}
         <button id="download-skill-btn" type="button" class="btn btn-primary">Download SKILL.md</button>
         {% if page.source_file %}
         <a href="https://github.com/mamingsuper/Skills4SocialScience/blob/main/{{ page.source_file }}" target="_blank"
@@ -32,6 +35,7 @@ layout: default
         {% else %}
         <a href="https://github.com/mamingsuper/Skills4SocialScience/tree/main/_skills" target="_blank"
             class="btn btn-secondary">View Source on GitHub</a>
+        {% endif %}
         {% endif %}
     </div>
 </div>
