@@ -7,11 +7,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/yang3kc/llm_for_css
 source: github-auto
+tags: []
+permalink: /resources/yang3kc-llm-for-css/
 stars: 56
 last_updated: 2025-09-24
 license: "MIT"
-tags: []
-permalink: /resources/yang3kc-llm-for-css/
 ---
 ## llm_for_css (yang3kc)
 

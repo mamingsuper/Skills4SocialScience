@@ -9,7 +9,7 @@ link: https://github.com/Galaxy-Dawn/claude-scholar
 source: github-auto
 tags: []
 permalink: /resources/galaxy-dawn-claude-scholar/
-stars: 576
+stars: 577
 last_updated: 2026-02-21
 license: ""
 ---

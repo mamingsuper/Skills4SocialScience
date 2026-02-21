@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/Farmhouse121/Adventures-in-Financial-Data-Science
 source: github-auto
+tags: []
+permalink: /resources/farmhouse121-adventures-in-financial-data-science/
 stars: 64
 last_updated: 2025-08-12
 license: "MIT"
-tags: []
-permalink: /resources/farmhouse121-adventures-in-financial-data-science/
 ---
 ## Adventures-in-Financial-Data-Science (Farmhouse121)
 

@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/benedekrozemberczki/spatiotemporal_datasets
 source: github-auto
+tags: ["analytics", "benchmark", "data-science", "dataset", "deep-learning", "deepwalk"]
+permalink: /resources/benedekrozemberczki-spatiotemporal-datasets/
 stars: 62
 last_updated: 2025-12-28
 license: "Apache-2.0"
-tags: ["analytics", "benchmark", "data-science", "dataset", "deep-learning", "deepwalk"]
-permalink: /resources/benedekrozemberczki-spatiotemporal-datasets/
 ---
 ## spatiotemporal_datasets (benedekrozemberczki)
 

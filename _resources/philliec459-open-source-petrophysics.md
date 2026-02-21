@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/Philliec459/Open-Source-Petrophysics
 source: github-auto
+tags: ["capillary-pressure", "permeability", "petrophysics", "photomicrographs", "porosity", "relative-permeability"]
+permalink: /resources/philliec459-open-source-petrophysics/
 stars: 64
 last_updated: 2026-02-19
 license: "GPL-3.0"
-tags: ["capillary-pressure", "permeability", "petrophysics", "photomicrographs", "porosity", "relative-permeability"]
-permalink: /resources/philliec459-open-source-petrophysics/
 ---
 ## Open-Source-Petrophysics (Philliec459)
 

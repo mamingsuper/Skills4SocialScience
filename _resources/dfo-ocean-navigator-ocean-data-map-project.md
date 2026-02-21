@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/DFO-Ocean-Navigator/Ocean-Data-Map-Project
 source: github-auto
+tags: ["data-visualization", "gis", "javascript", "netcdf", "ocean-model", "ocean-navigator"]
+permalink: /resources/dfo-ocean-navigator-ocean-data-map-project/
 stars: 55
 last_updated: 2026-02-19
 license: "GPL-3.0"
-tags: ["data-visualization", "gis", "javascript", "netcdf", "ocean-model", "ocean-navigator"]
-permalink: /resources/dfo-ocean-navigator-ocean-data-map-project/
 ---
 ## Ocean-Data-Map-Project (DFO-Ocean-Navigator)
 

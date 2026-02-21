@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/J535D165/datahugger
 source: github-auto
+tags: ["cli", "data", "datacite", "dataone", "dataverse", "dryad"]
+permalink: /resources/j535d165-datahugger/
 stars: 86
 last_updated: 2026-02-16
 license: "MIT"
-tags: ["cli", "data", "datacite", "dataone", "dataverse", "dryad"]
-permalink: /resources/j535d165-datahugger/
 ---
 ## datahugger (J535D165)
 
