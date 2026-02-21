@@ -9,7 +9,7 @@ link: https://github.com/graphbrain/graphbrain
 source: github-auto
 tags: ["artificial-intelligence", "cognitive-science", "computational-social-science", "hypergraphs", "knowledge", "knowledge-base"]
 permalink: /resources/graphbrain-graphbrain/
-stars: 628
+stars: 629
 last_updated: 2026-02-20
 license: "MIT"
 ---

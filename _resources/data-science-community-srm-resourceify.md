@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/Data-Science-Community-SRM/Resourceify
 source: github-auto
+tags: ["data-science", "hacktoberfest", "hacktoberfest-accepted", "hactoberfest2023", "machine-learning", "open-source"]
+permalink: /resources/data-science-community-srm-resourceify/
 stars: 99
 last_updated: 2026-01-10
 license: ""
-tags: ["data-science", "hacktoberfest", "hacktoberfest-accepted", "hactoberfest2023", "machine-learning", "open-source"]
-permalink: /resources/data-science-community-srm-resourceify/
 ---
 ## Resourceify (Data-Science-Community-SRM)
 

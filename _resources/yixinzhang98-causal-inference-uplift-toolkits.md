@@ -7,11 +7,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/yixinzhang98/causal_inference_uplift_toolkits
 source: github-auto
+tags: []
+permalink: /resources/yixinzhang98-causal-inference-uplift-toolkits/
 stars: 156
 last_updated: 2026-01-18
 license: ""
-tags: []
-permalink: /resources/yixinzhang98-causal-inference-uplift-toolkits/
 ---
 ## causal_inference_uplift_toolkits (yixinzhang98)
 

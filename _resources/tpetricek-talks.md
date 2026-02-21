@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/tpetricek/Talks
 source: github-auto
+tags: ["fsharp", "history-and-philosophy", "programming-languages", "talk-materials"]
+permalink: /resources/tpetricek-talks/
 stars: 94
 last_updated: 2026-02-11
 license: ""
-tags: ["fsharp", "history-and-philosophy", "programming-languages", "talk-materials"]
-permalink: /resources/tpetricek-talks/
 ---
 ## Talks (tpetricek)
 

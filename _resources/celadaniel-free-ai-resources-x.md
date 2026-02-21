@@ -9,8 +9,8 @@ link: https://github.com/CelaDaniel/free-ai-resources-x
 source: github-auto
 tags: ["ai", "ai-agents", "ai-courses", "ai-ethics", "ai-tools", "artificial-intelligence"]
 permalink: /resources/celadaniel-free-ai-resources-x/
-stars: 375
-last_updated: 2026-02-19
+stars: 376
+last_updated: 2026-02-20
 license: "MIT"
 ---
 ## free-ai-resources-x (CelaDaniel)

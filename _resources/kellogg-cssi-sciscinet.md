@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/kellogg-cssi/SciSciNet
 source: github-auto
-stars: 109
-last_updated: 2026-02-08
-license: "MIT"
 tags: []
 permalink: /resources/kellogg-cssi-sciscinet/
+stars: 110
+last_updated: 2026-02-20
+license: "MIT"
 ---
 ## SciSciNet (kellogg-cssi)
 

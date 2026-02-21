@@ -7,11 +7,11 @@ type: GitHub Repository
 category: research-tool
 link: https://github.com/nesquikm/mcp-rubber-duck
 source: github-auto
-stars: 138
-last_updated: 2026-02-18
-license: "MIT"
 tags: []
 permalink: /resources/nesquikm-mcp-rubber-duck/
+stars: 139
+last_updated: 2026-02-20
+license: "MIT"
 ---
 ## mcp-rubber-duck (nesquikm)
 

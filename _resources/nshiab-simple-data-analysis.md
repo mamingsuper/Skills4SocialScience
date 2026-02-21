@@ -9,8 +9,8 @@ link: https://github.com/nshiab/simple-data-analysis
 source: github-auto
 tags: ["ai", "analysis", "bun", "data", "data-analysis", "data-science"]
 permalink: /resources/nshiab-simple-data-analysis/
-stars: 329
-last_updated: 2026-02-19
+stars: 331
+last_updated: 2026-02-20
 license: "MIT"
 ---
 ## simple-data-analysis (nshiab)

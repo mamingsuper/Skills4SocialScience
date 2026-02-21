@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/JulesLscx/DS-Star
 source: github-auto
-stars: 132
-last_updated: 2026-02-17
-license: ""
 tags: []
 permalink: /resources/juleslscx-ds-star/
+stars: 132
+last_updated: 2026-02-20
+license: ""
 ---
 ## DS-Star (JulesLscx)
 

@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/CenterForOpenScience/SHARE
 source: github-auto
+tags: ["data", "elasticsearch", "harvest-data", "metadata", "openscience", "python"]
+permalink: /resources/centerforopenscience-share/
 stars: 105
 last_updated: 2026-01-29
 license: "Apache-2.0"
-tags: ["data", "elasticsearch", "harvest-data", "metadata", "openscience", "python"]
-permalink: /resources/centerforopenscience-share/
 ---
 ## SHARE (CenterForOpenScience)
 

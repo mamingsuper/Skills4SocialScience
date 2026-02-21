@@ -9,8 +9,8 @@ link: https://github.com/zhongyu09/openchatbi
 source: github-auto
 tags: ["agent", "ai", "analytics", "bi", "database", "datawarehouse"]
 permalink: /resources/zhongyu09-openchatbi/
-stars: 503
-last_updated: 2026-02-19
+stars: 504
+last_updated: 2026-02-20
 license: "MIT"
 ---
 ## openchatbi (zhongyu09)
