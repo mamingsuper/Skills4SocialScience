@@ -5,7 +5,7 @@ description: End-to-end academic paper writing solution for social science resea
 zh_description: "面向社会科学研究者的 AI 学术写作助手技能，支持 IMRAD 结构论文撰写、引用格式与摘要生成。"
 category: writing
 workflow_stage: writing
-source_file: writing/claude-writer/SKILL.md
+source_file: _skills/writing/claude-writer/SKILL.md
 tags:
   - writing
   - academic
