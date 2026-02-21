@@ -395,6 +395,18 @@ def github_search(
     return payload.get("items", [])
 
 
+# ============================================
+# Blacklist / Ignore List
+# ============================================
+BLACKLIST_REPOS = {
+    "liyupi/ai-guide",
+    "lobehub/lobehub",
+    "adenhq/hive",
+    "shareai-lab/learn-claude-code",
+    "danny-avila/librechat",
+    "x1xhlol/system-prompts-and-models-of-ai-tools",
+}
+
 def collect_candidates(
     *,
     queries: List[str],
@@ -426,7 +438,10 @@ def collect_candidates(
 
             for item in items:
                 link = normalize_link(str(item.get("html_url", "")))
-                if not link or link in seen:
+                parsed = parse_github_repo(link)
+                is_blacklisted = parsed and f"{parsed[0]}/{parsed[1]}".lower() in {r.lower() for r in BLACKLIST_REPOS}
+                
+                if not link or link in seen or is_blacklisted:
                     continue
 
                 stars = int(item.get("stargazers_count") or 0)
