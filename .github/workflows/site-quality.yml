@@ -52,6 +52,7 @@ jobs:
             --exclude "localhost|127.0.0.1"
             --exclude "^data:"
             --exclude "^https://mamingsuper\\.github\\.io/Skills4SocialScience(/|$)"
+            --exclude "(doi\.org|pnas\.org|cambridge\.org|science\.org|icpsr\.umich\.edu)"
             "_site/**/*.html"
             "README.md"
             "README_CN.md"
