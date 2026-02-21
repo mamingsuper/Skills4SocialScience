@@ -11,6 +11,7 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   collect:
@@ -41,32 +42,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit and push updates
-        run: |
-          set -euo pipefail
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add _resources/*.md
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-
-          git commit -m "chore(resources): auto-collect GitHub repositories"
-
-          for attempt in 1 2 3; do
-            echo "Push attempt ${attempt}..."
-            if git pull --rebase origin main && git push origin HEAD:main; then
-              echo "Push succeeded."
-              exit 0
-            fi
-
-            git rebase --abort || true
-            sleep 5
-          done
-
-          echo "Push failed after 3 attempts."
-          exit 1
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(resources): auto-collect new GitHub resources for review"
+          title: "chore(resources): auto-collect new GitHub resources for review"
+          body: |
+            Automatic GitHub Actions PR to add newly discovered AI resources for social science.
+            
+            Please review the modified files in `_resources/`. If they are relevant, approve and merge this PR. If they are irrelevant, close this PR and optionally consider adding the repository to `BLACKLIST_REPOS` in `scripts/auto_collect_github_resources.py`.
+          branch: "auto-collect-resources-updates"
+          base: "main"
+          delete-branch: true
