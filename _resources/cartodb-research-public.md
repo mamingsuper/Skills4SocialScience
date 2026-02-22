@@ -7,11 +7,11 @@ type: GitHub Repository
 category: dataset
 link: https://github.com/CartoDB/research-public
 source: github-auto
+tags: []
+permalink: /resources/cartodb-research-public/
 stars: 52
 last_updated: 2025-03-12
 license: ""
-tags: []
-permalink: /resources/cartodb-research-public/
 ---
 ## research-public (CartoDB)
 
