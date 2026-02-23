@@ -10,7 +10,7 @@ source: github-auto
 tags: ["document-clustering", "lda", "neural-topic-modeling", "neural-topic-models", "nlp", "nlp-library"]
 permalink: /resources/anfreth-stream/
 stars: 42
-last_updated: 2026-02-02
+last_updated: 2026-02-21
 license: "MIT"
 ---
 ## STREAM (AnFreTh)
