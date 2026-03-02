@@ -9,8 +9,8 @@ link: https://github.com/jaeyk/comp_thinking_social_science
 source: github-auto
 tags: ["computational-social-science", "data-science", "digital-humanities", "machine-learning", "python", "r"]
 permalink: /resources/jaeyk-comp-thinking-social-science/
-stars: 68
-last_updated: 2026-02-01
+stars: 69
+last_updated: 2026-02-28
 license: "CC0-1.0"
 ---
 ## comp_thinking_social_science (jaeyk)
