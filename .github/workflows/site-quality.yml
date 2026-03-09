@@ -42,6 +42,14 @@ jobs:
       - name: Build Site
         run: bundle exec jekyll build --trace
 
+      - name: Prepare link-check root
+        # lychee needs root-relative paths like /Skills4SocialScience/... to resolve
+        # against a real directory. Copy _site into _lychee_root/Skills4SocialScience/
+        # so that --root-dir _lychee_root resolves them correctly.
+        run: |
+          mkdir -p _lychee_root/Skills4SocialScience
+          cp -r _site/. _lychee_root/Skills4SocialScience/
+
       - name: Run Link Checker
         uses: lycheeverse/lychee-action@v2
         with:
@@ -49,11 +57,12 @@ jobs:
             --verbose
             --no-progress
             --accept 200,206,301,302,403,429
+            --root-dir _lychee_root
             --exclude "localhost|127.0.0.1"
             --exclude "^data:"
             --exclude "^https://mamingsuper\\.github\\.io/Skills4SocialScience(/|$)"
             --exclude "(doi\.org|pnas\.org|cambridge\.org|science\.org|icpsr\.umich\.edu)"
-            "_site/**/*.html"
+            "_lychee_root/Skills4SocialScience/**/*.html"
             "README.md"
             "README_CN.md"
             "CONTRIBUTING.md"
