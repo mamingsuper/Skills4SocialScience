@@ -18,56 +18,84 @@ permalink: /zh/pages/learn.html
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/learn.css">
     <style>
         .blog-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-lg);
+            display: flex;
+            flex-direction: column;
             margin-bottom: var(--space-3xl);
-        }
-
-        .blog-card {
-            background: white;
             border: 1px solid var(--border-default);
-            border-radius: var(--border-radius);
-            padding: var(--space-lg);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            background: white;
         }
 
-        .blog-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
+        .blog-row {
+            display: flex;
+            align-items: center;
+            padding: var(--space-md) var(--space-lg);
+            border-bottom: 1px solid var(--border-default);
+            gap: var(--space-md);
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.15s ease;
+        }
+
+        .blog-row:last-child {
+            border-bottom: none;
+        }
+
+        .blog-row:hover {
+            background: var(--bg-subtle, #f9fafb);
         }
 
         .blog-tag {
-            display: inline-block;
-            font-size: 0.75rem;
+            flex-shrink: 0;
+            font-size: 0.7rem;
             font-weight: 600;
             color: var(--text-tertiary);
             border: 1px solid var(--border-default);
             border-radius: var(--border-radius-full);
             padding: 2px 10px;
-            margin-bottom: var(--space-sm);
+            white-space: nowrap;
+            min-width: 68px;
+            text-align: center;
         }
 
-        .blog-card h3 {
-            margin: 0 0 var(--space-sm) 0;
-            font-size: 1.15rem;
+        .blog-row-title {
+            flex: 1;
+            font-size: 0.975rem;
+            font-weight: 500;
             line-height: 1.5;
+            color: var(--text-primary);
         }
 
-        .blog-card p {
-            margin: 0 0 var(--space-md) 0;
-            color: var(--text-secondary);
-            line-height: 1.7;
+        .blog-row-meta {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
         }
 
-        .blog-link {
+        .blog-date {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            white-space: nowrap;
+        }
+
+        .blog-arrow {
+            font-size: 0.85rem;
             color: var(--accent-secondary);
             font-weight: 600;
-            text-decoration: none;
+            white-space: nowrap;
         }
 
-        .blog-link:hover {
-            text-decoration: underline;
+        @media (max-width: 640px) {
+            .blog-row {
+                flex-wrap: wrap;
+                gap: var(--space-sm);
+            }
+            .blog-row-meta {
+                width: 100%;
+                justify-content: space-between;
+            }
         }
 
         .post-content {
@@ -118,40 +146,50 @@ permalink: /zh/pages/learn.html
             <section class="learn-section">
                 <h2>最新文章</h2>
                 <div class="blog-list">
-                    <article class="blog-card">
+                    <a href="#post-learn-guide" class="blog-row">
                         <span class="blog-tag">站内原创</span>
-                        <h3>如何在研究中使用 AI 技能（入门指南）</h3>
-                        <p>原“学习”页内容已整理为博客文章，覆盖 Agent、Skill 与最快上手流程。</p>
-                        <a href="#post-learn-guide" class="blog-link">阅读文章 →</a>
-                    </article>
+                        <span class="blog-row-title">如何在研究中使用 AI 技能（入门指南）</span>
+                        <span class="blog-row-meta">
+                            <span class="blog-date">2025-03-01</span>
+                            <span class="blog-arrow">阅读 →</span>
+                        </span>
+                    </a>
 
-                    <article class="blog-card">
+                    <a href="https://mp.weixin.qq.com/s/NeijVs31VZrR11puhVNxDQ" target="_blank" rel="noopener noreferrer" class="blog-row">
                         <span class="blog-tag">外部文章</span>
-                        <h3>AI能取代社会科学研究人员吗？真正的危机可能不是AI</h3>
-                        <p>关于“替代焦虑”之外更深层挑战的讨论。</p>
-                        <a href="https://mp.weixin.qq.com/s/NeijVs31VZrR11puhVNxDQ" target="_blank" rel="noopener noreferrer" class="blog-link">阅读原文 →</a>
-                    </article>
+                        <span class="blog-row-title">AI能取代社会科学研究人员吗？真正的危机可能不是AI</span>
+                        <span class="blog-row-meta">
+                            <span class="blog-date">2025-02-10</span>
+                            <span class="blog-arrow">阅读 →</span>
+                        </span>
+                    </a>
 
-                    <article class="blog-card">
+                    <a href="https://mp.weixin.qq.com/s/Ac-j-o53xYPOthsjwzLN1g" target="_blank" rel="noopener noreferrer" class="blog-row">
                         <span class="blog-tag">外部文章</span>
-                        <h3>AI时代学术界的生存指南</h3>
-                        <p>聚焦 AI 时代学术工作流与能力迁移。</p>
-                        <a href="https://mp.weixin.qq.com/s/Ac-j-o53xYPOthsjwzLN1g" target="_blank" rel="noopener noreferrer" class="blog-link">阅读原文 →</a>
-                    </article>
+                        <span class="blog-row-title">AI时代学术界的生存指南</span>
+                        <span class="blog-row-meta">
+                            <span class="blog-date">2025-01-20</span>
+                            <span class="blog-arrow">阅读 →</span>
+                        </span>
+                    </a>
 
-                    <article class="blog-card">
+                    <a href="https://mp.weixin.qq.com/s/auTceFJIYTTyt2HGaFxNag" target="_blank" rel="noopener noreferrer" class="blog-row">
                         <span class="blog-tag">外部文章</span>
-                        <h3>用AI做科研其实很危险！来自SSCI期刊主编、政治学大佬的忠告</h3>
-                        <p>围绕学术规范、可验证性与研究伦理的风险提醒。</p>
-                        <a href="https://mp.weixin.qq.com/s/auTceFJIYTTyt2HGaFxNag" target="_blank" rel="noopener noreferrer" class="blog-link">阅读原文 →</a>
-                    </article>
+                        <span class="blog-row-title">用AI做科研其实很危险！来自SSCI期刊主编、政治学大佬的忠告</span>
+                        <span class="blog-row-meta">
+                            <span class="blog-date">2024-12-15</span>
+                            <span class="blog-arrow">阅读 →</span>
+                        </span>
+                    </a>
 
-                    <article class="blog-card">
+                    <a href="https://mp.weixin.qq.com/s/NvgsCQLwU94NPsq_0E-vyg" target="_blank" rel="noopener noreferrer" class="blog-row">
                         <span class="blog-tag">外部文章</span>
-                        <h3>从替代到赋能：构建劳动友好型AI（诺贝尔经济学奖得主毛咕噜教授最新文章）</h3>
-                        <p>讨论 AI 如何从“替代劳动”转向“增强劳动”。</p>
-                        <a href="https://mp.weixin.qq.com/s/NvgsCQLwU94NPsq_0E-vyg" target="_blank" rel="noopener noreferrer" class="blog-link">阅读原文 →</a>
-                    </article>
+                        <span class="blog-row-title">从替代到赋能：构建劳动友好型AI（诺贝尔经济学奖得主毛咕噜教授最新文章）</span>
+                        <span class="blog-row-meta">
+                            <span class="blog-date">2024-11-28</span>
+                            <span class="blog-arrow">阅读 →</span>
+                        </span>
+                    </a>
                 </div>
             </section>
 
