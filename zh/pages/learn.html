@@ -1,7 +1,7 @@
 ---
 layout: null
-title: 学习指南 | AI4SS
-description: 社会科学研究者的 AI 工作流与技能使用指南。
+title: 学习博客 | AI4SS
+description: AI4SS 学习博客：用 AI 做社会科学研究的方法、风险与实践。
 lang: zh-CN
 permalink: /zh/pages/learn.html
 ---
@@ -16,6 +16,71 @@ permalink: /zh/pages/learn.html
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/learn.css">
+    <style>
+        .blog-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .blog-card {
+            background: white;
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .blog-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius-full);
+            padding: 2px 10px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .blog-card h3 {
+            margin: 0 0 var(--space-sm) 0;
+            font-size: 1.15rem;
+            line-height: 1.5;
+        }
+
+        .blog-card p {
+            margin: 0 0 var(--space-md) 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .blog-link {
+            color: var(--accent-secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .blog-link:hover {
+            text-decoration: underline;
+        }
+
+        .post-content {
+            background: white;
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-xl);
+        }
+
+        .post-content h2 {
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
     <nav class="nav">
@@ -45,40 +110,79 @@ permalink: /zh/pages/learn.html
     <main class="learn-page">
         <div class="container">
             <header class="learn-header">
-                <div class="hero-badge">📚 学习指南</div>
-                <h1>如何在研究中使用 <span class="gradient-text">AI 技能</span></h1>
-                <p>这份页面解释什么是 AI Coding Agent、什么是 Skill，以及如何把本站资源接入你的研究项目。</p>
+                <div class="hero-badge">📝 Learn Blog</div>
+                <h1>AI4SS <span class="gradient-text">学习博客</span></h1>
+                <p>把“学习”升级成可持续更新的博客：方法、争议、风险提醒与实战经验都在这里。</p>
             </header>
 
             <section class="learn-section">
-                <h2>1. 什么是 AI Coding Agent？</h2>
-                <p>AI Coding Agent（如 Claude Code、Cursor）不仅能聊天，还能读取你的项目目录，执行命令、修改文件。</p>
+                <h2>最新文章</h2>
+                <div class="blog-list">
+                    <article class="blog-card">
+                        <span class="blog-tag">站内原创</span>
+                        <h3>如何在研究中使用 AI 技能（入门指南）</h3>
+                        <p>原“学习”页内容已整理为博客文章，覆盖 Agent、Skill 与最快上手流程。</p>
+                        <a href="#post-learn-guide" class="blog-link">阅读文章 →</a>
+                    </article>
+
+                    <article class="blog-card">
+                        <span class="blog-tag">外部文章</span>
+                        <h3>AI能取代社会科学研究人员吗？真正的危机可能不是AI</h3>
+                        <p>关于“替代焦虑”之外更深层挑战的讨论。</p>
+                        <a href="https://mp.weixin.qq.com/s/NeijVs31VZrR11puhVNxDQ" target="_blank" rel="noopener noreferrer" class="blog-link">阅读原文 →</a>
+                    </article>
+
+                    <article class="blog-card">
+                        <span class="blog-tag">外部文章</span>
+                        <h3>AI时代学术界的生存指南</h3>
+                        <p>聚焦 AI 时代学术工作流与能力迁移。</p>
+                        <a href="https://mp.weixin.qq.com/s/Ac-j-o53xYPOthsjwzLN1g" target="_blank" rel="noopener noreferrer" class="blog-link">阅读原文 →</a>
+                    </article>
+
+                    <article class="blog-card">
+                        <span class="blog-tag">外部文章</span>
+                        <h3>用AI做科研其实很危险！来自SSCI期刊主编、政治学大佬的忠告</h3>
+                        <p>围绕学术规范、可验证性与研究伦理的风险提醒。</p>
+                        <a href="https://mp.weixin.qq.com/s/auTceFJIYTTyt2HGaFxNag" target="_blank" rel="noopener noreferrer" class="blog-link">阅读原文 →</a>
+                    </article>
+
+                    <article class="blog-card">
+                        <span class="blog-tag">外部文章</span>
+                        <h3>从替代到赋能：构建劳动友好型AI（诺贝尔经济学奖得主毛咕噜教授最新文章）</h3>
+                        <p>讨论 AI 如何从“替代劳动”转向“增强劳动”。</p>
+                        <a href="https://mp.weixin.qq.com/s/NvgsCQLwU94NPsq_0E-vyg" target="_blank" rel="noopener noreferrer" class="blog-link">阅读原文 →</a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="post-learn-guide" class="learn-section post-content">
+                <h2>如何在研究中使用 AI 技能（入门指南）</h2>
+                <p>这篇文章来自原学习页，整理为博客版本，适合作为第一次上手 AI4SS 的参考。</p>
+
+                <h3>1. 什么是 AI Coding Agent？</h3>
+                <p>AI Coding Agent（如 Claude Code、Cursor）不仅能聊天，还能读取你的项目目录，执行命令并修改文件。</p>
                 <ul>
                     <li>读取论文草稿、代码和数据目录结构</li>
                     <li>执行分析脚本并生成结果</li>
                     <li>按你的方法规范持续迭代</li>
                 </ul>
-            </section>
 
-            <section class="learn-section">
-                <h2>2. 什么是 Skill？</h2>
-                <p>Skill 是一组可复用的任务说明，告诉 AI 如何在某个研究场景下"标准化工作"。</p>
+                <h3>2. 什么是 Skill？</h3>
+                <p>Skill 是一组可复用的任务说明，告诉 AI 如何在某个研究场景下进行标准化工作。</p>
                 <div class="learn-code-block"><code>/claude-writer 帮我把这篇研究计划扩展成论文引言、方法和结果框架。</code></div>
-            </section>
 
-            <section class="learn-section">
-                <h2>3. 最快使用方式</h2>
+                <h3>3. 最快使用方式</h3>
                 <ul>
                     <li>打开任意技能详情页，点击 <strong>Download SKILL.md</strong></li>
                     <li>把文件放到你的 skills 目录</li>
                     <li>在 Agent 里用技能名或自然语言调用</li>
                 </ul>
-            </section>
 
-            <div style="text-align:center; margin-top:3rem;">
-                <a href="{{ site.baseurl }}/zh/#skills" class="btn btn-primary">浏览技能</a>
-                <a href="{{ site.baseurl }}/zh/pages/submit.html" class="btn btn-secondary">提交资源</a>
-            </div>
+                <div style="margin-top:2rem;">
+                    <a href="{{ site.baseurl }}/zh/#skills" class="btn btn-primary">浏览技能</a>
+                    <a href="{{ site.baseurl }}/zh/pages/submit.html" class="btn btn-secondary">提交资源</a>
+                </div>
+            </section>
         </div>
     </main>
 

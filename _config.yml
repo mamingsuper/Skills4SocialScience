@@ -3,8 +3,8 @@ tagline: AI for Social Science
 description: Curated skills, tools, papers, and references for AI-powered social science research.
 url: https://mamingsuper.github.io
 baseurl: "/Skills4SocialScience"
-lang: en
-locale: en_US
+lang: zh-CN
+locale: zh_CN
 timezone: Asia/Shanghai
 
 # Build settings
