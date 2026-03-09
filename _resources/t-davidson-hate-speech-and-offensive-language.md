@@ -9,8 +9,8 @@ link: https://github.com/t-davidson/hate-speech-and-offensive-language
 source: github-auto
 tags: ["abuse", "classifier", "computational-social-science", "dataset", "hate-speech", "hatespeech"]
 permalink: /resources/t-davidson-hate-speech-and-offensive-language/
-stars: 836
-last_updated: 2026-03-02
+stars: 837
+last_updated: 2026-03-06
 license: "MIT"
 ---
 ## hate-speech-and-offensive-language (t-davidson)
