@@ -143,3 +143,41 @@ textarea:focus {
         padding: var(--space-lg);
     }
 }
+
+/* Dark mode support */
+[data-theme="dark"] .form-container {
+    background: rgba(30, 30, 46, 0.5);
+    border-color: var(--border-default);
+}
+
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="url"],
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: rgba(30, 30, 46, 0.8);
+    color: var(--text-primary);
+    border-color: var(--border-default);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+[data-theme="dark"] .type-option {
+    background: rgba(30, 30, 46, 0.4);
+    border-color: var(--border-default);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .type-option:hover {
+    background: rgba(30, 30, 46, 0.8);
+}
+
+[data-theme="dark"] .hint {
+    color: var(--text-tertiary);
+}
