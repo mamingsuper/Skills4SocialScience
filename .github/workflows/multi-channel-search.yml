@@ -102,8 +102,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Add new files
-          git add _papers/*.md _resources/*.md || true
+          # Add new files (papers, resources, and skills from all adapters)
+          git add _papers/ _resources/ _skills/ || true
 
           # Create commit
           git commit -m "chore: multi-channel search results
@@ -112,6 +112,8 @@ jobs:
             - Semantic Scholar
             - arXiv
             - GitHub
+            - HuggingFace
+            - Reddit
 
           Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>"
 

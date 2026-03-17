@@ -1,0 +1,109 @@
+name: Trending Content Aggregator
+
+on:
+  schedule:
+    # Run weekly on Sunday at midnight UTC
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+    inputs:
+      min-score:
+        description: "Minimum relevance score (0-10)"
+        type: number
+        default: 4
+      max-items:
+        description: "Maximum items to discover"
+        type: number
+        default: 20
+      dry-run:
+        description: "Dry run mode (no file changes)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: trending-aggregator
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  discover-trending:
+    name: Discover Trending Content
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run trending aggregator
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MIN_SCORE="${{ inputs.min-score || '4' }}"
+          MAX_ITEMS="${{ inputs.max-items || '20' }}"
+          EXTRA_ARGS=""
+          if [ "${{ inputs.dry-run }}" = "true" ]; then
+            EXTRA_ARGS="--dry-run"
+          fi
+
+          python scripts/trending_aggregator.py \
+            --repo-root . \
+            --min-score "$MIN_SCORE" \
+            --max-items "$MAX_ITEMS" \
+            --output-summary /tmp/pr-summary.md \
+            $EXTRA_ARGS
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No new trending content found."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "New trending content discovered."
+          fi
+
+      - name: Create Pull Request
+        if: steps.check-changes.outputs.changed == 'true' && inputs.dry-run != 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            chore: weekly trending discoveries
+
+            Auto-discovered trending AI + social science content from:
+            - GitHub Trending
+            - Hacker News
+            - HuggingFace
+
+            Co-Authored-By: AI4SS Bot <noreply@ai4ss.org>
+          branch: auto/trending-${{ github.run_number }}
+          delete-branch: true
+          title: "[Auto] Weekly trending discoveries (${{ github.run_number }})"
+          body-path: /tmp/pr-summary.md
+          labels: |
+            auto-curated
+            needs-review
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Trending Aggregator Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status**: ${{ steps.check-changes.outputs.changed == 'true' && 'New content discovered' || 'No new content' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          if [ -f /tmp/pr-summary.md ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            cat /tmp/pr-summary.md >> $GITHUB_STEP_SUMMARY
+          fi
