@@ -36,6 +36,19 @@ permalink: /zh/
 </head>
 
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">跳转到内容</a>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索">
+        <div class="search-container">
+            <button class="search-close" aria-label="关闭搜索">&times;</button>
+            <input type="text" id="search-input" class="search-input" placeholder="搜索技能、论文、工具..."
+                aria-label="搜索">
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -43,13 +56,19 @@ permalink: /zh/
                 <span class="logo-icon">🎓</span>
                 <span class="logo-text">AI4SS</span>
             </a>
+            <button class="nav-toggle" aria-label="切换导航">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
+                <button id="nav-search-btn" class="nav-search-btn" aria-label="搜索"
+                    style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
                 <a href="#skills">技能</a>
-                <a href="#quick-start">快速开始</a>
                 <a href="#papers">论文</a>
                 <a href="#resources">工具</a>
                 <a href="{{ site.baseurl }}/zh/pages/learn.html">学习</a>
-                <a href="#author">关于</a>
+                <a href="{{ site.baseurl }}/zh/pages/about.html">关于</a>
                 <a href="{{ site.baseurl }}/zh/pages/submit.html" class="nav-cta">提交</a>
                 <a href="{{ site.baseurl }}/en/" class="nav-lang">English</a>
             </div>
@@ -58,7 +77,8 @@ permalink: /zh/
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-content">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content" id="hero-content">
             <div class="hero-badge">🚀 开源项目 • 面向社会科学学者</div>
             <h1 class="hero-title">
                 AI 赋能 <span class="gradient-text">社会科学</span>
@@ -75,15 +95,15 @@ permalink: /zh/
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-value">{{ site.skills | size }}</span>
+                    <span class="stat-value" data-count="{{ site.skills | size }}">0</span>
                     <span class="stat-label">AI 技能</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-value">{{ site.papers | size }}</span>
+                    <span class="stat-value" data-count="{{ site.papers | size }}">0</span>
                     <span class="stat-label">论文</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-value">{{ site.resources | size }}</span>
+                    <span class="stat-value" data-count="{{ site.resources | size }}">0</span>
                     <span class="stat-label">工具资源</span>
                 </div>
             </div>
@@ -374,6 +394,9 @@ mkdir -p ~/.claude/skills/claude-writer
                 <p><strong>AI4SS</strong> • 社会科学研究社区共建</p>
                 <br>
                 <div class="footer-links" style="justify-content:center; display:flex;">
+                    <a href="{{ site.baseurl }}/zh/pages/learn.html">学习</a>
+                    <a href="{{ site.baseurl }}/zh/pages/about.html">关于</a>
+                    <a href="{{ site.baseurl }}/feed.xml">RSS</a>
                     <a href="https://github.com/mamingsuper/Skills4SocialScience">GitHub</a>
                     <a href="{{ site.baseurl }}/CONTRIBUTING.md">贡献指南</a>
                     <a href="{{ site.baseurl }}/LICENSE">许可证</a>

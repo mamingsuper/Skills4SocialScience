@@ -35,8 +35,14 @@ function initFilterGroups() {
 
         if (!filterTabs.length || !cards.length) return;
 
+        let filterTimeouts = [];
+
         filterTabs.forEach((tab) => {
             tab.addEventListener('click', () => {
+                // Clear any pending timeouts from previous rapid clicks
+                filterTimeouts.forEach(id => clearTimeout(id));
+                filterTimeouts = [];
+
                 filterTabs.forEach((item) => item.classList.remove('active'));
                 tab.classList.add('active');
 
@@ -54,26 +60,26 @@ function initFilterGroups() {
                         card.style.display = 'flex';
                         card.classList.remove('hidden');
                         // Stagger visible cards
-                        setTimeout(() => {
+                        filterTimeouts.push(setTimeout(() => {
                             card.classList.add('revealing');
-                            setTimeout(() => {
+                            filterTimeouts.push(setTimeout(() => {
                                 card.classList.remove('revealing');
                                 card.classList.add('revealed');
-                            }, 50);
-                        }, delay);
+                            }, 50));
+                        }, delay));
                         delay += 30;
                     } else {
                         card.classList.add('hidden');
                         card.classList.remove('revealed');
-                        setTimeout(() => {
+                        filterTimeouts.push(setTimeout(() => {
                             card.style.display = 'none';
-                        }, 200);
+                        }, 200));
                     }
                 });
 
-                setTimeout(() => {
+                filterTimeouts.push(setTimeout(() => {
                     if (grid) grid.classList.remove('filtering');
-                }, 250);
+                }, 250));
             });
         });
     });
@@ -83,7 +89,9 @@ function initFilterGroups() {
  * Stagger animation for cards when filters change
  */
 function initStaggerAnimation() {
+    if (document.getElementById('stagger-animation-styles')) return;
     const styles = document.createElement('style');
+    styles.id = 'stagger-animation-styles';
     styles.textContent = `
         .hidden {
             opacity: 0;
@@ -360,6 +368,7 @@ function initParticles() {
 
     resize();
     createParticles();
+    if (animationFrame) cancelAnimationFrame(animationFrame);
     draw();
 
     let resizeTimer;
@@ -521,41 +530,102 @@ function performSearch(query, index) {
 }
 
 function highlightText(text, query) {
-    if (!query) return text;
+    const fragment = document.createDocumentFragment();
+    if (!query) {
+        fragment.appendChild(document.createTextNode(text));
+        return fragment;
+    }
     const terms = query.split(/\s+/).filter(Boolean);
-    let result = text;
-    terms.forEach(term => {
-        const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-        result = result.replace(regex, '<mark style="background:rgba(37,99,235,0.15);color:var(--accent-secondary);border-radius:2px;padding:0 2px;">$1</mark>');
-    });
-    return result;
+    const escaped = terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    const regex = new RegExp(`(${escaped.join('|')})`, 'gi');
+    let lastIndex = 0;
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+        }
+        const mark = document.createElement('mark');
+        mark.style.cssText = 'background:rgba(37,99,235,0.15);color:var(--accent-secondary);border-radius:2px;padding:0 2px;';
+        mark.textContent = match[1];
+        fragment.appendChild(mark);
+        lastIndex = regex.lastIndex;
+    }
+    if (lastIndex < text.length) {
+        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+    }
+    return fragment;
+}
+
+function isSafeUrl(url) {
+    if (!url) return false;
+    if (url.startsWith('/') || url.startsWith('.') || url.startsWith('#')) return true;
+    try {
+        const parsed = new URL(url, window.location.origin);
+        return ['http:', 'https:'].includes(parsed.protocol);
+    } catch {
+        return false;
+    }
 }
 
 function renderSearchResults(results, query, container) {
+    container.innerHTML = '';
+
     if (!results.length) {
-        container.innerHTML = `
-            <div class="search-empty">
-                <div style="font-size:2rem;margin-bottom:0.5rem;">🔍</div>
-                No results for "<strong>${query}</strong>"
-                <div style="margin-top:0.75rem;font-size:0.8rem;">Try different keywords or browse the sections below</div>
-            </div>`;
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'search-empty';
+
+        const iconDiv = document.createElement('div');
+        iconDiv.style.cssText = 'font-size:2rem;margin-bottom:0.5rem;';
+        iconDiv.textContent = '\uD83D\uDD0D';
+        emptyDiv.appendChild(iconDiv);
+
+        const msgText = document.createTextNode('No results for \u201C');
+        emptyDiv.appendChild(msgText);
+        const strong = document.createElement('strong');
+        strong.textContent = query;
+        emptyDiv.appendChild(strong);
+        emptyDiv.appendChild(document.createTextNode('\u201D'));
+
+        const hintDiv = document.createElement('div');
+        hintDiv.style.cssText = 'margin-top:0.75rem;font-size:0.8rem;';
+        hintDiv.textContent = 'Try different keywords or browse the sections below';
+        emptyDiv.appendChild(hintDiv);
+
+        container.appendChild(emptyDiv);
         return;
     }
 
     const typeLabels = { skill: 'Skill', paper: 'Paper', resource: 'Tool' };
-    const html = results.map(item => `
-        <a href="${item.link}" class="search-result-item" style="display:block;text-decoration:none;">
-            <div class="search-result-type type-${item.type}">${typeLabels[item.type] || item.type}</div>
-            <div class="search-result-title">${highlightText(item.title, query)}</div>
-            <div class="search-result-desc">${highlightText(item.desc.slice(0, 120) + (item.desc.length > 120 ? '…' : ''), query)}</div>
-        </a>
-    `).join('');
 
-    container.innerHTML = `
-        <div style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:10px;text-align:right;">
-            ${results.length} result${results.length !== 1 ? 's' : ''}
-        </div>
-        ${html}`;
+    const countDiv = document.createElement('div');
+    countDiv.style.cssText = 'font-size:0.8rem;color:var(--text-tertiary);margin-bottom:10px;text-align:right;';
+    countDiv.textContent = results.length + ' result' + (results.length !== 1 ? 's' : '');
+    container.appendChild(countDiv);
+
+    results.forEach(item => {
+        const a = document.createElement('a');
+        a.href = isSafeUrl(item.link) ? item.link : '#';
+        a.className = 'search-result-item';
+        a.style.cssText = 'display:block;text-decoration:none;';
+
+        const typeDiv = document.createElement('div');
+        typeDiv.className = 'search-result-type type-' + item.type;
+        typeDiv.textContent = typeLabels[item.type] || item.type;
+        a.appendChild(typeDiv);
+
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'search-result-title';
+        titleDiv.appendChild(highlightText(item.title, query));
+        a.appendChild(titleDiv);
+
+        const descDiv = document.createElement('div');
+        descDiv.className = 'search-result-desc';
+        const descText = item.desc.slice(0, 120) + (item.desc.length > 120 ? '\u2026' : '');
+        descDiv.appendChild(highlightText(descText, query));
+        a.appendChild(descDiv);
+
+        container.appendChild(a);
+    });
 }
 
 /**
