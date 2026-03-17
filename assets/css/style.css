@@ -13,7 +13,6 @@
 
     /* Background Gradient - Clean solid */
     --bg-gradient: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
-    --bg-gradient-blend-mode: normal;
 
     /* Neutral Grays */
     --gray-50: #ffffff;
@@ -109,7 +108,6 @@
     /* ===== Glass Effect (Minimal) ===== */
     --glass-bg: rgba(255, 255, 255, 0.8);
     --glass-border: rgba(17, 24, 39, 0.08);
-    --glass-blur: blur(8px);
     --glass-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     --glass-hover: rgba(255, 255, 255, 0.95);
 
@@ -160,7 +158,6 @@
     --leading-relaxed: 1.625;
 
     /* ===== Letter Spacing ===== */
-    --tracking-tighter: -0.05em;
     --tracking-tight: -0.025em;
     --tracking-normal: 0;
     --tracking-wide: 0.025em;
@@ -359,14 +356,14 @@ a:hover {
 .nav-lang:hover {
     background: var(--accent-secondary-100);
     border-color: var(--accent-secondary);
-    color: var(--accent-secondary) !important;
+    color: var(--accent-secondary);
 }
 
 .nav-cta {
     background: var(--accent-primary);
     padding: 0.5rem 1.25rem;
     border-radius: var(--border-radius-full);
-    color: white !important;
+    color: white;
     transition: all var(--transition-base);
     font-weight: 600;
     font-size: 0.9rem;
@@ -374,11 +371,11 @@ a:hover {
 
 .nav-cta:hover {
     background: var(--accent-secondary);
-    color: white !important;
+    color: white;
 }
 
 .nav-cta::after {
-    display: none !important;
+    display: none;
 }
 
 /* Mobile hamburger */
@@ -444,22 +441,6 @@ a:hover {
     animation: gentleFloat 25s ease-in-out infinite;
     z-index: -1;
     pointer-events: none;
-}
-
-@keyframes gentleFloat {
-
-    0%,
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    33% {
-        transform: translate(1.5%, -1.5%) rotate(0.5deg);
-    }
-
-    66% {
-        transform: translate(-1%, 1%) rotate(-0.3deg);
-    }
 }
 
 .hero-badge {
@@ -690,17 +671,19 @@ a:hover {
     border: 1px solid var(--border-default);
     border-radius: var(--border-radius);
     padding: var(--space-xl);
-    transition: all var(--duration-base) var(--ease-out);
     box-shadow: var(--shadow-sm);
     position: relative;
     display: flex;
     flex-direction: column;
+    border-left: 3px solid transparent;
+    transition: all 0.3s var(--ease-out), border-left-color 0.3s var(--ease-out);
 }
 
 .skill-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1), var(--shadow-md);
     border-color: var(--accent-secondary-200);
+    border-left-color: var(--accent-secondary);
 }
 
 .skill-icon {
@@ -1009,6 +992,15 @@ a:hover {
     font-size: 0.9rem;
 }
 
+.footer-content {
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+}
+
 .footer-links a:hover {
     color: var(--accent-secondary);
 }
@@ -1145,6 +1137,11 @@ a:hover {
     margin: var(--space-md) 0;
     letter-spacing: -0.02em;
     color: var(--text-primary);
+}
+
+.detail-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
 }
 
 .detail-meta {
@@ -1575,18 +1572,6 @@ button:focus-visible {
 /* ============================================
    Enhanced Card Hover Effects
    ============================================ */
-.skill-card {
-    border-left: 3px solid transparent;
-    transition: all 0.3s var(--ease-out), border-left-color 0.3s var(--ease-out);
-}
-
-.skill-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1), var(--shadow-md);
-    border-color: var(--accent-secondary-200);
-    border-left-color: var(--accent-secondary);
-}
-
 .skill-card:hover .skill-icon {
     transform: scale(1.15);
     transition: transform 0.25s var(--ease-spring);
@@ -1635,8 +1620,8 @@ button:focus-visible {
    ============================================ */
 .filter-tab[data-filter="discovery"]:hover,
 .filter-tab[data-filter="discovery"].active {
-    background: #7C3AED;
-    border-color: #7C3AED;
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
     color: white;
 }
 
@@ -1649,8 +1634,8 @@ button:focus-visible {
 
 .filter-tab[data-filter="analysis"]:hover,
 .filter-tab[data-filter="analysis"].active {
-    background: #0891B2;
-    border-color: #0891B2;
+    background: var(--info);
+    border-color: var(--info);
     color: white;
 }
 
@@ -1698,7 +1683,7 @@ button:focus-visible {
    ============================================ */
 .badge-new {
     display: inline-block;
-    background: linear-gradient(135deg, #2563EB, #7C3AED);
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
     color: white;
     font-size: 0.65rem;
     font-weight: 700;
@@ -1782,8 +1767,8 @@ button:focus-visible {
    ============================================ */
 .about-card:hover {
     transform: translateY(-4px);
-    border-color: var(--accent-secondary-200) !important;
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1) !important;
+    border-color: var(--accent-secondary-200);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
 }
 
 /* ============================================
@@ -1906,6 +1891,10 @@ button:focus-visible {
    Mobile Search Button Styling
    ============================================ */
 .nav-search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;

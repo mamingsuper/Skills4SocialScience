@@ -1,11 +1,11 @@
 {% assign is_zh = include.lang | default: page.lang | default: "en" %}
 <footer class="footer">
     <div class="container">
-        <div class="footer-content" style="text-align:center">
+        <div class="footer-content">
             {% if is_zh == "zh-CN" or is_zh == "zh" %}
             <p><strong>AI4SS</strong> • 社会科学研究社区共建</p>
             <br>
-            <div class="footer-links" style="justify-content:center; display:flex;">
+            <div class="footer-links">
                 <a href="{{ site.baseurl }}/zh/pages/learn.html">学习</a>
                 <a href="{{ site.baseurl }}/zh/pages/about.html">关于</a>
                 <a href="{{ site.baseurl }}/feed.xml">RSS</a>
@@ -16,7 +16,7 @@
             {% else %}
             <p><strong>AI4SS</strong> • Made with ❤️ by the social science research community</p>
             <br>
-            <div class="footer-links" style="justify-content:center; display:flex;">
+            <div class="footer-links">
                 <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
                 <a href="{{ site.baseurl }}/pages/about.html">About</a>
                 <a href="{{ site.baseurl }}/feed.xml">RSS</a>
