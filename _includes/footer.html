@@ -1,0 +1,30 @@
+{% assign is_zh = include.lang | default: page.lang | default: "en" %}
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content" style="text-align:center">
+            {% if is_zh == "zh-CN" or is_zh == "zh" %}
+            <p><strong>AI4SS</strong> • 社会科学研究社区共建</p>
+            <br>
+            <div class="footer-links" style="justify-content:center; display:flex;">
+                <a href="{{ site.baseurl }}/zh/pages/learn.html">学习</a>
+                <a href="{{ site.baseurl }}/zh/pages/about.html">关于</a>
+                <a href="{{ site.baseurl }}/feed.xml">RSS</a>
+                <a href="https://github.com/mamingsuper/Skills4SocialScience">GitHub</a>
+                <a href="{{ site.baseurl }}/CONTRIBUTING.md">贡献指南</a>
+                <a href="{{ site.baseurl }}/LICENSE">许可证</a>
+            </div>
+            {% else %}
+            <p><strong>AI4SS</strong> • Made with ❤️ by the social science research community</p>
+            <br>
+            <div class="footer-links" style="justify-content:center; display:flex;">
+                <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
+                <a href="{{ site.baseurl }}/pages/about.html">About</a>
+                <a href="{{ site.baseurl }}/feed.xml">RSS</a>
+                <a href="https://github.com/mamingsuper/Skills4SocialScience">GitHub</a>
+                <a href="{{ site.baseurl }}/CONTRIBUTING.md">Contribute</a>
+                <a href="{{ site.baseurl }}/LICENSE">License</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</footer>

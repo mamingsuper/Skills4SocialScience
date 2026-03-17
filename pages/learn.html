@@ -111,29 +111,8 @@ permalink: /pages/learn.html
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="{{ site.baseurl }}/en/" class="nav-logo">
-                <span class="logo-icon">🎓</span>
-                <span class="logo-text">AI4SS</span>
-            </a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-links">
-                <a href="{{ site.baseurl }}/en/#skills">Skills</a>
-                <a href="{{ site.baseurl }}/en/#quick-start">Quick Start</a>
-                <a href="{{ site.baseurl }}/en/#papers">Papers</a>
-                <a href="{{ site.baseurl }}/en/#resources">Tools</a>
-                <a href="{{ site.baseurl }}/pages/learn.html" class="active">Learn</a>
-                <a href="{{ site.baseurl }}/en/#author">About</a>
-                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
-                <a href="{{ site.baseurl }}/zh/pages/learn.html" class="nav-lang">中文</a>
-            </div>
-        </div>
-    </nav>
+    {% include nav.html lang="en" active="learn" lang_url="/zh/pages/learn.html" %}
+    {% include search-overlay.html lang="en" %}
 
     <main class="learn-page">
         <div class="container">
@@ -224,13 +203,7 @@ permalink: /pages/learn.html
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content" style="text-align:center">
-                <p>AI4SS • Community-built for social science research</p>
-            </div>
-        </div>
-    </footer>
+    {% include footer.html lang="en" %}
 
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 </body>

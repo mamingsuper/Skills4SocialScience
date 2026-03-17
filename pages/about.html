@@ -151,40 +151,8 @@ permalink: /pages/about.html
 </head>
 
 <body>
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="{{ site.baseurl }}/en/" class="nav-logo">
-                <span class="logo-icon">🎓</span>
-                <span class="logo-text">AI4SS</span>
-            </a>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-links">
-                <button id="nav-search-btn" class="nav-search-btn" aria-label="Search"
-                    style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
-                <a href="{{ site.baseurl }}/en/#skills">Skills</a>
-                <a href="{{ site.baseurl }}/en/#papers">Papers</a>
-                <a href="{{ site.baseurl }}/en/#resources">Tools</a>
-                <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
-                <a href="{{ site.baseurl }}/pages/about.html" class="active">About</a>
-                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit</a>
-                <a href="{{ site.baseurl }}/zh/pages/about.html" class="nav-lang">中文</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Search Overlay -->
-    <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
-        <div class="search-container">
-            <button class="search-close" aria-label="Close search">&times;</button>
-            <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..."
-                aria-label="Search">
-            <div id="search-results" class="search-results" aria-live="polite"></div>
-        </div>
-    </div>
+    {% include nav.html lang="en" active="about" lang_url="/zh/pages/about.html" %}
+    {% include search-overlay.html lang="en" %}
 
     <main class="about-page">
         <div class="container">
@@ -283,13 +251,7 @@ permalink: /pages/about.html
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content" style="text-align:center">
-                <p><strong>AI4SS</strong> • Made with ❤️ by the social science research community</p>
-            </div>
-        </div>
-    </footer>
+    {% include footer.html lang="en" %}
 
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 </body>

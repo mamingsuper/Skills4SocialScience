@@ -1,0 +1,20 @@
+{% assign is_zh = include.lang | default: page.lang | default: "en" %}
+{% if is_zh == "zh-CN" or is_zh == "zh" %}
+<div id="search-overlay" class="search-overlay" role="dialog" aria-label="搜索">
+    <div class="search-container">
+        <button class="search-close" aria-label="关闭搜索">&times;</button>
+        <input type="text" id="search-input" class="search-input" placeholder="搜索技能、论文、工具..."
+            aria-label="搜索">
+        <div id="search-results" class="search-results" aria-live="polite"></div>
+    </div>
+</div>
+{% else %}
+<div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+    <div class="search-container">
+        <button class="search-close" aria-label="Close search">&times;</button>
+        <input type="text" id="search-input" class="search-input" placeholder="Search skills, papers, resources..."
+            aria-label="Search">
+        <div id="search-results" class="search-results" aria-live="polite"></div>
+    </div>
+</div>
+{% endif %}

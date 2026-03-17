@@ -1,0 +1,66 @@
+{% assign is_zh = include.lang | default: page.lang | default: "en" %}
+{% assign home_fragment = include.home_fragment | default: false %}
+{% if is_zh == "zh-CN" or is_zh == "zh" %}
+{% assign prefix = site.baseurl | append: "/zh" %}
+<nav class="nav">
+    <div class="nav-container">
+        <a href="{{ prefix }}/" class="nav-logo">
+            <span class="logo-icon">🎓</span>
+            <span class="logo-text">AI4SS</span>
+        </a>
+        <button class="nav-toggle" aria-label="切换导航" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <button id="nav-search-btn" class="nav-search-btn" aria-label="搜索"
+                style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
+            {% if home_fragment %}
+            <a href="#skills">技能</a>
+            <a href="#papers">论文</a>
+            <a href="#resources">工具</a>
+            {% else %}
+            <a href="{{ prefix }}/#skills">技能</a>
+            <a href="{{ prefix }}/#papers">论文</a>
+            <a href="{{ prefix }}/#resources">工具</a>
+            {% endif %}
+            <a href="{{ prefix }}/pages/learn.html"{% if include.active == "learn" %} class="active"{% endif %}>学习</a>
+            <a href="{{ prefix }}/pages/about.html"{% if include.active == "about" %} class="active"{% endif %}>关于</a>
+            <a href="{{ prefix }}/pages/submit.html" class="nav-cta{% if include.active == "submit" %} active-cta{% endif %}">提交</a>
+            <a href="{{ site.baseurl }}{{ include.lang_url | default: '/en/' }}" class="nav-lang">English</a>
+        </div>
+    </div>
+</nav>
+{% else %}
+<nav class="nav">
+    <div class="nav-container">
+        <a href="{{ site.baseurl }}/en/" class="nav-logo">
+            <span class="logo-icon">🎓</span>
+            <span class="logo-text">AI4SS</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <button id="nav-search-btn" class="nav-search-btn" aria-label="Search"
+                style="background:none;border:none;cursor:pointer;font-size:1.1rem;">🔍</button>
+            {% if home_fragment %}
+            <a href="#skills">Skills</a>
+            <a href="#papers">Papers</a>
+            <a href="#resources">Tools</a>
+            {% else %}
+            <a href="{{ site.baseurl }}/en/#skills">Skills</a>
+            <a href="{{ site.baseurl }}/en/#papers">Papers</a>
+            <a href="{{ site.baseurl }}/en/#resources">Tools</a>
+            {% endif %}
+            <a href="{{ site.baseurl }}/pages/learn.html"{% if include.active == "learn" %} class="active"{% endif %}>Learn</a>
+            <a href="{{ site.baseurl }}/pages/about.html"{% if include.active == "about" %} class="active"{% endif %}>About</a>
+            <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta{% if include.active == "submit" %} active-cta{% endif %}">Submit</a>
+            <a href="{{ site.baseurl }}{{ include.lang_url | default: '/zh/' }}" class="nav-lang">中文</a>
+        </div>
+    </div>
+</nav>
+{% endif %}
