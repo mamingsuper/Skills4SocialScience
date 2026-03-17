@@ -183,7 +183,8 @@ class ArxivAdapter(BaseAdapter):
 
     API_BASE = "http://export.arxiv.org/api/query"
 
-    def search(self, query: str, max_results: int = 20, categories: Optional[List[str]] = None) -> List[SearchResult]:
+    def search(self, query: str, max_results: int = 20, limit: int = None, categories: Optional[List[str]] = None) -> List[SearchResult]:
+        max_results = limit or max_results
         cache_key = self._get_cache_key(query, max_results=max_results)
         cached = self._load_from_cache(cache_key)
         if cached:
@@ -308,6 +309,141 @@ class GitHubAdapter(BaseAdapter):
 
 
 # ============================================
+# Extended Adapters (HuggingFace, PapersWithCode, Reddit)
+# ============================================
+
+class HuggingFaceAdapter(BaseAdapter):
+    """Adapter for HuggingFace API — trending models, datasets, spaces."""
+
+    API_BASE = "https://huggingface.co/api"
+
+    def search(self, query: str, limit: int = 20, **kwargs) -> List[SearchResult]:
+        cache_key = self._get_cache_key(query, limit=limit)
+        cached = self._load_from_cache(cache_key)
+        if cached:
+            return [SearchResult(**r) for r in cached]
+
+        results = []
+
+        # Search models
+        for endpoint, result_type in [("models", "repository"), ("datasets", "dataset"), ("spaces", "repository")]:
+            url = f"{self.API_BASE}/{endpoint}?search={urllib.parse.quote(query)}&sort=likes&direction=-1&limit={min(limit, 10)}"
+            try:
+                request = urllib.request.Request(url, headers={
+                    'User-Agent': 'AI4SS-SearchOrchestrator'
+                })
+                with urllib.request.urlopen(request, timeout=30) as response:
+                    items = json.loads(response.read().decode('utf-8'))
+
+                    for item in items:
+                        item_id = item.get('id', '') or item.get('modelId', '')
+                        likes = item.get('likes', 0) or 0
+                        downloads = item.get('downloads', 0) or 0
+
+                        result = SearchResult(
+                            title=item_id.split('/')[-1] if '/' in item_id else item_id,
+                            description=(item.get('description', '') or item.get('cardData', {}).get('description', '') or item_id)[:300],
+                            link=f"https://huggingface.co/{endpoint.rstrip('s')}/{item_id}" if endpoint != "spaces" else f"https://huggingface.co/spaces/{item_id}",
+                            source='huggingface',
+                            result_type=result_type,
+                            stars=likes,
+                            tags=item.get('tags', [])[:5] if item.get('tags') else [],
+                            metadata={
+                                'hf_type': endpoint,
+                                'downloads': downloads,
+                                'likes': likes,
+                            }
+                        )
+                        results.append(result)
+            except Exception as exc:
+                print(f"[WARN] HuggingFace {endpoint} search failed: {exc}")
+
+        # Deduplicate by link and limit
+        seen = set()
+        unique = []
+        for r in results:
+            if r.link not in seen:
+                seen.add(r.link)
+                unique.append(r)
+        results = unique[:limit]
+
+        self._save_to_cache(cache_key, [asdict(r) for r in results])
+        return results
+
+
+class RedditAdapter(BaseAdapter):
+    """Adapter for Reddit JSON API — monitor relevant subreddits."""
+
+    SUBREDDITS = [
+        "MachineLearning",
+        "LanguageTechnology",
+        "datasets",
+        "AcademicPsychology",
+        "compsci",
+        "datascience",
+    ]
+
+    def search(self, query: str, limit: int = 20, min_upvotes: int = 50, **kwargs) -> List[SearchResult]:
+        cache_key = self._get_cache_key(query, limit=limit, min_upvotes=min_upvotes)
+        cached = self._load_from_cache(cache_key)
+        if cached:
+            return [SearchResult(**r) for r in cached]
+
+        results = []
+
+        for subreddit in self.SUBREDDITS:
+            url = f"https://www.reddit.com/r/{subreddit}/search.json?q={urllib.parse.quote(query)}&sort=top&t=month&restrict_sr=1&limit=10"
+            try:
+                request = urllib.request.Request(url, headers={
+                    'User-Agent': 'AI4SS-Bot/1.0 (Academic Research Tool)'
+                })
+                with urllib.request.urlopen(request, timeout=15) as response:
+                    data = json.loads(response.read().decode('utf-8'))
+
+                    for child in data.get('data', {}).get('children', []):
+                        post = child.get('data', {})
+                        ups = post.get('ups', 0) or 0
+
+                        if ups < min_upvotes:
+                            continue
+
+                        # Prefer external link if it's a link post
+                        link = post.get('url', '')
+                        permalink = f"https://www.reddit.com{post.get('permalink', '')}"
+                        if not link or 'reddit.com' in link:
+                            link = permalink
+
+                        result = SearchResult(
+                            title=post.get('title', ''),
+                            description=(post.get('selftext', '') or post.get('title', ''))[:300],
+                            link=link,
+                            source='reddit',
+                            result_type='paper' if any(kw in post.get('title', '').lower() for kw in ['paper', 'arxiv', 'research']) else 'tutorial',
+                            published_date=datetime.fromtimestamp(post.get('created_utc', 0)).strftime('%Y-%m-%d') if post.get('created_utc') else None,
+                            stars=ups,
+                            tags=[f"r/{subreddit}"],
+                            metadata={
+                                'subreddit': subreddit,
+                                'num_comments': post.get('num_comments', 0),
+                                'reddit_permalink': permalink,
+                            }
+                        )
+                        results.append(result)
+
+                # Rate limit: 1 req/sec for Reddit
+                time.sleep(1)
+            except Exception as exc:
+                print(f"[WARN] Reddit r/{subreddit} search failed: {exc}")
+
+        # Sort by upvotes descending
+        results.sort(key=lambda r: r.stars or 0, reverse=True)
+        results = results[:limit]
+
+        self._save_to_cache(cache_key, [asdict(r) for r in results])
+        return results
+
+
+# ============================================
 # Search Orchestrator
 # ============================================
 
@@ -340,11 +476,13 @@ class SearchOrchestrator:
         # Initialize adapters
         self.scholar_adapters = [
             SemanticScholarAdapter(self.cache_dir),
-            ArxivAdapter(self.cache_dir)
+            ArxivAdapter(self.cache_dir),
         ]
 
         self.skill_adapters = [
-            GitHubAdapter(self.cache_dir, token=config.github_token)
+            GitHubAdapter(self.cache_dir, token=config.github_token),
+            HuggingFaceAdapter(self.cache_dir),
+            RedditAdapter(self.cache_dir),
         ]
 
     def _build_scholar_query(self, query: str, discipline: Optional[str] = None,
