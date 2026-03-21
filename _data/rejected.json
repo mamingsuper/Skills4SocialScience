@@ -439,5 +439,628 @@
     "title": "ValidationError: 2 validation errors for LLMChain",
     "source": "opencli-stackoverflow",
     "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1969340759439540333",
+    "normalized": "https://x.com/i/status/1969340759439540333",
+    "title": "阅读学术论文时，虽然作者提供了 GitHub 代码，但配置环境、理解代码逻辑、正确运行实验往往非常繁琐，让人望而却步。\n\n最近发现了 Paper2Agent 这个开源工具，它能自动将研究论文的代码库转",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1765362096793931779",
+    "normalized": "https://x.com/i/status/1765362096793931779",
+    "title": "Using an LLM to evaluate an LLM\n\nYesterday, I shared initial thoughts on LLM evaluation.\n\nOne method",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/2509.12503",
+    "normalized": "https://arxiv.org/abs/2509.12503",
+    "title": "Qualitative Research in an Era of AI: A Pragmatic Approach to Data Analysis, Workflow, and Computati",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2032730761221255281",
+    "normalized": "https://x.com/i/status/2032730761221255281",
+    "title": "I found a GitHub repo that's basically a hedge fund in a bookmark folder.\n\nIt's called Awesome AI in",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1771581563601375669",
+    "normalized": "https://x.com/i/status/1771581563601375669",
+    "title": "Machine Learning for Causal Inference by Sheng Li and Zhixuan Chu https://t.co/tfuxJVUDvW",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1882106147072852051",
+    "normalized": "https://x.com/i/status/1882106147072852051",
+    "title": "37 dataset sources you never knew existed for data analysis, data science and machine learning in th",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1980006193419747744",
+    "normalized": "https://x.com/i/status/1980006193419747744",
+    "title": "Causal Inference is a hard but crucial area of machine learning that moves beyond correlation to det",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1994061415989301699",
+    "normalized": "https://x.com/i/status/1994061415989301699",
+    "title": "Causal Deep Learning combines neural networks with causal inference to learn cause-and-effect. Unlik",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1968812282873319802",
+    "normalized": "https://x.com/i/status/1968812282873319802",
+    "title": "Causal ML: Moving Beyond Correlation\n\nTraditional machine learning excels at finding predictive patt",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2019323620477276553",
+    "normalized": "https://x.com/i/status/2019323620477276553",
+    "title": "我扒了所有在X、Reddit和学术圈火爆的NotebookLM提示词。\n\n结果大多数人把NotebookLM当成了高级笔记本。\n\n这太疯狂了。\n\n这是一个完整的研究助手，如果你给它正确的指令，它能将1",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2020919147341742542",
+    "normalized": "https://x.com/i/status/2020919147341742542",
+    "title": "Large Language Models (LLMs) are probabilistic sequence models trained to learn the conditional dist",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1812949923010421192",
+    "normalized": "https://x.com/i/status/1812949923010421192",
+    "title": "Recently, I’ve done a ton of reading on LLM-as-a-judge techniques (i.e., using an LLM to evaluate th",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1797138610484822527",
+    "normalized": "https://x.com/i/status/1797138610484822527",
+    "title": "👉 Machine Learning Surveys\n\nA curated list of Surveys, Tutorials and Books on Active Learning, Bioin",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1968120200081052064",
+    "normalized": "https://x.com/i/status/1968120200081052064",
+    "title": "A must-read survey: \"Reinforcement learning foundations for deep research systems\"\n\nCovers:\n\n- A roa",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1838175594233655334",
+    "normalized": "https://x.com/i/status/1838175594233655334",
+    "title": "1/ 📊 New @NBERpubs paper alert! 🚨 𝗙𝗿𝗼𝗺 𝘁𝗵𝗲 𝗜𝗻𝗱𝘂𝘀𝘁𝗿𝗶𝗮𝗹 𝗔𝗴𝗲 𝘁𝗼 𝘁𝗵𝗲 𝗔𝗴𝗲 𝗼𝗳 𝗔𝗜: How will Artificial Gene",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034768378494390549",
+    "normalized": "https://x.com/i/status/2034768378494390549",
+    "title": "Garry Tan（YC 现任 CEO）把 YC office hours 的方法论写成了一个 Claude Code skill，开源了。\n\n就是你有个想法，跑一下 /office-hours，它会",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1803372968078352800",
+    "normalized": "https://x.com/i/status/1803372968078352800",
+    "title": "OpenAI、斯坦福、微软、普林斯顿大学等多所机构从众多研究报告中筛选出1565篇论文 \n\n发布了大模型《提示技术报告》\n\n研究团队从各种学术资源中筛选出超过1,500篇相关论文，整理出了一套标准术语",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2035130361576137206",
+    "normalized": "https://x.com/i/status/2035130361576137206",
+    "title": "为什么我从不学习大佬们的方法论？\n\n看到不少人转发研究YC大佬Gary Tan的Claude skill，我都没点进去看\n\n讲讲为什么我放弃学习大佬们的放\n方法论？\n\n原因不复杂\n\n“不适合我”\n\n我",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1990710947909169553",
+    "normalized": "https://x.com/i/status/1990710947909169553",
+    "title": "为什么我在AI时代坚持古法阅读和写作？\n\n以及你为什么应该关注我，见证我一个韭二代的自救与重生，\n\n因为我坚持古法阅读和写作，为你选择和分享第一手的消息来源\n\n一方面，对于我这个文科生身份认同的坚持，",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034478398903595033",
+    "normalized": "https://x.com/i/status/2034478398903595033",
+    "title": "12 Best Courses on Statistics for Data Science!\nhttps://t.co/W98ExRD3bw\n\n@KirkDBorne\n@antgrasso\n@ron",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2016209462621831448",
+    "normalized": "https://x.com/i/status/2016209462621831448",
+    "title": "Introducing Prism, a free workspace for scientists to write and collaborate on research, powered by ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033584901858202073",
+    "normalized": "https://x.com/i/status/2033584901858202073",
+    "title": "THIS is the wildest open-source project I’ve seen this month.\n\nWe were all hyped about @karpathy's a",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1991476685208780923",
+    "normalized": "https://x.com/i/status/1991476685208780923",
+    "title": "i built 47 n8n workflows in 3 months\n\neveryone asks: \"how do you build so fast?\"\n\nONE prompt\n\ni crea",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2031248325522108661",
+    "normalized": "https://x.com/i/status/2031248325522108661",
+    "title": "“一代人有一代人的龙虾要玩。”\n\n很多人装了 OpenClaw都是跟风，装完了也不知道怎么用。\n\n闲来无事整理了 3个实用的 OpenClaw 案例。\n\n看完基本可以直接抄作业。\n\n一、金融投资类\n\n",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033501656995045688",
+    "normalized": "https://x.com/i/status/2033501656995045688",
+    "title": "After 6 months of using NotebookLM, I can say it's the research tool that has revolutionized my work",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033552299407138887",
+    "normalized": "https://x.com/i/status/2033552299407138887",
+    "title": "Peter Berger complained sociology had taken a turn toward methodological fetishism—the application o",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/3691944/how-should-i-do-rapid-gui-development-for-r-and-octave-methods-possibly-with-py",
+    "normalized": "https://stackoverflow.com/questions/3691944/how-should-i-do-rapid-gui-development-for-r-and-octave-methods-possibly-with-py",
+    "title": "How should I do rapid GUI development for R and Octave methods (possibly with Python)?",
+    "source": "opencli-stackoverflow",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2032939398132826206",
+    "normalized": "https://x.com/i/status/2032939398132826206",
+    "title": "PROMPT 5 - The Methodology Audit\n\n\"Compare the research methodologies used across all papers.\n\nGroup",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/0708.2496",
+    "normalized": "https://arxiv.org/abs/0708.2496",
+    "title": "Contributions from cognitive research to mathematics and science education",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/2504.08817",
+    "normalized": "https://arxiv.org/abs/2504.08817",
+    "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/2308.13062",
+    "normalized": "https://arxiv.org/abs/2308.13062",
+    "title": "ZeroLeak: Using LLMs for Scalable and Cost Effective Side-Channel Patching",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1959597285270044689",
+    "normalized": "https://x.com/i/status/1959597285270044689",
+    "title": "Advice for my people that are still in school\n\nWhile tech skills are in high demand, not everything ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034591519471231405",
+    "normalized": "https://x.com/i/status/2034591519471231405",
+    "title": "TickFlow：开源免费的股票行情数据 API 服务\n\n支持 A 股、ETF、美股、港股等多市场，\n\n提供历史 K 线和实时行情数据，面向量化交易和金融分析开发者\n\n主打稳定易用，提供 Python",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2024871472477405580",
+    "normalized": "https://x.com/i/status/2024871472477405580",
+    "title": "Claude just became the smartest research assistant you'll ever have.\n\nFind sources, analyze papers, ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1907752761720033728",
+    "normalized": "https://x.com/i/status/1907752761720033728",
+    "title": "ML/LLMOps 101: 𝗖𝗼𝗻𝘁𝗶𝗻𝘂𝗼𝘂𝘀 𝗧𝗿𝗮𝗶𝗻𝗶𝗻𝗴 (𝗖𝗧) and what steps are needed to achieve it.\n\nCT is the process ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1983658879314469349",
+    "normalized": "https://x.com/i/status/1983658879314469349",
+    "title": "A drag-and-drop data pipeline builder compiled to machine code https://t.co/uAdmc7H5mp",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1960715284991324619",
+    "normalized": "https://x.com/i/status/1960715284991324619",
+    "title": "A breakdown of 𝗗𝗮𝘁𝗮 𝗣𝗶𝗽𝗲𝗹𝗶𝗻𝗲𝘀 𝗶𝗻 𝗠𝗮𝗰𝗵𝗶𝗻𝗲 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗦𝘆𝘀𝘁𝗲𝗺𝘀 👇 And yes, it can also be used for LLM bas",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1899768215313518678",
+    "normalized": "https://x.com/i/status/1899768215313518678",
+    "title": "50 Tools for Boosting Your Research Productivity\n\n𝐖𝐫𝐢𝐭𝐢𝐧𝐠\n\n1. @ChatGPTapp \n2. @teampaperpal \n3. @who",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1977462947552154081",
+    "normalized": "https://x.com/i/status/1977462947552154081",
+    "title": "We hear increasing discussion about aligning LLM with “diverse human values.”\nBut what’s the actual ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2013254619275891164",
+    "normalized": "https://x.com/i/status/2013254619275891164",
+    "title": "We still don't understand how LLMs really work. Despite their massive success, they're treated as \"b",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1882942241867509957",
+    "normalized": "https://x.com/i/status/1882942241867509957",
+    "title": "Our AI financial agent now shows its thinking\n\nMuch like how @perplexity_ai  shows its tasks\n\nHere i",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2031016148272087179",
+    "normalized": "https://x.com/i/status/2031016148272087179",
+    "title": "There's a growing worry that AI will break empirical social science -- that agents can p-hack until ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034038765434638384",
+    "normalized": "https://x.com/i/status/2034038765434638384",
+    "title": "Call me naive, but I’m optimistic about what this AI tsunami 🌊 means for social science and the libe",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2010200040007147970",
+    "normalized": "https://x.com/i/status/2010200040007147970",
+    "title": "ChatGPT将重新定义学术研究的未来。\n\n但大多数学者不知道如何智能地使用它。\n\n这是如何聪明地使用ChatGPT来加速研究的方法：",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2032541910955327561",
+    "normalized": "https://x.com/i/status/2032541910955327561",
+    "title": "Dear followers,\nI’m happy to share this new academic paper on how even capable AI can lead to deteri",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1984263500085301379",
+    "normalized": "https://x.com/i/status/1984263500085301379",
+    "title": "how to research; properly.\n\nmost people “google and scroll.” real researchers hunt, map, and build.\n",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033229625225298001",
+    "normalized": "https://x.com/i/status/2033229625225298001",
+    "title": "Today we release our open-source tool designed to help physicists use AI for research-level discover",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034236986664292852",
+    "normalized": "https://x.com/i/status/2034236986664292852",
+    "title": "有个俄罗斯年轻人，用开源工具 Claude Code 和 Open Claw，一个月时间把 13 美元变成了 19.5 万美元。\n\n他住在莫斯科附近的一个小镇，没什么启动资金，用的全是免费工具。\n\n账",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034126986650763297",
+    "normalized": "https://x.com/i/status/2034126986650763297",
+    "title": "分享一下我制作的 Claude Code 通知提示音 Skill，\n\n再也不用担心忘记有没有需要确认的操作、会话有没有完成了。\n\n1. 需要用户确认时，会循环播放 progress 的提示音，\n2. ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033136169840710076",
+    "normalized": "https://x.com/i/status/2033136169840710076",
+    "title": "🚀人類の可能性を最大化する——それがh+協会の使命です。最新のAI、バイオテクノロジー、ナノテクノロジーが描く未来。老化という生物学的制約を超え、創造的な活動に集中できる社会を目指しています。毎月の研",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033738678011584786",
+    "normalized": "https://x.com/i/status/2033738678011584786",
+    "title": "给 Claude Code 接上了得到 Get 笔记官方Skill，这下查询笔记内容太方便了。速度比 NotebookLM 那种绕了几道弯的连接要快，这下可以把卡片笔记的优势充分发挥出来。比如我问题是",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034531791034290189",
+    "normalized": "https://x.com/i/status/2034531791034290189",
+    "title": "Google Cloud 总结了 5 种 Agent Skill 设计模式。拿来审计了自己的 43 个 Claude Code Skill，发现一个有意思的失衡：\n\nPipeline 占 32%，In",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1989343294707445790",
+    "normalized": "https://x.com/i/status/1989343294707445790",
+    "title": "对 Tim 的选题不做评价，之前讨论兜底评论区太撕裂了，不利于团结…\n\n但非常认同评论区有位推友说的一句：\n\n「别拿爆款公式去拆解社会科学的复杂性，不然最后只会得到一团混沌。」\n\nAI 可以模拟斯坦福",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1891774744472474013",
+    "normalized": "https://x.com/i/status/1891774744472474013",
+    "title": "Explore the top 20 LLMs for coding and get free n8n workflow templates to integrate AI into your dev",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2035245559221571951",
+    "normalized": "https://x.com/i/status/2035245559221571951",
+    "title": "总融资7000万美元的项目 还有多少人不知道？\n\n@NousResearch 简单理解这是一个AI领域的项目\n但与众不同的是Nous Research是一家成立于2023年左右的美国开源AI研究公司，",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2021458362437923009",
+    "normalized": "https://x.com/i/status/2021458362437923009",
+    "title": "AI取代的不是“工作”，而是特定类型的脑力活动。\n那些高度依赖数据、逻辑、重复计算的社会科学研究，本质上和AI做的事情没区别。\n区别在于，AI更快、更便宜。\n\n很多人觉得AI威胁论是杞人忧天，因为他们",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034549854316487120",
+    "normalized": "https://x.com/i/status/2034549854316487120",
+    "title": "SRIT proudly celebrates a recent publication in the International Journal of Computational Research ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/1403.5107",
+    "normalized": "https://arxiv.org/abs/1403.5107",
+    "title": "Social and Natural Sciences Differ in Their Research Strategies, Adapted to Work for Different Knowl",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/2401.15284",
+    "normalized": "https://arxiv.org/abs/2401.15284",
+    "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/1006.3863",
+    "normalized": "https://arxiv.org/abs/1006.3863",
+    "title": "Normalization of peer-evaluation measures of group research quality across academic disciplines",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/2105.06840",
+    "normalized": "https://arxiv.org/abs/2105.06840",
+    "title": "The academic wanderer: structure of collaboration network and relation with research performance",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/2005.08254",
+    "normalized": "https://arxiv.org/abs/2005.08254",
+    "title": "Analyzing the relationship between text features and research proposal productivity",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/cond-mat/0309395",
+    "normalized": "https://arxiv.org/abs/cond-mat/0309395",
+    "title": "This paper has been withdrawn",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://arxiv.org/abs/2006.08140",
+    "normalized": "https://arxiv.org/abs/2006.08140",
+    "title": "The Social Contract for AI",
+    "source": "opencli-arxiv",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1451019570781700096",
+    "normalized": "https://x.com/i/status/1451019570781700096",
+    "title": "Want to increase your productivity?\n\nHere are 7 tools for students, creators and startups 🧵👇",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2014903263540478408",
+    "normalized": "https://x.com/i/status/2014903263540478408",
+    "title": "👉 FREE Tools for Your Research\n\n➡️ This 7-step academic research workflow highlights free and freemi",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2019993251395129437",
+    "normalized": "https://x.com/i/status/2019993251395129437",
+    "title": "Framework for building knowledge graphs from text\n\nhttps://t.co/ZTDsHVFSUg https://t.co/BbRkWO487t",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2016929841946501413",
+    "normalized": "https://x.com/i/status/2016929841946501413",
+    "title": "炒股的朋友们请注意，股票分析舆情工具上线！daily-stock-analysis\n\n面对大 A，港股，美股股票动态分析，把它当成信息源工具就可以。\n\n支持多模型接入，可把相关信息发送到飞书\n\n数据来",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1879786511509647635",
+    "normalized": "https://x.com/i/status/1879786511509647635",
+    "title": "Data Pipeline Design Framework (Quick Guide) 📝\n\nData pipelines are the backbone of every data-driven",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1937475324314304620",
+    "normalized": "https://x.com/i/status/1937475324314304620",
+    "title": "𝗗𝗮𝘁𝗮 𝗣𝗶𝗽𝗲𝗹𝗶𝗻𝗲𝘀 𝗶𝗻 𝗠𝗮𝗰𝗵𝗶𝗻𝗲 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗦𝘆𝘀𝘁𝗲𝗺𝘀 can become complex and for a good reason 👇\n\nIt is critica",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1921596224186077352",
+    "normalized": "https://x.com/i/status/1921596224186077352",
+    "title": "🔬 DeerFlow: Deep Research Framework\n\nAn open-source framework for conducting systematic deep researc",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1943315677026144576",
+    "normalized": "https://x.com/i/status/1943315677026144576",
+    "title": "🚨 New preprint! 🚨\n\nEveryone loves causal interp. It’s coherently defined! It makes testable predicti",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1880918925074157672",
+    "normalized": "https://x.com/i/status/1880918925074157672",
+    "title": "Research proposal flowchart #AcademicTwitter https://t.co/DvAhiJgLdm",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1969556006528020487",
+    "normalized": "https://x.com/i/status/1969556006528020487",
+    "title": "Open-source BI tool for teams to explore and visualize data from dbt projects https://t.co/wskWmM5cB",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2016138977108230512",
+    "normalized": "https://x.com/i/status/2016138977108230512",
+    "title": "WeFlow 是一款 完全本地运行 的微信聊天记录查看、分析与导出工具。\n\n实时获取微信聊天记录（从本地数据库读取）\n\n导出聊天内容 到多种格式，方便备份或归档\n\n生成聊天分析报告，统计关键联系人、活",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1878628070015545422",
+    "normalized": "https://x.com/i/status/1878628070015545422",
+    "title": "2025年1月12号下午于北京昆仑巢，AIGCLINK联合超互联主办了2025第四届AIGC中国开发者大会，至顶科技、铅笔道，微软MVP，昆仑巢、零氪云、中国社会科学网协办，大会围绕大模型应用落地实践",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1941473680342614307",
+    "normalized": "https://x.com/i/status/1941473680342614307",
+    "title": "Insightful analysis! CARV D.A.T.A Framework could enhance this research by:\n\n• Providing verifiable ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2032899789533368335",
+    "normalized": "https://x.com/i/status/2032899789533368335",
+    "title": "🚨 BREAKING: Perplexity Computer just became the most dangerous tool on a public market desk.\n\nPerple",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/1638678507982323712",
+    "normalized": "https://x.com/i/status/1638678507982323712",
+    "title": "5 hidden academic success gems\n\n1. @otter_ai: Automated voice transcription\n2. @zotero: Streamlined ",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034463074212835328",
+    "normalized": "https://x.com/i/status/2034463074212835328",
+    "title": "Position paper: \"Social physics in the age of artificial intelligence\" (by The Anh Han, Joel Z. Leib",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033884853301616771",
+    "normalized": "https://x.com/i/status/2033884853301616771",
+    "title": "📌 Month 5: LLMOps &amp; Production\n\n• Docker &amp; Containerization\n• Evaluating LLM outputs &amp; T",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033487310952538136",
+    "normalized": "https://x.com/i/status/2033487310952538136",
+    "title": "📢 Vacancy: BSC is looking for a Data Specialist for Public Administration Projects for Computational",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/26180218/improve-a-puzzle-game-ai-using-machine-learning",
+    "normalized": "https://stackoverflow.com/questions/26180218/improve-a-puzzle-game-ai-using-machine-learning",
+    "title": "Improve a puzzle game AI using machine learning",
+    "source": "opencli-stackoverflow",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2035236596883357737",
+    "normalized": "https://x.com/i/status/2035236596883357737",
+    "title": "03.21 今日新鲜 Skills 精选 \n由 https://t.co/FdOgygbeez 整理！\n\n1️⃣ 🆕 jackwener/opencli ⭐3,075 | +112/day\n把任何网站",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/57073587/machine-learning-algorithm-for-similar-profiles-recommendation-ml-net-library",
+    "normalized": "https://stackoverflow.com/questions/57073587/machine-learning-algorithm-for-similar-profiles-recommendation-ml-net-library",
+    "title": "Machine Learning algorithm for similar profiles recommendation (ML.NET library) .NET C#",
+    "source": "opencli-stackoverflow",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2035237771493986730",
+    "normalized": "https://x.com/i/status/2035237771493986730",
+    "title": "1. 深度研究员\n\n提示词：'我在研究[主题]。首先，将其分解为5个专家会问的关键问题。然后对每个问题：1)提供主流观点和具体例子，2)找出2-3个挑战此观点的对立视角，3)解释哪些数据能证明每一方正",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2034355287906463797",
+    "normalized": "https://x.com/i/status/2034355287906463797",
+    "title": "These 10 prompts turn any AI into your personal Wall Street analyst.\n\nRemember: AI is a powerful res",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://x.com/i/status/2033521188085850592",
+    "normalized": "https://x.com/i/status/2033521188085850592",
+    "title": "We’re excited to launch our new hub which showcases research &amp; evidence-led insights from the so",
+    "source": "opencli-twitter",
+    "rejected_at": "2026-03-21"
+  },
+  {
+    "url": "https://stackoverflow.com/questions/78846862/how-to-display-file-name-along-with-reference-in-azure-openai-web-application",
+    "normalized": "https://stackoverflow.com/questions/78846862/how-to-display-file-name-along-with-reference-in-azure-openai-web-application",
+    "title": "How to Display File Name along with Reference in Azure OpenAI Web Application",
+    "source": "opencli-stackoverflow",
+    "rejected_at": "2026-03-21"
   }
 ]

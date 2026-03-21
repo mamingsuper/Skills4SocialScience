@@ -399,9 +399,10 @@ def run_discovery(
     repo_root: Path,
     *,
     min_score: float = 2.0,
+    top_n: int = 10,
     browse: bool = False,
 ) -> None:
-    """Run the full interactive discovery flow."""
+    """Run auto-review + interactive approval of top N items."""
 
     # Header
     print()
@@ -459,10 +460,9 @@ def run_discovery(
 
     # Deduplicate, classify, and score
     print()
-    print(colored("Phase 2: Classifying and scoring...", C.BOLD))
+    print(colored("Phase 2: Auto-review — classifying and filtering...", C.BOLD))
     seen: Set[str] = set()
-    unique: List[Dict] = []
-    not_recommended_count = 0
+    all_scored: List[Dict] = []
     for item in all_results:
         url = item.get("url", "")
         if not url:
@@ -490,33 +490,56 @@ def run_discovery(
         item["content_type"] = classification["type"]
         item["subcategory"] = classification["subcategory"]
 
-        if classification["suitability"] == "not_recommended":
-            not_recommended_count += 1
+        all_scored.append(item)
 
-        if score >= min_score:
-            unique.append(item)
+    # --- Auto-review: reject, skip, or shortlist ---
+    auto_rejected = []
+    shortlist = []
+    auto_skipped = []
 
-    # Sort: recommended first, then by score
-    def sort_key(x):
-        suit_order = {"recommended": 2, "maybe": 1, "not_recommended": 0}
-        return (suit_order.get(x.get("classification", {}).get("suitability", "maybe"), 1),
-                x["score"], x.get("popularity", 0))
-    unique.sort(key=sort_key, reverse=True)
+    for item in all_scored:
+        suit = item["classification"]["suitability"]
+        score = item["score"]
 
-    print(f"  {len(all_results)} raw → {len(unique)} unique (score >= {min_score})")
-    if not_recommended_count:
-        print(f"  {colored(f'{not_recommended_count} items marked as not recommended', C.DIM)}")
+        if suit == "not_recommended" or score < min_score:
+            # Auto-reject: not relevant to AI4SS
+            auto_rejected.append(item)
+            save_rejected_item(
+                repo_root,
+                url=item.get("url", ""),
+                title=item.get("title", ""),
+                source=item.get("source", ""),
+            )
+        elif suit == "recommended" and score >= 4.0:
+            # High confidence: shortlist for manual approval
+            shortlist.append(item)
+        else:
+            # Maybe: auto-skip (will appear again next time)
+            auto_skipped.append(item)
 
-    print(f"  {len(all_results)} raw -> {len(unique)} unique (score >= {min_score})")
+    # Sort shortlist by score desc, take top N
+    shortlist.sort(key=lambda x: (x["score"], x.get("popularity", 0)), reverse=True)
+    shortlist = shortlist[:top_n]
 
-    if not unique:
-        print(f"\n  {colored('No items passed the minimum score threshold.', C.YELLOW)}")
+    print(f"  {len(all_results)} raw → {len(all_scored)} unique")
+    print(f"  {colored(f'✅ {len(shortlist)}', C.GREEN)} shortlisted for your review")
+    print(f"  {colored(f'❌ {len(auto_rejected)}', C.RED)} auto-rejected (irrelevant / low score, saved to rejected.json)")
+    print(f"  {colored(f'⏭️  {len(auto_skipped)}', C.YELLOW)} auto-skipped (uncertain, will reappear next time)")
+
+    if not shortlist:
+        print(f"\n  {colored('No high-quality items found this round.', C.YELLOW)}")
+        # Show best of the auto-skipped as hint
+        if auto_skipped:
+            auto_skipped.sort(key=lambda x: x["score"], reverse=True)
+            best = auto_skipped[0]
+            print(f"  Best 'maybe': {best['title'][:60]}... (score: {best['score']:.1f})")
+            print(f"  Try lowering --min-score or widening platforms.")
         return
 
-    # Interactive review
+    # Interactive review of shortlisted items only
     print()
-    print(colored("Phase 3: Interactive review", C.BOLD))
-    print(f"  Review {len(unique)} items one by one. Accept the ones you want to add.")
+    print(colored(f"Phase 3: Review top {len(shortlist)} items", C.BOLD))
+    print(f"  Only the best items are shown. Accept, reject, or tweak category.")
     print()
 
     accepted_files: List[Path] = []
@@ -524,15 +547,14 @@ def run_discovery(
     rejected_count = 0
     skipped_once_count = 0
 
-    for i, item in enumerate(unique, 1):
-        display_item(item, i, len(unique))
+    for i, item in enumerate(shortlist, 1):
+        display_item(item, i, len(shortlist))
         action = prompt_action(item)
 
         if action == "q":
             print(f"\n  {colored('Quit. Finishing up...', C.DIM)}")
             break
         elif action == "n":
-            # Permanent reject — save to _data/rejected.json
             save_rejected_item(
                 repo_root,
                 url=item.get("url", ""),
@@ -543,18 +565,15 @@ def run_discovery(
             print(f"  {colored('Rejected (永久跳过)', C.RED)}")
             continue
         elif action == "?":
-            # Skip once — will appear again next time
             skipped_once_count += 1
             continue
         elif action in ("s", "p", "r"):
             type_map = {"s": "skill", "p": "paper", "r": "resource"}
             item["content_type"] = type_map[action]
-            # Let user pick subcategory for the new type
             default_sub = SUBCATEGORY_CHOICES.get(item["content_type"], {}).get("1", ("", ""))[0]
             item["subcategory"] = prompt_subcategory(item["content_type"], item.get("subcategory", default_sub))
             action = "y"
         elif action == "c":
-            # Change subcategory, keep type
             item["subcategory"] = prompt_subcategory(item["content_type"], item.get("subcategory", ""))
             action = "y"
 
@@ -563,18 +582,17 @@ def run_discovery(
             if filepath:
                 accepted_files.append(filepath)
                 accepted_count += 1
-                print(f"  {colored('Saved!', C.GREEN)} {filepath.relative_to(repo_root)}")
+                print(f"  {colored('✓ Saved!', C.GREEN)} {filepath.relative_to(repo_root)}")
             else:
                 skipped_once_count += 1
 
     # Summary
     print()
     print(colored("━━━ Summary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", C.BOLD))
-    remaining = len(unique) - accepted_count - rejected_count - skipped_once_count
-    print(f"  {colored(str(accepted_count), C.GREEN)} accepted, "
-          f"{colored(str(rejected_count), C.RED)} rejected (永久), "
-          f"{colored(str(skipped_once_count), C.YELLOW)} skipped (下次还会出现), "
-          f"{remaining} remaining")
+    print(f"  {colored(str(accepted_count), C.GREEN)} accepted")
+    print(f"  {colored(str(rejected_count), C.RED)} manually rejected")
+    print(f"  {colored(str(skipped_once_count), C.YELLOW)} skipped (下次还会出现)")
+    print(f"  {colored(str(len(auto_rejected)), C.DIM)} auto-rejected this round")
 
     # Git
     if accepted_files:
@@ -623,7 +641,11 @@ Cookie-based platforms (need Chrome login):
     )
     parser.add_argument(
         "--min-score", type=float, default=2.0,
-        help="Minimum relevance score to show (default: 2.0)",
+        help="Minimum relevance score for auto-review (default: 2.0)",
+    )
+    parser.add_argument(
+        "--top-n", type=int, default=10,
+        help="Number of top items to present for manual review (default: 10)",
     )
     parser.add_argument(
         "--repo-root", default=".",
@@ -661,6 +683,7 @@ def main() -> int:
         queries=queries,
         repo_root=repo_root,
         min_score=args.min_score,
+        top_n=args.top_n,
         browse=args.browse,
     )
     return 0
