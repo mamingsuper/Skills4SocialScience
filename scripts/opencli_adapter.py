@@ -68,7 +68,7 @@ PUBLIC_PLATFORMS = {
 
 COOKIE_PLATFORMS = {
     "twitter": {
-        "search_style": "intercept",
+        "search_style": "flag",
         "fields": {"title": "text", "url": "url", "popularity": "likes", "description": "text"},
         "content_hint": "social",
     },

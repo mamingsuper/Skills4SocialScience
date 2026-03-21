@@ -52,17 +52,21 @@ from opencli_adapter import (
 
 DEFAULT_QUERIES = {
     "skills": [
+        "social science research skills",
+        "research skills AI",
+        "academic research workflow",
         "AI research tool",
         "LLM automation workflow",
         "Claude Code skill",
-        "academic productivity",
-        "AI科研工具",
+        "科研技能",
+        "学术研究方法",
     ],
     "papers": [
         "computational social science",
         "causal inference machine learning",
-        "LLM text analysis",
+        "LLM text analysis research",
         "NLP survey research",
+        "social science AI paper",
         "社会科学AI",
     ],
     "resources": [
@@ -70,6 +74,7 @@ DEFAULT_QUERIES = {
         "open science toolkit",
         "social science dataset",
         "text analysis framework",
+        "academic productivity tool",
         "数据分析工具",
     ],
 }
@@ -510,8 +515,8 @@ Cookie-based platforms (need Chrome login):
 """,
     )
     parser.add_argument(
-        "--platforms", default="arxiv,stackoverflow",
-        help="Comma-separated platforms (default: arxiv,stackoverflow)",
+        "--platforms", default="twitter,arxiv,stackoverflow",
+        help="Comma-separated platforms (default: twitter,arxiv,stackoverflow)",
     )
     parser.add_argument(
         "--keywords",
