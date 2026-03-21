@@ -103,9 +103,10 @@ ALL_PLATFORMS = {**PUBLIC_PLATFORMS, **COOKIE_PLATFORMS}
 
 
 # ============================================
-# Content Type Classification
+# Content Type & Subcategory Classification
 # ============================================
 
+# --- Top-level type signals ---
 PAPER_SIGNALS = [
     "paper", "arxiv", "论文", "study", "journal", "conference",
     "icml", "neurips", "acl", "emnlp", "aaai", "iclr",
@@ -119,18 +120,195 @@ RESOURCE_SIGNALS = [
     "工具", "开源", "repository", "platform", "software",
 ]
 
+# --- Skill subcategory signals (maps to _skills/<category>/) ---
+SKILL_SUBCATEGORIES = {
+    "analysis": [
+        "data analysis", "statistics", "regression", "stata", "spss", "r language",
+        "python data", "pandas", "visualization", "causal inference", "econometrics",
+        "statistical", "quantitative", "modeling",
+        "数据分析", "统计", "可视化", "因果推断", "回归",
+    ],
+    "writing": [
+        "writing", "write", "draft", "paper writing", "academic writing", "latex",
+        "manuscript", "proofreading", "editor", "论文写作", "写作", "撰写",
+    ],
+    "design": [
+        "research design", "methodology", "experiment design", "survey design",
+        "open science", "reproducibility", "preregistration", "研究设计", "开放科学",
+    ],
+    "research-engineering": [
+        "agent", "claude", "llm", "gpt", "automation", "pipeline", "code",
+        "programming", "engineering", "api", "scraping", "自动化", "编程", "工程",
+    ],
+}
 
-def classify_content_type(title: str, description: str, platform: str) -> str:
-    """Classify a search result into skill/paper/resource."""
+# --- Paper subcategory signals (maps to _papers/ frontmatter category) ---
+PAPER_SUBCATEGORIES = {
+    "methodology": [
+        "method", "framework", "approach", "technique", "algorithm", "model",
+        "方法", "算法", "框架",
+    ],
+    "application": [
+        "application", "case study", "applied", "using", "deployment",
+        "应用", "案例",
+    ],
+    "ethics-policy": [
+        "ethics", "bias", "fairness", "policy", "governance", "regulation",
+        "伦理", "偏见", "政策",
+    ],
+    "review": [
+        "survey", "review", "overview", "landscape", "state of the art", "meta-analysis",
+        "综述", "回顾",
+    ],
+    "general": [],  # fallback
+}
+
+# --- Resource subcategory signals ---
+RESOURCE_SUBCATEGORIES = {
+    "research-tool": [
+        "tool", "toolkit", "platform", "app", "software", "service",
+        "工具", "平台", "软件",
+    ],
+    "dataset": [
+        "dataset", "corpus", "benchmark", "data collection", "data repository",
+        "数据集", "语料", "数据仓库",
+    ],
+    "workflow": [
+        "workflow", "guide", "tutorial", "handbook", "course", "lesson",
+        "教程", "指南", "课程",
+    ],
+    "community": [
+        "community", "forum", "group", "newsletter", "conference", "meetup",
+        "社区", "论坛",
+    ],
+}
+
+# --- Suitability: signals that content is NOT relevant to AI4SS ---
+IRRELEVANT_SIGNALS = [
+    # Pure tech / not social science
+    "game dev", "gaming", "crypto", "blockchain", "nft", "web3",
+    "devops", "kubernetes", "docker", "frontend", "react", "vue", "angular",
+    "mobile app", "ios", "android", "swift", "kotlin",
+    # Entertainment
+    "meme", "funny", "drama", "celebrity", "gossip", "movie review",
+    # Finance/trading
+    "stock pick", "trading strategy", "forex", "day trading",
+    # Too generic
+    "what is ai", "ai for beginners",
+]
+
+# Positive signals: content IS relevant to social science research
+RELEVANT_SIGNALS = [
+    "social science", "political science", "economics", "sociology", "psychology",
+    "public policy", "communication", "anthropology", "education",
+    "research", "academic", "scholarly", "university", "professor",
+    "causal", "survey", "experiment", "qualitative", "quantitative",
+    "nlp", "text analysis", "computational social", "digital humanities",
+    "社会科学", "政治学", "经济学", "社会学", "心理学", "学术", "科研",
+]
+
+
+def classify_content(title: str, description: str, platform: str) -> Dict:
+    """Smart classification: type + subcategory + suitability.
+
+    Returns:
+        {
+            "type": "skill" | "paper" | "resource",
+            "subcategory": "analysis" | "writing" | ... ,
+            "suitability": "recommended" | "maybe" | "not_recommended",
+            "reason": "why this classification",
+        }
+    """
     text = f"{title} {description}".lower()
 
+    # --- Suitability check ---
+    irrelevant_hits = sum(1 for s in IRRELEVANT_SIGNALS if s in text)
+    relevant_hits = sum(1 for s in RELEVANT_SIGNALS if s in text)
+
+    if irrelevant_hits >= 2 and relevant_hits == 0:
+        suitability = "not_recommended"
+        reason = "与社会科学研究关系不大"
+    elif relevant_hits >= 2:
+        suitability = "recommended"
+        reason = "高度相关"
+    elif relevant_hits >= 1:
+        suitability = "maybe"
+        reason = "可能相关，请人工确认"
+    else:
+        suitability = "maybe"
+        reason = "关联度不确定"
+
+    # --- Top-level type (two-pass: direct signals + subcategory boost) ---
     hint = ALL_PLATFORMS.get(platform, {}).get("content_hint", "")
     if hint == "paper":
-        return "paper"
+        content_type = "paper"
+    else:
+        paper_hits = sum(1 for s in PAPER_SIGNALS if s in text)
+        skill_hits = sum(1 for s in SKILL_SIGNALS if s in text)
+        resource_hits = sum(1 for s in RESOURCE_SIGNALS if s in text)
 
-    paper_hits = sum(1 for s in PAPER_SIGNALS if s in text)
-    skill_hits = sum(1 for s in SKILL_SIGNALS if s in text)
-    resource_hits = sum(1 for s in RESOURCE_SIGNALS if s in text)
+        # Boost: if subcategory signals match strongly, count that toward parent type
+        skill_sub_hits = max(
+            (sum(1 for s in sigs if s in text) for sigs in SKILL_SUBCATEGORIES.values()),
+            default=0,
+        )
+        paper_sub_hits = max(
+            (sum(1 for s in sigs if s in text) for sigs in PAPER_SUBCATEGORIES.values()),
+            default=0,
+        )
+        resource_sub_hits = max(
+            (sum(1 for s in sigs if s in text) for sigs in RESOURCE_SUBCATEGORIES.values()),
+            default=0,
+        )
+
+        # Add subcategory boost (capped at 2) to top-level scores
+        skill_total = skill_hits + min(skill_sub_hits, 2)
+        paper_total = paper_hits + min(paper_sub_hits, 2)
+        resource_total = resource_hits + min(resource_sub_hits, 2)
+
+        best = max(skill_total, paper_total, resource_total)
+        if best == 0:
+            content_type = "resource"
+        elif paper_total == best:
+            content_type = "paper"
+        elif skill_total == best:
+            content_type = "skill"
+        else:
+            content_type = "resource"
+
+    # --- Subcategory ---
+    if content_type == "skill":
+        subcategory = _match_subcategory(text, SKILL_SUBCATEGORIES, "research-engineering")
+    elif content_type == "paper":
+        subcategory = _match_subcategory(text, PAPER_SUBCATEGORIES, "general")
+    else:
+        subcategory = _match_subcategory(text, RESOURCE_SUBCATEGORIES, "research-tool")
+
+    return {
+        "type": content_type,
+        "subcategory": subcategory,
+        "suitability": suitability,
+        "reason": reason,
+    }
+
+
+def _match_subcategory(text: str, subcategories: Dict[str, List[str]], default: str) -> str:
+    """Find the best matching subcategory by keyword hits."""
+    best_key = default
+    best_hits = 0
+    for key, signals in subcategories.items():
+        hits = sum(1 for s in signals if s in text)
+        if hits > best_hits:
+            best_hits = hits
+            best_key = key
+    return best_key
+
+
+# Legacy wrapper for backward compatibility
+def classify_content_type(title: str, description: str, platform: str) -> str:
+    """Classify into skill/paper/resource (legacy interface)."""
+    result = classify_content(title, description, platform)
+    return result["type"]
 
     best = max(paper_hits, skill_hits, resource_hits)
     if best == 0:

@@ -39,6 +39,7 @@ from opencli_adapter import (
     PUBLIC_PLATFORMS,
     COOKIE_PLATFORMS,
     check_opencli_available,
+    classify_content,
     classify_content_type,
     get_opencli_version,
     search_platform,
@@ -105,17 +106,30 @@ def colored(text: str, color: str) -> str:
 # ============================================
 
 def display_item(item: Dict, index: int, total: int) -> None:
-    """Display a single search result for review."""
-    ct = item.get("content_type", "resource")
+    """Display a single search result for review with smart classification."""
+    classification = item.get("classification", {})
+    ct = classification.get("type", item.get("content_type", "resource"))
+    subcategory = classification.get("subcategory", "")
+    suitability = classification.get("suitability", "maybe")
+    reason = classification.get("reason", "")
+
     ct_colors = {"paper": C.MAGENTA, "skill": C.CYAN, "resource": C.GREEN}
     ct_display = colored(ct.upper(), ct_colors.get(ct, C.GREEN))
+
+    suit_icons = {"recommended": "✅", "maybe": "🤔", "not_recommended": "❌"}
+    suit_colors = {"recommended": C.GREEN, "maybe": C.YELLOW, "not_recommended": C.RED}
+    suit_display = f"{suit_icons.get(suitability, '?')} {colored(reason, suit_colors.get(suitability, C.DIM))}"
 
     score = item.get("score", 0)
     score_color = C.GREEN if score >= 5 else C.YELLOW if score >= 3 else C.RED
     score_display = colored(f"{score:.1f}", score_color)
 
     print()
-    print(colored(f"━━━ [{index}/{total}] ━━━━━━━━━━━━━━━━━━━━━━━━━━━", C.DIM))
+    if suitability == "not_recommended":
+        print(colored(f"━━━ [{index}/{total}] ━━━ ❌ 不推荐 ━━━━━━━━━━━━━━", C.RED))
+    else:
+        print(colored(f"━━━ [{index}/{total}] ━━━━━━━━━━━━━━━━━━━━━━━━━━━", C.DIM))
+
     print(f"  {colored('Title:', C.BOLD)} {item['title']}")
     if item.get("description") and item["description"] != item["title"]:
         desc = item["description"][:120]
@@ -123,24 +137,35 @@ def display_item(item: Dict, index: int, total: int) -> None:
     if item.get("extra"):
         print(f"  {colored('Info:', C.BOLD)}  {item['extra']}")
     print(f"  {colored('URL:', C.BOLD)}   {item.get('url', 'N/A')}")
-    print(f"  {colored('From:', C.BOLD)}  {item['source']}  |  "
-          f"Type: {ct_display}  |  "
-          f"Score: {score_display}  |  "
-          f"Popularity: {item.get('popularity', 0)}")
+    print(f"  {colored('From:', C.BOLD)}  {item['source']}  |  Score: {score_display}  |  Pop: {item.get('popularity', 0)}")
+    print(f"  {colored('分类:', C.BOLD)}  {ct_display} → {colored(subcategory, C.BLUE)}  |  {suit_display}")
 
 
-def prompt_action() -> str:
+def prompt_action(item: Dict) -> str:
     """Prompt user for action on current item.
 
-    Returns: 'y' (accept), 'n' (skip), 's' (accept as skill),
-             'p' (accept as paper), 'r' (accept as resource), 'q' (quit)
+    Returns: 'y' (accept with auto-classification), 'n' (permanent reject),
+             's' (accept as skill), 'p' (accept as paper), 'r' (accept as resource),
+             'c' (change subcategory), '?' (skip once), 'q' (quit)
     """
+    suitability = item.get("classification", {}).get("suitability", "maybe")
+
+    # For not_recommended items, default to 'n' (reject)
+    if suitability == "not_recommended":
+        default_action = "n"
+        default_hint = "默认: 拒绝"
+    else:
+        default_action = "?"
+        default_hint = "默认: 跳过一次"
+
     prompt = (
-        f"  {colored('[y]', C.GREEN)} Accept  "
-        f"{colored('[n]', C.RED)} Skip (won't show again)  "
-        f"{colored('[s/p/r]', C.YELLOW)} Accept as Skill/Paper/Resource  "
-        f"{colored('[?]', C.DIM)} Skip once (show again next time)  "
-        f"{colored('[q]', C.DIM)} Quit\n"
+        f"  {colored('[y]', C.GREEN)} Accept (用推荐分类)  "
+        f"{colored('[n]', C.RED)} Reject (永久)  "
+        f"{colored('[s/p/r]', C.YELLOW)} Accept as Skill/Paper/Resource\n"
+        f"  {colored('[c]', C.BLUE)} Change subcategory  "
+        f"{colored('[?]', C.DIM)} Skip once  "
+        f"{colored('[q]', C.DIM)} Quit  "
+        f"{colored(f'[Enter={default_hint}]', C.DIM)}\n"
         f"  > "
     )
     while True:
@@ -149,9 +174,54 @@ def prompt_action() -> str:
         except (EOFError, KeyboardInterrupt):
             print()
             return "q"
-        if choice in ("y", "n", "s", "p", "r", "q", "?", ""):
-            return choice if choice else "?"  # default: skip once
-        print(f"  {colored('Invalid choice. Use y/n/s/p/r/?/q', C.RED)}")
+        if choice in ("y", "n", "s", "p", "r", "c", "q", "?", ""):
+            return choice if choice else default_action
+        print(f"  {colored('Invalid choice. Use y/n/s/p/r/c/?/q', C.RED)}")
+
+
+# Subcategory choices for interactive selection
+SUBCATEGORY_CHOICES = {
+    "skill": {
+        "1": ("analysis", "数据分析 Analysis"),
+        "2": ("writing", "学术写作 Writing"),
+        "3": ("design", "研究设计 Design"),
+        "4": ("research-engineering", "研究工程 Research Engineering"),
+    },
+    "paper": {
+        "1": ("general", "综合 General"),
+        "2": ("methodology", "方法论 Methodology"),
+        "3": ("application", "应用 Application"),
+        "4": ("ethics-policy", "伦理政策 Ethics & Policy"),
+        "5": ("review", "综述 Review"),
+    },
+    "resource": {
+        "1": ("research-tool", "研究工具 Research Tool"),
+        "2": ("dataset", "数据集 Dataset"),
+        "3": ("workflow", "工作流指南 Workflow Guide"),
+        "4": ("community", "社区资源 Community"),
+    },
+}
+
+
+def prompt_subcategory(content_type: str, current_sub: str) -> str:
+    """Let user choose a subcategory interactively."""
+    choices = SUBCATEGORY_CHOICES.get(content_type, {})
+    if not choices:
+        return current_sub
+
+    print(f"\n  {colored(f'Choose subcategory for {content_type.upper()}:', C.BOLD)}")
+    for key, (sub_key, label) in choices.items():
+        marker = " ← current" if sub_key == current_sub else ""
+        print(f"    {colored(f'[{key}]', C.CYAN)} {label}{colored(marker, C.DIM)}")
+
+    try:
+        choice = input(f"  > ").strip()
+    except (EOFError, KeyboardInterrupt):
+        return current_sub
+
+    if choice in choices:
+        return choices[choice][0]
+    return current_sub
 
 
 # ============================================
@@ -161,13 +231,14 @@ def prompt_action() -> str:
 def write_jekyll_file(item: Dict, repo_root: Path) -> Optional[Path]:
     """Generate a Jekyll markdown file for an accepted item. Returns the file path."""
     ct = item.get("content_type", "resource")
+    subcategory = item.get("subcategory", "")
     today = datetime.now().strftime("%Y-%m-%d")
     slug = slugify(item["title"])
     tags = item.get("tags", [])
     tags_yaml = "[" + ", ".join(yaml_quote(t) for t in tags if t) + "]" if tags else "[]"
 
     if ct == "skill":
-        category = "research-engineering"
+        category = subcategory or "research-engineering"
         out_dir = repo_root / "_skills" / category
         out_dir.mkdir(parents=True, exist_ok=True)
         filepath = out_dir / f"{slug}.md"
@@ -196,7 +267,10 @@ permalink: /skills/{category}/{slug}/
 """
 
     elif ct == "paper":
-        out_dir = repo_root / "_papers" / "0-general"
+        paper_cat = subcategory or "general"
+        # Papers use _papers/<category-dir>/ for filesystem, category field in frontmatter
+        paper_dir_name = f"0-{paper_cat}" if paper_cat != "general" else "0-general"
+        out_dir = repo_root / "_papers" / paper_dir_name
         out_dir.mkdir(parents=True, exist_ok=True)
         filepath = out_dir / f"{slug}.md"
         if filepath.exists():
@@ -208,7 +282,7 @@ title: {yaml_quote(item['title'])}
 description: {yaml_quote(item.get('description', '')[:200])}
 authors: []
 year: {datetime.now().year}
-category: general
+category: {paper_cat}
 link: {item.get('url', '')}
 source: {item['source']}
 tags: {tags_yaml}
@@ -224,7 +298,8 @@ permalink: /papers/{slug}/
 """
 
     else:  # resource
-        out_dir = repo_root / "_resources" / "0-general"
+        resource_cat = subcategory or "research-tool"
+        out_dir = repo_root / "_resources" / f"0-{resource_cat}"
         out_dir.mkdir(parents=True, exist_ok=True)
         filepath = out_dir / f"{slug}.md"
         if filepath.exists():
@@ -235,7 +310,7 @@ layout: resource
 title: {yaml_quote(item['title'])}
 description: {yaml_quote(item.get('description', '')[:200])}
 type: repository
-category: research-tool
+category: {resource_cat}
 link: {item.get('url', '')}
 source: {item['source']}
 stars: {item.get('popularity', 0)}
@@ -382,11 +457,12 @@ def run_discovery(
         print(f"\n  {colored('No results found from any platform.', C.RED)}")
         return
 
-    # Deduplicate and score
+    # Deduplicate, classify, and score
     print()
-    print(colored("Phase 2: Deduplicating and scoring...", C.BOLD))
+    print(colored("Phase 2: Classifying and scoring...", C.BOLD))
     seen: Set[str] = set()
     unique: List[Dict] = []
+    not_recommended_count = 0
     for item in all_results:
         url = item.get("url", "")
         if not url:
@@ -405,19 +481,31 @@ def run_discovery(
         )
         item["score"] = score
 
-        # Resolve content type
-        if "query_content_type" in item:
-            item["content_type"] = item["query_content_type"]
-        classified = classify_content_type(
-            item.get("title", ""), item.get("description", ""), ""
+        # Smart classification: type + subcategory + suitability
+        classification = classify_content(
+            item.get("title", ""), item.get("description", ""),
+            item.get("source", "").replace("opencli-", ""),
         )
-        if classified != "resource":
-            item["content_type"] = classified
+        item["classification"] = classification
+        item["content_type"] = classification["type"]
+        item["subcategory"] = classification["subcategory"]
+
+        if classification["suitability"] == "not_recommended":
+            not_recommended_count += 1
 
         if score >= min_score:
             unique.append(item)
 
-    unique.sort(key=lambda x: (x["score"], x.get("popularity", 0)), reverse=True)
+    # Sort: recommended first, then by score
+    def sort_key(x):
+        suit_order = {"recommended": 2, "maybe": 1, "not_recommended": 0}
+        return (suit_order.get(x.get("classification", {}).get("suitability", "maybe"), 1),
+                x["score"], x.get("popularity", 0))
+    unique.sort(key=sort_key, reverse=True)
+
+    print(f"  {len(all_results)} raw → {len(unique)} unique (score >= {min_score})")
+    if not_recommended_count:
+        print(f"  {colored(f'{not_recommended_count} items marked as not recommended', C.DIM)}")
 
     print(f"  {len(all_results)} raw -> {len(unique)} unique (score >= {min_score})")
 
@@ -438,7 +526,7 @@ def run_discovery(
 
     for i, item in enumerate(unique, 1):
         display_item(item, i, len(unique))
-        action = prompt_action()
+        action = prompt_action(item)
 
         if action == "q":
             print(f"\n  {colored('Quit. Finishing up...', C.DIM)}")
@@ -461,6 +549,13 @@ def run_discovery(
         elif action in ("s", "p", "r"):
             type_map = {"s": "skill", "p": "paper", "r": "resource"}
             item["content_type"] = type_map[action]
+            # Let user pick subcategory for the new type
+            default_sub = SUBCATEGORY_CHOICES.get(item["content_type"], {}).get("1", ("", ""))[0]
+            item["subcategory"] = prompt_subcategory(item["content_type"], item.get("subcategory", default_sub))
+            action = "y"
+        elif action == "c":
+            # Change subcategory, keep type
+            item["subcategory"] = prompt_subcategory(item["content_type"], item.get("subcategory", ""))
             action = "y"
 
         if action == "y":
