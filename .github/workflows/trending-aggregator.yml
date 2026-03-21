@@ -44,6 +44,17 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Setup Node.js (for opencli)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install opencli
+        run: |
+          npm install -g @jackwener/opencli
+          sudo apt-get install -y xvfb
+          opencli --version || echo "opencli install check done"
+
       - name: Run trending aggregator
         continue-on-error: true
         env:
@@ -62,6 +73,35 @@ jobs:
             --max-items "$MAX_ITEMS" \
             --output-summary /tmp/pr-summary.md \
             $EXTRA_ARGS
+
+      - name: Run opencli keyword searches
+        continue-on-error: true
+        env:
+          OPENCLI_HEADLESS: "1"
+        run: |
+          MIN_SCORE="${{ inputs.min-score || '3' }}"
+          MAX_ITEMS="${{ inputs.max-items || '20' }}"
+          EXTRA_ARGS=""
+          if [ "${{ inputs.dry-run }}" = "true" ]; then
+            EXTRA_ARGS="--dry-run"
+          fi
+
+          xvfb-run python scripts/opencli_search.py \
+            --platforms hackernews,stackoverflow \
+            --type auto \
+            --min-score "$MIN_SCORE" \
+            --max-results "$MAX_ITEMS" \
+            --repo-root . \
+            --output-summary /tmp/opencli-summary.md \
+            $EXTRA_ARGS
+
+          # Append opencli summary to PR summary
+          if [ -f /tmp/opencli-summary.md ]; then
+            echo "" >> /tmp/pr-summary.md
+            echo "---" >> /tmp/pr-summary.md
+            echo "" >> /tmp/pr-summary.md
+            cat /tmp/opencli-summary.md >> /tmp/pr-summary.md
+          fi
 
       - name: Check for changes
         id: check-changes
@@ -86,6 +126,7 @@ jobs:
             - GitHub Trending
             - Hacker News
             - HuggingFace
+            - opencli multi-platform search (HN, StackOverflow)
 
             Co-Authored-By: AI4SS Bot <noreply@ai4ss.org>
           branch: auto/trending-${{ github.run_number }}

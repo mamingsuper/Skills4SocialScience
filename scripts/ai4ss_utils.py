@@ -6,8 +6,10 @@ Provides URL normalization, dedup registry, taxonomy loading, and relevance scor
 
 from __future__ import annotations
 
+import json
 import re
 import urllib.parse
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Set
 
@@ -54,7 +56,7 @@ def normalize_url(url: str) -> str:
 
 
 def build_dedup_registry(repo_root: str | Path) -> Set[str]:
-    """Scan existing _skills/, _papers/, _resources/ for URLs already in the site."""
+    """Scan existing _skills/, _papers/, _resources/ AND rejected.json for URLs to skip."""
     repo_root = Path(repo_root).resolve()
     existing_urls: Set[str] = set()
 
@@ -74,7 +76,71 @@ def build_dedup_registry(repo_root: str | Path) -> Set[str]:
             link = _extract_frontmatter_field(text, "link")
             if link:
                 existing_urls.add(normalize_url(link))
+
+    # Also load rejected URLs
+    rejected = load_rejected_urls(repo_root)
+    existing_urls.update(rejected)
+
     return existing_urls
+
+
+# ============================================
+# Rejected Items Registry
+# ============================================
+
+_REJECTED_FILE = "_data/rejected.json"
+
+
+def _rejected_path(repo_root: str | Path) -> Path:
+    return Path(repo_root).resolve() / _REJECTED_FILE
+
+
+def load_rejected_urls(repo_root: str | Path) -> Set[str]:
+    """Load rejected URLs from _data/rejected.json."""
+    path = _rejected_path(repo_root)
+    if not path.exists():
+        return set()
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return {normalize_url(entry["url"]) for entry in data if entry.get("url")}
+    except Exception:
+        return set()
+
+
+def save_rejected_item(
+    repo_root: str | Path,
+    url: str,
+    title: str = "",
+    source: str = "",
+) -> None:
+    """Append a rejected item to _data/rejected.json."""
+    path = _rejected_path(repo_root)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    entries: List[Dict] = []
+    if path.exists():
+        try:
+            entries = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            entries = []
+
+    # Check if already rejected
+    norm = normalize_url(url)
+    if any(normalize_url(e.get("url", "")) == norm for e in entries):
+        return
+
+    entries.append({
+        "url": url,
+        "normalized": norm,
+        "title": title[:100],
+        "source": source,
+        "rejected_at": datetime.now().strftime("%Y-%m-%d"),
+    })
+
+    path.write_text(
+        json.dumps(entries, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def _extract_frontmatter_field(text: str, field: str) -> Optional[str]:
