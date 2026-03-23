@@ -9,8 +9,8 @@ link: https://github.com/DISSINET/InkVisitor
 source: github-auto
 tags: ["complexity-analysis", "data-modeling", "database", "history", "inquisition", "linked-data"]
 permalink: /resources/dissinet-inkvisitor/
-stars: 15
-last_updated: 2026-03-19
+stars: 16
+last_updated: 2026-03-23
 license: "BSD-3-Clause"
 ---
 ## InkVisitor (DISSINET)
