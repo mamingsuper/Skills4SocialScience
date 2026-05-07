@@ -9,8 +9,8 @@ link: https://github.com/ubcecon/ECON526
 source: github-auto
 tags: []
 permalink: /resources/ubcecon-econ526/
-stars: 25
-last_updated: 2025-12-01
+stars: 26
+last_updated: 2026-05-06
 license: ""
 ---
 ## ECON526 (ubcecon)
