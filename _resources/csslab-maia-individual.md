@@ -9,8 +9,8 @@ link: https://github.com/CSSLab/maia-individual
 source: github-auto
 tags: ["chess", "chess-engine", "computational-social-science", "deep-learning", "machine-learning", "mimetic-model"]
 permalink: /resources/csslab-maia-individual/
-stars: 46
-last_updated: 2026-05-23
+stars: 47
+last_updated: 2026-06-01
 license: "AGPL-3.0"
 ---
 ## maia-individual (CSSLab)
