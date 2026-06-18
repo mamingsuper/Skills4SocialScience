@@ -9,8 +9,8 @@ link: https://github.com/ronikobrosly/causal-curve
 source: github-auto
 tags: []
 permalink: /resources/ronikobrosly-causal-curve/
-stars: 283
-last_updated: 2026-05-24
+stars: 284
+last_updated: 2026-06-17
 license: "MIT"
 ---
 ## causal-curve (ronikobrosly)
