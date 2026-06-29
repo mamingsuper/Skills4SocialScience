@@ -9,8 +9,8 @@ link: https://github.com/harmonydata/harmony
 source: github-auto
 tags: ["ai", "data-harmonization", "data-science", "depression", "embedding", "embeddings"]
 permalink: /resources/harmonydata-harmony/
-stars: 58
-last_updated: 2026-06-09
+stars: 59
+last_updated: 2026-06-28
 license: "MIT"
 ---
 ## harmony (harmonydata)
