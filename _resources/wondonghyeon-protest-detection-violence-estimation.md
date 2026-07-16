@@ -9,8 +9,8 @@ link: https://github.com/wondonghyeon/protest-detection-violence-estimation
 source: github-auto
 tags: ["acm-mm", "acm-multimedia-2017", "computational-social-science", "computer-vision", "datamining", "dataset"]
 permalink: /resources/wondonghyeon-protest-detection-violence-estimation/
-stars: 187
-last_updated: 2026-05-21
+stars: 186
+last_updated: 2026-07-15
 license: "MIT"
 ---
 ## protest-detection-violence-estimation (wondonghyeon)
