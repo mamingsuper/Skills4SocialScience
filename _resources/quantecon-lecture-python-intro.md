@@ -10,7 +10,7 @@ source: github-auto
 tags: ["computational", "economics"]
 permalink: /resources/quantecon-lecture-python-intro/
 stars: 62
-last_updated: 2026-08-02
+last_updated: 2026-08-06
 license: ""
 ---
 ## lecture-python-intro (QuantEcon)
