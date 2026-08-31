@@ -9,8 +9,8 @@ link: https://github.com/Ahren09/AgentReview
 source: github-auto
 tags: ["agent", "chatgpt", "computational-social-science", "deep-learning", "emnlp", "emnlp2024"]
 permalink: /resources/ahren09-agentreview/
-stars: 289
-last_updated: 2026-08-27
+stars: 315
+last_updated: 2026-08-31
 license: "Apache-2.0"
 ---
 ## AgentReview (Ahren09)
