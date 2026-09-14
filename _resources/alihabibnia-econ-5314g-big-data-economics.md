@@ -9,8 +9,8 @@ link: https://github.com/AliHabibnia/ECON_5314G_Big_Data_Economics
 source: github-auto
 tags: []
 permalink: /resources/alihabibnia-econ-5314g-big-data-economics/
-stars: 30
-last_updated: 2026-07-26
+stars: 31
+last_updated: 2026-09-13
 license: "MIT"
 ---
 ## ECON_5314G_Big_Data_Economics (AliHabibnia)
