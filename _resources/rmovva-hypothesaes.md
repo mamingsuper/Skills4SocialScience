@@ -9,8 +9,8 @@ link: https://github.com/rmovva/HypotheSAEs
 source: github-auto
 tags: ["ai-for-science", "computational-social-science", "interpretability", "nlp", "sparse-autoencoders", "topic-modeling"]
 permalink: /resources/rmovva-hypothesaes/
-stars: 95
-last_updated: 2026-09-04
+stars: 96
+last_updated: 2026-09-15
 license: "Apache-2.0"
 ---
 ## HypotheSAEs (rmovva)
