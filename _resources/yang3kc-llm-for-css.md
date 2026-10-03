@@ -10,7 +10,7 @@ source: github-auto
 tags: []
 permalink: /resources/yang3kc-llm-for-css/
 stars: 54
-last_updated: 2026-09-02
+last_updated: 2026-10-01
 license: "MIT"
 ---
 ## llm_for_css (yang3kc)
