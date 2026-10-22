@@ -9,8 +9,8 @@ link: https://github.com/CartoDB/research-public
 source: github-auto
 tags: []
 permalink: /resources/cartodb-research-public/
-stars: 52
-last_updated: 2026-10-13
+stars: 53
+last_updated: 2026-10-20
 license: ""
 ---
 ## research-public (CartoDB)
