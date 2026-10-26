@@ -9,8 +9,8 @@ link: https://github.com/CenterForOpenScience/SHARE
 source: github-auto
 tags: ["data", "elasticsearch", "harvest-data", "metadata", "openscience", "python"]
 permalink: /resources/centerforopenscience-share/
-stars: 107
-last_updated: 2026-09-01
+stars: 106
+last_updated: 2026-10-23
 license: "Apache-2.0"
 ---
 ## SHARE (CenterForOpenScience)
