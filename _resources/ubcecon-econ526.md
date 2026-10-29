@@ -10,7 +10,7 @@ source: github-auto
 tags: []
 permalink: /resources/ubcecon-econ526/
 stars: 27
-last_updated: 2026-09-09
+last_updated: 2026-10-28
 license: ""
 ---
 ## ECON526 (ubcecon)
