@@ -9,8 +9,8 @@ link: https://github.com/JasonKessler/scattertext
 source: github-auto
 tags: ["computational-social-science", "d3", "eda", "exploratory-data-analysis", "japanese-language", "machine-learning"]
 permalink: /resources/jasonkessler-scattertext/
-stars: 2348
-last_updated: 2026-10-30
+stars: 2349
+last_updated: 2026-11-03
 license: "Apache-2.0"
 ---
 ## scattertext (JasonKessler)
