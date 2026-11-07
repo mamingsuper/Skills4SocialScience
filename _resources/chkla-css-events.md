@@ -10,7 +10,7 @@ source: github-auto
 tags: ["computational-social-science", "conferences", "events", "summer-schools", "text-as-data", "winter-schools"]
 permalink: /resources/chkla-css-events/
 stars: 47
-last_updated: 2026-09-21
+last_updated: 2026-11-05
 license: ""
 ---
 ## CSS-Events (chkla)
